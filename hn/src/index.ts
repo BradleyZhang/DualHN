@@ -46,7 +46,8 @@ try {
     const html = await getHtml(url);
     const page = await markdown(html, url);
     console.log("开始翻译:" + title);
-    const translatedTitle = (await translate(title)).content;
+    const translatedTitle = (await translate(title,"翻译该英文标题为中文，不要换行")).content;
+    translatedTitle.replace(/\s+/g,"")
     const frontMater = getFrontMater(
       translatedTitle,
       page.title,
