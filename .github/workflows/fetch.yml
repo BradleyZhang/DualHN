@@ -1,0 +1,59 @@
+name: fetch and translate
+
+on:
+  schedule:
+    - cron: "0 21 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+# 同一时刻只跑一个抓取任务；不要打断进行中的任务，避免推送半截内容
+concurrency:
+  group: fetch-hn
+  cancel-in-progress: false
+
+env:
+  CONTENT_BRANCH: content
+  NODE_VERSION: "22"
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: node
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+          cache-dependency-path: hn/package-lock.json
+
+      - name: Install dependencies
+        working-directory: hn
+        run: npm ci
+
+      - name: HN translation
+        working-directory: hn
+        env:
+          OPENROUTER_API_KEYS: ${{ secrets.OPENROUTER_API_KEYS }}
+        run: npm start
+
+      - name: 提交当天文章到内容分支
+        run: |
+          set -euo pipefail
+          DATE="$(TZ=Asia/Shanghai date +%F)"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add website/content/
+          if git diff --cached --quiet; then
+            echo "没有需要提交的变更"
+            exit 0
+          fi
+
+          git commit -m "content: $DATE"
+          git push
