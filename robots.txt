@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://BradleyZhang.github.io/DualHN/sitemap.xml
