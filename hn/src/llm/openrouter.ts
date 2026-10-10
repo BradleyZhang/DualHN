@@ -62,7 +62,10 @@ export interface LLMRes {
 const max_retry = 5;
 let client = clients[0];
 let clientIndex = 0;
-export const translate = async (article: string,prompt:string=defaultPrompt): Promise<LLMRes> => {
+export const translate = async (
+  article: string,
+  prompt: string = defaultPrompt,
+): Promise<LLMRes> => {
   let result;
   if (!client)
     throw new Error(
@@ -105,7 +108,7 @@ export const translate = async (article: string,prompt:string=defaultPrompt): Pr
           console.log("retry:change api key");
           continue;
         } else {
-          throw new Error(
+          console.log(
             "status code 429:总共" + clientIndex + "个 api key 额度已经用完",
           );
         }
