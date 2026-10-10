@@ -3,7 +3,7 @@ baseURL: "https://BradleyZhang.github.io/DualHN/"
 title: "DualHN"
 theme: ["PaperMod"]
 
-languageCode: "zh-cn"
+locale: "zh-cn"
 defaultContentLanguage: "zh"
 hasCJKLanguage: true # 按中日韩字符统计字数与阅读时间
 enableRobotsTXT: true
