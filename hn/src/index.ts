@@ -1,6 +1,6 @@
 import { topUrls, type UrlAndTitle } from "./hacker_news/top.js";
 import { getHtml } from "./html/html.js";
-import { translate } from "./llm/openrouter.js";
+import { TaskCompleted, translate } from "./llm/openrouter.js";
 import { toBilingualMarkdown } from "./llm/translate.js";
 import { markdown } from "./page/page.js";
 import { access, mkdir, writeFile, readFile } from "node:fs/promises";
@@ -22,6 +22,7 @@ const processedPath = processedDir + today + ".json";
 
 const yesterdayHN = "https://news.ycombinator.com/front?day=" + yesterday;
 let urlWithTitles: UrlAndTitle[] | undefined = undefined;
+async function main(){
 try {
   const processed = await fileExists(processedPath);
   if (processed) {
@@ -69,6 +70,10 @@ try {
     item.processed = true;
   }
 } catch (error) {
+  if (error instanceof TaskCompleted) {
+    console.log(error.message);
+    return;
+  }
   console.error("err:", error);
   process.exitCode = 1;
 } finally {
@@ -81,6 +86,8 @@ try {
     );
   }
 }
+}
+
 
 async function fileExists(path: string): Promise<boolean> {
   try {
@@ -146,3 +153,6 @@ function getShanghaiTime(): string {
   );
   return `${date.year}-${date.month}-${date.day}T${date.hour}:${date.minute}:${date.second}+08:00`;
 }
+
+
+main()

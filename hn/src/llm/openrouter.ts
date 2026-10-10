@@ -54,6 +54,7 @@ Markdown 格式
 严格保留原文的内容和结构。原文没有的标题、列表、注释或总结，不得自行添加。
 即使认为补充说明有助于理解，也必须省略，除非原文中本身包含这些说明。
     `;
+export class TaskCompleted extends Error {}
 
 export interface LLMRes {
   content: string;
@@ -108,9 +109,7 @@ export const translate = async (
           console.log("retry:change api key");
           continue;
         } else {
-          console.log(
-            "status code 429:总共" + clientIndex + "个 api key 额度已经用完",
-          );
+          throw new TaskCompleted("API 额度已用完，正常结束");
         }
       } else {
         throw error;
