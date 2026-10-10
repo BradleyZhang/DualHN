@@ -1,19 +1,16 @@
 import { translate } from "./openrouter.js";
 
-
 /**
  * 将英文原文翻译为双语 Markdown
  */
-export async function toBilingualMarkdown(
-  source: string,
-): Promise<string>{
+export async function toBilingualMarkdown(source: string): Promise<string> {
   const blocks = source.split(/\n\s*\n/);
   const result: string[] = [];
   let curr = 0;
 
   for (const block of blocks) {
-    printProgress(curr,blocks.length)
-    curr++
+    printProgress(curr, blocks.length);
+    curr++;
     const trimmed = block.trim();
     if (!trimmed) {
       continue;
@@ -28,7 +25,7 @@ export async function toBilingualMarkdown(
       .split("\n")
       .map((line) => `> ${line}`)
       .join("\n");
-    const res=await translate(block);
+    const res = await translate(block);
     const translated = res.content;
     if (!translated) continue;
     result.push(quotedSource, translated);
@@ -47,8 +44,7 @@ function isSpecialBlock(block: string): boolean {
     trimmed.startsWith("![") || // 图片
     trimmed.startsWith("```") || // 代码块
     trimmed.startsWith("~~~") || // 另一种代码块
-    trimmed.startsWith("<") || // HTML
-    /^(\s*[-*+]|\s*\d+\.)\s/.test(trimmed) // 列表
+    trimmed.startsWith("<") // HTML
   );
 }
 
