@@ -1,0 +1,22 @@
+{{- /* 正文之前追加「原文 / HN 讨论」信息块。
+       需在 front matter 写入 originalUrl / originalTitle / hnUrl / points / comments。 */}}
+{{- $originalUrl := .Params.originalUrl }}
+{{- $hnUrl := .Params.hnUrl }}
+{{- if or $originalUrl $hnUrl }}
+<aside class="post-source">
+  <ul>
+    {{- with $originalUrl }}
+    <li>
+      <span class="post-source-label">原文</span>
+      <a href="{{ . }}" target="_blank" rel="noopener noreferrer">{{ $.Params.originalTitle | default . }}</a>
+    </li>
+    {{- end }}
+    {{- with $hnUrl }}
+    <li>
+      <span class="post-source-label">HN 讨论</span>
+      <a href="{{ . }}" target="_blank" rel="noopener noreferrer">{{ $.Params.points | default 0 }} points · {{ $.Params.comments | default 0 }} comments</a>
+    </li>
+    {{- end }}
+  </ul>
+</aside>
+{{- end }}

@@ -1,0 +1,70 @@
+{{- define "main" }}
+
+{{- /* 每天的文章放在 content/<YYYY-MM-DD>/ 下。
+       首页只展示「最新一天」的文章：先找出日期最大的那个目录。 */}}
+{{- $latestDate := "" }}
+{{- range site.RegularPages }}
+  {{- $section := .Section }}
+  {{- if and $section (gt $section $latestDate) }}
+    {{- $latestDate = $section }}
+  {{- end }}
+{{- end }}
+
+{{- $pages := slice }}
+{{- with $latestDate }}
+  {{- /* 按文件名排序：hn用 NN-slug.md 命名（NN 为 HN 排名*/}}
+  {{- $pages = sort (where site.RegularPages "Section" .) "File.ContentBaseName" "asc" }}
+{{- end }}
+
+{{- $today := now.Format "2006-01-02" }}
+{{- $isToday := eq $latestDate $today }}
+
+{{- /* 首页顶部简介 */}}
+{{- partial "home_info.html" . }}
+
+{{- if $pages }}
+<header class="page-header home-today-header">
+  <h1>{{ if $isToday }}今日更新{{ else }}最新更新{{ end }}</h1>
+  <span class="home-today-date">{{ $latestDate }} · 共 {{ len $pages }} 篇</span>
+</header>
+
+{{- $userPreferred := or site.Params.disableSpecial1stPost site.Params.homeInfoParams }}
+{{- range $index, $page := $pages }}
+{{- $class := "post-entry" }}
+{{- if and (eq $index 0) (not $userPreferred) }}
+  {{- $class = "first-entry" }}
+{{- end }}
+<article class="{{ $class }}">
+  {{- $isHidden := ($page.Param "cover.hiddenInList") | default ($page.Param "cover.hidden") | default false }}
+  {{- partial "cover.html" (dict "cxt" $page "IsSingle" false "isHidden" $isHidden) }}
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">{{ $page.Title }}</h2>
+  </header>
+  {{- if (ne ($page.Param "hideSummary") true) }}
+  <div class="entry-content">
+    <p>{{ $page.Summary | plainify | htmlUnescape }}{{ if $page.Truncated }}...{{ end }}</p>
+  </div>
+  {{- end }}
+  {{- if not ($page.Param "hideMeta") }}
+  <footer class="entry-footer">
+    {{- partial "post_meta.html" $page -}}
+  </footer>
+  {{- end }}
+  <a class="entry-link" aria-label="post link to {{ $page.Title | plainify }}" href="{{ $page.Permalink }}"></a>
+</article>
+{{- end }}
+
+<footer class="page-footer">
+  <nav class="pagination">
+    <a class="next" href="{{ "/archives/" | relURL }}">查看全部文章 &nbsp;»</a>
+  </nav>
+</footer>
+{{- else }}
+<article class="post-entry">
+  <div class="entry-content">
+    <p>还没有文章</p>
+  </div>
+</article>
+{{- end }}
+
+{{- end }}{{/* end main */}}

@@ -1,3 +1,87 @@
-baseURL: https://example.org/
-locale: en-us
+# TODO: url
+baseURL: "https://example.org/"
+
+title: "DualHN"
 theme: ["PaperMod"]
+
+languageCode: "zh-cn"
+defaultContentLanguage: "zh"
+hasCJKLanguage: true # 按中日韩字符统计字数与阅读时间
+enableRobotsTXT: true
+enableEmoji: true
+
+timeZone: "Asia/Shanghai"
+
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+
+pagination:
+  pagerSize: 20
+
+# home 额外输出 JSON，供站内搜索使用
+# outputs:
+#   home:
+#     - HTML
+#     - RSS
+#     - JSON
+#   section:
+#     - HTML
+#     - RSS
+
+menu:
+  main:
+    - identifier: home
+      name: Home
+      url: /
+      weight: 10
+    - identifier: archives
+      name: Archives
+      url: /archives/
+      weight: 20
+    # - identifier: search
+    #   name: 搜索
+    #   url: /search/
+    #   weight: 30
+
+params:
+  env: production
+  description: "每早提供昨天 Hacker News 热门文章的 LLM 双语翻译"
+  # author: "DualHN"
+  defaultTheme: auto
+
+  # 列表页/文章页的日期显示格式
+  DateFormat: "2006-01-02"
+
+  # 首页顶部简介
+  homeInfoParams:
+    Title: "DualHN"
+    Content: |
+      每早提供昨天 Hacker News 热门文章的 LLM 双语翻译
+
+  ShowReadingTime: true
+  ShowWordCount: false
+  ShowShareButtons: false
+  ShowPostNavLinks: true # 同一天内的上一篇/下一篇
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowRssButtonInSectionTermList: true
+  ShowFullTextinRSS: true
+  ShowPageNums: true
+  ShowToc: true
+  hideAuthor: true
+
+  socialIcons:
+    - name: github
+      title: View Source on Github
+      url: "WIP//TODO"
+    - name: rss
+      title: RSS
+      url: "http://localhost:1313/index.xml" # TODO
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true # 允许正文内嵌 HTML
+  highlight:
+    noClasses: false

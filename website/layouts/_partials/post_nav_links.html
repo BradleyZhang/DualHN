@@ -1,0 +1,19 @@
+{{- /* 上一篇 / 下一篇：限定在「同一天」的文章范围内 */}}
+{{- $section := .Section }}
+{{- $pages := sort (where site.RegularPages "Section" $section) "File.ContentBaseName" "asc"}}
+{{- if and (gt (len $pages) 1) (in $pages .) }}
+<nav class="paginav">
+  {{- with $pages.Next . }}
+  <a class="prev" href="{{ .Permalink }}">
+    <span class="title">« {{ i18n "prev_page" }}</span>
+    <span>{{- .Title -}}</span>
+  </a>
+  {{- end }}
+  {{- with $pages.Prev . }}
+  <a class="next" href="{{ .Permalink }}">
+    <span class="title">{{ i18n "next_page" }} »</span>
+    <span>{{- .Title -}}</span>
+  </a>
+  {{- end }}
+</nav>
+{{- end }}

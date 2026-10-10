@@ -1,0 +1,73 @@
+{{- define "main" }}
+
+{{- /* 存档：列出全部文章。
+       文章都在 content/<YYYY-MM-DD>/ 里，排除 content 根目录下的独立页面*/}}
+{{- $pages := where site.RegularPages "Section" "ne" "" }}
+{{- $pages = where $pages "Layout" "ne" "archives" }}
+{{- $pages = where $pages "Layout" "ne" "search" }}
+{{- $pages = $pages.ByDate.Reverse }}
+
+<header class="page-header">
+  <h1>
+    {{ .Title }}
+  </h1>
+  {{- with .Description }}
+  <div class="post-description">{{ . }}</div>
+  {{- end }}
+</header>
+
+{{- with .Content }}
+<div class="post-content md-content">{{ . }}</div>
+{{- end }}
+
+{{- if not $pages }}
+<article class="post-entry">
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">还没有文章</h2>
+  </header>
+</article>
+{{- end }}
+
+{{- range $pages.GroupByDate "2006" }}
+{{- if ne .Key "0001" }}
+{{- $year := .Key }}
+<div class="archive-year">
+  <h2 class="archive-year-header" id="{{ $year }}">
+    <a class="archive-header-link" href="#{{ $year }}">{{ $year }} 年</a>
+    <sup class="archive-count">&nbsp;{{ len .Pages }}</sup>
+  </h2>
+
+  {{- range .Pages.GroupByDate "2006-01" }}
+  {{- $ym := .Key }}
+  {{- $month := index (split $ym "-") 1 }}
+  <div class="archive-month">
+    <h3 class="archive-month-header" id="{{ $ym }}">
+      <a class="archive-header-link" href="#{{ $ym }}">{{ int $month }} 月</a>
+      <sup class="archive-count">&nbsp;{{ len .Pages }}</sup>
+    </h3>
+    <div class="archive-posts">
+      {{- range .Pages.GroupByDate "2006-01-02" }}
+      {{- $day := .Key }}
+      <div class="archive-day">
+        <h4 class="archive-day-header" id="{{ $day }}">
+          <a class="archive-header-link" href="#{{ $day }}">{{ $day }}</a>
+          <sup class="archive-count">&nbsp;{{ len .Pages }}</sup>
+        </h4>
+        {{- /* 同一天内按文件名（NN- 排名序号）升序，和首页保持一致 */}}
+        {{- range sort .Pages "File.ContentBaseName" "asc" }}
+        <div class="archive-entry">
+          <h3 class="archive-entry-title entry-hint-parent">{{ .Title | markdownify }}</h3>
+          <div class="archive-meta">{{- partial "post_meta.html" . -}}</div>
+          <a class="entry-link" aria-label="post link to {{ .Title | plainify }}" href="{{ .Permalink }}"></a>
+        </div>
+        {{- end }}
+      </div>
+      {{- end }}
+    </div>
+  </div>
+  {{- end }}
+</div>
+{{- end }}
+{{- end }}
+
+{{- end }}{{/* end main */}}
