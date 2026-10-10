@@ -7,7 +7,7 @@ const apiKeys = (process.env.OPENROUTER_API_KEYS ?? "")
   .filter(Boolean);
 
 const clients = apiKeys.map((apiKey) => new OpenRouter({ apiKey }));
-const prompt = `
+const defaultPrompt = `
 你是一位专业的技术文档翻译专家，精通中英文，擅长翻译计算机科学、人工智能、软件工程等领域的技术文章。你的翻译不仅追求准确，更注重保留技术语境和专业术语的精确性。
 
 核心翻译准则：
@@ -46,11 +46,10 @@ export interface LLMRes {
   model: string;
 }
 const max_retry = 5;
-
-export const translate = async (article: string): Promise<LLMRes> => {
+let client = clients[0];
+let clientIndex = 0;
+export const translate = async (article: string,prompt:string=defaultPrompt): Promise<LLMRes> => {
   let result;
-  let client = clients[0];
-  let clientIndex = 0;
   if (!client)
     throw new Error(
       "api key not found\n.env's OPENROUTER_API_KEYS:" +
@@ -85,14 +84,16 @@ export const translate = async (article: string): Promise<LLMRes> => {
       const statusCode = getStatusCode(error);
       if (statusCode == 429) {
         // 换key
-        if (clientIndex + 1 < clients.length) {
-          clientIndex++;
+        clientIndex++;
+        if (clientIndex < clients.length) {
           client = clients[clientIndex];
           i = -1;
-          console.log("retry:change api key")
+          console.log("retry:change api key");
           continue;
         } else {
-          throw error
+          throw new Error(
+            "status code 429:总共" + clientIndex + "个 api key 额度已经用完",
+          );
         }
       } else {
         throw error;
