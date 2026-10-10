@@ -33,6 +33,11 @@ try {
   if (urlWithTitles === undefined) {
     throw new Error("unreachable");
   }
+
+  // hugo _index.md
+  await mkdir(outputDir, { recursive: true });
+  await writeFile(outputDir + "_index.md", `---\ntitle: "${today}"\n---\n`, "utf8");
+
   for (let i = 0; i < urlWithTitles.length; i++) {
     const item = urlWithTitles[i];
     if (!item) break;
@@ -47,9 +52,8 @@ try {
     const page = await markdown(html, url);
     console.log("开始翻译:" + title);
     const translatedTitle = (await translate(title,"翻译该英文标题为中文，不要换行")).content;
-    translatedTitle.replace(/\s+/g,"")
     const frontMater = getFrontMater(
-      translatedTitle,
+      translatedTitle.replace(/\s+/g, " ").trim(),
       page.title,
       url,
       "",
@@ -58,9 +62,8 @@ try {
     ); // TODO 标题翻译,hnurl point comment
     const translated = frontMater + (await toBilingualMarkdown(page.content));
 
-    const fileName = sanitizeFilename("#" + rank + " " + title) + ".md";
+    const fileName = `${String(rank).padStart(2, "0")}-${slugify(title)}.md`;
     const path = outputDir + fileName;
-    await mkdir(outputDir, { recursive: true });
     await writeFile(path, translated, "utf8");
     console.log(`Markdown 已写入：${path}`);
     item.processed = true;
@@ -88,11 +91,18 @@ async function fileExists(path: string): Promise<boolean> {
   }
 }
 
-function sanitizeFilename(title: string): string {
-  return title
-    .replace(/[/\\?%*:|"<>]/g, "-")
-    .replace(/\s+/g, " ")
-    .trim();
+function slugify(input: string): string {
+  const slug = input
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "") // 去掉重音符号
+    .replace(/['’]/g, "") // isn't -> isnt
+    .toLowerCase()
+    .replace(/[^a-z0-9\u4e00-\u9fff]+/g, "-") // 其余非字母数字转成 -
+    .replace(/-{2,}/g, "-")
+    .replace(/^-+|-+$/g, "")
+    .slice(0, 80)
+    .replace(/-+$/g, "");
+  return slug || "post";
 }
 function getFrontMater(
   title: string,
