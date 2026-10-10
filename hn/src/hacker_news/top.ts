@@ -3,9 +3,10 @@ import * as cheerio from "cheerio";
 import { getHtml } from "../html/html.js";
 
 const excludeKeywords: string[] = ["Show HN", "Ask HN", "Launch HN"];
-interface UrlAndTitle {
+export interface UrlAndTitle {
   url: string;
   title: string;
+  processed: boolean;
 }
 
 export async function topUrls(url: string): Promise<UrlAndTitle[]> {
@@ -22,7 +23,7 @@ export async function topUrls(url: string): Promise<UrlAndTitle[]> {
       return; // 跳过当前文章
     }
     if (href) {
-      urls.push({ url: new URL(href).href, title: title });
+      urls.push({ url: new URL(href).href, title: title, processed: false });
     }
   });
 
