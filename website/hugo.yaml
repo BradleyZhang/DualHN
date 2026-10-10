@@ -1,5 +1,4 @@
-# TODO: url
-baseURL: "https://example.org/"
+baseURL: "https://BradleyZhang.github.io/DualHN/"
 
 title: "DualHN"
 theme: ["PaperMod"]
@@ -74,10 +73,10 @@ params:
   socialIcons:
     - name: github
       title: View Source on Github
-      url: "WIP//TODO"
+      url: "https://github.com/BradleyZhang/DualHN"
     - name: rss
       title: RSS
-      url: "http://localhost:1313/index.xml" # TODO
+      url: "https://BradleyZhang.github.io/DualHN/index.xml" 
 
 markup:
   goldmark:
