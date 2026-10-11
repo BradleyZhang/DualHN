@@ -57,17 +57,17 @@ params:
     Title: "DualHN"
     Content: |
       每早提供昨天 Hacker News 热门文章的 LLM 双语翻译
-      
+
       topKHN is a personal learning project. To make it convenient for using, I have made it publicly accessible on the internet. I hope it will remain just a small, unobtrusive corner of the internet that doesn’t get in anyone’s way.
-      
+
       This project is intended for personal learning and technical research, and is not intended for commercial profit. I respect the rights of original authors and creators. I have no intention of infringing upon anyone’s copyright or causing offense.
-      
+
       If you are an author, creator, or copyright holder of any content featured on this website and have concerns about how your work is presented or used, please feel free to contact me. I will take your concerns seriously and am willing to promptly remove the  content upon receiving a  removal request. 
-      
+
       More broadly, if anyone finds this website or its content uncomfortable, offensive, or otherwise concerning, please feel free to reach out.I am willing to take the entire site offline promptly upon request.
 
       The copyright of all original content featured on this website remains with its respective authors and copyright holders. I will make every effort to credit the original sources and provide links to the original articles, out of respect for the creators’ work and to help readers access the original material.
-      
+
       Thank you to every creator who contributes knowledge and ideas to the internet.
 
   ShowReadingTime: true
@@ -88,7 +88,10 @@ params:
       url: "https://github.com/BradleyZhang/DualHN"
     - name: rss
       title: RSS
-      url: "https://BradleyZhang.github.io/DualHN/index.xml" 
+      url: "https://BradleyZhang.github.io/DualHN/index.xml"
+    - name: email
+      title: email
+      url: mailto:bradley-zhang@outlook.com?subject=[DualHN]
 
 markup:
   goldmark:
