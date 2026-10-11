@@ -2,7 +2,7 @@ name: fetch and translate
 
 on:
   schedule:
-    - cron: "0 21 * * *"
+    - cron: "17 21 * * *"
   workflow_dispatch:
 
 permissions:
@@ -54,6 +54,6 @@ jobs:
             echo "没有需要提交的变更"
             exit 0
           fi
-
           git commit -m "content: $DATE"
-          git push
+          git pull --rebase origin main
+          git push origin main
