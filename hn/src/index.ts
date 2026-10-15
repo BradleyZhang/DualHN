@@ -22,72 +22,90 @@ const processedPath = processedDir + today + ".json";
 
 const yesterdayHN = "https://news.ycombinator.com/front?day=" + yesterday;
 let urlWithTitles: UrlAndTitle[] | undefined = undefined;
-async function main(){
-try {
-  const processed = await fileExists(processedPath);
-  if (processed) {
-    const content = await readFile(processedPath, "utf-8");
-    urlWithTitles = JSON.parse(content);
-  } else {
-    urlWithTitles = await topUrls(yesterdayHN);
-  }
-  if (urlWithTitles === undefined) {
-    throw new Error("unreachable");
-  }
-
-  // hugo _index.md
-  await mkdir(outputDir, { recursive: true });
-  await writeFile(outputDir + "_index.md", `---\ntitle: "${today}"\n---\n`, "utf8");
-
-  for (let i = 0; i < urlWithTitles.length; i++) {
-    const item = urlWithTitles[i];
-    if (!item) break;
-    if (item.processed) {
-      continue;
+async function main() {
+  try {
+    const processed = await fileExists(processedPath);
+    if (processed) {
+      const content = await readFile(processedPath, "utf-8");
+      urlWithTitles = JSON.parse(content);
+    } else {
+      urlWithTitles = await topUrls(yesterdayHN);
+    }
+    if (urlWithTitles === undefined) {
+      throw new Error("unreachable");
     }
 
-    const url = item.url;
-    const title = item.title;
-    const rank = i + 1;
-    const html = await getHtml(url);
-    const page = await markdown(html, url);
-    console.log("开始翻译:" + title);
-    const translatedTitle = (await translate(title,"翻译该英文标题为中文，不要换行")).content;
-    const frontMater = getFrontMater(
-      translatedTitle.replace(/\s+/g, " ").trim(),
-      page.title,
-      url,
-      "",
-      "",
-      "",
-    ); // TODO 标题翻译,hnurl point comment
-    const translated = frontMater + (await toBilingualMarkdown(page.content));
-
-    const fileName = `${String(rank).padStart(2, "0")}-${slugify(title)}.md`;
-    const path = outputDir + fileName;
-    await writeFile(path, translated, "utf8");
-    console.log(`Markdown 已写入：${path}`);
-    item.processed = true;
-  }
-} catch (error) {
-  if (error instanceof TaskCompleted) {
-    console.log(error.message);
-    return;
-  }
-  console.error("err:", error);
-  process.exitCode = 1;
-} finally {
-  if (urlWithTitles !== undefined) {
-    await mkdir(processedDir, { recursive: true });
+    // hugo _index.md
+    await mkdir(outputDir, { recursive: true });
     await writeFile(
-      processedPath,
-      JSON.stringify(urlWithTitles, null, 2),
-      "utf-8",
+      outputDir + "_index.md",
+      `---\ntitle: "${today}"\n---\n`,
+      "utf8",
+    );
+
+    for (let i = 0; i < urlWithTitles.length; i++) {
+      const item = urlWithTitles[i];
+      if (!item) break;
+      if (item.processed) {
+        continue;
+      }
+
+      const url = item.url;
+      const title = item.title;
+      const rank = i + 1;
+      const html = await getHtml(url);
+      const page = await markdown(html, url);
+      console.log("开始翻译:" + title);
+      const translatedTitle = (
+        await translate(title, "翻译该英文标题为中文，不要换行")
+      ).content;
+      const frontMater = getFrontMater(
+        translatedTitle.replace(/\s+/g, " ").trim(),
+        page.title,
+        url,
+        "",
+        "",
+        "",
+      ); // TODO 标题翻译,hnurl point comment
+      const translated = frontMater + (await toBilingualMarkdown(page.content));
+
+      const fileName = `${String(rank).padStart(2, "0")}-${slugify(title)}.md`;
+      const path = outputDir + fileName;
+      await writeFile(path, translated, "utf8");
+      console.log(`Markdown 已写入：${path}`);
+      item.processed = true;
+    }
+  } catch (error) {
+    if (error instanceof TaskCompleted) {
+      console.log(error.message);
+      return;
+    }
+    logFatal(error);
+    return;
+  } finally {
+    if (urlWithTitles !== undefined) {
+      await mkdir(processedDir, { recursive: true });
+      await writeFile(
+        processedPath,
+        JSON.stringify(urlWithTitles, null, 2),
+        "utf-8",
+      );
+    }
+  }
+}
+
+function logFatal(err: unknown) {
+  console.log("[ERR] ", err);
+  bark(String(err));
+}
+async function bark(msg: string) {
+  let barkKey = process.env.OPENROUTER_KEY;
+  if (barkKey != undefined) {
+    await fetch(
+      `https://api.day.app/${barkKey}/DualHN: ERROR/${msg}?group=DualHN`,
     );
   }
 }
-}
-
 
 async function fileExists(path: string): Promise<boolean> {
   try {
@@ -154,5 +172,4 @@ function getShanghaiTime(): string {
   return `${date.year}-${date.month}-${date.day}T${date.hour}:${date.minute}:${date.second}+08:00`;
 }
 
-
-main()
+main();
