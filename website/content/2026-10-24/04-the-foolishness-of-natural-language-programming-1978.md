@@ -3,7 +3,7 @@ title: "自然语言编程的愚蠢(1978)"
 date: 2026-10-24T08:52:25+08:00
 draft: false
 source: "Hacker News"
-originalTitle: "E.W.Dijkstra Archive: On the foolishness of "natural language programming". (EWD 667)"
+originalTitle: 'E.W.Dijkstra Archive: On the foolishness of "natural language programming". (EWD 667)'
 originalUrl: "https://www.cs.utexas.edu/~EWD/transcriptions/EWD06xx/EWD667.html"
 hnUrl: ""
 points: 

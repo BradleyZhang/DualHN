@@ -143,7 +143,7 @@ title: '${title}'
 date: ${date}
 draft: false
 source: "Hacker News"
-originalTitle: "${originalTitle}"
+originalTitle: '${originalTitle}'
 originalUrl: "${originalUrl}"
 hnUrl: "${hnUrl}"
 points: ${points}
