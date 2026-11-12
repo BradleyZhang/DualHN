@@ -1,5 +1,5 @@
 ---
-title: "Cursor 应用商店中 VS Code 扩展 "Claude Code" 存在后门"
+title: 'Cursor 应用商店中 VS Code 扩展 "Claude Code" 存在后门'
 date: 2026-10-31T08:48:15+08:00
 draft: false
 source: "Hacker News"

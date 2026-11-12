@@ -139,7 +139,7 @@ function getFrontMater(
 ): string {
   const date = getShanghaiTime();
   const f = `---
-title: "${title}"
+title: '${title}'
 date: ${date}
 draft: false
 source: "Hacker News"
