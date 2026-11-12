@@ -6,7 +6,7 @@
 &lt;blockquote&gt;
 &lt;p&gt;An ongoing cyberattack has reportedly struck major supermarket chains across Europe, disrupting refrigeration control systems. The attack — which has reportedly seen units set to continuously defrost at 50 degrees Celsius — is also apparently affecting deliveries and in-store pricing powered by electronic shelf labels, &lt;a href="https://www.ladepeche.fr/2026/10/12/intermarche-leclerc-et-super-u-vises-par-une-cyberattaque-la-temperature-des-frigos-est-montee-jusqua-50-degres-des-degats-considerables-attendus-13596843.php"&gt;&lt;em&gt;La Dépêche&lt;/em&gt;&lt;/a&gt; reports*.*&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;据报道，欧洲多家超市连锁店遭遇了一起持续性的网络攻击，导致制冷控制系统瘫痪。攻击过程中，设备 reportedly 持续在 50 摄氏度下除霜，同时还影响了由电子价签管理的配送和店内定价。&lt;a href="https://www.ladepeche.fr/2026/10/12/intermarche-leclerc-et-super-u-vises-par-une-cyberattaque-la-temperature-des-frigos-est-montee-jusqua-50-degres-des-degats-considerables-attendus-13596843.php"&gt;&lt;em&gt;La Dépêche&lt;/em&gt;&lt;/a&gt; 报道称。*&lt;/p&gt;</description><content:encoded><![CDATA[<p><img alt="Supermarket fridge" loading="lazy" src="https://cdn.mos.cms.futurecdn.net/o7hTqTruL84oHxvg6pYS3K-1920-80.jpg.webp"></p>
+&lt;p&gt;据报道，欧洲多家超市连锁店遭遇了一起持续性的网络攻击，导致制冷控制系统瘫痪。攻击过程中，设备 reportedly 持续在 50 摄氏度下除霜，同时还影响了由电子价签管理的配送和店内定价。&lt;a href="https://www.ladepeche.fr/2026/10/12/intermarche-leclerc-et-super-u-vises-par-une-cyberattaque-la-temperature-des-frigos-est-montee-jusqua-50-degres-des-degats-considerables-attendus-13596843.php"&gt;&lt;em&gt;La Dépêche&lt;/em&gt;&lt;/a&gt; 报道称。*&lt;/p&gt;</description><content:encoded><![CDATA[<p>from: <a href="https://www.tomshardware.com/tech-industry/cyber-security/unprecedented-cyberattack-cripples-supermarket-fridges-across-europe-as-hackers-activate-automatic-defrosting-delivery-and-store-prices-also-impacted-by-incident">'Unprecedented' Cyberattack cripples supermarket fridges across Europe as hackers activate automatic defrosting  — delivery and store prices also impacted by incident</a></p><p><img alt="Supermarket fridge" loading="lazy" src="https://cdn.mos.cms.futurecdn.net/o7hTqTruL84oHxvg6pYS3K-1920-80.jpg.webp"></p>
 <blockquote>
 <p>(Image credit: AFP)</p>
 </blockquote>
@@ -146,7 +146,7 @@ But there&rsquo;s a difference between passive monitoring vs. the ability to do 
 &lt;p&gt;鉴于这个issue已经在网上被分享，目前访问量相当高，这里提供一些额外的背景信息。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Rust&amp;rsquo;s type system is intended to prevent memory unsafety. Upholding this promise is something we take very seriously, which is why we&amp;rsquo;ve been working on things like &lt;a href="https://goals.rust-lang.org/2026/next-solver.html"&gt;the next-generation trait solver&lt;/a&gt;, &lt;a href="https://goals.rust-lang.org/2026/next-gen-region-constraints.html"&gt;the region constraint rework&lt;/a&gt;, and more generally &lt;a href="https://goals.rust-lang.org/2026/roadmap-project-zero.html"&gt;Project Zero&lt;/a&gt;. It is a large priority of the Types Team to fix all type system unsoundnesses and to work towards there being a solid foundation to minimize the risk of unknown ones.&lt;/p&gt;
-&lt;/blockquote&gt;</description><content:encoded><![CDATA[<blockquote>
+&lt;/blockquote&gt;</description><content:encoded><![CDATA[<p>from: <a href="https://github.com/rust-lang/rust/issues/164250">struct's lifetime requirements can be bypassed via covariant field assignment · Issue #164250 · rust-lang/rust · GitHub</a></p><blockquote>
 <p>Note</p>
 </blockquote>
 <p>注意</p>
@@ -577,7 +577,7 @@ Godbolt without asan: <a href="https://rust.godbolt.org/z/GsGdqqMWe">https://rus
 &lt;blockquote&gt;
 &lt;p&gt;Across Google and our early access partners, Argon is quickly becoming the preferred model for engineers tackling long-horizon software engineering.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;在 Google 内部及我们的早期访问合作伙伴中，Argon 正迅速成为工程师应对长周期软件工程任务的首选模型。&lt;/p&gt;</description><content:encoded><![CDATA[<blockquote>
+&lt;p&gt;在 Google 内部及我们的早期访问合作伙伴中，Argon 正迅速成为工程师应对长周期软件工程任务的首选模型。&lt;/p&gt;</description><content:encoded><![CDATA[<p>from: <a href="https://deepmind.google/models/gemini/">Gemini</a></p><blockquote>
 <p>Our next era of frontier intelligence, built to solve your hardest problems</p>
 </blockquote>
 <p>我们的下一代前沿智能，致力于解决最困难的问题</p>

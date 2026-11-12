@@ -1,0 +1,611 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>2026-11-12 on DualHN</title><link>https://BradleyZhang.github.io/DualHN/2026-11-12/</link><description>Recent content in 2026-11-12 on DualHN</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Thu, 12 Nov 2026 10:28:07 +0800</lastBuildDate><atom:link href="https://BradleyZhang.github.io/DualHN/2026-11-12/index.xml" rel="self" type="application/rss+xml"/><item><title>蒂姆·彼得斯去世</title><link>https://BradleyZhang.github.io/DualHN/2026-11-12/02-tim-peters-has-died/</link><pubDate>Thu, 12 Nov 2026 10:28:07 +0800</pubDate><guid>https://BradleyZhang.github.io/DualHN/2026-11-12/02-tim-peters-has-died/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;&lt;a href="https://discuss.python.org/c/core-dev/23"&gt;Core Development&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;核心开发&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;I am immensely sad to announce that &lt;a href="https://en.wikipedia.org/wiki/Tim_Peters_(software_engineer)"&gt;Tim Peters&lt;/a&gt; has &lt;a href="https://www.bratleyfamilyfuneralhomes.com/obituary/timothy-peters"&gt;died&lt;/a&gt; earlier this year on July 15.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;我十分难过地宣布，&lt;a href="https://en.wikipedia.org/wiki/Tim_Peters(software_engineer)"&gt;Tim Peters&lt;/a&gt; 已 &lt;a href="https://www.bratleyfamilyfuneralhomes.com/obituary/timothy-peters"&gt;died&lt;/a&gt; 今年 7月 15日。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;It’s hard to overestimate Tim’s influence on Python. He’s probably best known for writing the Zen of Python (&lt;a href="https://peps.python.org/pep-0020/"&gt;PEP 20&lt;/a&gt;), but to me he was a mentor and language co-designer long before that.&lt;/p&gt;
+&lt;/blockquote&gt;</description><content:encoded><![CDATA[<p>from: <a href="https://discuss.python.org/t/in-memoriam-tim-peters-1952-2026/110028">In Memoriam: Tim Peters 1952–2026</a></p><blockquote>
+<p><a href="https://discuss.python.org/c/core-dev/23">Core Development</a></p>
+</blockquote>
+<p>核心开发</p>
+<blockquote>
+<p>I am immensely sad to announce that <a href="https://en.wikipedia.org/wiki/Tim_Peters_(software_engineer)">Tim Peters</a> has <a href="https://www.bratleyfamilyfuneralhomes.com/obituary/timothy-peters">died</a> earlier this year on July 15.</p>
+</blockquote>
+<p>我十分难过地宣布，<a href="https://en.wikipedia.org/wiki/Tim_Peters(software_engineer)">Tim Peters</a> 已 <a href="https://www.bratleyfamilyfuneralhomes.com/obituary/timothy-peters">died</a> 今年 7月 15日。</p>
+<blockquote>
+<p>It’s hard to overestimate Tim’s influence on Python. He’s probably best known for writing the Zen of Python (<a href="https://peps.python.org/pep-0020/">PEP 20</a>), but to me he was a mentor and language co-designer long before that.</p>
+</blockquote>
+<p>很难高估 Tim 对 Python 的影响。他最著名的事迹或许就是撰写了 Zen of Python（<a href="https://peps.python.org/pep-0020/">PEP 20</a>），但对我来说，早在那时之前，他是一位导师和语言共同设计者。</p>
+<blockquote>
+<p>Tim found Python not long after its initial release. His first deed was to convince me that Python should support mixed arithmetic between <code>int</code> and <code>float</code>, because most users would expect them to work that way. And he never stopped contributing.</p>
+</blockquote>
+<p>Tim 很快在 Python 的最初发布后发现了它。 他的第一件事是说服我，Python 应该支持 <code>int</code> 和 <code>float</code> 之间的混合算术，因为大多数用户期望它们能够这样工作。 而且他从未停止过贡献。</p>
+<blockquote>
+<p>Tim quickly became a major phenomenon on the Python mailing list (including later incarnations and spinoffs), where he earned the nickname “Timbot” by his innumerable, careful and patient answers to user questions. These he filled with mild humor (always marked by <code>&lt;wink&gt;</code> or <code>&lt;0.5 wink&gt;</code>) and often referred to as “channeling Guido”.</p>
+</blockquote>
+<p>蒂姆很快就成为 Python 邮件列表上的一个热门人物，包括其后续版本和衍生版本。他因无数次耐心地细致解答用户问题而被昵称为“Timbot”。他的回答充满了温和的幽默感，通常用 <code>&lt;wink&gt;</code> 或 <code>&lt;0.5 wink&gt;</code> 来标记，人们常说他是在“模仿吉多”。</p>
+<blockquote>
+<p>At the same time Tim participated in numerous in-depth design discussions, saving me or others from embarrassing design mistakes or solving deep problems, guided by his vast mathematical knowledge and compiler-building experience. In fact, Tim really set the tone for early core development, never outright dismissing people and explaining in detail why things could or couldn’t work.</p>
+</blockquote>
+<p>Tim 同时参加了众多深入的设计讨论，为我或他人避免了尴尬的设计错误，或解决了深层问题，凭借他广博的数学知识和编译器构建经验。事实上，Tim 真正奠定了早期核心开发的基调，从不直接驳回他人，并详细解释事物为何可行或不可行。</p>
+<blockquote>
+<p>In 2002, Tim gave us <a href="https://en.wikipedia.org/wiki/Timsort">Timsort</a>: a new sorting algorithm he designed for Python lists, which was later adopted by Java and Android.</p>
+</blockquote>
+<p>2002 年，Tim 给我们带来 <a href="https://en.wikipedia.org/wiki/Timsort">Timsort</a>：他为 Python 列表设计的一种新型排序算法，后来被 Java 和 Android 采用。</p>
+<blockquote>
+<p>Python-would-not-be-what-it-is-today-without-Tim-ly y’rs,</p>
+</blockquote>
+<p>Python 没有 Tim 就不会是今天的 Python，y&rsquo;rs，</p>
+<blockquote>
+<p>–Guido</p>
+</blockquote>
+<p>——吉多</p>
+<blockquote>
+<p>168 Likes</p>
+</blockquote>
+<p>168 个赞</p>
+<blockquote>
+<p>Feel free to respond with your own Tim anecdotes. I could not cover everything he did.</p>
+</blockquote>
+<p>欢迎分享你自己的 Tim 轶事。我无法覆盖他做的所有事。</p>
+<blockquote>
+<p>4 Likes</p>
+</blockquote>
+<p>4 个赞</p>
+<blockquote>
+<p>Very sad news. I have had the privilege and pleasure of discussing MANY topics with Tim, and his input into technical discussions has always been something I value very highly. He never treated you like an idiot, never dismissed your concerns out of hand, always answered and explained. I exchanged emails with him many times, but geography meant that sadly, we never met in person.</p>
+</blockquote>
+<p>非常悲伤的消息。我很荣幸也很高兴能和 Tim 讨论许多话题，他对技术讨论的意见我一直非常看重。他从不把你当傻瓜对待，从不轻率驳回你的顾虑，总是耐心回答和解释。我和他通过电子邮件交换过很多次，但由于地理原因，遗憾的是，我们从未当面见面。</p>
+<blockquote>
+<p>13 Likes</p>
+</blockquote>
+<p>13 个赞</p>
+<blockquote>
+<p>From the start to the end. His <a href="https://discuss.python.org/t/sorted-data-structure-in-the-stdlib/107994/30">last post</a> concluded:</p>
+</blockquote>
+<p>从头到尾。他的 <a href="https://discuss.python.org/t/sorted-data-structure-in-the-stdlib/107994/30">last post</a> 总结道：</p>
+<blockquote>
+<blockquote>
+<p>Which is all a long-winded say of saying the real world is more complicated than our clean abstractions hope for.</p>
+</blockquote>
+</blockquote>
+<p>这不过是绕弯子地说明现实世界比我们希望的简洁抽象更为复杂。</p>
+<blockquote>
+<p>40 Likes</p>
+</blockquote>
+<p>40 个赞</p>
+<blockquote>
+<p>I wrote this some time ago about Tim:</p>
+</blockquote>
+<p>我是在一段时间前写了这篇关于 Tim 的内容：</p>
+<blockquote>
+<p>“”&quot;</p>
+</blockquote>
+<p>（未提供需翻译的英文原文）</p>
+<blockquote>
+<p>I worked with Tim and the rest of Python Labs for a couple of years in the early 2000s. Tim was a hugely positive influence on me throughout my Python career.</p>
+</blockquote>
+<p>2000 年代初，我曾与 Tim 以及 Python Labs 的其他成员共事几年。Tim 在我的 Python 职业生涯中产生了极其积极的影响。</p>
+<blockquote>
+<p>Before I had ever spoken to Tim, he was already legendary. He had worked for Cray Research writing compilers for supercomputers, and for Dragon Systems, writing speech-to-text software at a time when such a task was considered largely impossible. He took up Python on a lark in its very early days, becoming something like Python’s second real user after Guido.</p>
+</blockquote>
+<p>在我 和 Tim 说话之前，他已经是个传奇。他曾在 Cray Research 工作，为超级计算机编写编译器，也曾在 Dragon Systems 工作，在那个被认为在当时基本上不可能实现的任务上编写语音转文本软件。他在 Python 最早期的日子里开始使用它，兴致勃勃，成为 Guido 之后 的 Python 第二位真正用户。</p>
+<blockquote>
+<p>Guido came to rely on Tim heavily. Tim will demur about this, but as far as I can tell, Tim and Guido were largely partners in the design evolution of very early Python, and before most important features made it in to Python, you could be sure that they had been examined from every angle, shaken, stirred, and thunk about very hard by both of them.</p>
+</blockquote>
+<p>Guido 逐渐深度依赖 Tim。Tim 会对此表示反对，但据我所知，Tim 和 Guido 是 Python 早期设计演变的主要合作伙伴，在大多数重要特性被纳入 Python 之前，可以肯定的是，这两个人都从各个角度对这些特性进行了反复审视、搅动和深思。</p>
+<blockquote>
+<p>Tim often played the role of gatekeeper and polisher. You have Tim to thank at least partially if you were a refugee from Java or Microsoft languages, which made excuses for their sprawling verbosity, complexity, and poor readability. Python, at the time, made none of those and had none of that (it now does). Tim was crucial in ensuring it stayed that way during his most active years. He will claim differently, but, by my observation, it is no accident that Python ballooned in complexity after his exit as day-to-day core developer. Perhaps this was more due to the resignation of Guido as BDFL and the new Steering Council model, which was also coincident, but not having Tim around didn’t help either.</p>
+</blockquote>
+<p>Tim 常常扮演着守门人和打磨者的角色。如果你曾经是 Java 或 Microsoft 系列语言的难民——那些语言总为自己的冗长、复杂和糟糕的可读性寻找借口——那你至少应该部分地感谢 Tim。而 Python 在当时并不具备那些特征，也没有那些借口（如今它有了）。在他最为活跃的岁月里，Tim 在确保 Python 保持这种状态方面起到了至关重要的作用。他会对此持有不同说法，但在我看来，Python 在他退出日常核心开发者角色之后，其复杂性急剧膨胀，绝非偶然。这或许更多是因为 Guido 辞去 BDFL 一职，以及新的 Steering Council 模式的引入——这两件事在时间上也是巧合——但 Tim 不在身边，同样没有起到任何帮助。</p>
+<blockquote>
+<p>It was pure joy to read Tim’s Usenet and mail list posts, which were full of humor and good nature and measured positivity and not a little winking darkness. They somehow resonated with me on my journey from becoming a new programmer to a not-so-new programmer and they lit a path to becoming one on which you could be dramatically competent without becoming cryptic and insufferable. He was intensely knowledgeable, and unfailingly precise when arguing for or against some design change. But he was always gentle and patient and matter-of-fact, preferring to use humor and warmth rather than bile and authority as the currency in which he dealt.</p>
+</blockquote>
+<p>阅读 Tim 在 Usenet 和邮件列表上的帖子，于我而言纯粹是一种享受——这些文字充满幽默与善意，带着克制的乐观，还点缀着几分狡黠的暗色。在我从初出茅庐的新手程序员成长为不太新的程序员的道路上，这些文字仿佛与我产生了共鸣；它们照亮了一条道路，让人能够以卓越的能力示人，却不会变得晦涩难懂、令人厌烦。Tim 博学多识，在论证或反对某项设计变更时，总能保持惊人的精确。但他始终温和、耐心且实事求是，更倾向于以幽默与温暖作为交流的货币，而非刻薄与权威。</p>
+<blockquote>
+<p>Tim penned “the Zen of Python” (“beautiful is better than ugly…”) which can be seen via “import this” to this day. You can see a bit of his wonderful humor and style in the <a href="https://mail.python.org/pipermail/python-list/1999-June/001951.html">prelude to his introduction of the poem</a>. His enthusiasm was infectious, and in the days when he was most involved, <a href="https://mail.python.org/archives/list/python-dev@python.org/thread/ND2WKGJME4FCFM3IDZMLG5EJW76DWOGQ/#YXWNISHMQYFCD6HAR4GLFZATDESWB2VR">most everyone could be witnessed</a> spouting Tim-isms (winks and “&rsquo;lys” and whatnot).</p>
+</blockquote>
+<p>Tim 撰写了 “the Zen of Python” (“beautiful is better than ugly…”) 至今仍可通过 “import this” 看到。你可以在 <a href="https://mail.python.org/pipermail/python-list/1999-June/001951.html">prelude to his introduction of the poem</a> 中看到他精彩的幽默和风格。他的热情具有感染力，而在他最活跃的日子里，<a href="https://mail.python.org/archives/list/python-dev@python.org/thread/ND2WKGJME4FCFM3IDZMLG5EJW76DWOGQ/#YXWNISHMQYFCD6HAR4GLFZATDESWB2VR">几乎每个人都能看到</a> 在说 Tim-isms（眨眼和“&rsquo;lys”以及其他）。</p>
+<blockquote>
+<p>When I did get the chance to work with Tim, he was just as influential. He had absolutely no pretensions. If I hadn’t already known him to be a computer savant, I would have assumed he was a biker or mechanic due to his long grey locks, full mustache and and working-class fashion sense. I would later find out that he had indeed worked at Harley-Davidson. I think he’s originally from Wisconsin, but an East- or West-Coaster not fluent in Midwest tongues could be excused for believing <a href="https://www.youtube.com/watch?v=1wAOy88WxmY">his disarming accent</a> is Chicagoan. He seemed just like a regular-looking neighborhood punch-the-clock guy, not unlike all the mechanics and deliverymen and cooks and dishwashers and event staff I’d worked around as a kid and in my 20s. Except he was pretty much the smartest guy in every room he entered.</p>
+</blockquote>
+<p>当我有机会与Tim合作时，他同样具有影响力。他完全没有虚伪之处。如果我已经知道他是个计算机天才，我可能不会认为他是个摩托车手或机械师，因为他有长灰色头发、浓密的胡须和工薪阶层的时尚感。我后来得知他确实曾在Harley-Davidson工作。我认为他原本来自威斯康星州，但如果是东部或西部人不熟悉中西部方言，可以理解他们会认为他的那种令人放松的口音是芝加哥人的。看起来他就像一个普通的社区时间工，不像我小时候和20多岁时周围工作过的那些机械师、送货员、厨师、洗碗工和活动人员。除了，他几乎是每一个他走进的房间里最聪明的人。</p>
+<blockquote>
+<p>Tim’s demeanor and lack of pretense inspired me to think that despite my own lack of education and pedigree, with enough effort and grace, that I might become a half-competent programmer. And eventualy I did. But before meeting Tim, it was not a given. I was alienated by the pretensions of my community peers, and I was often reminded that they were not necessary only by Tim.</p>
+</blockquote>
+<p>Tim 的举止和不事张扬让我意识到，尽管我自身缺乏正规教育和名校背景，但只要付出足够的努力和坚持，我也有可能成为一名半吊子也好、合格也罢的程序员。最终我确实做到了。但在遇见 Tim 之前，这并非板上钉钉的事。我因同龄人圈子里的虚荣浮夸而感到疏离，而正是 Tim 一次次让我意识到，那些东西根本不必要。</p>
+<blockquote>
+<p>He was somewhat private. He could often be found with a pen and paper outside the building just standing alone, staring blankly off into space, presumably thinking about some mind-boggling algorithmic topic with which he had just been charged by our CTO, or perhaps mentally designing some aspect of a pet project, scribbling something every few minutes. He applied himself to our code, which included a custom database written in C and Python. He diagnosed and fixed a data-destroying bug in that byzantine codebase for our largest customer. This saved the account, and likely gave us enough runway for another year or so.</p>
+</blockquote>
+<p>他有些内向。他经常在建筑物外面手拿笔和纸，独自站着，茫然地凝视着虚空，大概是在思考刚才被我们的 CTO 交给他的某个令人困惑的算法话题，或者也许是在脑海中设计某个私人项目的某个方面，每隔几分钟就记录点什么。他投入到我们的代码中，其中包括一个用 C 和 Python 编写的自定义数据库。他诊断并修复了那个极其复杂的代码库中为我们最大客户造成的一个数据破坏性错误。这挽救了该客户，很可能为我们争取到大约再一年的资金跑道。</p>
+<blockquote>
+<p>Everyone who worked there was in awe of his programming and debugging skills, and while we tried our best to let the poor man be, we often asked him questions, many of which were pedestrian and dull. I remember one of our teammates trying to engage him into a debugging session, claiming that some fault seemed to happen every six runs. He smiled winkingly and asked “have you grepped the source for six?” It was a minor jab but given the sincerity of the question, and the person from which it had come, it occurred to me at the time that it might not be the worst theory of debugging from which to start.</p>
+</blockquote>
+<p>所有在那里工作的人都对他精湛的编程和调试技艺敬畏不已。虽然我们极力想让这位可怜的人清静清静，但仍时常向他请教问题，其中大多都平淡无奇。我记得有次一位队友试图拉他参加一次调试会话，声称某个故障似乎每运行六次就会出现一次。他意味深长地笑了笑，反问：“你 grep 过源码里的 ‘six’ 吗？”这虽是句调侃，但考虑到提问的诚恳程度和提问者的身份，我当时意识到，这或许并不是一个最差的调试切入点。</p>
+<blockquote>
+<p>Tim was a Director of the Python Software Foundation from 2001 to 2014, bringing Python across an uncanny valley from a time where it was “interesting but ignorable” to “the planet’s default language” along with a cast of other incredible people. If you use Python, it’s not in small part due to Tim.</p>
+</blockquote>
+<p>Tim 在 2001 年至 2014 年间担任 Python Software Foundation 董事，与一众其他了不起的人士一道，带领 Python 跨越了一个 uncanny valley，从一个“interesting but ignorable”的时代，过渡到成为“the planet’s default language”。如果你使用 Python，很大程度上要归功于 Tim。</p>
+<blockquote>
+<p>When I started my own open source projects, it was Tim whom I channeled during design discussions and sprints. I quite consciously used tricks I had learned from him to make the process fun and welcoming. Rather than become prickly about some technical conflict, I would try to use low-brow humor to defuse things and I would try very hard to learn everything I could about the topic before responding such that I could gain and rely on the respect of other contributors. I often failed, of course, because I’m not Tim, but I was at least a twentieth a Tim, and at the time, I think my co-contributors would have agreed that the projects I led were fun and worthwhile to work on.</p>
+</blockquote>
+<p>当我启动自己的开源项目时，在设计讨论和 sprints 中，我都会以 Tim 为榜样。我非常有意识地使用从他那里学到的技巧，让整个过程变得有趣且友好。面对技术冲突，我不再变得敏感，而是试图用不高雅的幽默来缓和局面，并在回应之前非常努力地了解我所能了解的关于该主题的一切，以便赢得并依赖其他贡献者的尊重。当然，我经常失败，因为我不是 Tim，但我至少算得上是 Tim 的二十分之一，而且当时，我认为我的合作者们会同意我领导的项目既有趣又值得投入。</p>
+<blockquote>
+<p>It is in this way that Tim’s influence is likely most obvious to people today, because I’m not the only one who channeled him; any Python project started between 1995 and 2010 has a bit of Tim culture in it.</p>
+</blockquote>
+<p>恰恰是通过这种方式，Tim 的影响力在今天对人们而言可能最为显而易见，因为我并不是唯一一个传承了他思想的人；任何在 1995 年至 2010 年间启动的 Python 项目，都融入了少许 Tim 的文化。</p>
+<blockquote>
+<p>“”&quot;</p>
+</blockquote>
+<p>(无输出 - 无原文内容可供翻译)</p>
+<blockquote>
+<p>In sadness,</p>
+</blockquote>
+<p>在悲伤中，</p>
+<blockquote>
+<p>. C</p>
+</blockquote>
+<p>请提供需要翻译的完整英文原文，我会为您进行专业翻译。</p>
+<blockquote>
+<p>28 Likes</p>
+</blockquote>
+<p>28 个赞</p>
+<blockquote>
+<p>As a young child, only about 15, I first learned timsort. Some dozen years later, I had the briefest opportunity to exchange words with Tim himself on this forum. What a treat to have had that chance, just in time. RIP</p>
+</blockquote>
+<p>作为年幼的孩子，才约 15 岁时，我第一次学习 timsort。几十年后，我有机会在本论坛与 Tim 本人交流。能够及时拥有这份机会真是一种享受。RIP</p>
+<blockquote>
+<p>9 Likes</p>
+</blockquote>
+<p>9 个赞</p>
+<blockquote>
+<p>When I was finishing university, head full of textbook algorithms, I read <a href="https://github.com/python/cpython/blob/2fc68e180ffdb31886938203e89a75b220a58cec/Objects/listsort.txt"><code>Objects/listsort.txt</code></a> and was overwhelmed by how much depth, rigor, common sense and <em>humanity</em> can fit in a technical note. That was when I picked a programming language.</p>
+</blockquote>
+<p>在我刚刚结束大学时，大脑里满是教科书算法，我阅读了 <a href="https://github.com/python/cpython/blob/2fc68e180ffdb31886938203e89a75b220a58cec/Objects/listsort.txt"><code>Objects/listsort.txt</code></a> ，并被深度、严谨、常识以及<em>人性</em>所淹没。这正是在我选择一种编程语言的时候。</p>
+<blockquote>
+<p>24 Likes</p>
+</blockquote>
+<p>24 好评</p>
+<blockquote>
+<p>Tim’s main legacy for me has been the Zen of Python, which - despite being less cited nowadays - has been so useful and influential as a framework for elegance and clarity, and has informed so many people in their daily practice (and I cannot find a better way to describe him than as an <em>excellent practitioner</em>).</p>
+</blockquote>
+<p>Tim 的主要遗产是 Python 的 Zen， 尽管它如今引用不多， 但它作为优雅和清晰的框架一直非常有用且具有影响力， 指导了许多人的日常实践（我无法用更好的方式描述他， 除了将他称为 <em>优秀实践者</em>）。</p>
+<blockquote>
+<p>He was already less active when I started contributing around 2007; in fact my most frequent interactions with him have been in the recent years while he grew a slightly more confrontational attitude in some discussions, including here on d.p.o. I believe <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> he was acting with the best of intentions and was still deeply caring for the community he had been such a pivotal member of; acting with the same objectives as others, but having trouble to understand that different means might be used towards the same ends.</p>
+</blockquote>
+<p>当我从 2007 年前后开始参与贡献时，他的活跃度就已经大不如前了。事实上，我与他的交流最频繁的时期反而是近几年——那段时间他在一些讨论中（也包括 d.p.o 上的讨论）变得略带对抗性。我相信 <sup id="fnref1:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> 他的所作所为是出于最善意的考量，而且他依然深切关心着他曾作为关键成员之一的这个社区。他的目标与旁人并无二致，只是难以理解：为了同一个目的，不同的人可能会采用不同的手段。</p>
+<blockquote>
+<hr>
+</blockquote>
+<p>请提供需要翻译的英文原文。</p>
+<blockquote>
+<p>16 Likes</p>
+</blockquote>
+<p>16 点赞</p>
+<blockquote>
+<p>This is so sad and such a big loss for Python. Tim has given us a lot and we owe him.</p>
+</blockquote>
+<p>这太令人悲伤了，对 Python 来说，是巨大的损失。 Tim 给了我们很多，我们欠他。</p>
+<blockquote>
+<p>He was one of the extremely smart people who drew me into PythonLand in the late 1990s. Coming out of university, I was amazed how approachable, down to earth and humurous really great folks can be.</p>
+</blockquote>
+<p>他是 1990 年代末把我引入 PythonLand 的极少数极其聪明的人之一。刚走出大学校园时，我惊讶地发现，那些真正厉害的人竟然如此平易近人、脚踏实地，而且幽默风趣。</p>
+<blockquote>
+<p>Rest in Peace, Tim, and thanks-for-being-one-of-those-great-people-ly, Marc</p>
+</blockquote>
+<p>安息吧，Tim，感谢你成为那些伟大的人之一，Marc</p>
+<blockquote>
+<p>17 Likes</p>
+</blockquote>
+<p>17 个赞</p>
+<blockquote>
+<p>So sad. I never had the chance to meet Tim in person, but his posts were always a delight to read, full of knowledge, insight and humour. I learned more than I can express from him. He will be missed.</p>
+</blockquote>
+<p>太难过了。我从未有机会当面遇见 Tim，但他的帖子总是令人愉悦，充满知识、洞见和幽默。我从他那里学到了难以言表的东西。他会被人怀念。</p>
+<blockquote>
+<p>13 Likes</p>
+</blockquote>
+<p>13 个赞</p>
+<blockquote>
+<p>One of the great souls, and roughly treated here near the end.</p>
+</blockquote>
+<p>伟大灵魂之一，并在本文末尾处受到了粗暴对待。</p>
+<blockquote>
+<p>14 Likes</p>
+</blockquote>
+<p>14 个赞</p>
+<blockquote>
+<p>A +1 to what Chris wrote.</p>
+</blockquote>
+<p>赞同 Chris 所说的内容。</p>
+<blockquote>
+<p>Tim was always pragmatic, preferring simple solutions over complex ones. In the early days of syntax highlighting in text editors, like Emacs and Vim, I remember that Python’s triple-quoted strings were tricky to get right. They span multiple lines and opening and closing tokens are identical, so it’s easy to get out of sync. Doctests make things especially tricky.</p>
+</blockquote>
+<p>Tim 总是很务实，比起复杂的解决方案，他更喜欢简单的。在文本编辑器（如 Emacs 和 Vim）中进行语法高亮的早期，我记得 Python 的 triple-quoted strings 很难处理妥当。它们跨越多行，且起始和结束 token 相同，因此很容易失去同步。Doctests 让情况变得特别棘手。</p>
+<blockquote>
+<p>I was telling Tim about some techniques I was using in the Vim syntax file to make it work more reliably. I don’t recall the editor Tim used (some commercial program on Windows) but he explained how he did it in his editor. Open the syntax highlighting config window, for open string token, type three quotes, for close string, type three quotes, close config window. Job done. That tickled him.</p>
+</blockquote>
+<p>我在告诉蒂姆，我使用的一些在 Vim 语法文件中的技巧，用以让它更可靠。我不记得蒂姆用的是哪款编辑器（Windows 上的某个商业程序），但他说他在那个编辑器中是怎么做的。打开语法高亮配置窗口，对于打开字符串 token，输入三个引号，对于关闭字符串，输入三个引号，然后关闭配置窗口。完成了。这让他笑了。</p>
+<blockquote>
+<p>He primarily used Windows 95 or 98 at a time when many Python core devs used NT, Unix, or Linux. He said if you installed <em>all</em> of Microsoft’s updates, it was quite reliable. Maybe he preferred it because it worked for him and there was no reason to change. Or, he found it useful when supporting people, since Windows was the most common platform Python was used on. Tim was about the furthest thing from an elitist you could be.</p>
+</blockquote>
+<p>他主要使用 Windows 95 或 98，而在那个时候，许多 Python 核心开发者使用 NT、Unix 或 Linux。</p>
+<p>他说如果安装了 <em>所有</em> Microsoft 的更新，它就相当可靠。</p>
+<p>也许他偏爱它是因为它对他有效，而且没有理由改变。</p>
+<p>或者，他在支持其他人时发现它很有用，因为 Windows 是 Python 最常用的平台。</p>
+<p>Tim 与精英主义者相去甚远。</p>
+<blockquote>
+<p>This Bible quote comes to mind for me: “Ye shall know them by their fruits.”. Tim gave us a lot of fruit.</p>
+</blockquote>
+<p>我脑海中浮现出的一句话是：“凭他们的果子，你们就认识他们。” 蒂姆给我们带来了许多果实。</p>
+<blockquote>
+<p>I poked around at Python 2.4, since that seems a good version to show off the things he worked on. His contributions were all over the codebase but I’ll point out a few that stand out to me. <a href="https://github.com/python/cpython/blob/v2.4/Objects/obmalloc.c">pymalloc</a> was contributed by Vladimir Marangozov but it was Tim who polished it to diamond-like form. A memory allocator is one of those things where it is impossible to have something completely optimal; you always make tradeoffs. Tim’s special contribution in that unit is <code>Py_ADDRESS_IN_RANGE</code>. It is well commented, if you want to understand how it works. Technically, it relies on undefined behavior but Tim figured it should work in practice. It did so for many years.</p>
+</blockquote>
+<p>我翻阅了 Python 2.4 的代码，因为这是一个展示他所做贡献的较好版本。他的贡献遍布整个代码库，但我会列出一些特别突出的贡献。<a href="https://github.com/python/cpython/blob/v2.4/Objects/obmalloc.c">pymalloc</a> 是由 Vladimir Marangozov 贡献的，但 Tim 使其达到了完美的境界。内存分配器是这样一种组件，在它不可能完全优化的情况下，你总是要做出权衡。Tim 在这个模块中的特别贡献是 <code>Py_ADDRESS_IN_RANGE</code>。如果你想了解它的具体实现，它有详细的注释说明。技术上来说，它依赖于未定义的行为，但 Tim 认为它在实践中应该能正常工作。事实证明，它在许多年里都运作良好。</p>
+<blockquote>
+<p>At some point I wanted to increase the pymalloc pool size, since typical RAM sizes had increased so much since 2000. Tim <a href="https://gist.github.com/nascheme/bf32c1c018fafeb18a050b1cc9dc7d2b">helped</a> me optimize the <code>address_in_range()</code> check.</p>
+</blockquote>
+<p>在某个时间点，我想增加 pymalloc 内存池的大小，因为自 2000 年起，通常的 RAM 大小已经大幅增长。Tim <a href="https://gist.github.com/nascheme/bf32c1c018fafeb18a050b1cc9dc7d2b">helped</a> 帮我优化了 <code>address_in_range()</code> 检查。</p>
+<blockquote>
+<p>TimSort is a good example of Tim’s approach to software problems. Someone must have “nerd sniped” him on the problem of sorting. He already had an encyclopedic knowledge of the classic algorithms, like you’d find in Knuth. He spent a few days reading the recent research papers on sorting. With that knowledge and throwing in a few twists of his own, he made TimSort. He was always thinking of the common case, the favorable case as well as the worst-case scenarios. TimSort does all three well (it exploits already sorted runs, and uses galloping during merging to copy long stretches efficiently).</p>
+</blockquote>
+<p>TimSort 是蒂姆软件问题解决方案的典范之一。有人或许用“书呆子诱捕术”引诱他去研究排序问题。他已经掌握了经典算法的百科全书式知识，就像《唐纳德·克努特的著作》中所呈现的那样。他花了几天时间阅读了近期关于排序的研究论文，汲取了这些知识并加入了自己的巧妙设计，创造了 TimSort。他始终关注常见场景、有利场景和最坏场景。TimSort 在这三方面表现都非常出色（它利用了已排序的子序列，并在合并过程中使用奔袭法高效复制长段数据）。</p>
+<blockquote>
+<p>Speaking of Knuth, the <a href="https://github.com/python/cpython/blob/v2.4/Objects/dictobject.c">dict object</a> algorithms were heavily optimized by Tim. The C file contains lots of comments. He also wrote <a href="https://github.com/python/cpython/blob/v2.4/Objects/dictnotes.txt">dictnotes</a>, which is a good example of his technical writing. Another example is <a href="https://github.com/python/cpython/blob/v2.4/Modules/gc_weakref.txt">weakref.txt</a>, which I think Tim wrote after fixing a particularly difficult GC bug revealed by ZODB (while working at Zope Corp).</p>
+</blockquote>
+<p>说到 Knuth， <a href="https://github.com/python/cpython/blob/v2.4/Objects/dictobject.c">dict object</a> 算法被 Tim 大幅优化。该 C 文件包含大量注释。他还编写了 <a href="https://github.com/python/cpython/blob/v2.4/Objects/dictnotes.txt">dictnotes</a>，这也是他技术写作的一个很好示例。另一个例子是 <a href="https://github.com/python/cpython/blob/v2.4/Modules/gc_weakref.txt">weakref.txt</a>，我认为 Tim 在修复一个由 ZODB 触发的特别困难的 GC 错误后撰写了它（当时他在 Zope Corp 工作）。</p>
+<blockquote>
+<p>On the topic of GC, the initial version of the cyclic garbage collector was written by me, merged before the 2.0 release. It was Tim who polished it into robust and well-performing shape. Likewise, I wrote the initial version of “simple generators” but it was Tim who put them on solid foundation, both the PEP and the implementation.</p>
+</blockquote>
+<p>关于 GC 的话题，循环垃圾回收器的初始版本是由我编写的，在 2.0 版本发布前合并。是 Tim 将其打磨成了健壮且性能良好的形状。同样，我编写了“简单生成器”的初始版本，但 Tim 是将其打下坚实基础的人，无论是 PEP 还是实现。</p>
+<blockquote>
+<p>Tim was skilled with numerical algorithms and error analysis, and Python benefited from his expertise. The float object and math module got special attention from him. He also worked on the Karatsuba multiplication algorithms in <a href="https://github.com/python/cpython/blob/v2.4/Objects/longobject.c">longobject</a>.</p>
+</blockquote>
+<p>Tim 擅长数值算法和误差分析，Python 从中受益匪浅。float 对象和 math 模块得到了他的特别关注。他还参与了 <a href="https://github.com/python/cpython/blob/v2.4/Objects/longobject.c">longobject</a> 中的 Karatsuba 乘法算法。</p>
+<blockquote>
+<p>In addition to the C code, Tim also wrote beautiful Python code. As an example, see the N-Queens and Knight’s tour solvers in <a href="https://github.com/python/cpython/blob/v2.4/Lib/test/test_generators.py">test_generators.py</a>. He wrote the initial version of <a href="https://github.com/python/cpython/blob/v2.2/Lib/doctest.py">doctest</a>. Some more examples of his work: <a href="https://github.com/python/cpython/blob/v2.2/Lib/difflib.py">difflib</a>, <a href="https://github.com/python/cpython/blob/v2.4/Lib/pickletools.py">pickletools</a>, <a href="https://github.com/python/cpython/blob/v2.4/Lib/tabnanny.py">tabnanny</a> (she shows no mercy!).</p>
+</blockquote>
+<p>除了 C 代码， Tim 还写了优美的 Python 代码。作为示例， 请参见 N-Queens 和 Knight’s tour 求解器在 <a href="https://github.com/python/cpython/blob/v2.4/Lib/test/test_generators.py">test_generators.py</a>。他编写了 doctest 的最初版本 <a href="https://github.com/python/cpython/blob/v2.2/Lib/doctest.py">doctest</a>。他更多的作品示例包括： <a href="https://github.com/python/cpython/blob/v2.2/Lib/difflib.py">difflib</a>，<a href="https://github.com/python/cpython/blob/v2.4/Lib/pickletools.py">pickletools</a>，<a href="https://github.com/python/cpython/blob/v2.4/Lib/tabnanny.py">tabnanny</a>（she shows no mercy!）。</p>
+<blockquote>
+<p>It’s clear that Tim enjoyed writing code and solving problems. It’s also the case that he spent many thousands of hours of his time doing things primarily to help his fellow humans, without expectation of financial gain or of glory. Thank you, friend, for that and thank you for setting such an example.</p>
+</blockquote>
+<p>很明显，蒂姆喜欢编写代码，也喜欢解决问题。同样，他花费了许多个小时，主要不是为了帮助他的fellow humans，而是出于帮助他人的初衷，他从未期待金钱回报或名声。感谢你，朋友，为此，也感谢你树立了如此的榜样。</p>
+<blockquote>
+<p>32 Likes</p>
+</blockquote>
+<p>32 个赞</p>
+<blockquote>
+<p>Thanks for everything Tim. Zen of Python has always been and will be my programming &quot; North Star&quot; and I strive to use it in every language I work with. Your impact has been on many of us Python Programmers and our families lives. Thank you and rest in peace!</p>
+</blockquote>
+<p>感谢你的一切付出，Tim。Python 之禅始终是、也将永远是我编程的“北极星”，我努力在使用的每一门语言中践行它。你的影响深远，触动了我们许多 Python 程序员及其家庭的生活。谢谢你，安息吧！</p>
+<blockquote>
+<p>6 Likes</p>
+</blockquote>
+<p>6 赞</p>
+<blockquote>
+<p>I’ve been fearing this since I noticed his absence end of July, dreading the thought whenever I saw his name but still no new activity. I’ve had quite a few interactions with Tim, he was one of my main contact points to Python, and he was the one who added me to <a href="https://github.com/python/cpython/blob/main/Misc/ACKS">Misc/ACKS</a>. Thank you for everything, Tim.</p>
+</blockquote>
+<p>自从七月底注意到他的缺席以来，我一直害怕面对这个结果，每次看到他的名字却迟迟没有新动态时，我都感到恐惧。我和 Tim 有过不少互动，他是我接触 Python 的主要联络人之一，正是他将我加入了 <a href="https://github.com/python/cpython/blob/main/Misc/ACKS">Misc/ACKS</a>。感谢你所做的一切，Tim。</p>
+<blockquote>
+<p>7 Likes</p>
+</blockquote>
+<p>7 赞</p>
+<blockquote>
+<p><a href="https://www.reddit.com/r/GNUTerryPratchett/s/VhmR2Kxh86">GNU</a> Tim.</p>
+</blockquote>
+<p><a href="https://www.reddit.com/r/GNUTerryPratchett/s/VhmR2Kxh86">GNU</a> Tim.</p>
+<blockquote>
+<p>2 Likes</p>
+</blockquote>
+<p>2 个点赞</p>
+<blockquote>
+<p>I wish I’d had the chance to meet Tim in person. We had just a few exchanges on social media, but I always enjoyed reading his messages. There was always something to learn from his experience, his perspective and his way of thinking. Reading the memories shared here by those who knew and worked with him makes me regret even more that I never had that opportunity.</p>
+</blockquote>
+<p>我多希望能有机会与 Tim 当面相见。我们只在社交媒体上有过寥寥几次交流，但我一直很享受阅读他的留言。从他的经历、视角和思考方式中，总能有所收获。读到这些认识他、与他共事过的人在此分享的回忆，我更加遗憾自己从未有过这样的机会。</p>
+<blockquote>
+<p>I remember when Timsort was created. I was at university, studying algorithms, and it was a big deal at the time.</p>
+</blockquote>
+<p>我记得 Timsort 被创建时。当时我在大学学习算法，这件事当时很大。</p>
+<blockquote>
+<p>But it’s the Zen of Python that influenced me most personally.</p>
+</blockquote>
+<p>但最让我个人受到影响的，是 Python 的哲学。</p>
+<blockquote>
+<p><strong>“Now is better than never.”</strong></p>
+</blockquote>
+<p><strong>此刻总比从未好</strong></p>
+<blockquote>
+<p>That sentence has stayed with me since I started using Python in the early 2000s. Over the years, it has become one of my personal mottos, encouraging me to keep trying, strive to do better and step outside my comfort zone, both in life and at work.</p>
+</blockquote>
+<p>那句话自我在2000年代初开始使用Python以来一直伴随我。多年来，它成为了我个人座右铭之一，鼓励我继续努力，追求更好的表现，并走出我的舒适区，无论是在生活中还是在工作中。</p>
+<blockquote>
+<p>We’ll probably never know what the 20th aphorism of the Zen of Python would have been. But perhaps that’s OK. I like to think that Tim left us the freedom to fill that space with something meaningful to each of us.</p>
+</blockquote>
+<p>我们或许永远无法得知 Python 之禅的第 20 条格言会是什么。但也许这样也无妨。我更愿意相信，Tim 留给我们的是一种自由，让每个人可以用对自己有意义的东西来填补那份空白。</p>
+<blockquote>
+<p>Thank you, Tim, for everything you gave to Python and for the impact your work and words had on people.</p>
+</blockquote>
+<p>感谢你，Tim，感谢你为 Python 所付出的一切，以及你的工作与言语对人们产生的深远影响。</p>
+<blockquote>
+<p>Rest in peace.</p>
+</blockquote>
+<p>安息而去。</p>
+<blockquote>
+<p>10 Likes</p>
+</blockquote>
+<p>10 点赞</p>
+<blockquote>
+<p>Tim and I originally thought we first met fairly shortly after we both moved to Virginia, and became friends over Chinese lunches and discussions with Guido about starting a new Python conference. As we got to know each other better we realised that we had seen each other once before, when I visited a fellow academic’s office in Manchester, England, and Tim was there representing Cray Research back in 1983. Small world. After PythonLabs dissolved on Guido’s departure for the West coast the lunches eventually became a regular date at our local PF Chang, where Tim would invariably end with their huge “Mountain of Chocolate” dessert. The resulting sugar rush was often amusing.</p>
+</blockquote>
+<p>蒂姆和我原本以为我们是在双双搬到弗吉尼亚州不久后首次相识，并通过中餐聚餐以及与 Guido 讨论创办新 Python 大会而成为朋友。随着了解加深，我们才意识到之前其实见过一次面：那时我去英国曼彻斯特拜访一位同行的办公室，蒂姆正在那里代表 Cray Research，那是 1983 年的事了。世界真小。在 Guido 离职去往西海岸导致 PythonLabs 解散后，午餐聚会最终演变成了我们当地 PF Chang 固定的约会，蒂姆总会以他们那巨大的“巧克力山”甜点作结。随之而来的糖分冲击常常令人捧腹。</p>
+<blockquote>
+<p>Tim was well-known long before I arrived in the Python world, and remained so after I left it. His technical contributions to Python, now the most popular programming language in the world, are legion. Just as significant, if not more so, was the way he communicated the joy, both of being a programmer and a human being. He was deeply affected by the ban imposed on him for ideological reasons by the Python Steering Committee but did not let that affect his desire to help others, which was on display until the end.</p>
+</blockquote>
+<p>Tim 在我进入 Python 世界之前就已声名远扬，在我离开后依然如此。他对 Python（现为世界上最流行的编程语言）的技术贡献不可胜数。同样重要的，甚至可以说更为重要的，是他传递出的那份快乐——既是作为程序员的快乐，也是作为人的快乐。他深受 Python 指导委员会因意识形态原因实施的禁令之苦，但这并未动摇他帮助他人的初衷，这一点贯穿始终，直至生命尽头。</p>
+<blockquote>
+<p>I respected Tim above anyone else in the Python world for his wisdom, his witty humour and his deep humanity. There won’t be another one like him. Goodbye, old friend.</p>
+</blockquote>
+<p>我比Python世界里的任何人都更敬重Tim，因他的智慧、风趣的幽默和深厚的人性。世间再无像他这样的人。再见，老友。</p>
+<blockquote>
+<p>20 Likes</p>
+</blockquote>
+<p>20 点赞</p>
+<blockquote>
+<p>This is very sad. I worked with Tim for quite a few years in context of the PSF board and of course also knew him from IPC and PyCons, starting in the relatively early days. He stood out to me almost immediately because so obviously utterly brilliant and yet with such a kind, helpful, respectful, good-humored way about him. One of the best people I’ve known, he was an inspiration to me and I think clearly also to very many others. Thanks, Tim, you will be missed.</p>
+</blockquote>
+<p>这非常令人悲伤。我在 PSF 董事会的工作中与 Tim 共事了好几年，当然也从 IPC 和 PyCon 认识他，从相对早期就开始了。他几乎立刻就让我眼前一亮，因为他显然才华横溢，却又有着如此善良、乐于助人、尊重他人、风趣幽默的待人方式。他是我所认识的最优秀的人之一，他激励了我，我想显然也激励了其他许多人。谢谢您，Tim，我们会想念您的。</p>
+<blockquote>
+<p>6 Likes</p>
+</blockquote>
+<p>6 赞</p>
+<blockquote>
+<p>I only met Tim once, along with Guido, in 2001. I was writing a Python training course, and the training company wanted to arrange for “the experts” to get a look at it, so on a week I was in Reston working on it, we sat down over a meal. It wasn’t a very good course (“if I knew then what I know now”, a quarter century later…), but they generously gave of their time to critique, including Tim’s trademark humor, and I so appreciated it. He will be missed!</p>
+</blockquote>
+<p>我只在 2001 年与 Tim 和 Guido 见面过一次。我当时正在写一门 Python 培训课程，而培训公司希望让“the experts”来看看它。一天，我在 Reston 工作时，正处理这门课，我们坐下来吃饭了。这门课并不太好（“if I knew then what I know now”，二十五年后……），但他们很乐意抽出时间进行评析，包括 Tim&rsquo;s trademark humor。而我非常欣赏了。他会被遗忘！</p>
+<blockquote>
+<p>5 Likes</p>
+</blockquote>
+<p>5 点赞</p>
+<blockquote>
+<p>Tim was hugely influential on my own CPython core development journey. Initially that influence was through his voluminous writings, mailing list discussions and his code itself: when I joined the core dev team in 2008, Tim himself was absent from the scene in person, but very much present through his many many contributions. Later on, after his return to core development, I was privileged to interact more directly with Tim on many topics. His gentle erudition, his humour and his patience were endless.</p>
+</blockquote>
+<p>Tim对我的CPython核心开发之旅产生了巨大影响。最初这种影响是通过他大量的著作、邮件列表讨论和他的代码本身：当我2008年加入核心开发团队时，Tim本人当时并未亲临现场，但通过他众多的贡献却非常明显。后来，当Tim回归核心开发后，我有幸在许多话题上与Tim进行更直接的互动。他温和的博学、幽默和耐心是无尽的。</p>
+<blockquote>
+<p>Rest in peace, Tim. You will be sorely missed.</p>
+</blockquote>
+<p>愿 Tim 安息。我们会深深怀念你。</p>
+<blockquote>
+</blockquote>
+<p>我可能在这里有点自负</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>and I might be full of myself here&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+]]></content:encoded></item><item><title>我的AI智能体发现了一处未测绘的玛雅遗址？</title><link>https://BradleyZhang.github.io/DualHN/2026-11-12/01-my-ai-agents-found-an-unmapped-maya-site/</link><pubDate>Thu, 12 Nov 2026 10:16:07 +0800</pubDate><guid>https://BradleyZhang.github.io/DualHN/2026-11-12/01-my-ai-agents-found-an-unmapped-maya-site/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;Update (11 November): it turns out the site had already been mapped in &lt;a href="https://doi.org/10.1016/j.jasrep.2025.105288"&gt;Estrada-Belli et al. 2025&lt;/a&gt;. The agents missed it while going through the literature, so they rediscovered it rather than discovered it (it just wasn&amp;rsquo;t in the register of Mexico&amp;rsquo;s National Institute of Anthropology and History, INAH, yet). Still work to do then! The rest of the story still holds.&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;em&gt;更新（11月11日）：事实证明，该遗址已在 &lt;a href="https://doi.org/10.1016/j.jasrep.2025.105288"&gt;Estrada-Belli 等人 2025&lt;/a&gt; 的研究中被绘制过地图。智能体在梳理文献时遗漏了它，因此是“重新发现”而非“首次发现”（该遗址当时尚未录入墨西哥国家人类学与历史研究所，即 INAH 的登记册）。那么，仍有工作要做！故事的其余部分依然成立。&lt;/em&gt;&lt;/p&gt;</description><content:encoded><![CDATA[<p>from: <a href="https://pietromiotti.com/latest/maya-site">My AI Agents (Re)discovered a Maya Site in 72 Hours</a></p><blockquote>
+<p><em>Update (11 November): it turns out the site had already been mapped in <a href="https://doi.org/10.1016/j.jasrep.2025.105288">Estrada-Belli et al. 2025</a>. The agents missed it while going through the literature, so they rediscovered it rather than discovered it (it just wasn&rsquo;t in the register of Mexico&rsquo;s National Institute of Anthropology and History, INAH, yet). Still work to do then! The rest of the story still holds.</em></p>
+</blockquote>
+<p><em>更新（11月11日）：事实证明，该遗址已在 <a href="https://doi.org/10.1016/j.jasrep.2025.105288">Estrada-Belli 等人 2025</a> 的研究中被绘制过地图。智能体在梳理文献时遗漏了它，因此是“重新发现”而非“首次发现”（该遗址当时尚未录入墨西哥国家人类学与历史研究所，即 INAH 的登记册）。那么，仍有工作要做！故事的其余部分依然成立。</em></p>
+<blockquote>
+<p>By analyzing NASA lidar data, my AI agents found a Maya site in Mexico that wasn&rsquo;t in the official register. (It turned out archaeologists had mapped it already, more on that at the end.) It took <strong>less than 72 hours</strong> to go from a random thought while traveling to an official reply from the Mexican government. This is by far the best time ever to be alive.</p>
+</blockquote>
+<p>通过分析 NASA 激光雷达数据，我的 AI Agents 在墨西哥发现了一个官方名录中没有的玛雅遗址。（结果发现考古学家早已对其进行了测绘，文末详述。）从旅途中的一念之想，到收到墨西哥政府的官方回复，前后仅耗时 <strong>不到 72 小时</strong>。这绝对是有生以来最好的时代。</p>
+<p><img alt="Lidar of the hilltop with the forest stripped away, showing a plaza, a pyramid and platforms" loading="lazy" src="https://pietromiotti.com/latest/hero-lidar.jpg"></p>
+<blockquote>
+<p>Drag the slider. The same hilltop today from a satellite (just trees) and in lidar (no trees). Colours show height. Satellite © Esri, Maxar, Earthstar Geographics.</p>
+</blockquote>
+<p>拖动滑块，查看同一山顶的卫星图像（仅显示树木）和激光雷达图像（无树木）。颜色表示高度。卫星图像来源：Esri、Maxar、Earthstar Geographics。</p>
+<blockquote>
+<p><em>Disclaimer: I&rsquo;m not an archaeologist.</em></p>
+</blockquote>
+<p><em>免责声明：我不是考古学家。</em></p>
+<blockquote>
+<p>I&rsquo;m going to tell this story as a diary, because the timeline is probably the best part.</p>
+</blockquote>
+<p>我想用日记的形式讲述这个故事，因为时间线可能是最精彩的部分。</p>
+<blockquote>
+<h2 id="18-october">18 October</h2>
+</blockquote>
+<h2 id="10月18日">10月18日</h2>
+<blockquote>
+<p>I was traveling in Peru, Gemini-ing about the history of the place, when I learned about <a href="https://en.wikipedia.org/wiki/Hiram_Bingham_III">Hiram Bingham</a>, the American explorer who &ldquo;discovered&rdquo; <a href="https://en.wikipedia.org/wiki/Machu_Picchu">Machu Picchu</a> in 1911. &ldquo;What luck!&rdquo; I thought. He was actually looking for a different city, <a href="https://en.wikipedia.org/wiki/Vilcabamba,_Peru">Vilcabamba</a>, the last refuge of the Incas, when a local farmer in the valley below guided him to the ruins. &ldquo;Imagine if Bingham had our tools,&rdquo; I thought. &ldquo;What would he do?&rdquo;</p>
+</blockquote>
+<p>我在秘鲁旅行，用 Gemini 查询该地的历史时，了解到美国探险家 <a href="https://en.wikipedia.org/wiki/Hiram_Bingham_III">Hiram Bingham</a>，他在 1911 年“发现”了 <a href="https://en.wikipedia.org/wiki/Machu_Picchu">Machu Picchu</a>。“真幸运！”我想。他原本在寻找另一座城市，<a href="https://en.wikipedia.org/wiki/Vilcabamba,_Peru">Vilcabamba</a>，那是印加人最后的避难所；这时，下方山谷里的一位当地农民把他带到了遗址。“想象一下如果 Bingham 拥有我们的工具，”我想，“他会做什么？”</p>
+<p><img alt="Hiram Bingham standing at his tent door near Machu Picchu, 1912" loading="lazy" src="https://pietromiotti.com/latest/bingham-1912.jpg"></p>
+<blockquote>
+<p>Left: Bingham at his tent, 1912. Right: Machu Picchu, photographed by Bingham the same year. Public domain, Wikimedia Commons ( left, right ).</p>
+</blockquote>
+<p>左：1912 年，Bingham 在其帐篷旁。右：同年由 Bingham 拍摄的 Machu Picchu。公共领域，Wikimedia Commons（左、右）。</p>
+<blockquote>
+<p>I brainstormed a bit with a few agents (Gemini, ChatGPT, Claude and Grok), and they all said <a href="https://en.wikipedia.org/wiki/Lidar">lidar</a>. From above, a ruin in the jungle is just a bunch of trees (like Machu Picchu before it was cleared), so satellite photos don&rsquo;t help much. Lidar, instead, fires laser pulses through the gaps in the canopy and maps the ground underneath.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+</blockquote>
+<p>我和几个 agent（Gemini、ChatGPT、Claude 和 Grok）进行了一些头脑风暴，他们都提到了 <a href="https://en.wikipedia.org/wiki/Lidar">lidar</a>。从上面看，丛林中的废墟只是一堆树（就像清理前的马丘比丘），因此卫星照片并没有太大帮助。相反，lidar 会穿过树冠的缝隙发射激光脉冲，并绘制下方地面的地图。<sup id="fnref1:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+<blockquote>
+<p>So the agents went looking for lidar data. Peru isn&rsquo;t well covered, and hiring a company to do a survey meant permits, costs and bureaucracy, so I gave up on that. Then I thought: why not the <a href="https://en.wikipedia.org/wiki/Maya_civilization">Maya</a>? Their region is much better covered by public lidar.</p>
+</blockquote>
+<p>所以 agents 去寻找 lidar data. 秘鲁的覆盖不佳，聘请公司进行调查意味着需要办理许可证、承担费用和繁琐的行政手续，所以我放弃了这项计划。然后我考虑: 为什么不试试 <a href="https://en.wikipedia.org/wiki/Maya_civilization">Maya</a>？他们的地区由公共 lidar 覆盖得更好。</p>
+<blockquote>
+<p>That night, I asked the agents to analyze it and went to bed.</p>
+</blockquote>
+<p>那天晚上，我让 agents 去分析它，然后就上床睡觉了。</p>
+<blockquote>
+<h2 id="19-october">19 October</h2>
+</blockquote>
+<h2 id="10月19日">10月19日</h2>
+<blockquote>
+<p>I woke up and checked the agents&rsquo; reports. &lsquo;DAMN!&rsquo; They had found lots of villages and other regular shapes that looked like structures or houses.</p>
+</blockquote>
+<p>我醒来并检查了代理人的报告。 &lsquo;DAMN!&rsquo; 他们发现了许多村庄和其他规则形状，看起来像结构或房屋。</p>
+<p><img alt="Grid of eight bare-earth lidar views of Maya sites flagged by the agents" loading="lazy" src="https://pietromiotti.com/latest/maya-sites.jpg"></p>
+<blockquote>
+<p>A few of the sites the agents flagged overnight. Keep an eye on the bottom-left one.</p>
+</blockquote>
+<p>昨晚，代理标记了几个站点，请留意左下角的那个。</p>
+<blockquote>
+<p><strong>So how did they do it?</strong> They turned the lidar strips (about 1,200 km² of jungle) into images, and 48 agents went through them one by one like very patient archaeologists, looking for pyramids, platforms, and plazas while filtering out natural hills, sinkholes, and roads. There was no special model or classifier involved: the agents literally looked at the pictures, following a precise guide.</p>
+</blockquote>
+<p><strong>他们是怎么做到的？</strong> 他们把雷达条带（约 1,200 km² 的雨林）转换为图像，并且 48 个代理人逐一像非常耐心的考古学家一样，寻找金字塔、平台和广场，同时过滤掉自然山丘、坑地和道路。没有特殊的模型或分类器参与 ： 代理人字面上看图像，遵循精确指南。</p>
+<blockquote>
+<blockquote>
+<p><strong>Me:</strong> That&rsquo;s awesome! Please check which of these villages haven&rsquo;t been discovered yet. Search both the literature and the archives.</p>
+<p><em>…a few hours later…</em></p>
+<p><strong>Agent:</strong> One major village doesn&rsquo;t seem to have been registered.</p>
+</blockquote>
+</blockquote>
+<p><strong>我：</strong> 太棒了！请检查这些村庄是否还没被发现。搜索文献和档案。</p>
+<p><em>…a few hours later…</em></p>
+<p><strong>Agent:</strong> 一个主要的村庄似乎还没有被注册。</p>
+<blockquote>
+<p>This is the hilltop from the top of this post. It sits on the edge of a cliff, under the jungle, and it has straight edges and sharp corners. Nature doesn&rsquo;t really do straight lines.</p>
+</blockquote>
+<p>这是这篇帖子顶部的那座山丘顶。它位于悬崖的边缘，在丛林之下，并且有直边和尖角。自然并不真的会做直线。</p>
+<blockquote>
+<p>Zooming in, there&rsquo;s a levelled plaza, an oval pyramid at least 8–12 m tall, a raised courtyard attached to it and a flat-bottomed hollow that might have been a water reservoir.</p>
+</blockquote>
+<p>放大，有一个平整的广场，一座至少高 8–12 m 的椭圆形金字塔，一个附着于其上的高起庭院，以及一个平底空腔，它也许曾是水库。</p>
+<p><img alt="Bare-earth lidar of the whole hilltop, with a zoom into the civic centre below: plaza, pyramid, raised courtyard and possible reservoir" loading="lazy" src="https://pietromiotti.com/latest/lidar-zoom.jpg"></p>
+<blockquote>
+<p>The hilltop with the trees removed (top), and a zoom into its civic centre (bottom).</p>
+</blockquote>
+<p>移除了树木的山顶（顶部），以及对其市中心的放大视图（底部）。</p>
+<blockquote>
+<p>And this is what it looks like in 3D.</p>
+</blockquote>
+<p>并且这就是它在 3D 中的样子。</p>
+<p><video src="https://pietromiotti.com/latest/M2_lidar_360.mp4" controls="" aria-label="3D lidar model of the site rotating 360 degrees: plaza, pyramid and courtyard on a hilltop"></video></p>
+<blockquote>
+<p>The site in 3D, from the lidar. Heights exaggerated ~1.5×.</p>
+</blockquote>
+<p>3D 中的场地，来自 lidar。高度夸张约 1.5×。</p>
+<blockquote>
+<blockquote>
+<p><strong>Me:</strong> OK, what should I do?</p>
+<p><strong>Agent:</strong> You should contact <a href="https://www.inah.gob.mx/">INAH</a> (Mexico&rsquo;s National Institute of Anthropology and History), write a report on your discovery, and check whether the site is in their register. Sometimes they have unpublished results.</p>
+<p><strong>Me:</strong> OK, how do I contact INAH? How does the reporting process work?</p>
+<p><strong>Agent:</strong> <em>…instructions for the report… + email addresses</em></p>
+<p><strong>Me:</strong> OK, please do the report.</p>
+</blockquote>
+</blockquote>
+<p><strong>Me:</strong> OK, what should I do?
+<strong>Agent:</strong> 您应该联系<a href="https://www.inah.gob.mx/">INAH</a>（墨西哥国家人类学与历史研究所），撰写一份关于您发现的报告，并检查该遗址是否在其注册名册中。有时他们会有未发表的结果。
+<strong>Me:</strong> OK, how do I contact INAH? How does the reporting process work?
+<strong>Agent:</strong> <em>…instructions for the report… + email addresses</em>
+<strong>Me:</strong> OK, please do the report.</p>
+<blockquote>
+<p>And I went to bed.</p>
+</blockquote>
+<p>我去睡觉了。</p>
+<blockquote>
+<h2 id="20-october">20 October</h2>
+</blockquote>
+<h2 id="10月20日">10月20日</h2>
+<blockquote>
+<p>I iterated on the report a bit, since a few things were off, and translated it into Spanish to improve the chances of getting a reply (at least, that&rsquo;s what Claude suggested). I don&rsquo;t speak Spanish, so I had to trust the agents on that one.</p>
+</blockquote>
+<p>我对报告进行了几次迭代，因为有些地方不对劲，并将其翻译成西班牙语，以提高获得回复的机会（至少，Claude 是这样建议的）。我不说西班牙语，所以我不得不信任 agents 在此事上的判断。</p>
+<blockquote>
+<p>The agents also checked the raw point cloud, to make sure the shapes were really on the ground and not created by the trees. Green dots are leaves, brown dots are the ground.</p>
+</blockquote>
+<p>Agent 也检查了原始点云，以确保形状确实在地面，而不是由树木产生。绿色点代表叶子，棕色点代表地面。</p>
+<p><img alt="Point-cloud slices across the site: vegetation returns in green, ground returns in brown" loading="lazy" src="https://pietromiotti.com/latest/point-cloud-profiles.jpg"></p>
+<blockquote>
+<p>Two slices through the raw lidar points. Under 10–17 m of forest, the ground (brown) traces the plaza, the pyramid and the courtyard.</p>
+</blockquote>
+<p>两层穿过原始 lidar points。在 10–17 m 的森林中， 地面 (brown) 描绘出广场、金字塔和庭院。</p>
+<blockquote>
+<p>Then I sent the report to INAH.</p>
+</blockquote>
+<p>然后我把报告发给了 INAH。</p>
+<p><img alt="First page of the report sent to INAH" loading="lazy" src="https://pietromiotti.com/latest/report-letter.jpg"></p>
+<blockquote>
+<p>The top of my letter to INAH. The exact coordinates went in a confidential annex, not shown here.</p>
+</blockquote>
+<p>我写给 INAH 的信的开头部分。<br>
+准确坐标被放在一个机密附录中，这里并未展示。</p>
+<blockquote>
+<h2 id="21-october">21 October</h2>
+</blockquote>
+<h2 id="10-月-21-日">10 月 21 日</h2>
+<blockquote>
+<p>INAH replied: they checked their records and found <strong>no registered archaeological site at that location</strong>.</p>
+</blockquote>
+<p>INAH 回复说：他们查阅了记录，并发现<strong>该地点没有登记的考古遗址</strong>。</p>
+<p><img alt="INAH&rsquo;s official reply" loading="lazy" src="https://pietromiotti.com/latest/inah-reply.jpg"></p>
+<blockquote>
+<p>INAH&rsquo;s reply. The highlighted part: &ldquo;…no registered archaeological site was identified at the location given in your report.&rdquo;</p>
+</blockquote>
+<p>…未在您报告中提供的地点识别到注册的考古遗址。</p>
+<blockquote>
+<p>At that point I thought nobody had put it on a map before. I was wrong (see below).</p>
+</blockquote>
+<p>在那时，我以为之前没有人把它放到地图上。我错了（见下文）。</p>
+<blockquote>
+<h2 id="so-what-was-it">So what was it?</h2>
+</blockquote>
+<h2 id="那到底是什么">那到底是什么？</h2>
+<blockquote>
+<p>This part is speculation, from a long chat with the agents. It looks like a small Maya civic centre from the Classic period (roughly AD 250–900), basically the &ldquo;downtown&rdquo; of a local elite. The plaza is where people gathered, for ceremonies and maybe even a market. The pyramid was probably a temple, and the raised courtyard next to it might have been where the local ruler lived. The hollow could have been an <em>aguada</em>, a rainwater reservoir: Maya towns needed them to get through the dry season. Or it&rsquo;s just a hole. The three platforms around were probably houses.</p>
+</blockquote>
+<p>这部分是推测，来自与智能体的一段很长的聊天。它看起来像一个来自古典时期（大约 AD 250–900）的小型玛雅公民中心，基本上是当地精英的“市中心”。广场是人们聚集的地方，举行仪式，也许甚至举办市场。金字塔可能是一座寺庙，而旁边的高台庭院可能是在当地统治者居住的地方。这个空地可能是一个 <em>aguada</em>，一种雨水蓄积池：玛雅城镇需要它们来度过旱季。或者只是一个洞。周围三个平台可能都是房子。</p>
+<blockquote>
+<p>I asked Gemini to imagine how it looked back then:</p>
+</blockquote>
+<p>我让 Gemini 想象一下它当时的样子：</p>
+<p><img alt="AI-generated artist&rsquo;s impression of the site in the Classic period: a plaza, a small pyramid and a courtyard on a forested clifftop, with thatched houses around" loading="lazy" src="https://pietromiotti.com/latest/reconstruction.jpg"></p>
+<blockquote>
+<p>How it might have looked around AD 700. Generated with Gemini from the lidar layout</p>
+</blockquote>
+<p>大概在 AD 700 年时的样子。 使用 Gemini 从 lidar 布局生成。</p>
+<blockquote>
+<p>For similar studies, have a look at how NASA&rsquo;s G-LiHT instrument works (<a href="https://doi.org/10.3390/rs5084045">Cook et al. 2013</a>) and how lidar collected for environmental research can be reused for archaeology (<a href="https://doi.org/10.1016/j.jasrep.2016.07.029">Golden et al. 2016</a>). In 2024, archaeologists found a whole Maya city in Mexico this way (<a href="https://doi.org/10.15184/aqy.2024.148">Auld-Thomas et al. 2024</a>), others mapped settlements across the Maya lowlands, including this very site (<a href="https://doi.org/10.1016/j.jasrep.2025.105288">Estrada-Belli et al. 2025</a>), and another study found what may have been ancient Maya marketplaces (<a href="https://doi.org/10.1017/S0956536126100923">Šprajc 2026</a>).</p>
+</blockquote>
+<p>有关类似的研究，可以参考 NASA 的 G-LiHT 仪器的工作原理（<a href="https://doi.org/10.3390/rs5084045">Cook et al. 2013</a>），以及如何将为环境研究收集的 lidar 数据重新用于考古学（<a href="https://doi.org/10.1016/j.jasrep.2016.07.029">Golden et al. 2016</a>）。2024 年，考古学家通过这种方法在墨西哥发现了一整座玛雅城市（<a href="https://doi.org/10.15184/aqy.2024.148">Auld-Thomas et al. 2024</a>），其他研究人员绘制了包括该遗址本身在内的整个玛雅低地定居点分布图（<a href="https://doi.org/10.1016/j.jasrep.2025.105288">Estrada-Belli et al. 2025</a>），而另一项研究则发现了可能是古代玛雅集市的所在地（<a href="https://doi.org/10.1017/S0956536126100923">Šprajc 2026</a>）。</p>
+<blockquote>
+<h2 id="whats-next">What&rsquo;s next</h2>
+</blockquote>
+<h2 id="接下来">接下来</h2>
+<blockquote>
+<p>The site is now in the hands of the people who should have it: Mexico&rsquo;s National Institute of Anthropology and History (INAH) and the archaeologists who mapped it first. If anything comes out of it, I&rsquo;ll post an update.</p>
+</blockquote>
+<p>该遗址现已移交给本应拥有它的人手中：墨西哥国家人类学与历史研究院（INAH）以及最先绘制该遗址地图的考古学家们。若有进展，我会发布更新。</p>
+<blockquote>
+<h2 id="what-ive-learned">What I&rsquo;ve learned</h2>
+</blockquote>
+<h2 id="我学到的">我学到的</h2>
+<blockquote>
+<p>You can just do things. I&rsquo;m not an archaeologist, so I didn&rsquo;t know this was supposed to be hard. I just picked an old problem, tried the most obvious thing and threw some compute at it. Being a naive outsider might be a superpower now.</p>
+</blockquote>
+<p>你可以直接做事。我不是考古学家，所以我不知道这件事本来就很难。我只是选了一个老问题，试了最明显的方法，然后扔了些算力去试。现在，作为一个外行可能是一种超能力。</p>
+<blockquote>
+<p>And it turned out professional archaeologists had already mapped the same site. I guess that&rsquo;s a good sign: an outsider with agents ended up in a similar place to the experts.</p>
+</blockquote>
+<p>结果发现专业考古学家已经映射了同一处。 我猜这是个好消息： 外来者 agents 结束于 与专家相似的地方。</p>
+<blockquote>
+<p>And I don&rsquo;t think this is really about archaeology. So far, most agentic AI stories have been about coding, math and physics, but it&rsquo;s much more general than that, and I hope this small example makes it a bit more obvious. We are on the brink of a revolution in all the sciences, and the only bottlenecks left will be curiosity and imagination (and compute).</p>
+</blockquote>
+<p>而且，我不认为这真的关乎考古学。到目前为止，大多数关于 agentic AI 的故事都围绕着编程、数学和物理，但它远比这更通用。我希望这个小小的例子能让这一点变得稍微明显一些。我们正站在所有科学领域革命的边缘，而剩下的唯一瓶颈将是好奇心和想象力（以及算力）。</p>
+<blockquote>
+<p><strong>At this point, we should probably lidar the whole planet and let the agents discover the rest.</strong></p>
+</blockquote>
+<p><strong>此时，我们大概应该对整个星球进行 lidar 扫描，并让 agents 发现其余部分。</strong></p>
+<blockquote>
+</blockquote>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>If you don&rsquo;t know how lidar works, copy and paste this prompt into your favorite AI tool: &ldquo;Build an HTML page that explains how lidar works, with beautiful visualizations.&rdquo;&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+]]></content:encoded></item></channel></rss>

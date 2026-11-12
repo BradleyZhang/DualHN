@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>2026-11-09 on DualHN</title><link>https://BradleyZhang.github.io/DualHN/2026-11-09/</link><description>Recent content in 2026-11-09 on DualHN</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Mon, 09 Nov 2026 09:52:04 +0800</lastBuildDate><atom:link href="https://BradleyZhang.github.io/DualHN/2026-11-09/index.xml" rel="self" type="application/rss+xml"/><item><title>用四个2构造任意整数 (2025)</title><link>https://BradleyZhang.github.io/DualHN/2026-11-09/05-making-any-integer-with-four-2s-2025/</link><pubDate>Mon, 09 Nov 2026 09:52:04 +0800</pubDate><guid>https://BradleyZhang.github.io/DualHN/2026-11-09/05-making-any-integer-with-four-2s-2025/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;There&amp;rsquo;s a cute math puzzle that can be interesting to folks on very different levels:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;有个可爱的数学谜题，对不同层次的人来说都很有趣：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Given exactly four instances of the digit 2 and some target natural number, use any mathematical operations to generate the target number with these 2s, using no other digits.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;给定恰好四个数字 2 以及某个目标自然数，使用任意数学运算利用这四个 2 来生成目标数字，不得使用其他数字。&lt;/p&gt;</description><content:encoded><![CDATA[<p>from: <a href="https://eli.thegreenplace.net/2025/making-any-integer-with-four-2s/">Making any integer with four 2s - Eli Bendersky's website</a></p><blockquote>
+<p>There&rsquo;s a cute math puzzle that can be interesting to folks on very different levels:</p>
+</blockquote>
+<p>有个可爱的数学谜题，对不同层次的人来说都很有趣：</p>
+<blockquote>
+<blockquote>
+<p>Given exactly four instances of the digit 2 and some target natural number, use any mathematical operations to generate the target number with these 2s, using no other digits.</p>
+</blockquote>
+</blockquote>
+<p>给定恰好四个数字 2 以及某个目标自然数，使用任意数学运算利用这四个 2 来生成目标数字，不得使用其他数字。</p>
+<blockquote>
+<p>Some examples can be done by elementary school kids:</p>
+</blockquote>
+<p>有些示例连小学生都能完成：</p>
+<blockquote>
+<p>In middle school, kids learn about exponents, factorials, etc. which expands the range considerably:</p>
+</blockquote>
+<p>在中学阶段，学生会学习指数、阶乘等知识，这大大扩展了数的范围。</p>
+<blockquote>
+<p>Then come the tricks; for example, the number 22 (twenty two) can be seen as a valid use of two 2s, and so on; so we can have:</p>
+</blockquote>
+<p>然后是一些技巧；例如，数字 22（twenty two）可以被视为两个 2 的有效使用，依此类推；因此我们可以得到：</p>
+<blockquote>
+<p>Getting to 7 is notoriously difficult, but if you allow even more mathematical tools like the <a href="https://en.wikipedia.org/wiki/Gamma_function">Gamma function</a>, it becomes easy:</p>
+</blockquote>
+<p>得到 7 以“难以捉摸”著称，但如果允许使用更多的数学工具（如 <a href="https://en.wikipedia.org/wiki/Gamma_function">Gamma 函数</a>），这就会变得很简单：</p>
+<blockquote>
+<p>The more math skill people have, the more numbers they can make. See <a href="https://math.stackexchange.com/questions/1034122/get-the-numbers-from-0-30-by-using-the-number-2-four-times">this thread</a> for some fun concoctions using integrals, repeating fractions and combinatorial operators. One of my favorite examples involves complex numbers:</p>
+</blockquote>
+<p>数学技能越强的人，能生成的数字就越多。请参阅 <a href="https://math.stackexchange.com/questions/1034122/get-the-numbers-from-0-30-by-using-the-number-2-four-times">this thread</a> 以了解一些使用积分、循环分数和组合运算符的有趣组合。我最喜欢的例子之一涉及复数：</p>
+<blockquote>
+<p>So the fun doesn&rsquo;t end even after one graduates from university! In fact, this seems to have been a favorite pastime for mathematicians in the 1920s. Until <a href="https://en.wikipedia.org/wiki/Paul_Dirac">Paul Dirac</a> ruined it for everyone by finding a general solution for every number.</p>
+</blockquote>
+<p>大学毕业后，好戏还远远没有结束。事实上，这似乎是 20 世纪 20 年代数学家们最喜欢的消遣方式，直到保罗·狄拉克（Paul Dirac）找到了一个通用的解决方案，让这种乐趣戛然而止。</p>
+<blockquote>
+<p>It&rsquo;s all about nested square roots:</p>
+</blockquote>
+<p>请提供完整的英文原文，我将为您翻译。</p>
+<blockquote>
+<p>If the square root is applied <em>n</em> times:</p>
+</blockquote>
+<p>如果将平方根应用于 <em>n</em> 次：</p>
+<blockquote>
+<p>All that&rsquo;s left now is some base-2 logarithms:</p>
+</blockquote>
+<p>现在剩下的就是一些以 2 为底的对数了：</p>
+<blockquote>
+<p>And another:</p>
+</blockquote>
+<p>另一个：</p>
+<blockquote>
+<p>This leads to the general formula:</p>
+</blockquote>
+<p>这引出了通用公式：</p>
+<blockquote>
+<p>There&rsquo;s just one small wrinkle: it uses <em>three</em> instances of the digit 2, not four. This is easy to amend, however; since , we can replace any single digit with that and get exactly four:</p>
+</blockquote>
+<p>只有一个小小的波折：它使用了数字 2 的三个<em>实例</em>，而不是四个。然而，这很容易修改；因为，我们可以用那个替换任何单个数字，正好得到四个：</p>
+<blockquote>
+<p>One may claim this is cheating, but it seems to be in line with the rules of the puzzle! Note that the entity <em>n</em> doesn&rsquo;t actually appear anywhere - it&rsquo;s just a helper to count the number of repeated square roots. For example, another way to express 7 is:</p>
+</blockquote>
+<p>有人可能会说这是作弊，但这似乎符合谜题的规则！注意，实体 <em>n</em> 实际上并未出现在任何地方 —— 它只是一个用来计算重复平方根次数的辅助变量。例如，表达 7 的另一种方式是：</p>
+<blockquote>
+<p>There are exactly four 2s, and this uses only reasonable, elemental math operations to do the calculation. It&rsquo;s clear that <em>any</em> number can be expressed this way; the only challenge is properly drawing all those square roots!</p>
+</blockquote>
+<p>恰好有四个 2s，并且 这仅使用合理的、基本的数学运算来进行计算。 显然， <em>any</em> 数字可以用这种方式；唯一的 挑战是 正确 绘制 所有 这些 平方根！</p>
+<blockquote>
+<h2 id="credits">Credits</h2>
+</blockquote>
+<h2 id="致谢">致谢</h2>
+<blockquote>
+<p>I&rsquo;ve read about this story in Graham Farmelo&rsquo;s book <em>The Strangest Man: The Hidden Life of Paul Dirac, Quantum Genius</em>. I&rsquo;m enjoying this book so far.</p>
+</blockquote>
+<p>我在 Graham Farmelo 的书《The Strangest Man: The Hidden Life of Paul Dirac, Quantum Genius》里读到过这个故事。这本书到目前为止我很喜欢。</p>
+]]></content:encoded></item><item><title>铀立方体揭示了德国核项目为何失败</title><link>https://BradleyZhang.github.io/DualHN/2026-11-09/04-uranium-cubes-reveal-why-the-german-nuclear-project-failed/</link><pubDate>Mon, 09 Nov 2026 09:44:33 +0800</pubDate><guid>https://BradleyZhang.github.io/DualHN/2026-11-09/04-uranium-cubes-reveal-why-the-german-nuclear-project-failed/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;“Our calculations suggest Heisenberg significantly underestimated the materials required.”One of 664 uranium cubes from the failed nuclear reactor that German scientists tried to build in Haigerloch during World War II. Credit: ohn T. Consoli, University of Maryland College Park&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;“我们的计算表明，海森堡显著低估了所需材料。”
+它是二战期间德国科学家试图在 Haigerloch 建造的失败核反应堆的 664 块铀立方体之一。
+Credit: ohn T. Consoli, University of Maryland College Park&lt;/p&gt;</description><content:encoded><![CDATA[<p>from: <a href="https://arstechnica.com/science/2026/11/uranium-cubes-reveal-why-the-german-nuclear-project-failed/">Uranium cubes reveal why the German nuclear project failed</a></p><blockquote>
+<p>“Our calculations suggest Heisenberg significantly underestimated the materials required.”One of 664 uranium cubes from the failed nuclear reactor that German scientists tried to build in Haigerloch during World War II. Credit: ohn T. Consoli, University of Maryland College Park</p>
+</blockquote>
+<p>“我们的计算表明，海森堡显著低估了所需材料。”
+它是二战期间德国科学家试图在 Haigerloch 建造的失败核反应堆的 664 块铀立方体之一。
+Credit: ohn T. Consoli, University of Maryland College Park</p>
+<blockquote>
+<p>One of 664 uranium cubes from the failed nuclear reactor that German scientists tried to build in Haigerloch during World War II. Credit: ohn T. Consoli, University of Maryland College Park</p>
+</blockquote>
+<p>664 个铀方块之一 来自德国科学家在二战期间试图在海根霍克 (Haigerloch) 建造的失败核反应堆。 Credit: ohn T. Consoli, University of Maryland College Park</p>
+<blockquote>
+<p>During World War II, physicists on the Manhattan Project worried that the Nazi German nuclear program might achieve the first nuclear bomb before the US and its allies. That’s not what transpired, but historians have debated just how close the Germans came to achieving criticality in their last attempt at building a reactor: the B8 pile. Werner Heisenberg, who led that effort, claimed that they were close and had only needed a little more uranium. But according to <a href="https://academic.oup.com/pnasnexus/article-lookup/doi/10.1093/pnasnexus/pgag282">a paper</a> published in the Proceedings of the National Academy of Sciences Nexus, that was not the case: The project simply didn’t have sufficient uranium and heavy water to build a working bomb, given the design they were using.</p>
+</blockquote>
+<p>在第二次世界大战期间，Manhattan Project 的物理学家们担心纳粹德国的核计划可能会在美国及其盟友之前制造出第一颗原子弹。但事实并非如此，历史学家们一直在争论，德国人在他们最后一次尝试建造反应堆—— B8 pile ——时，距离达到临界状态究竟有多近。领导这项工作的 Werner Heisenberg 声称，他们当时已经非常接近，只需要再多一点铀。但根据发表在《Proceedings of the National Academy of Sciences Nexus》上的<a href="https://academic.oup.com/pnasnexus/article-lookup/doi/10.1093/pnasnexus/pgag282">一篇论文</a>，情况并非如此：鉴于他们当时所采用的设计，该项目根本没有足够的铀和重水来制造一颗能正常工作的原子弹。</p>
+<blockquote>
+<p>This particular research started in 2013, when University of Maryland physicist Timothy Koeth—a co-author on the new paper—received the gift of a mysterious heavy metal cube from a friend. He <a href="https://www.eurekalert.org/pub_releases/2019-05/aiop-sfl042619.php">instantly recognized</a> it as one of the uranium cubes used by German scientists in their unsuccessful attempt to build a working nuclear reactor. Only 14 such cubes are known to exist today.</p>
+</blockquote>
+<p>这项研究始于 2013 年，当时美国马里兰大学物理学家 Timothy Koeth——本论文的合著者之一——从朋友那里收到一个神秘的重金属立方体作为礼物。他 <a href="https://www.eurekalert.org/pub_releases/2019-05/aiop-sfl042619.php">立即认出</a> 它是德国科学家在未能建造正常工作的核反应堆的尝试中使用的铀立方体之一。目前已知仅存 14 个此类立方体。</p>
+<blockquote>
+<p>In 2019, <a href="https://arstechnica.com/science/2019/06/physicists-hunt-uranium-cubes-to-shed-light-on-germanys-failed-nuclear-reactor/">we reported</a> on Koeth’s quest to track down the cube’s origins, as well as several other similar cubes that had somehow found their way across the Atlantic. At the time, Koeth and his partner in the quest, then-graduate student Miriam “Mimi” Hiebert, had tracked down 10 such cubes around the US. For instance, the Smithsonian Institute had a German uranium cube in storage. They tracked a third cube to Harvard University, where it was regularly passed around to students in introductory physics classes as a curiosity.</p>
+</blockquote>
+<p>在 2019 年， <a href="https://arstechnica.com/science/2019/06/physicists-hunt-uranium-cubes-to-shed-light-on-germanys-failed-nuclear-reactor/">我们报道</a> 关于 Koeth 追踪立方体起源的行动，以及几个类似的立方体 somehow 通过大西洋找到美国。当时，Koeth 与这项追踪的合作伙伴—— 当时的研究生 Miriam “Mimi” Hiebert—— 已经在美利坚合众国找到了 10 个此类立方体。例如，史密森尼学会（Smithsonian Institute）的仓库中存放着一枚德国 Uranium cube。他们将第三枚立方体追踪到哈佛大学， 在那里它经常被分发给入门物理课学生作为一种好奇的事物。</p>
+<blockquote>
+<p>Underpinning the Manhattan Project in the US was the fear that German scientists under Adolf Hitler’s Nazi regime would <a href="https://www.atomicheritage.org/history/german-atomic-bomb-project">beat the Allies</a> to a nuclear bomb. The Germans had <a href="https://en.wikipedia.org/wiki/German_nuclear_weapons_program">a two-year head start</a>, but according to Koeth, “fierce competition over finite resources, bitter interpersonal rivalries, and ineffectual scientific management” resulted in significant delays in their progress toward achieving a sustained nuclear reaction. German nuclear scientists were separated into three isolated groups based in Berlin (B), Gottow (G), and Leipzig (L).</p>
+</blockquote>
+<p>为了推动美国的曼哈顿计划，背后有一个重要的动因：人们担心在希特勒纳粹政权统治下的德国科学家会比同盟国更早地制造出核弹。德国人比同盟国早了两年，但据科斯所言，由于“对有限资源的激烈竞争、苦涩的人际关系和无效的科学管理”，他们的持续核反应进展出现了重大延误。德国核科学家被分为三个独立的组别，分别位于柏林（B）、戈托（G）和莱比锡（L）。</p>
+<blockquote>
+<p><a href="https://en.wikipedia.org/wiki/Werner_Heisenberg">Heisenberg</a> headed the Berlin group, and as the Allied forces advanced in the winter of 1944, Heisenberg moved his team to a cave under a castle in a small town called Haigerloch—now the site of the <a href="https://www.atlasobscura.com/places/atomkeller-museum">Atomkeller Museum</a>. That’s where the group built the B8 reactor. It resembled an “ominous chandelier,” per Koeth, because it was composed of 664 uranium cubes strung together with aircraft cable and then submerged in a tank of heavy water shielded by graphite to prevent radiation exposure.</p>
+</blockquote>
+<p><a href="https://en.wikipedia.org/wiki/Werner_Heisenberg">Heisenberg</a> 率领柏林小组，随着盟军在1944 年冬季的推进，Heisenberg 将他的团队移至一座城堡下的洞穴中，位于小镇 Haigerloch，现在的<a href="https://www.atlasobscura.com/places/atomkeller-museum">Atomkeller Museum</a> 所在地。那里是该组建造了B8 反应堆。它看起来像一座“阴森的吊灯”，据 科埃思称，因为它由664 颗铀块用飞机线串联而成，随后浸入被石墨屏蔽的重水罐中，以防止辐射暴露。</p>
+<p><img alt="A replica of the failed B-VIII reactor on display at the Atomkeller Museum in Haigerloch, Germany" loading="lazy" src="https://cdn.arstechnica.net/wp-content/uploads/2026/11/cube3.jpg"></p>
+<blockquote>
+<p>A replica of the failed B8 reactor on display at the Atomkeller Museum in Haigerloch, Germany Credit: ArtMechanic/CC BY-SA 3.0</p>
+</blockquote>
+<p>德国海格洛赫原子地窖博物馆展出的失败 B8 反应堆复制品 图片来源：ArtMechanic/CC BY-SA 3.0</p>
+<blockquote>
+<p>As the German scientists were racing against time, Manhattan Project lead <a href="https://www.atomicheritage.org/profile/leslie-r-groves">Lieutenant General Leslie Groves</a> kicked off a covert mission dubbed “Alsos,” with the express purpose of gathering information and materials related to Germany’s scientific research. When Allied forces closed in, Heisenberg took apart the B8 experiment and buried the uranium cubes in a field, ferreting away key documentation in a latrine. (Pity <a href="https://www.atomicheritage.org/profile/samuel-goudsmit">Samuel Goudsmit</a>, the poor physicist who had to dig those out.) Heisenberg escaped by bicycle, carrying a few cubes in a backpack.</p>
+</blockquote>
+<p>当德国科学家们与时间赛跑时，曼哈顿计划负责人莱斯利·格罗夫斯中将发起了一项代号为“阿洛斯”的秘密行动，目的是收集与德国科学研究相关的信息和资料。面对盟军逼近，海森堡拆除了B8实验装置，将铀立方体埋在田野中，并将关键文件藏匿在厕所内。（可怜的Samuel Goudsmit，这位物理学家不得不挖出这些文件。）海森堡骑着自行车逃脱，背包里装了几个铀立方体。</p>
+<blockquote>
+<h2 id="a-critical-reassessment">A critical reassessment</h2>
+</blockquote>
+<h2 id="一个关键的重新评估">一个关键的重新评估</h2>
+<blockquote>
+<p>As Heisenberg reported, the German scientists’ final experiment failed because the amount of uranium in the cubes was insufficient to trigger a sustained nuclear reaction. But Heisenberg was confident that “a slight increase in its size would have been sufficient to start off the process of energy production.” A model <a href="https://link.springer.com/article/10.1007/s00016-008-0396-0">described in a 2009 paper</a> supported that, showing the group would have needed only 50 percent more uranium cubes to make the design work.</p>
+</blockquote>
+<p>根据海森堡的报告，德国科学家的最终实验失败是因为立方体中的铀量不足以引发持续的核反应。但海森堡确信，&ldquo;稍微增加其尺寸就足以启动能量生产过程。&rdquo; 一项模型<a href="https://link.springer.com/article/10.1007/s00016-008-0396-0">在2009年的论文中描述</a> 支持了这一点，表明该团队只需要多用50%的铀立方体就能让设计奏效。</p>
+<blockquote>
+<p>Koeth and Hiebert uncovered a box of declassified documents about German uranium in the National Archives and found about 400 other uranium cubes from a separate reactor experiment by the Gottow group. They concluded that the combined inventory would have been more than enough to achieve criticality in the B8 reactor, suggesting that Germany’s secretive, isolationist approach hampered their nuclear program, because the two groups weren’t sharing information or resources.</p>
+</blockquote>
+<p>Koeth 和 Hiebert 在国家档案馆发现了一箱关于德国铀的解密文件，并从 Gottow 研究组的另一个反应堆实验中找到了约 400 个其他铀立方体。他们得出结论，合并后的库存量足以让 B8 反应堆达到临界状态，这表明德国那种秘而不宣、各自为政的方式阻碍了其核计划，因为这两个研究组既不共享信息，也不共享资源。</p>
+<blockquote>
+<p>This latest paper builds on that earlier work but reaches a different conclusion. Koeth, Hiebert, and their co-authors analyzed two of the surviving uranium cubes, along with combing through historical records, technical reports, correspondence, and similar archival sources to learn more about the uranium, heavy water, and graphite blocks used for the B8 reactor experiment.</p>
+</blockquote>
+<p>这篇最新论文基于那项早期工作，但得出了不同的结论。Koeth、Hiebert 和他们的合著者分析了两块幸存的铀方块，同时查阅了历史记录、技术报告、往来信件和其他类似的档案来源，以了解更多关于用于 B8 反应堆实验的铀、重水和石墨块的信息。</p>
+<blockquote>
+<p>Among their findings: The B8 reactor would have needed between 1,292 and 1,775 uranium cubes to achieve criticality, and twice the heavy water produced by the Norsk Hydro plant in Vemork, Norway—the only source at the time—over the course of the entire war. In short, “Our calculations suggest Heisenberg significantly underestimated the materials required,” the authors wrote.</p>
+</blockquote>
+<p>他们的发现包括：B8 反应堆若要达到临界，需要 1,292 到 1,775 个铀立方体，以及在整个战争期间，需要两倍于挪威 Vemork, Norway 地区 Norsk Hydro 工厂生产的重水——当时这是唯一的来源。简而言之，作者写道：“我们的计算表明，Heisenberg 显著低估了所需材料。”</p>
+<blockquote>
+<p>The authors also cited prior work noting key differences in American and German graphite production. The former used petroleum coke. While some of this supply reached Germany, the British naval blockade in January 1940 deprived the Germans of that vital resource. The German nuclear physicists had to use metallurgical coke from the Ruhr, which had twice as many impurities as American coke. (The US scientists had similar issues until they located an unusually low-boron coke in Pennsylvania.) Thus, “no natural uranium, graphite-moderated pile could have gone critical” with the materials available to the German scientists at the time.</p>
+</blockquote>
+<p>作者还引用了先前的研究，指出了美国和德国石墨生产的关键差异。前者使用石油焦。虽然部分这种供应到达了德国，但 1940 年 1 月的英国海军封锁切断了德国获取这一关键资源的途径。德国核物理学家不得不使用鲁尔地区的冶金焦，其杂质含量是美国焦炭的两倍。（美国科学家也面临类似问题，直到他们在宾夕法尼亚州找到了一种异常低硼的焦炭。）因此，用当时德国科学家可用的材料，“任何天然铀、石墨慢化堆都不可能达到临界状态”。</p>
+<blockquote>
+<p>PNAS Nexus, 2026. DOI: <a href="http://dx.doi.org/10.1093/pnasnexus/pgag282">10.1093/pnasnexus/pgag282</a> (<a href="http://arstechnica.com/science/news/2010/03/dois-and-their-discontents-1.ars">About DOIs</a>).</p>
+</blockquote>
+<p>PNAS Nexus, 2026. DOI: <a href="http://dx.doi.org/10.1093/pnasnexus/pgag282">10.1093/pnasnexus/pgag282</a> (<a href="http://arstechnica.com/science/news/2010/03/dois-and-their-discontents-1.ars">关于 DOI</a>)。</p>
+]]></content:encoded></item><item><title>苹果的灰名单：你的iPhone不会帮你拼写的单词和短语</title><link>https://BradleyZhang.github.io/DualHN/2026-11-09/03-apples-grey-list-words-and-phrases-your-iphone-wont-help-you-spell/</link><pubDate>Mon, 09 Nov 2026 09:36:54 +0800</pubDate><guid>https://BradleyZhang.github.io/DualHN/2026-11-09/03-apples-grey-list-words-and-phrases-your-iphone-wont-help-you-spell/</guid><description>&lt;p&gt;&lt;img alt="A hand types a list on an iPhone" loading="lazy" src="https://i.guim.co.uk/img/media/28e97d03d0abcd9f1e2eb53b873f17079a1a7f82/998_270_3911_3129/master/3911.jpg?width=620&amp;dpr=2&amp;s=none&amp;crop=none"&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The swipe-type-thwarting list was discovered by the independent researcher Derik Kauffman. Photograph: Manuel Orbegozo/Reuters&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;防滑动输入列表由独立研究人员 Derik Kauffman 发现。摄影：Manuel Orbegozo/路透社&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;There are more than 100,000 words and phrases that the tech giant has restricted its predictive text from completing, research shows&lt;/p&gt;
+&lt;/blockquote&gt;</description><content:encoded><![CDATA[<p>from: <a href="https://www.theguardian.com/technology/2026/nov/06/struggling-to-spell-male-chauvinist-pig-apple-grey-list-means-your-iphone-wont-help-you">Struggling to spell ‘male chauvinist pig’? Apple’s grey list means your iPhone won’t help you</a></p><p><img alt="A hand types a list on an iPhone" loading="lazy" src="https://i.guim.co.uk/img/media/28e97d03d0abcd9f1e2eb53b873f17079a1a7f82/998_270_3911_3129/master/3911.jpg?width=620&dpr=2&s=none&crop=none"></p>
+<blockquote>
+<p>The swipe-type-thwarting list was discovered by the independent researcher Derik Kauffman. Photograph: Manuel Orbegozo/Reuters</p>
+</blockquote>
+<p>防滑动输入列表由独立研究人员 Derik Kauffman 发现。摄影：Manuel Orbegozo/路透社</p>
+<blockquote>
+<p>There are more than 100,000 words and phrases that the tech giant has restricted its predictive text from completing, research shows</p>
+</blockquote>
+<p>研究表明，这家科技巨头已限制其预测文本功能补全超过 100,000 个单词和短语。</p>
+<blockquote>
+<p>“Australia is a very bad place to question your sexuality on MDMA with NSA spies” might be a text you would wish to send to your friends, if you have had an extraordinarily complicated night out in Sydney.</p>
+</blockquote>
+<p>澳大利亚是在服用MDMA与NSA情报人员的情况下质疑自己的性取向，绝对是个糟糕的地方.</p>
+<blockquote>
+<p>But your <a href="https://www.theguardian.com/technology/iphone">iPhone</a> won’t help you spell any of it if you try to swipe-type it – that is, by gliding a finger across a keyboard as opposed to pecking out a word.</p>
+</blockquote>
+<p>但是 你的 <a href="https://www.theguardian.com/technology/iphone">iPhone</a> 并不能帮你拼写其中的任何一个词，如果你尝试滑屏打字的话——也就是说，通过手指在键盘上滑动来打字，而不是逐个字母地打单词。</p>
+<blockquote>
+<p>New research shows that <a href="https://www.theguardian.com/technology/apple">Apple</a> has a “grey list” of more than 100,000 words and phrases that it has restricted from being completed by its predictive text.</p>
+</blockquote>
+<p>最新研究表明，<a href="https://www.theguardian.com/technology/apple">Apple</a> 拥有一份包含超过 100,000 个单词和短语的“灰名单”，这些内容被限制由其预测文本功能进行补全。</p>
+<blockquote>
+<p>So if a user wishes to type phrases such as “Dictator Trump”, “NSA spies” or, surprisingly, “Australia is a very bad place”, “question your sexuality” or “on MDMA”, they will have to spell them out.</p>
+</blockquote>
+<p>所以，如果用户想输入诸如“Dictator Trump”、“NSA spies”或者，令人意外的是，“Australia is a very bad place”、“question your sexuality”或者“on MDMA”这样的短语，他们就必须拼写出来。</p>
+<blockquote>
+<p>Apple’s predictive text will not suggest these words. And, if a user attempts to swipe-type them, they will often stumble, changing “United Ireland” to “United Iceland”, for example, or “Tibetan independence” to “Tibetan independences”.</p>
+</blockquote>
+<p>Apple 的预测文本不会 建议 这些 词。并且， 如果用户 尝试 手势输入 它们， 他们 经常会跌倒， 将 “United Ireland” 改为 “United Iceland” ， 例如， 或将 “Tibetan independence” 改为 “Tibetan independences” 。</p>
+<blockquote>
+<p>The “grey list” was discovered by the independent researcher Derik Kauffman, whose other <a href="https://derikk.com/#projects">projects</a> include using AI to find errors in scientific papers. After noticing that he had problems typing certain phrases – but not others – on his iPhone, Kauffman was able to unearth a table containing the list, encoded in Apple’s operating system.</p>
+</blockquote>
+<p>独立研究人员 Derik Kauffman 发现了“grey list&quot;，他的其他 <a href="https://derikk.com/#projects">projects</a> 包括使用 AI 在科学论文中查找错误。在注意到他在 iPhone 上输入某些短语（但不是其他短语）时遇到问题后，Kauffman 能够发掘出一个包含该列表的表格，该表格编码在 Apple 的操作系统中。</p>
+<blockquote>
+<p>The list he found includes some unsurprising words and phrases. Apple’s iPhone will not autocomplete references to drugs, sexual acts and, perhaps in the spirit of corporate protection, “iMessage isn’t working”.</p>
+</blockquote>
+<p>他找到的列表包含一些不令人惊讶的词语和短语。 Apple’s iPhone 不会自动补全对药物、性行为的引用，和 也许出于公司保护的考虑，“iMessage isn’t working” 。</p>
+<blockquote>
+<p>But it also includes possibly politically charged phrases, which Kauffman <a href="https://www.reuters.com/business/retail-consumer/apples-predictive-text-restrictions-include-dictator-trump-sleepy-joe-researcher-2026-11-06/">described</a> to Reuters as a “light-touch form of censorship”. Among these are “Trayvon Martin”, the name of the Black teenager shot in Florida in 2012, “Kashmir dispute”, “Muslim extremist” and “male chauvinist pig”.</p>
+</blockquote>
+<p>但其中也包括一些可能带有政治色彩的短语，考夫曼向路透社<a href="https://www.reuters.com/business/retail-consumer/apples-predictive-text-restrictions-include-dictator-trump-sleepy-joe-researcher-2026-11-06/">描述</a>称其为一种“温和的审查形式”。其中包括“特雷冯·马丁”（Trayvon Martin，2012 年在佛罗里达州被枪杀的黑人青少年的名字）、“克什米尔争端”（Kashmir dispute）、“穆斯林极端分子”（Muslim extremist）和“男性沙文主义猪”（male chauvinist pig）。</p>
+<blockquote>
+<p>In Hebrew, Apple will not autocomplete the phrase “the occupied territories”. In Arabic, it will not autocomplete the phrase “the Hamas movement”.</p>
+</blockquote>
+<p>在希伯来语中，Apple 将不会自动补全“被占领的领土”。在阿拉伯语中，Apple 将不会自动补全“哈马斯运动”。</p>
+<blockquote>
+<p>The list is one more glimpse into the dark bowels of how autocorrect – the chirpy keyboard partner that helps you look more educated to your loved ones – actually works.</p>
+</blockquote>
+<p>列表是对自动纠错——那个让你对亲人看起来更有教养的活泼键盘伙伴——实际上是如何工作的另一次窥探。</p>
+<blockquote>
+<p>The technology has taken many forms. In its earliest version, Unix, an operating system, would look up each word a user typed against a table of words, to determine if this word was spelled correctly.</p>
+</blockquote>
+<p>技术已经呈现多种形式。在其最早版本中，Unix 是一个操作系统，会将用户输入的每个单词与单词表进行比对，以确定该单词是否拼写正确。</p>
+<blockquote>
+<p>This evolved into n-grams, a tool which allows an operating system to statistically predict what words might come next, based on the words before it. These form the basis of Apple’s familiar <a href="https://www.theguardian.com/technology/2025/nov/01/ducking-annoying-why-has-iphones-autocorrect-function-gone-haywire">autocorrect</a>, which was known to change expletives into prudish alternatives: “fork” and “ducking”, among other gaffes.</p>
+</blockquote>
+<p>这演变成了 n-grams，一种允许操作系统根据前面的单词，通过统计学方法预测接下来可能会出现什么单词的工具。这些构成了苹果公司所熟知的 <a href="https://www.theguardian.com/technology/2025/nov/01/ducking-annoying-why-has-iphones-autocorrect-function-gone-haywire">autocorrect</a> 的基础，后者因将脏话转化为过于拘谨的替代词（如“fork”和“ducking”以及其他尴尬的错误）而闻名。</p>
+<blockquote>
+<p>Last year, Apple launched a new autocorrect – a “transformer-based” system that was more akin to an LLM. Reddit sleuths <a href="https://www.theguardian.com/technology/2025/nov/01/ducking-annoying-why-has-iphones-autocorrect-function-gone-haywire">saw this</a> as a possible reason behind a spate of avant-garde spelling suggestions their iPhones made last year.</p>
+</blockquote>
+<p>去年，Apple 推出了一款新的 autocorrect —— 一种基于 “transformer-based” 的系统，与 LLM 更为相似。Reddit 上的侦探 <a href="https://www.theguardian.com/technology/2025/nov/01/ducking-annoying-why-has-iphones-autocorrect-function-gone-haywire">将其视为</a> iPhone 去年出现大量前卫拼写建议的可能原因。</p>
+<blockquote>
+<p>This hard-coded list illuminates one longstanding mystery behind the world’s spelling coach. Others remain, such as a brief <a href="https://www.bbc.co.uk/news/articles/c5ymvjjqzmeo">glitch</a> in which users of the dictation feature saw the name “Trump” flash across their screen when they spoke the word “racist” into their iPhones – which Apple quickly remedied.</p>
+</blockquote>
+<p>这个硬编码的列表揭示了世界拼写教练背后一个长期存在的谜题。其他谜题依然存在，例如一个短暂的<a href="https://www.bbc.co.uk/news/articles/c5ymvjjqzmeo">故障</a>——当用户对iPhone说出“racist”时，抄写功能屏幕上会闪现“特朗普”这个名字，苹果公司很快修复了这个问题。</p>
+<blockquote>
+<p>Apple said that it designed its keyboard to avoid offering inappropriate or offensive predictive suggestions. It said iPhone users could always type out specific words or phrases, and override predictive text suggestions to achieve their desired meaning.</p>
+</blockquote>
+<p>苹果表示，它设计键盘是为了避免提供不当或冒犯的预测文本建议。它表示,iPhone 用户始终可以手动输入特定的单词或短语，并覆盖预测文本建议以实现他们期望的含义。</p>
+]]></content:encoded></item><item><title>再见 Claude，你好 Pi</title><link>https://BradleyZhang.github.io/DualHN/2026-11-09/02-goodbye-claude-hello-pi/</link><pubDate>Mon, 09 Nov 2026 09:26:29 +0800</pubDate><guid>https://BradleyZhang.github.io/DualHN/2026-11-09/02-goodbye-claude-hello-pi/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;&lt;a href="https://caleb.software/"&gt;caleb.software&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href="https://caleb.software/"&gt;caleb.software&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;I’ve been a longtime Claude Code user, ever since it became available in the Claude Pro subscription plan over a year ago. I remember the first time I used it, feeling giddy as it spat out messy Python code for whatever random weekend project I was working on, all from a single prompt. I’m certain that in a few years we’ll all look back at its release as one of the major drivers of this new era of software development we’re in.&lt;/p&gt;
+&lt;/blockquote&gt;</description><content:encoded><![CDATA[<p>from: <a href="https://caleb.software/posts/claude-to-pi.html">Goodbye Claude, Hello Pi</a></p><blockquote>
+<p><a href="https://caleb.software/">caleb.software</a></p>
+</blockquote>
+<p><a href="https://caleb.software/">caleb.software</a></p>
+<blockquote>
+<p>I’ve been a longtime Claude Code user, ever since it became available in the Claude Pro subscription plan over a year ago. I remember the first time I used it, feeling giddy as it spat out messy Python code for whatever random weekend project I was working on, all from a single prompt. I’m certain that in a few years we’ll all look back at its release as one of the major drivers of this new era of software development we’re in.</p>
+</blockquote>
+<p>我一直是 Claude Code 的长期用户，自从一年多前它在 Claude Pro 订阅计划中推出以来便是如此。我记得第一次使用它时，兴奋不已，它为我当时做的任何随机周末项目吐出了一堆混乱的 Python 代码，只需一个 prompt。我确信，几年后我们都会回顾它的发布，将其视为我们所处的这个软件开发新时代的主要推动力之一。</p>
+<blockquote>
+<p>Despite this, due to an accumulation of many small frustrations, I’ve finally decided to retire it as my main coding harness and migrate my development setup to use <a href="https://pi.dev/">Pi</a> instead.</p>
+</blockquote>
+<p>尽管如此，由于积累了许多小的挫折，我终于决定将其作为我的主要编码工具放弃，并将我的开发设置迁移到使用 <a href="https://pi.dev/">Pi</a> 而已。</p>
+<blockquote>
+<p>Someone at Anthropic must’ve caught wind… just a day after making my decision, they announced Claude Code would <a href="https://code.claude.com/docs/en/memory#agents-md">finally start supporting</a> <code>AGENTS.md</code> files in an effort to get me to stay. Unfortunately, for me it was too little, too late.</p>
+</blockquote>
+<p>Anthropic 的某人必然察觉到了… 就在我做出决定的一天后，他们宣布 Claude Code <a href="https://code.claude.com/docs/en/memory#agents-md">finally start supporting</a> <code>AGENTS.md</code> files 试图留住我。可惜对我来说已经太晚了。</p>
+<blockquote>
+<h2 id="complaining">Complaining</h2>
+</blockquote>
+<h2 id="抱怨">抱怨</h2>
+<blockquote>
+<p>In lieu of a proper obituary, I’d like to take this time to say a few words about the things I liked least about Claude Code (and thus what I’m looking forward to avoiding with Pi).</p>
+</blockquote>
+<p>我不写正式的悼词了，借此机会谈谈我最不喜欢 Claude Code 的地方（因此也是我期待在 Pi 中避免的地方）。</p>
+<blockquote>
+<p>The <code>AGENTS.md</code> thing kind of epitomizes the whole reason I decided to quit using Claude Code. Don’t get me wrong, having a ton of <code>CLAUDE.md</code> files scattered about various GitHub hobby repos is great guerrilla marketing. But it sucks for users to have to deal with copying or symlinking between the two formats.</p>
+</blockquote>
+<p><code>AGENTS.md</code> 这事，某种程度上体现了我决定停止使用 Claude Code 的全部原因。请不要误会，在各种 GitHub 业余项目里散落大量 <code>CLAUDE.md</code> 文件，固然是很棒的游击营销。但对用户来说，在两种格式间进行复制或创建软链接，体验很差。</p>
+<blockquote>
+<p>Like the Luddite I am, I still prefer to review most of the code it churns out before I commit it. I use(d) Claude Code inside VSCode, and it lets you connect the harness to the IDE. This is nice because you can highlight text in a file and have it automatically included in the context when asking questions or requesting changes during a review.</p>
+</blockquote>
+<p>像 L&hellip;&quot;. 我仍然更倾向在提交前审阅它生成的大部分代码。我使用 Claude Code 在 VSCode 中，它让你将 harness 连接到 IDE。这点很好，因为你可以在文件中高亮文本，并在提问或在审阅期间请求修改时自动将其包含在上下文中。</p>
+<blockquote>
+<p>Except you can only have one session “connected” to the IDE at a time. If you open a second tab to start another task while the first one works, it can’t receive the text selection events from the IDE at all. This has been reported at <em>least</em> as far back as <a href="https://github.com/anthropics/claude-code/issues/14865">December 2025</a> … and closed as a duplicate of a totally unrelated bug.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+</blockquote>
+<p>除了你只能在同一时间只有一个“连接”到IDE的会话。如果你在第一个任务运行时打开第二个标签页开始另一个任务，第一个任务将完全无法从IDE接收文本选择事件。这个问题最早在<a href="https://github.com/anthropics/claude-code/issues/14865">December 2025</a>被报告……并被关闭为与完全无关的另一个Bug的重复。<sup id="fnref1:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+<p><img alt="claude code in vscode showing disconnected error" loading="lazy" src="https://caleb.software/assets/img/claude-to-pi/vsc-disconnected.png"></p>
+<blockquote>
+<p>Of course, you can always use the official Claude Code VSCode GUI extension, which does allow you to have multiple tabs open and load the text selection into the context of each. But this extension has plenty of problems of its own. Half of the built-in slash commands don’t work at all in the GUI. It doesn’t have any support for a custom status line. Subagent output messages are simply layered into the main chat thread in chronological order, which is a mess to read when more than one is running. I could go on and on.</p>
+</blockquote>
+<p>当然，你也可以始终使用官方的 Claude Code VSCode GUI 扩展，它确实支持同时打开多个标签页，并将文本选择加载到各自的上下文中。但这个扩展自身也存在诸多问题。内置的斜杠命令有一半在 GUI 中完全无法使用。它不支持自定义状态栏。子智能体的输出消息只是按时间顺序堆叠在主聊天线程中，当有多个子智能体同时运行时，阅读起来会非常混乱。诸如此类的问题，我可以一直列举下去。</p>
+<blockquote>
+<p>In spite of all of these existing issues, it seems like Anthropic has worked at a feverish pace to pack more features into Claude Code without much care for quality or stability. <a href="https://code.claude.com/docs/en/workflows">Dynamic workflows</a>, <a href="https://code.claude.com/docs/en/agent-teams">agent teams</a>, <a href="https://code.claude.com/docs/en/ultrareview">ultrareviews</a> – all great ways to help enterprise customers burn ever more tokens each day, but not really anything I want or need.</p>
+</blockquote>
+<p>尽管存在上述所有问题，Anthropic 似乎仍在以狂热的速度将更多功能硬塞进 Claude Code，对质量或稳定性关注甚少。<a href="https://code.claude.com/docs/en/workflows">Dynamic workflows</a>、<a href="https://code.claude.com/docs/en/agent-teams">agent teams</a>、<a href="https://code.claude.com/docs/en/ultrareview">ultrareviews</a> —— 这些都是帮助每天消耗更多 token 的企业客户的好方法，但并不是我真正想要或需要的。</p>
+<blockquote>
+<p>Alongside all of these feature releases, they always seem to be fiddling with things in ways that mess up my personal setup. At the time of writing, there have been <strong>244</strong> releases to Claude Code this year; over 3/4 of these changed the system prompt or tool descriptions, which can substantially change how the LLM performs (especially when these new instructions contradict user prompts or repo conventions).</p>
+</blockquote>
+<p>伴随着所有的这些功能发布，他们似乎总是会以这样的方式折腾某些东西，从而搞乱了我的个人设置。写作时，今年发布了 <strong>244</strong> 个 Claude Code 版本；超过 3/4 的版本更改了 system prompt 或 tool descriptions，这可能显著改变 LLM 的表现（尤其是当这些新指令与用户提示或仓库约定相矛盾时。）</p>
+<p>Wait, period should be Chinese full stop. Let&rsquo;s correct final.
+伴随着所有的这些功能发布，他们似乎总是会以这样的方式折腾某些东西，从而搞乱了我的个人设置。写作时，今年发布了 <strong>244</strong> 个 Claude Code 版本；超过 3/4 的版本更改了 system prompt 或 tool descriptions，这可能显著改变 LLM 的表现（尤其是当这些新指令与用户提示或仓库约定相矛盾时）。伴随着所有的这些功能发布，他们似乎总是会以这样的方式折腾某些东西，从而搞乱了我的个人设置。写作时，今年发布了 <strong>244</strong> 个 Claude Code 版本；超过 3/4 的版本更改了 system prompt 或 tool descriptions，这可能显著改变 LLM 的表现（尤其是当这些新指令与用户提示或仓库约定相矛盾时）。</p>
+<blockquote>
+<p>And what are all those changes for? Despite <a href="https://claude.com/blog/the-new-rules-of-context-engineering-for-claude-5-generation-models">chopping 80% of the system prompt</a>, Claude Code still has way more overhead than Pi for seemingly no benefit. The default Bash tool’s description is almost 3,000 tokens, most of which is random stuff about using git and opening PRs on GitHub.<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> The models already know how to do this without detailed instructions, by the way.<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></p>
+</blockquote>
+<p>这些变化到底是为了什么？尽管<a href="https://claude.com/blog/the-new-rules-of-context-engineering-for-claude-5-generation-models">chopping 80% of the system prompt</a>，Claude Code 却比 Pi 有更多的开销，毫无实质益处。默认 Bash 工具的描述几乎达到了 3,000 个 token，其中大部分是关于使用 git 和在 GitHub 上打开 PRs 的随机内容。<sup id="fnref1:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> 模型已经知道如何在没有详细指令的情况下完成这项工作，顺便一提。<sup id="fnref1:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></p>
+<blockquote>
+<h2 id="looking-forward">Looking Forward</h2>
+</blockquote>
+<h2 id="期待未来">期待未来</h2>
+<blockquote>
+<p>This post has been a lot of hating. I’m sorry! That’s not my usual style, and I do think Anthropic has made a really cool piece of software here. I’m also not under any delusion that I would’ve done a better job if I were the one in charge of running Claude Code from the beginning. LLM coding harnesses are a very new space and being one of the first to innovate in a field is a really hard task. Later tools like Pi have the benefit of hindsight to see what works and what doesn’t, what’s a core feature and what can be cut.</p>
+</blockquote>
+<p>这篇帖子被喷得太多了。我很抱歉！这并不是我平时的风格，而且我确实认为 Anthropic 在这里做了一件很酷的软件。我也不认为自己如果当时就是负责从一开始运行 Claude Code 的人，会做得更好。LLM 编码工具是一个非常新的领域，第一个在这个领域里进行创新的人真的很难做。像 Pi 这样的后续工具则有后见之明，可以看看到什么可行、什么不可行，什么才是核心功能，什么可以被削减。</p>
+<blockquote>
+<p>Ultimately, CC feels like a product without a strong vision or direction. It’s as if a bunch of excited engineers and PMs are rapidly tacking on whatever features suit their workflow… but without consideration for how this might make things worse for other users. It seems like there isn’t someone high-up whose job is strictly to say “no” to these requests, which is incredibly important when it comes to product engineering. So, for now, I’m leaving.</p>
+</blockquote>
+<p>最终来说， CC 感觉像是一个没有明确远景或方向的产品。这就像一群兴奋的工程师和 PMs 正在快速地添加任何适合他们工作流的功能……但是，没有考虑这会让情况对其他用户变得更糟。看起来，并没有高层有人专门的职责是必须说“不”来应对这些请求，而在产品工程中，这一点非常重要。所以，暂时我还是要离开。</p>
+<blockquote>
+<p>I’m excited to lean more into Pi. The first few days required some finagling, but since then it’s been smooth sailing. I’m enjoying the stability, minimalist approach, and the extreme level of customizability. I’ve already written a couple of extensions to support my use cases, which I’m hoping to share soon after I’ve cleaned them up a bit. If you’re also feeling these frustrations, I’d highly encourage giving an open source harness a try!</p>
+</blockquote>
+<p>我很兴奋能更多地使用Pi。前几天需要一些调整，但现在一切顺利。我喜欢它的稳定性、极简主义的方法以及极高的可定制性。我已经写了一些扩展来支持我的使用场景，我希望在稍微整理好之后尽快分享。如果你也在经历这些挫折，我强烈建议你尝试一下这个 open source harness！</p>
+<blockquote>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+</blockquote>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>It’s not like there’s some huge technical roadblock to this either. After installing Pi, I wrote an extension to handle this very functionality across multiple open tabs in like 20 minutes.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>Bonus points for the fact that it instructs the model to use <code>cat &lt;&lt;'EOF'</code> which (prior to widespread rollout of <code>auto</code> mode) would <em>always</em> trip the manual review rules regardless of existing git command allowlists.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3">
+<p>If you assume 1 million DAU and 100M requests per day, trimming 1,000 tokens off of this could literally save millions of dollars in inference costs per year. Surely that’s worth some engineer’s time??&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+]]></content:encoded></item><item><title>我在10美元的OpenStick家庭实验室上运行的内容</title><link>https://BradleyZhang.github.io/DualHN/2026-11-09/01-what-i-run-on-my-10-usd-openstick-homelab/</link><pubDate>Mon, 09 Nov 2026 08:55:34 +0800</pubDate><guid>https://BradleyZhang.github.io/DualHN/2026-11-09/01-what-i-run-on-my-10-usd-openstick-homelab/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;A while ago I bought an &lt;a href="https://hackaday.com/2022/08/03/hackable-20-modem-combines-lte-and-pi-zero-w2-power/"&gt;OpenStick&lt;/a&gt; on a whim for 10 dollars (including shipping!) because it seemed like such a cool novelty piece of hardware.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;一段时间前，我冲动买入了一个 &lt;a href="https://hackaday.com/2022/08/03/hackable-20-modem-combines-lte-and-pi-zero-w2-power/"&gt;OpenStick&lt;/a&gt;，花费 10 美元（含运费！），因为它看起来像是如此酷炫的硬件玩意儿。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;For 10 dollars you get:&lt;/p&gt;
+&lt;/blockquote&gt;</description><content:encoded><![CDATA[<p>from: <a href="https://blog.bosscher.ch/posts/openstick/">What I run on my $10 USD OpenStick homelab</a></p><blockquote>
+<p>A while ago I bought an <a href="https://hackaday.com/2022/08/03/hackable-20-modem-combines-lte-and-pi-zero-w2-power/">OpenStick</a> on a whim for 10 dollars (including shipping!) because it seemed like such a cool novelty piece of hardware.</p>
+</blockquote>
+<p>一段时间前，我冲动买入了一个 <a href="https://hackaday.com/2022/08/03/hackable-20-modem-combines-lte-and-pi-zero-w2-power/">OpenStick</a>，花费 10 美元（含运费！），因为它看起来像是如此酷炫的硬件玩意儿。</p>
+<blockquote>
+<p>For 10 dollars you get:</p>
+</blockquote>
+<p>付出 10 美元，你就能得到：</p>
+<blockquote>
+<ul>
+<li>512 MB of RAM (~450 MB usable)</li>
+<li>4x ARM Cortex-A53 CPU cores at 1 GHz</li>
+<li>4 GB eMMC flash</li>
+<li>150 Mbit/s Wi-Fi</li>
+<li>4G modem and GPS</li>
+<li>Passively cooled, so 100% silent!</li>
+<li>1 programmable LED:)</li>
+</ul>
+</blockquote>
+<ul>
+<li>512 MB RAM（约 450 MB，可用）</li>
+<li>4x ARM Cortex-A53 CPU 核心，频率 1 GHz</li>
+<li>4 GB eMMC 闪存</li>
+<li>150 Mbit/s Wi-Fi</li>
+<li>4G 调制解调器和 GPS</li>
+<li>被动冷却，因此完全静音！</li>
+<li>1 个可编程 LED：)</li>
+</ul>
+<p><img alt="A white 4G LTE Wi-Fi modem stick with a USB-A plug next to a black USB hub and a pen for scale" loading="lazy" src="https://blog.bosscher.ch/_astro/openstick.nDFavhOI_1HBuYF.webp"></p>
+<blockquote>
+<p>Now, you might look at this hardware and think “my watch is more powerful than that”, and you wouldn’t necessarily be wrong, but there’s still a lot of fun to be had with a device this size, and it’s a great gadget to get started with self-hosting.</p>
+</blockquote>
+<p>现在，你可能会看这款硬件，并想“我的手表比那个更强大”，你并不一定错，但这种尺寸的设备仍然有很多乐趣，而且它是一个适合开始自托管的小工具。</p>
+<blockquote>
+<p>The installation process is a bit involved, but once you’re up and running it runs Debian, which brings all the classic goodies such as systemd (among other things, a scheduler and service monitoring for Linux) and Podman (lightweight containerization). For 10 USD you basically get a home server with minimal power usage and zero noise!</p>
+</blockquote>
+<p>安装过程有点涉及，但一旦运行起来，它运行 Debian，带来了诸多经典功能，例如 systemd (among other things, a scheduler and service monitoring for Linux) 和 Podman (lightweight containerization)。对于 10 USD，你基本上得到了一个功耗极低、零噪音的家庭服务器！</p>
+<blockquote>
+<p>There’s actually a lot of useful software that runs great on this thing. Some of my favorites are:</p>
+</blockquote>
+<p>其实有不少实用软件能在这台设备上流畅运行。我最喜欢的有：</p>
+<blockquote>
+<h2 id="castsponsorskip-510-mb">CastSponsorSkip (5–10 MB)</h2>
+</blockquote>
+<h2 id="投放赞助商跳过-510-mb">投放赞助商跳过 (5–10 MB)</h2>
+<blockquote>
+<p>This is a little service that connects to any running Google Cast device and skips sponsorships (and sometimes ads). It barely uses any resources, and after a while you forget that it exists, but it does make the whole YouTube experience a lot nicer!</p>
+</blockquote>
+<p>这是一个小服务，连接到任何正在运行的 Google Cast 设备，并跳过赞助（以及偶尔出现的广告）。它几乎不消耗任何资源，过一段时间后你会忘记它存在，但它确实让整个 YouTube 体验变得更加友好！</p>
+<blockquote>
+<p><a href="https://github.com/gabe565/CastSponsorSkip">CastSponsorSkip</a></p>
+</blockquote>
+<p><a href="https://github.com/gabe565/CastSponsorSkip">CastSponsorSkip</a></p>
+<blockquote>
+<h2 id="adguard-home---my-own-fork-40-mb">AdGuard Home - my own fork (40 MB)</h2>
+</blockquote>
+<h2 id="adguard-home---我的个人分支-40-mb">AdGuard Home - 我的个人分支 (40 MB)</h2>
+<blockquote>
+<p>AdGuard Home blocks bad domains at the DNS level: spyware, malware, and so on. These days devices have a tendency to spy on you. <a href="https://www.youtube.com/watch?v=6IFVTcM28KA">Smart TVs</a> run content recognition continuously, <a href="https://www.reddit.com/r/gadgets/comments/196bb6c/your_washing_machine_could_be_sending_37_gb_of/">washing machines</a> scan your network, and your <a href="https://medium.com/@staneyjoseph.in/your-coffee-maker-might-be-spying-on-you-the-scary-reality-of-iot-0d4e8b6b21c2">coffee maker</a> might be spying on you.</p>
+</blockquote>
+<p>AdGuard Home 在 DNS 层面拦截恶意域名：间谍软件、恶意软件等。如今，设备往往倾向于监视你。<a href="https://www.youtube.com/watch?v=6IFVTcM28KA">智能电视</a> 持续运行内容识别，<a href="https://www.reddit.com/r/gadgets/comments/196bb6c/your_washing_machine_could_be_sending_37_gb_of/">洗衣机</a> 扫描你的网络，而你的 <a href="https://medium.com/@staneyjoseph.in/your-coffee-maker-might-be-spying-on-you-the-scary-reality-of-iot-0d4e8b6b21c2">咖啡机</a> 可能正在监视你。</p>
+<blockquote>
+<p>A DNS blocker cannot block all bad requests (you’ll need a proper firewall for that), but it sure can block a whole lot. After adding a few blocklists, 60% of my queries are now blocked. Most seem harmless, but I’m pretty sure that some aren’t.</p>
+</blockquote>
+<p>DNS 阻止器无法阻止所有恶意请求（你需要为此使用合适的防火墙），但它当然可以拦截大量请求。在添加了一些拦截列表后，我的 DNS 查询现在有 60% 被拦截了。大多数看起来无害，但我相当确定其中有些不是。</p>
+<blockquote>
+<p>I’m running my own fork, which can handle large blocklists in an efficient manner, but you probably shouldn’t run binaries provided by random strangers, so I’ve also included the link to the official version below (which is totally fine if you limit yourself to smaller blocklists).</p>
+</blockquote>
+<p>我运行自己的 fork，它能高效处理大 blocklists，但你大概不应该运行随机陌生人的 binary，所以我也在下面提供了官方版本的链接（如果你只限制自己使用较小的 blocklists，那完全没问题）。</p>
+<blockquote>
+<p><a href="https://github.com/LaurensBosscher/AdGuardHome-Next-Gen">AdGuard Home Next-Gen</a> - 40 MB (independent of the size of the blocklist) <a href="https://github.com/AdguardTeam/AdGuardHome/">AdGuard Home</a> - 40 MB (with a small (200k) blocklist)</p>
+</blockquote>
+<p><a href="https://github.com/LaurensBosscher/AdGuardHome-Next-Gen">AdGuard Home Next-Gen</a> - 40 MB（独立于 blocklist 的大小） <a href="https://github.com/AdguardTeam/AdGuardHome/">AdGuard Home</a> - 40 MB（带有 small (200k) blocklist）</p>
+<p><img alt="AdGuard Home dashboard showing 12,536 DNS queries, 8,091 blocked ads and top clients" loading="lazy" src="https://blog.bosscher.ch/_astro/adguard_home.DUT8bS1V_ZChp7D.webp"></p>
+<blockquote>
+<h2 id="zeroclaw-64-mb">Zeroclaw (64 MB)</h2>
+</blockquote>
+<h2 id="zeroclaw-64-mb-1">Zeroclaw (64 MB)</h2>
+<blockquote>
+<p>Zeroclaw is an AI agent harness. It supports 30 channels (Telegram, email, WhatsApp, etc.), has sensible security defaults, a nice web UI, and integrations with all the major LLM providers.</p>
+</blockquote>
+<p>Zeroclaw 是一个 AI 代理框架。它支持 30 个通道（Telegram、email、WhatsApp 等），具有合理的安全默认设置、一个不错的 Web UI，以及与所有主要 LLM 提供商的集成。</p>
+<blockquote>
+<p>I ran OpenClaw for a while on my Kubernetes cluster, but it mostly caused a lot of frustration: it worked, but it used 1 GB+ of memory, broke with every update, and they kept changing functionality in ways that broke my existing workflows. Zeroclaw feels like a breath of fresh air. It uses ~3 MB RSS when idle, covers all the functionality that I need, and the security defaults are sensible and easy enough to disable. The next version will (hopefully!) have rich message support for Telegram, implemented by yours truly. The <a href="https://github.com/zeroclaw-labs/zeroclaw/pull/11862">PR</a> can be tracked here!</p>
+</blockquote>
+<p>我在 Kubernetes 集群上运行 OpenClaw 一段时间了，但它主要给我带来了很多挫败感：虽然它能跑通，但占用 1 GB 以上内存，每次更新都会挂掉，而且他们不断以破坏我现有工作流的方式更改功能。Zeroclaw 则让人耳目一新。空闲时仅占用约 3 MB RSS 内存，涵盖我所需的所有功能，且安全默认值合理且易于禁用。下一个版本（希望如此！）将支持 Telegram 富消息，由我本人实现。可在此跟踪 <a href="https://github.com/zeroclaw-labs/zeroclaw/pull/11862">PR</a>！</p>
+<blockquote>
+<p>I’ve given Zeroclaw access to the OpenStick (but nothing beyond that). Effectively it’s a root shell, but given that the blast radius is limited, I figured it would be acceptable. I mostly use this to monitor the OpenStick, with questions such as “anything in the logs that requires my attention?” or “how is the disk space?”. The biggest advantage is that it communicates through Telegram, so if I’m in the mountains with limited signal, I can still ask it how my little server is doing:)</p>
+</blockquote>
+<p>我已将 Zeroclaw 的访问权限授予 OpenStick （但除此之外没有其他）。实际上它是一个 root shell ，但鉴于其爆炸半径受限，我认为这是可以接受的。我主要用它来监控 OpenStick ，提出诸如“anything in the logs that requires my attention” ？或“how is the disk space” ？等问题。最大的优势是它通过 Telegram 进行通信，因此即使我在山里信号有限，仍然可以询问它我的小服务器状况 :)</p>
+<blockquote>
+<p>I looked at alternatives such as Picoclaw and Nullclaw, and no doubt they’re good as well. However, Zeroclaw seemed to have the best documentation and the most active community, so I went with that:)</p>
+</blockquote>
+<p>我看了看 Picoclaw 和 Nullclaw 等替代方案，它们确实也很不错。不过，Zeroclaw 的文档资料和社区活跃度似乎最高，因此我选择了它。😊</p>
+<blockquote>
+<p><a href="https://github.com/zeroclaw-labs/zeroclaw">GitHub Zeroclaw</a> <a href="https://docs.zeroclaw.com/v0.8.7/en/">Documentation</a></p>
+</blockquote>
+<p><a href="https://github.com/zeroclaw-labs/zeroclaw">GitHub Zeroclaw</a> <a href="https://docs.zeroclaw.com/v0.8.7/en/">文档</a></p>
+<p><img alt="Zeroclaw dashboard showing uptime, RAM usage, cost overview and the active Telegram channel" loading="lazy" src="https://blog.bosscher.ch/_astro/zeroclaw.BcIG_KYp_Z27axi4.webp"></p>
+<blockquote>
+<h2 id="cloudflare-tunnel-8-20-mb">Cloudflare Tunnel (~8-20 MB)</h2>
+</blockquote>
+<p>Cloudflare 隧道 (~8-20 MB)</p>
+<blockquote>
+<p>Cloudflared makes it possible to expose all these services securely to the big, bad internet, for free, without exposing any ports. The downside might be that the NSA might be able to read everything you do, but for a homelab I consider that to be an acceptable trade-off.</p>
+</blockquote>
+<p>Cloudflared 使得你可以安全地将所有这些服务暴露给那个“邪恶的”互联网，且免费，无需暴露任何端口。不过，缺点可能是 NSA 能够读取你的一切，但就一个家庭实验室而言，我认为这属于可接受的权衡。</p>
+<blockquote>
+<p><a href="https://developers.cloudflare.com/tunnel/">Cloudflare Tunnel</a></p>
+</blockquote>
+<p><a href="https://developers.cloudflare.com/tunnel/">Cloudflare Tunnel</a></p>
+<blockquote>
+<h2 id="beszel-20-mb">Beszel (20 MB)</h2>
+</blockquote>
+<h2 id="beszel-20-mb-1">Beszel (20 MB)</h2>
+<blockquote>
+<p>Beszel shows a pretty graph of memory, CPU usage, and so on, and alerts you if something looks suspicious, all while using very little memory.</p>
+</blockquote>
+<p>Beszel 会以直观的图表展示内存、CPU 使用率等指标，并在发现异常时发出警报，且自身占用极少的内存。</p>
+<blockquote>
+<p>I ran Grafana and the whole stack on my Kubernetes cluster for a while, and it’s powerful, but not extremely user friendly, and it felt like overkill.</p>
+</blockquote>
+<p>我在我的 Kubernetes 集群上运行了 Grafana 和整个 stack，一段时间，它很有力量，但并不是特别用户友好，而且感觉就像是过度设计了。</p>
+<blockquote>
+<p>Beszel is a really awesome solution: it looks pretty and requires ~20 MB, 10 MB for the agent and 10 MB for the server. It has built-in alerting for a whole bunch of protocols, and I let it send messages to Telegram when something requires my attention.</p>
+</blockquote>
+<p>Beszel 是一个真正很棒的解决方案：它看起来很美观，且需要约 20 MB，10 MB 给 agent，10 MB 给 server。它内置了对多种协议的告警，我让它在需要我关注时向 Telegram 发送消息。</p>
+<blockquote>
+<p><a href="https://github.com/henrygd/beszel">GitHub Beszel</a></p>
+</blockquote>
+<p><a href="https://github.com/henrygd/beszel">GitHub Beszel</a></p>
+<p><img alt="Beszel system page for the OpenStick showing CPU, Podman CPU, memory and Podman memory usage over 24 hours" loading="lazy" src="https://blog.bosscher.ch/_astro/beszel.D43pXGV0_Z1RoP2R.webp"></p>
+<blockquote>
+<h2 id="dozzle">Dozzle</h2>
+</blockquote>
+<h1 id="dozzle-1">Dozzle</h1>
+<p>Dozzle 是一个用于构建 LLM 应用的工具，基于 LangChain 框架。它提供了简化的开发体验，帮助开发者快速创建和部署基于大语言模型的应用程序。</p>
+<h2 id="核心功能">核心功能</h2>
+<ul>
+<li><strong>Agent 编排</strong>：支持多智能体协作，实现复杂任务的分解与执行</li>
+<li><strong>RAG 集成</strong>：内置检索增强生成能力，支持从外部知识库获取信息</li>
+<li><strong>Prompt 工程</strong>：提供强大的 prompt 模板和优化工具，提升模型响应质量</li>
+<li><strong>模块化架构</strong>：支持灵活组合不同的组件，满足多样化的应用场景</li>
+</ul>
+<h2 id="技术栈">技术栈</h2>
+<ul>
+<li><strong>LangChain</strong>：核心框架，提供统一的 LLM 交互接口</li>
+<li><strong>Python</strong>：主要开发语言，支持丰富的生态系统</li>
+<li><strong>Transformer 模型</strong>：支持 GPT-4、Claude 等主流模型的调用</li>
+</ul>
+<h2 id="快速开始">快速开始</h2>
+<ol>
+<li>安装依赖：<code>pip install dozzle</code></li>
+<li>导入库：<code>from dozzle import Agent, RAG</code></li>
+<li>创建 Agent 实例并配置任务</li>
+<li>启动应用并开始交互</li>
+</ol>
+<p>Dozzle 旨在降低 LLM 应用开发的门槛，让开发者能够专注于业务逻辑，而不是底层的框架配置。</p>
+<blockquote>
+<p>Dozzle is a pretty interface for managing Podman containers. It has a large overlap with Beszel, so if I ever need to save 10 or 20 MB, I’ll get rid of one of them. Dozzle has a way better interface for checking Podman logs, but it doesn’t offer the same level of stats as Beszel does.</p>
+</blockquote>
+<p>Dozzle 是一个用于管理 Podman 容器的界面。它与 Beszel 有很大重叠，所以如果我以后需要保存 10 或 20 MB，我会放弃其中一个。Dozzle 提供检查 Podman 日志的更好界面，但它没有像 Beszel 那样提供相同程度的统计数据。</p>
+<blockquote>
+<p><a href="https://github.com/amir20/dozzle">GitHub Dozzle</a></p>
+</blockquote>
+<p><a href="https://github.com/amir20/dozzle">GitHub Dozzle</a></p>
+<p><img alt="Dozzle container list showing eight running containers on openstick-debian with CPU and memory per container" loading="lazy" src="https://blog.bosscher.ch/_astro/dozzle.CMqt1IaR_Z2g0ruK.webp"></p>
+<blockquote>
+<h2 id="gatus-10-mb">Gatus (10 MB)</h2>
+</blockquote>
+<h2 id="gatus-10-mb-1">Gatus (10 MB)</h2>
+<blockquote>
+<p>Beszel monitors your server(s). Gatus monitors your services. In other words, if you would like to get a notification when your webserver or database has crashed, you’ll want Gatus. It also creates a really pretty web interface!</p>
+</blockquote>
+<p>Beszel 监控你的服务器。Gatus 监控你的服务。换言之，如果你希望在你的 web 服务器 或 数据库 宕机时收到通知，你就想要 Gatus。它同样提供了一个非常漂亮的 web 界面！</p>
+<blockquote>
+<p><a href="https://github.com/TwiN/gatus">GitHub Gatus</a> - 10 MB</p>
+</blockquote>
+<p>我需要先获取该页面的内容，然后为您翻译。让我获取原文。</p>
+<p><img alt="Gatus status page with uptime bars per endpoint for AdGuard Home, Beszel, Dozzle, the Cloudflare tunnel and more" loading="lazy" src="https://blog.bosscher.ch/_astro/gatus.Bq9x4ssd_ZDQN9s.webp"></p>
+<blockquote>
+<h2 id="fusion-rss-22-mb">Fusion RSS (22 MB)</h2>
+</blockquote>
+<h2 id="fusion-rss-22-兆字节">Fusion RSS (22 兆字节)</h2>
+<blockquote>
+<p>RIP <a href="https://en.wikipedia.org/wiki/Google_Reader">Google Reader</a>. I tried <a href="https://feedly.com/i/pro">Feedly</a> for a while, but 7 USD for the Pro version was just a little bit more than I felt comfortable with. Besides, why pay when you can have hours of fun setting up your own alternative?</p>
+</blockquote>
+<p>RIP <a href="https://en.wikipedia.org/wiki/Google_Reader">Google Reader</a>。我曾尝试使用 <a href="https://feedly.com/i/pro">Feedly</a> 一段时间，但 Pro 版本的 7 USD 对我来说稍微超出了舒适区。而且，既然花几个小时动手搭建自己的替代方案就能获得乐趣，为什么还要付费呢？</p>
+<blockquote>
+<p>I tried a whole bunch of RSS readers and eventually settled on Fusion. It does all I need, looks good, feels responsive, and uses 22 MB of RAM.</p>
+</blockquote>
+<p>我试用了一大堆 RSS 阅读器，最终决定使用 Fusion。它能满足我所有需求，界面美观，运行流畅，且仅占用 22 MB 的 RAM。</p>
+<blockquote>
+<p><a href="https://github.com/0x2E/fusion">GitHub Fusion</a> - 22 MB</p>
+</blockquote>
+<p><a href="https://github.com/0x2E/fusion">GitHub Fusion</a> - 22 MB</p>
+<p><img alt="Fusion&rsquo;s three-pane reader showing 63 unread articles in the all-articles list" loading="lazy" src="https://blog.bosscher.ch/_astro/fusion_rss.DQy_M5dx_13flvu.webp"></p>
+<blockquote>
+<h2 id="shiori-1020-mb">Shiori (~10–20 MB)</h2>
+</blockquote>
+<h2 id="shiori-约-10-20-mb">Shiori (约 10-20 MB)</h2>
+<blockquote>
+<p>Browser bookmarks are great, however a lot of my older bookmarks have stopped working because the sites disappeared, the URLs changed, or for a myriad of other reasons. Shiori fixes this by offering a great bookmark manager that also automatically archives the website. It does so in ~10 MB. You can expect some spikes when archiving, but nothing that our mighty OpenStick cannot handle!</p>
+</blockquote>
+<p>浏览器书签很棒，然而我的许多旧书签因网站消失或 URL 变更或其他诸多原因而不再可用。Shiori 通过提供一个优秀的书签管理器并自动归档网站来解决这一问题。它的压缩体积仅为 ~10 MB。归档时可能会出现一些流量峰值，但这对我们强大的 OpenStick 来说绰绰有余！</p>
+]]></content:encoded></item></channel></rss>

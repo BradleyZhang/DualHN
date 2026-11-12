@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>2026-10-21 on DualHN</title><link>https://BradleyZhang.github.io/DualHN/2026-10-21/</link><description>Recent content in 2026-10-21 on DualHN</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Wed, 21 Oct 2026 07:53:19 +0800</lastBuildDate><atom:link href="https://BradleyZhang.github.io/DualHN/2026-10-21/index.xml" rel="self" type="application/rss+xml"/><item><title>DeepInfer：面向 DeepSeek 模型的高性能推理框架</title><link>https://BradleyZhang.github.io/DualHN/2026-10-21/01-deepinfer-high-performance-inference-framework-for-deepseek-models/</link><pubDate>Wed, 21 Oct 2026 07:53:19 +0800</pubDate><guid>https://BradleyZhang.github.io/DualHN/2026-10-21/01-deepinfer-high-performance-inference-framework-for-deepseek-models/</guid><description>&lt;blockquote&gt;
+&lt;h2 id="deepinfer"&gt;DeepInfer&lt;/h2&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;深度推理&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;DeepInfer is the high-performance inference framework that powers DeepSeek&amp;rsquo;s large-scale production services. This open-source release provides offline inference with the core features needed for serving at scale.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;DeepInfer 是支撑 DeepSeek 大规模生产服务的高性能推理框架。此次开源发布提供离线推理，具备大规模服务所需的核心功能。&lt;/p&gt;</description><content:encoded><![CDATA[<p>from: <a href="https://github.com/deepseek-ai/DeepInfer">deepseek-ai/DeepInfer: DeepInfer: High-performance, large-scale inference framework for DeepSeek models</a></p><blockquote>
+<h2 id="deepinfer">DeepInfer</h2>
+</blockquote>
+<p>深度推理</p>
+<blockquote>
+<p>DeepInfer is the high-performance inference framework that powers DeepSeek&rsquo;s large-scale production services. This open-source release provides offline inference with the core features needed for serving at scale.</p>
+</blockquote>
+<p>DeepInfer 是支撑 DeepSeek 大规模生产服务的高性能推理框架。此次开源发布提供离线推理，具备大规模服务所需的核心功能。</p>
+<blockquote>
+<p>Supported models:</p>
+</blockquote>
+<p>支持的模型：</p>
+<blockquote>
+<ul>
+<li>DeepSeek-V4.1-Flash</li>
+</ul>
+</blockquote>
+<p>DeepSeek-V4.1-Flash</p>
+<blockquote>
+<p>Supported features:</p>
+</blockquote>
+<p>支持的功能：</p>
+<blockquote>
+<ul>
+<li>Optimized kernels, model and sampler runtime</li>
+<li>Parallelism: Attention DP / balanced CP, MoE EP + EPLB</li>
+<li>DSpark and confidence-scheduled verification</li>
+<li>SWA bounded replay</li>
+<li>Asynchronous scheduling (zero-overhead batch scheduler)</li>
+<li>Batch-invariant inference</li>
+<li>Deterministic sampling</li>
+<li>Structured outputs
+Feature details and configuration</li>
+<li><strong>Optimized kernels:</strong> <a href="https://github.com/deepseek-ai/FlashMLA">FlashMLA</a>, <a href="https://github.com/deepseek-ai/DeepGEMM">DeepGEMM</a>, <a href="https://github.com/deepseek-ai/DeepEP">DeepEP</a>, <a href="https://github.com/deepseek-ai/TileKernels">TileKernels</a>, <a href="https://github.com/deepseek-ai/DeepSelect">DeepSelect</a>, and custom <a href="https://github.com/deepseek-ai/DeepInfer/blob/main/deepinfer/model_executor/layers/tilelang_ops">TileLang kernels</a>.</li>
+<li><strong>DSpark and confidence-scheduled verification:</strong> accelerate decoding with draft tokens and use confidence estimates to schedule verification. Set <code>DEEPINFER_ENABLE_MTP_VARLEN=1</code>; <code>DEEPINFER_USE_NEXTN_DECODE</code> controls the maximum draft length (default: 5).</li>
+<li><strong>Decoder SWA bounded replay:</strong> reduce decoder prefill work by replaying only a bounded suffix. Set <code>DEEPINFER_YOCO_PREFILL_TRUNCATION_MODE=compact</code> and <code>DEEPINFER_YOCO_PREFILL_KEEP_TOKENS=140</code> for the default V4.1 settings; the retained suffix must cover the SWA window plus the maximum backtracking length.</li>
+<li><strong>Asynchronous scheduling:</strong> overlap CPU batch scheduling with device execution. Enabled by default.</li>
+<li><strong>Batch-invariant inference:</strong> keep model results identical across different batch compositions. Enable with <code>DEEPINFER_BATCH_INVARIANT=1</code> (NVIDIA only).</li>
+<li><strong>Deterministic sampling:</strong> produce identical outputs for identical input tokens and sampling parameters. Set <code>DEEPINFER_BATCH_INVARIANT=1 DEEPINFER_ENABLE_MTP_VARLEN=0</code> and pass a fixed <code>seq_seed</code> to <code>SamplingParams</code> (NVIDIA only).</li>
+<li><strong>Structured outputs:</strong> constrain generation to a regex, JSON schema, or EBNF grammar. Pass <code>so_args={&quot;schema_type&quot;: ..., &quot;schema&quot;: ...}</code> to <code>SamplingParams</code>; see <a href="https://github.com/deepseek-ai/DeepInfer/blob/main/examples/_structured_output.py">examples</a>.</li>
+</ul>
+</blockquote>
+<ul>
+<li>优化 kernels, model 与 sampler runtime</li>
+<li>平行: Attention DP / balanced CP, MoE EP + EPLB</li>
+<li>DSpark 与 confidence-scheduled verification</li>
+<li>SWA bounded replay</li>
+<li>异步调度 (零开销批处理器): 重叠 CPU 批处理与设备执行。默认启用。</li>
+<li>批量不变推理: 保持模型结果在不同 batch compositions 中保持相同。Enable with <code>DEEPINFER_BATCH_INVARIANT=1</code> (NVIDIA only).</li>
+<li>确定性采样: 为相同的输入 tokens 和采样参数产生相同输出。Set <code>DEEPINFER_BATCH_INVARIANT=1 DEEPINFER_ENABLE_MTP_VARLEN=0</code> and pass a fixed <code>seq_seed</code> to <code>SamplingParams</code> (NVIDIA only).</li>
+<li>结构化输出: 将生成限制为 regex、JSON schema 或 EBNF 语法。Pass <code>so_args={&quot;schema_type&quot;: ..., &quot;schema&quot;: ...}</code> to <code>SamplingParams</code>; see <a href="https://github.com/deepseek-ai/DeepInfer/blob/main/examples/_structured_output.py">examples</a>.
+Feature details and configuration</li>
+<li><strong>Optimized kernels:</strong> <a href="https://github.com/deepseek-ai/FlashMLA">FlashMLA</a>, <a href="https://github.com/deepseek-ai/DeepGEMM">DeepGEMM</a>, <a href="https://github.com/deepseek-ai/DeepEP">DeepEP</a>, <a href="https://github.com/deepseek-ai/TileKernels">TileKernels</a>, <a href="https://github.com/deepseek-ai/DeepSelect">DeepSelect</a>, and 自定义 <a href="https://github.com/deepseek-ai/DeepInfer/blob/main/deepinfer/model_executor/layers/tilelang_ops">TileLang kernels</a>.</li>
+<li><strong>DSpark and confidence-scheduled verification:</strong> 加速解码时使用 draft tokens 并使用 confidence estimates 进行调度验证。Set <code>DEEPINFER_ENABLE_MTP_VARLEN=1</code>; <code>DEEPINFER_USE_NEXTN_DECODE</code> controls the maximum draft length (default: 5).</li>
+<li><strong>Decoder SWA bounded replay:</strong> 减少解码预填工作，仅重放有限 suffix。Set <code>DEEPINFER_YOCO_PREFILL_TRUNCATION_MODE=compact</code> and <code>DEEPINFER_YOCO_PREFILL_KEEP_TOKENS=140</code> for the default V4.1 settings; the retained suffix must cover the SWA window plus the maximum backtracking length.</li>
+<li><strong>Asynchronous scheduling:</strong> 重叠 CPU 批处理与设备执行。默认启用。</li>
+<li><strong>Batch-invariant inference:</strong> 保持模型结果在不同 batch compositions 中保持相同。Enable with <code>DEEPINFER_BATCH_INVARIANT=1</code> (NVIDIA only).</li>
+<li><strong>Deterministic sampling:</strong> 为相同的输入 tokens 和采样参数产生相同输出。Set <code>DEEPINFER_BATCH_INVARIANT=1 DEEPINFER_ENABLE_MTP_VARLEN=0</code> and pass a fixed <code>seq_seed</code> to <code>SamplingParams</code> (NVIDIA only).</li>
+<li><strong>Structured outputs:</strong> 将生成限制为 regex、JSON schema 或 EBNF 语法。Pass <code>so_args={&quot;schema_type&quot;: ..., &quot;schema&quot;: ...}</code> to <code>SamplingParams</code>; see <a href="https://github.com/deepseek-ai/DeepInfer/blob/main/examples/_structured_output.py">examples</a>.</li>
+</ul>
+<blockquote>
+<p>Supported hardware:</p>
+</blockquote>
+<p>支持的硬件：</p>
+<blockquote>
+<ul>
+<li>NVIDIA SM100 GPUs</li>
+<li>Huawei Ascend 950 NPUs</li>
+</ul>
+</blockquote>
+<ul>
+<li>NVIDIA SM100 图形处理单元</li>
+<li>华为昇腾 950 神经网络处理单元</li>
+</ul>
+<blockquote>
+<p>Required for a complete inference service (not included in this release):</p>
+</blockquote>
+<p>完整的推理服务所需组件（本版本不包含）：</p>
+<blockquote>
+<ul>
+<li>A KV cache system</li>
+<li>VE/Prefill/Decode disaggregation (most required engine functionality is already implemented)</li>
+<li>Load balancing across data-parallel replicas for both prefill and decode</li>
+</ul>
+</blockquote>
+<ul>
+<li>一个 KV cache 系统</li>
+<li>VE/Prefill/Decode 解耦（大部分所需引擎功能已实现）</li>
+<li>跨数据并行副本的负载均衡，适用于 Prefill 和 Decode</li>
+</ul>
+<blockquote>
+<h2 id="getting-started">Getting started</h2>
+</blockquote>
+<h2 id="快速入门">快速入门</h2>
+<blockquote>
+<h3 id="prerequisites">Prerequisites</h3>
+</blockquote>
+<h3 id="前置条件">前置条件</h3>
+<blockquote>
+<ul>
+<li>Linux</li>
+<li>GCC &gt;= 13.0</li>
+<li>Python 3.12</li>
+<li>CUDA 13 (NVIDIA only)</li>
+<li>CANN 9.2 (Ascend only)</li>
+</ul>
+</blockquote>
+<ul>
+<li>Linux</li>
+<li>GCC &gt;= 13.0</li>
+<li>Python 3.12</li>
+<li>CUDA 13 (仅限 NVIDIA)</li>
+<li>CANN 9.2 (仅限 Ascend)</li>
+</ul>
+<blockquote>
+<h3 id="build-from-source">Build from source</h3>
+</blockquote>
+<h3 id="从源代码构建">从源代码构建</h3>
+<blockquote>
+<p>Before building DeepInfer, please create and activate an empty Python 3.12 environment.</p>
+</blockquote>
+<p>在构建 DeepInfer 之前，请创建并激活一个空的 Python 3.12 环境。</p>
+<pre tabindex="0"><code># Use `ascend` instead for the Ascend platform
+# Keep it exported in the environment where you run DeepInfer
+export DEEPINFER_ACCELERATOR=nvidia
+./build.sh
+</code></pre><blockquote>
+<h3 id="offline-inference">Offline inference</h3>
+</blockquote>
+<h3 id="离线推理">离线推理</h3>
+<blockquote>
+<p>The default checkpoint, <a href="https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017"><code>deepseek-ai/DeepSeek-V4.1-Flash-1017</code></a>, is downloaded into the Hugging Face cache on the first run; set <code>DEEPINFER_HF_MODEL_DIR=/path/to/DeepSeek-V4.1-Flash-1017</code> to run from a local copy instead.</p>
+</blockquote>
+<p>默认检查点 <a href="https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017"><code>deepseek-ai/DeepSeek-V4.1-Flash-1017</code></a> 会在首次运行时下载到 Hugging Face 缓存中；如需改用本地副本，请设置 <code>DEEPINFER_HF_MODEL_DIR=/path/to/DeepSeek-V4.1-Flash-1017</code>。</p>
+<pre tabindex="0"><code>python examples/offline_inference.py
+</code></pre><blockquote>
+<p>See <a href="https://github.com/deepseek-ai/DeepInfer/blob/main/examples/README.md">examples</a> for details.</p>
+</blockquote>
+<p>参见 <a href="https://github.com/deepseek-ai/DeepInfer/blob/main/examples/README.md">示例</a> 了解详情。</p>
+<blockquote>
+<h2 id="performance-benchmarks">Performance benchmarks</h2>
+</blockquote>
+<h2 id="性能基准测试">性能基准测试</h2>
+<blockquote>
+<table>
+	<thead>
+			<tr>
+					<th>Prefill</th>
+					<th>Decode</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><a href="https://github.com/deepseek-ai/DeepInfer/blob/main/doc/images/prefill_pareto.png"><img alt="Prefill: non-cached input throughput vs. latency" loading="lazy" src="https://github.com/deepseek-ai/DeepInfer/raw/main/doc/images/prefill_pareto.png"></a></td>
+					<td><a href="https://github.com/deepseek-ai/DeepInfer/blob/main/doc/images/decode_pareto.png"><img alt="Decode: output throughput vs. per-user speed" loading="lazy" src="https://github.com/deepseek-ai/DeepInfer/raw/main/doc/images/decode_pareto.png"></a></td>
+			</tr>
+	</tbody>
+</table>
+</blockquote>
+<table>
+	<thead>
+			<tr>
+					<th>Prefill（预填充）</th>
+					<th>Decode（解码）</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><a href="https://github.com/deepseek-ai/DeepInfer/blob/main/doc/images/prefill_pareto.png"><img alt="Prefill：非缓存输入吞吐量与延迟" loading="lazy" src="https://github.com/deepseek-ai/DeepInfer/raw/main/doc/images/prefill_pareto.png"></a></td>
+					<td><a href="https://github.com/deepseek-ai/DeepInfer/blob/main/doc/images/decode_pareto.png"><img alt="Decode：输出吞吐量与单用户速度" loading="lazy" src="https://github.com/deepseek-ai/DeepInfer/raw/main/doc/images/decode_pareto.png"></a></td>
+			</tr>
+	</tbody>
+</table>
+<blockquote>
+<p>Measured on 4 SM100 GPUs for prefill and 64 for decode — each within one scale-up domain. To reproduce the benchmarks, see <a href="https://github.com/deepseek-ai/DeepInfer/blob/main/examples/sweep/run_sweep.sh">run_sweep.sh</a>.</p>
+</blockquote>
+<p>在4个SM100 GPU上进行预填充（prefill），在64个GPU上进行解码（decode）——每个都在一个规模扩展领域内。要重现基准测试，请参见 <a href="https://github.com/deepseek-ai/DeepInfer/blob/main/examples/sweep/run_sweep.sh">run_sweep.sh</a>。</p>
+<blockquote>
+<h2 id="evaluation-benchmarks">Evaluation benchmarks</h2>
+</blockquote>
+<p>评估基准</p>
+<blockquote>
+<p>See <a href="https://github.com/deepseek-ai/DeepInfer/blob/main/eval/README.md">eval/README.md</a>.</p>
+</blockquote>
+<p>请参阅 <a href="https://github.com/deepseek-ai/DeepInfer/blob/main/eval/README.md">eval/README.md</a>。</p>
+<blockquote>
+<h2 id="license">License</h2>
+</blockquote>
+<h2 id="许可证">许可证</h2>
+<blockquote>
+<p>DeepInfer is released under the Apache License 2.0. See <a href="https://github.com/deepseek-ai/DeepInfer/blob/main/LICENSE">LICENSE</a> for details.</p>
+</blockquote>
+<p>DeepInfer 基于 Apache License 2.0 许可证发布。详情请参见 <a href="https://github.com/deepseek-ai/DeepInfer/blob/main/LICENSE">LICENSE</a>。</p>
+<blockquote>
+<h2 id="acknowledgments">Acknowledgments</h2>
+</blockquote>
+<h2 id="致谢">致谢</h2>
+<blockquote>
+<p>DeepInfer was originally built primarily on <a href="https://github.com/vllm-project/vllm">vLLM</a>, with additional inspiration from <a href="https://github.com/sgl-project/sglang">SGLang</a> and <a href="https://github.com/NVIDIA/TensorRT-LLM">TensorRT-LLM</a>. We thank their developers.</p>
+</blockquote>
+<p>DeepInfer 最初主要基于 <a href="https://github.com/vllm-project/vllm">vLLM</a> 构建，并参考了 <a href="https://github.com/sgl-project/sglang">SGLang</a> 和 <a href="https://github.com/NVIDIA/TensorRT-LLM">TensorRT-LLM</a> 的设计思路。我们感谢这些项目的开发者。</p>
+<blockquote>
+<h2 id="citation">Citation</h2>
+</blockquote>
+<p>请提供完整的引用内容，以便我进行翻译。目前只看到了标题 &ldquo;## Citation&rdquo;，缺少具体的引用文本。</p>
+<pre tabindex="0"><code>@misc{deepinfer2026,
+  title = {DeepInfer: High-performance, large-scale inference framework for DeepSeek models},
+   = {DeepSeek-AI},
+  year = {2026},
+  publisher = {GitHub},
+  howpublished = {\url{https://github.com/deepseek-ai/DeepInfer}},
+}
+</code></pre>]]></content:encoded></item></channel></rss>

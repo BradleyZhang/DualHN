@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>2026-10-20 on DualHN</title><link>https://BradleyZhang.github.io/DualHN/2026-10-20/</link><description>Recent content in 2026-10-20 on DualHN</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Tue, 20 Oct 2026 08:44:00 +0800</lastBuildDate><atom:link href="https://BradleyZhang.github.io/DualHN/2026-10-20/index.xml" rel="self" type="application/rss+xml"/><item><title>Timestral：Mistral 的时间序列基础模型</title><link>https://BradleyZhang.github.io/DualHN/2026-10-20/02-timestral-mistrals-time-series-foundation-models/</link><pubDate>Tue, 20 Oct 2026 08:44:00 +0800</pubDate><guid>https://BradleyZhang.github.io/DualHN/2026-10-20/02-timestral-mistrals-time-series-foundation-models/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;Timestral, Mistral’s first family of time-series foundation models, delivers state-of-the-art probabilistic, multivariate forecasts with just 209M parameters, outperforming larger models on key benchmarks while supporting past and future covariates. Available in four sizes (5M to 209M parameters), it balances accuracy and efficiency, running efficiently on CPUs and excelling in zero-shot forecasting for diverse domains. The model combines synthetic pre-training, covariate-aware attention, and long-context learning, with fine-tuning options for domain adaptation via Mistral Forge.&lt;/p&gt;
+&lt;/blockquote&gt;</description><content:encoded><![CDATA[<p>from: <a href="https://mistral.ai/news/timestral/">Timestral: Mistral's time-series foundation models</a></p><blockquote>
+<p>Timestral, Mistral’s first family of time-series foundation models, delivers state-of-the-art probabilistic, multivariate forecasts with just 209M parameters, outperforming larger models on key benchmarks while supporting past and future covariates. Available in four sizes (5M to 209M parameters), it balances accuracy and efficiency, running efficiently on CPUs and excelling in zero-shot forecasting for diverse domains. The model combines synthetic pre-training, covariate-aware attention, and long-context learning, with fine-tuning options for domain adaptation via Mistral Forge.</p>
+</blockquote>
+<p>Timestral 是 Mistral 首个时间序列基础模型系列，仅凭 209M 参数即可提供最先进的概率性多变量预测，在关键基准测试中超越更大模型，同时支持过去和未来的协变量。该系列提供四种规模（5M 至 209M 参数），平衡了准确性与效率，可在 CPU 上高效运行，并在多个领域的零样本预测中表现出色。该模型融合了合成预训练、协变量感知注意力机制和长上下文学习，并通过 Mistral Forge 提供微调选项以实现领域适配。</p>
+<blockquote>
+<p>Today, we’re releasing Timestral, our first family of time-series foundation models. Our largest model, at just 209M parameters, ranks first on all three of the field&rsquo;s main public benchmarks, GIFT-Eval, TIME, and fev-bench, outperforming the previous state of the art with only two-thirds of the model parameters.</p>
+</blockquote>
+<p>今天，我们发布了 Timestral，这是我们首个时间序列基础模型系列。我们最大的模型仅有 209M 参数，在 GIFT-Eval、TIME 和 fev-bench 这三个领域主要公开基准测试中均排名第一，以仅三分之二的参数量超越了此前的最优性能。</p>
+<blockquote>
+<p>Timestral delivers probabilistic, multivariate forecasts and supports past-only and known-future covariates. Our family of models sits on the Pareto front of forecasting accuracy versus model size, delivering leading performance at each size. Results have been submitted to the GIFT-Eval and TIME leaderboards.</p>
+</blockquote>
+<p>Timestral 能够进行概率性多变量预测，并支持仅依赖历史值的协变量和未来值已知的协变量。我们的模型系列处于预测准确度与模型大小之间的 Pareto 前沿，在每种模型规模下均能实现领先性能。结果已提交至 GIFT-Eval 和 TIME 排行榜。</p>
+<blockquote>
+<h2 id="time-series-foundation-models-tsfm">Time Series Foundation Models (TSFM)</h2>
+</blockquote>
+<h2 id="时间序列基础模型-tsfm">时间序列基础模型 (TSFM)</h2>
+<blockquote>
+<p>Time series is one of the most common data types in enterprise, from sensor telemetry to observability metrics. Forecasts built on it drive decisions in capacity planning, energy, supply chains, risk and maintenance.</p>
+</blockquote>
+<p>时间序列 time series 是企业中最常见的数据类型之一，从 sensor telemetry 到 observability metrics。基于时间序列构建的预测 forecasts 驱动着 capacity planning、能源、supply chains、risk 和 maintenance 等领域的决策。</p>
+<blockquote>
+<p>Industrial plants forecast process sensors against the production schedule, catch equipment drift before it fails, and plan capacity and spare parts across thousands of assets. Finance teams forecast flows, volumes, and volatility to inform positions, hedging, and treasury across thousands of accounts.</p>
+</blockquote>
+<p>工业工厂根据生产计划对工艺传感器进行预测，以在设备故障前捕捉设备漂移现象，并在数千台资产中优化产能和备件配置。财务团队则通过预测现金流、交易量和波动性，为数千个账户的头寸管理、对冲策略和国库操作提供决策支持。</p>
+<blockquote>
+<p>Classical models such as ARIMA and linear regression remain well-established tools for forecasting time series. These models are usually fitted to a single series and learn only from that series&rsquo; history.</p>
+</blockquote>
+<p>ARIMA 和线性回归等经典模型仍是时间序列预测中成熟可靠的重要工具。这些模型通常仅基于单个序列进行拟合，并且只从该序列的历史数据中学习。</p>
+<blockquote>
+<p>Deep learning models such as PatchTST add the capacity to learn nonlinear patterns across many related series, but they are still typically trained from scratch on each dataset, so what they learn doesn&rsquo;t carry over to new domains.</p>
+</blockquote>
+<p>深度学习模型 如 PatchTST 能够学习多个相关时序序列中的非线性模式， 但它们通常仍然是从零开始在每个数据集上进行训练， 因此它们学到的内容难以迁移到新领域。</p>
+<blockquote>
+<p>Time series foundation models bring the pre-training approach to time series. Trained on a large and diverse corpus, our model learns patterns that transfer across series, forecasting zero-shot on data it has never seen, even in domains where data is scarce.</p>
+</blockquote>
+<p>时间序列基础模型将预训练方法引入了时间序列领域。通过在大型多样化语料库上进行训练，我们的模型能够学习到跨时间序列的可迁移模式，即使在数据稀缺的领域，也能实现对从未见过的数据进行零样本预测。</p>
+<blockquote>
+<h2 id="benchmark-results">Benchmark Results</h2>
+</blockquote>
+<h2 id="基准测试结果">基准测试结果</h2>
+<blockquote>
+<p>We evaluated Timestral on the three main public forecasting benchmarks: GIFT-Eval, TIME and fev-bench. Among pre-trained, zero-shot models, it ranks first across all five metrics. These results come from a single checkpoint, without ensembling.</p>
+</blockquote>
+<p>我们在三个主要的公开预测基准上对 Timestral 进行了评估：GIFT-Eval、TIME 和 fev-bench。在预训练模型的零样本设置下，Timestral 在全部五项指标中均排名第一。这些结果均来自单个检查点，未使用集成。</p>
+<blockquote>
+<ul>
+<li>GIFT-Eval - GMean MASE</li>
+<li>GIFT-Eval - GMean WQL</li>
+</ul>
+</blockquote>
+<p>User Safety: safe</p>
+<blockquote>
+<p><em>GIFT-Eval, top ten of 83 comparable pretrained and zero-shot entries. Lower is better.</em></p>
+</blockquote>
+<p>GIFT-Eval，83 个可比预训练和零样本条目中的前十名。数值越低越好。</p>
+<blockquote>
+<ul>
+<li>TIME - GMean MASE</li>
+<li>TIME - GMean CRPS</li>
+</ul>
+</blockquote>
+<ul>
+<li>时间序列 - 几何平均数 MASE</li>
+<li>时间序列 - 几何平均数 CRPS</li>
+</ul>
+<blockquote>
+<p><em>TIME, top ten of the 35 leaderboard entries. Lower is better on both metrics.</em></p>
+</blockquote>
+<p><em>TIME, 前35名榜单的前十名。两个指标中较低值更好。</em></p>
+<p><img loading="lazy" src="https://mistral.ai/_astro/SQL%20skill%20score_yUMlC.webp?dpl=6ad67bec1e6315ef32f09863"></p>
+<blockquote>
+<p>Today, we’re releasing Timestral, our first family of time-series foundation models. Our largest model, at just 209M parameters, ranks first on all three of the field&rsquo;s main public benchmarks, GIFT-Eval, TIME, and fev-bench, outperforming the previous state of the art with only two-thirds of the model parameters.</p>
+</blockquote>
+<p>今天，我们发布了 Timestral，这是我们首个时序基础模型系列。我们的最大模型仅有 209 亿参数，却在 GIFT-Eval、TIME 和 fev-bench 这三个领域主要公共基准测试中均排名第一，以三分之二的参数量就超越了之前的技术领先水平。</p>
+<blockquote>
+<p><em>fev-bench, top ten of the 37 leaderboard entries, by SQL skill score. Higher is better.</em></p>
+</blockquote>
+<p><em>fev-bench 排行榜 37 个条目中，按 SQL 技能得分排名前十。分数越高越好。</em></p>
+<blockquote>
+<h2 id="family-of-models-optimised-for-every-specification">Family of models optimised for every specification</h2>
+</blockquote>
+<h2 id="针对各种规格优化的模型系列">针对各种规格优化的模型系列</h2>
+<blockquote>
+<p>Timestral has been optimised as a family of four models: 5M, 28M, 123M and 209M parameters. The larger models improve forecast performance, while the smaller ones are faster and cheaper. All four share the same architecture and training recipe. Every size sits on the Pareto front of accuracy versus model size: for each model size, no public model forecasts better.</p>
+</blockquote>
+<p>Timestral 被优化为四个参数规模的模型家族：5M、28M、123M 和 209M。 大参数模型能提升预测性能，而小参数模型则更快、更经济。这四个模型共享相同的架构和训练流程。 每个参数规模都位于精度与模型规模的帕累托前沿：对于每个模型规模，目前没有公开发布的模型能够超越其预测性能。</p>
+<iframe src="https://ml4-blog-widgets.netlify.app/pareto-benchmarks/?iframe" width="100%" height="700" title="Pareto Benchmarks Demo"></iframe>
+<blockquote>
+<p><em>Score vs model size on GIFT-Eval, TIME and fev-bench (shown as 1 − skill score). Lower is better. Our 28M model beats Chronos-2, about four times larger, on GIFT-Eval and TIME. Our 209M model beats TimesFM-3 and Falcon-2.0 with fewer parameters.</em></p>
+</blockquote>
+<p>在 GIFT-Eval、TIME 和 fev-bench 上的得分与模型大小对比（表示为 1 − skill score）。越低越好。我们的 28M 模型在 GIFT-Eval 和 TIME 上击败了约大四倍的 Chronos-2。我们的 209M 模型以更少的参数击败了 TimesFM-3 和 Falcon-2.0。</p>
+<blockquote>
+<p>Timestral does not need a GPU at inference. On a standard server CPU with 8 threads, forecasting one day ahead from three weeks of 15-minute history takes 10 ms with the 5M model and 140 ms with the 209M model. Smaller models trade some accuracy for speed: the 28M model is five times faster than the 209M model, and the 123M model comes within 0.2% of the 209M score at three quarters of its latency.</p>
+</blockquote>
+<p>Timestral 在推理时不需要 GPU。在具有 8 线程的标准服务器 CPU 上，基于三周 15 分钟历史预测未来一天，使用 5M 模型耗时 10 ms，使用 209M 模型耗时 140 ms。较小的模型以一定的准确性换取速度：28M 模型的速度是 209M 模型的五倍，而 123M 模型在延迟为 209M 模型四分之三的情况下，其得分与 209M 模型的得分相差仅 0.2%。</p>
+<blockquote>
+<h2 id="an-industrial-example">An industrial example</h2>
+</blockquote>
+<h2 id="一个工业案例">一个工业案例</h2>
+<blockquote>
+<p>Consider an industrial plant with thousands of sensors across its equipment. Timestral can improve the forecasts on that data in several ways.</p>
+</blockquote>
+<p>考虑一座在其设备上分布着数千个传感器的工业设备厂。 Timestral 可以在多种方式上改进对该数据的预测。</p>
+<iframe src="https://ml4-blog-widgets.netlify.app/timeseries-forecast/" title="Time Series Forecast Demo" width="100%" height="650"></iframe>
+<blockquote>
+<p><strong>Multivariate forecasting.</strong> A pump&rsquo;s vibration, temperature and pressure don&rsquo;t move independently. A rise in one often explains or causes a change in another. Timestral models related series jointly, so it can use those dependencies instead of forecasting each sensor in isolation.</p>
+</blockquote>
+<p>**多变量预测。**泵的振动、温度和压力并非独立变化。一个变量的上升往往能够解释或引发另一个变量的变化。Timestral 模型将相关序列联合建模，因此它可以利用这些依赖关系，而不是分别单独预测每个传感器。</p>
+<blockquote>
+<p><strong>Probabilistic forecasting.</strong> A single predicted value may not show the full picture. Timestral predicts a full set of quantiles, so teams can see how wide the uncertainty is, set alert thresholds that reflect it, and plan maintenance around risk rather than a single number.</p>
+</blockquote>
+<p><strong>概率预测</strong>。单个预测值可能无法完整呈现情况。Timestral 预测一组完整的分位数，使团队能够看到不确定性的范围，设定能够反映这种不确定性的警报阈值，围绕风险而非单一数值进行维护规划。</p>
+<blockquote>
+<p><strong>Categorical covariates.</strong> Some covariates take values from a set of categories rather than continuous numbers, such as the day of the week, or a machine&rsquo;s state (running, idle, under maintenance). Encoding these as numbers would impose an order or scale they don&rsquo;t have. Timestral takes them as categorical inputs directly to improve forecasts.</p>
+</blockquote>
+<p>分类协变量。某些协变量的值取自一组类别，而非连续数字，例如星期中的某天，或者机器的状态（运行、空闲、维护中）。将它们编码为数字会强加其并不具备的顺序或尺度。Timestral 直接将它们作为分类输入，以改善预测。</p>
+<blockquote>
+<p><strong>Known-future covariates.</strong> Some drivers of sensor behaviour are known in advance, such as production schedules, planned shutdowns, weather forecasts. Timestral can condition on them to improve forecast quality, so a scheduled load increase is expected rather than flagged as a surprise.</p>
+</blockquote>
+<p>Known-future covariates. 已知未来 covariates.</p>
+<p>一些导致传感器行为的因素事先已知，例如生产计划、计划关闭、天气预报。</p>
+<p>Timestral 可以基于它们来改进 forecast quality 预测质量，因此计划的负载增加是预期的，而不是被标记为惊喜。</p>
+<blockquote>
+<p><strong>From Model to System</strong></p>
+</blockquote>
+<p><strong>从模型到系统</strong></p>
+<blockquote>
+<p>Timestral is a numerical model that can run inside existing monitoring pipelines, or be paired with our language models in multi-modal agentic workflows.</p>
+</blockquote>
+<p>Timestral 是一种数值模型，既可以运行在现有的监控流水线中，也可以与我们的语言模型搭配，用于多模态 Agent 工作流。</p>
+<blockquote>
+<p>In the plant, that could look like this:</p>
+</blockquote>
+<p>在工厂中，这可能是这样的：</p>
+<blockquote>
+<ol>
+<li>Timestral running continuously on the plant&rsquo;s sensor streams, detecting anomalies as they occur.</li>
+<li>When it flags an anomaly on a pump, an agent embeds the signals and compares against embeddings of past sensor data to find similar historical failures.</li>
+<li>The agent then starts sub-agents to run a root cause analysis, drawing on context from that plant, such as maintenance records, shift logs and operator notes, equipment manuals, past work orders, and readings from related equipment.</li>
+<li>The agent drafts a suggested diagnosis based on the findings, with supporting evidence and possible next steps.</li>
+</ol>
+</blockquote>
+<ol>
+<li>Timestral 持续监控工厂传感器数据，实时检测异常情况。</li>
+<li>当它检测到泵出现异常时，智能代理会将信号嵌入，并与历史传感器数据的嵌入进行比对，查找类似的历史故障模式。</li>
+<li>然后，代理启动子代理，利用工厂的上下文信息（如维护记录、交班日志、操作员笔记、设备手册、历史工单及相关设备读数）进行根本原因分析。</li>
+<li>代理基于分析结果起草诊断建议，包括支持证据和可能的后续行动。</li>
+</ol>
+<blockquote>
+<p>The plant manager gets a diagnosis and a plan backed by the sensor data, rather than just an alert.</p>
+</blockquote>
+<p>工厂经理获得的是基于传感器数据的诊断和方案，而不仅仅是一则警报。</p>
+<blockquote>
+<h2 id="key-technical-contributions">Key technical contributions</h2>
+</blockquote>
+<h2 id="关键技术贡献">关键技术贡献</h2>
+<blockquote>
+<p>Several ideas have been combined to produce these results. Each will be described in detail in the technical report.</p>
+</blockquote>
+<p>多种思路的结合促成了这些成果。每一种都将在技术报告中进行详细说明。</p>
+<blockquote>
+<ol>
+<li><strong>Decoupled Horizon Forecasting.</strong> Causal decoders trained with contiguous patch masking, as in Toto 2.0 and TimesFM-3, mask out the values to be forecast, so they look like missing values and are also lost as context for later forecasts. Our approach, DHF, separates the two: the full history stays in the sequence, and learned forecast tokens read the history before them. Every observed value thus serves as both target and context, true gaps stay flagged as missing, and training horizon lengths and missing-data augmentation can be tuned independently of each other.</li>
+<li><strong>Covariate-aware attention.</strong> Each input series is assigned a role: target variate, past-only covariate or known-future covariate. Known-future covariates are visible across the whole window while targets stay causal, and information flows only from covariates to targets. Timestral can therefore use a holiday calendar or a weather forecast without leaking a target&rsquo;s own future into its forecast.</li>
+<li><strong>Synthetic-first data.</strong> The majority of the training data was synthetic. We first generated univariate processes with coherent temporal dynamics, including trends, seasonality and diverse noise patterns. We then used a multivariate synthesizer to construct multivariate series by introducing nonlinear dependencies between these processes.</li>
+<li><strong>Two-stage training.</strong> Timestral is first pre-trained at scale on purely synthetic data with context size 8192, then post-trained on a mix of real and synthetic data with a 4x longer context. The objective is a pinball loss over 21 quantiles, a discrete approximation of CRPS.
+<img loading="lazy" src="https://mistral.ai/_astro/01-timestral-overview_WcSY2.webp?dpl=6ad67bec1e6315ef32f09863"></li>
+</ol>
+</blockquote>
+<ol>
+<li>
+<p><strong>解耦预测视野（Decoupled Horizon Forecasting，DHF）。</strong> 采用连续补丁掩码训练的因果解码器（如 Toto 2.0 和 TimesFM-3）会掩盖待预测的值，使其看起来像缺失值，并导致这些值作为后续预测的上下文丢失。我们的方法 DHF 将两者分离：完整历史保留在序列中，学习到的预测 token 读取其之前的历史。因此每个观测值同时充当目标和上下文，真实间隙仍标记为缺失，且训练预测视野长度与缺失数据增强可相互独立调整。</p>
+</li>
+<li>
+<p><strong>协变量感知注意力。</strong> 每个输入序列被分配一个角色：目标变量、仅过去协变量或已知未来协变量。已知未来协变量在整个窗口可见，而目标保持因果性，且信息仅从协变量流向目标。因此 Timestral 可使用假日日历或天气预报，而不将目标自身的未来泄露到其预测中。</p>
+</li>
+<li>
+<p><strong>合成数据优先。</strong> 大部分训练数据为合成数据。我们首先生成具有连贯时间动态的单变量过程，包含趋势、季节性和多样的噪声模式。然后使用多变量合成器构建多变量序列，通过在这些过程间引入非线性依赖。</p>
+</li>
+<li>
+<p><strong>两阶段训练。</strong> Timestral 首先在纯合成数据上大规模预训练，上下文大小为 8192；然后在真实与合成数据的混合上进行后训练，上下文长度为 4 倍。目标是 21 个分位数上的 pinball loss，即 CRPS 的离散近似。</p>
+</li>
+</ol>
+<p><img loading="lazy" src="https://mistral.ai/_astro/01-timestral-overview_WcSY2.webp?dpl=6ad67bec1e6315ef32f09863"></p>
+<blockquote>
+<p>Today, we’re releasing Timestral, our first family of time-series foundation models. Our largest model, at just 209M parameters, ranks first on all three of the field&rsquo;s main public benchmarks, GIFT-Eval, TIME, and fev-bench, outperforming the previous state of the art with only two-thirds of the model parameters.</p>
+</blockquote>
+<p>今天，我们发布了 Timestral，这是我们首个时间序列基础模型家族。我们的最大模型仅有 209 亿参数，却在 GIFT-Eval、TIME 和 fev-bench 这三个领域的主要公开基准测试中排名第一，以更少的参数（仅为之前的两倍）就超越了之前最先进的技术。</p>
+<blockquote>
+<h2 id="a-model-that-can-be-adapted">A model that can be adapted</h2>
+</blockquote>
+<h2 id="可适应的模型">可适应的模型</h2>
+<blockquote>
+<p>Public benchmarks measure general performance, but production data can be significantly different in behavior and structure. It may also shift over time as markets change regime, equipment degrades and demand patterns move. The lasting value lies in being able to adapt a model to in-domain data and keep retraining it as the distribution moves.</p>
+</blockquote>
+<p>公开 benchmarks 衡量通用性能，但生产数据可能在行为和结构上显著不同。它也可能随时间转移，随着市场运行模式的变化，设备退化和需求模式的移动。持久的价值在于能够适配域内数据并持续重训练模型，随着分布的移动。</p>
+<blockquote>
+<p>For organisations that want to go further, Timestral is available through <a href="https://mistral.ai/products/forge/">Mistral Forge</a>, the same training pipeline we use for our language models. It supports:</p>
+</blockquote>
+<p>对于希望走得更远的组织，可以通过 <a href="https://mistral.ai/products/forge/">Mistral Forge</a> 获取 Timestral，这是我们用于语言模型的同一训练流水线。它支持：</p>
+<blockquote>
+<ul>
+<li><strong>Zero-shot inference</strong> out of the box.</li>
+<li><strong>Architectural extensions</strong>, such as domain-specific covariates.</li>
+<li><strong>Fine-tuning on proprietary data</strong>, specialising to a domain while preserving general performance.</li>
+<li><strong>Control over the training data</strong>, including adjusting the training mix, replaying pre-training data, and generating synthetic data samples to reflect the target domain. Full control over the data ensures that nothing we backtest was seen during pre-training.</li>
+</ul>
+</blockquote>
+<ul>
+<li><strong>Zero-shot 推理</strong> 即开即用。</li>
+<li><strong>Architectural extensions</strong>，例如领域特定的协变量。</li>
+<li><strong>Fine-tuning on proprietary data</strong>，在保持通用性能的同时，针对特定领域进行专业化。</li>
+<li><strong>Control over the training data</strong>，包括调整训练组合、重播预训练数据以及生成合成数据样本以反映目标领域。对数据的完全控制确保了我们回测的任何内容在预训练期间未被看到。</li>
+</ul>
+<blockquote>
+<p>The full pipeline can be deployed on our clients’ hardware, including air-gapped environments.</p>
+</blockquote>
+<p>全流程可以部署到客户的硬件上，包括离线环境。</p>
+<blockquote>
+<h2 id="whats-next">What’s next</h2>
+</blockquote>
+<h2 id="接下来是什么">接下来是什么</h2>
+<blockquote>
+<p>We have published a <a href="https://github.com/mistralai/timestral">GitHub repository</a> so you can run Timestral on your own data. A technical report with the full results will follow. For more specialised forecasting problems, or to collaborate on research, please reach out to us.</p>
+</blockquote>
+<p>我们已发布 <a href="https://github.com/mistralai/timestral">GitHub 仓库</a>，您可以在自己的数据上运行 Timestral。包含完整结果的技术报告将随后发布。如果您有更专业的预测问题，或希望在研究方面进行合作，请与我们联系。</p>
+<table><tbody><tr><th colspan="1" rowspan="1"><p>Timestral</p></th><th colspan="1" rowspan="1"></th></tr><tr><td colspan="1" rowspan="1"><p>Type</p></td><td colspan="1" rowspan="1"><p>Time-series foundation model (TSFM)</p></td></tr><tr><td colspan="1" rowspan="1"><p>Parameters</p></td><td colspan="1" rowspan="1"><p>5M, 28M, 123M and 209M</p></td></tr><tr><td colspan="1" rowspan="1"><p>Context length</p></td><td colspan="1" rowspan="1"><p>32,768 time steps</p></td></tr><tr><td colspan="1" rowspan="1"><p>Output</p></td><td colspan="1" rowspan="1"><p>Probabilistic forecasts, 21 quantiles</p></td></tr><tr><td colspan="1" rowspan="1"><p>Inputs</p></td><td colspan="1" rowspan="1"><p>Multivariate targets, past-only and known-future covariates</p></td></tr><tr><td colspan="1" rowspan="1"><p>Deployment</p></td><td colspan="1" rowspan="1"><p>On-prem, VPC or air-gapped</p></td></tr><tr><td colspan="1" rowspan="1"><p>Licence</p></td><td colspan="1" rowspan="1"><p>Modified MIT</p></td></tr></tbody></table>
+<p><img loading="lazy" src="https://mistral.ai/cms-media/api/media/file/timestral-icon-model.svg"></p>
+<blockquote>
+<p>Timestral</p>
+</blockquote>
+<p>Timestral</p>
+<blockquote>
+<p>Mistral&rsquo;s time-series foundation models. State-of-the-art probabilistic forecasts, 5M–209M params, runs on CPU.</p>
+</blockquote>
+<p>Mistral 的 time-series foundation models。
+最先进的 probabilistic forecasts，5M–209M 参数，可在 CPU 上运行。</p>
+<blockquote>
+<p>0%</p>
+</blockquote>
+<p>请提供需要翻译的英文原文。</p>
+]]></content:encoded></item><item><title>威廉·吉布森与“赛博空间”的商标化</title><link>https://BradleyZhang.github.io/DualHN/2026-10-20/01-william-gibson-and-the-trademarking-of-cyberspace/</link><pubDate>Tue, 20 Oct 2026 08:21:07 +0800</pubDate><guid>https://BradleyZhang.github.io/DualHN/2026-10-20/01-william-gibson-and-the-trademarking-of-cyberspace/</guid><description>&lt;p&gt;&lt;img alt="Photograph at Park Güell in Barcelona" loading="lazy" src="https://colo.to/pix/guell.jpg"&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Park Güell, Barcelona, 1990&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;古埃尔公园，巴塞罗那，1990 年&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;h2 id="the-cyberspace-rumor"&gt;The Cyberspace Rumor&lt;/h2&gt;
+&lt;/blockquote&gt;
+&lt;h1 id="网络空间传闻"&gt;网络空间传闻&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;From the first days of the web, people have repeated the story that Autodesk trademarked &amp;ldquo;cyberspace&amp;rdquo; and Gibson retaliated by trademarking &amp;ldquo;Eric Gullichsen&amp;rdquo;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;从网络早期以来，人们流传着 Autodesk 商标化了 &amp;ldquo;cyberspace&amp;rdquo;，并 Gibson 通过 商标化 &amp;ldquo;Eric Gullichsen&amp;rdquo; 进行报复的故事。&lt;/p&gt;</description><content:encoded><![CDATA[<p>from: <a href="https://colo.to/cyberspace.html">William Gibson and the trademarking of Cyberspace™</a></p><p><img alt="Photograph at Park Güell in Barcelona" loading="lazy" src="https://colo.to/pix/guell.jpg"></p>
+<blockquote>
+<p>Park Güell, Barcelona, 1990</p>
+</blockquote>
+<p>古埃尔公园，巴塞罗那，1990 年</p>
+<blockquote>
+<h2 id="the-cyberspace-rumor">The Cyberspace Rumor</h2>
+</blockquote>
+<h1 id="网络空间传闻">网络空间传闻</h1>
+<blockquote>
+<p>From the first days of the web, people have repeated the story that Autodesk trademarked &ldquo;cyberspace&rdquo; and Gibson retaliated by trademarking &ldquo;Eric Gullichsen&rdquo;.</p>
+</blockquote>
+<p>从网络早期以来，人们流传着 Autodesk 商标化了 &ldquo;cyberspace&rdquo;，并 Gibson 通过 商标化 &ldquo;Eric Gullichsen&rdquo; 进行报复的故事。</p>
+<blockquote>
+<h2 id="autodesk-cyberspace">Autodesk Cyberspace</h2>
+</blockquote>
+<h2 id="autodesk-网络空间">Autodesk 网络空间</h2>
+<blockquote>
+<p>In 1989, I was working at the Autodesk Research Lab on early virtual reality, a project started after we visited Scott Fisher at NASA Ames. Our nascent system was a 386 with a pair of Matrox graphics cards on the ISA bus, a VPL EyePhone, a Polhemus tracker, and a data glove. It ran at six to ten frames per second on models with a few hundred polygons. Sluggish, but marginally enough to get us <a href="https://www.fourmilab.ch/autofile/www/chapter2_69.html">Through the Looking Glass</a>.</p>
+</blockquote>
+<p>1989年，我在 Autodesl Research Lab 参与早期虚拟现实项目。这项项目始于我们拜访了 NASA Ames 的 Scott Fisher 之后。我们的初始系统是一台 386 计算机，配备了两个通过 ISA 总线连接的 Matrox 图形卡、一台 VPL EyePhone、一个 Polhemus 跟踪器和一个数据手套。它在含有几百个多边形的模型上运行，帧率为 6 到 10 帧。虽然运行缓慢，但足以让我们走过<a href="https://www.fourmilab.ch/autofile/www/chapter2_69.html">Looking Glass</a>。</p>
+<blockquote>
+<p>Our motto was “Reality Isn’t Enough Any More”.</p>
+</blockquote>
+<p>我们的座右铭是：&ldquo;现实已不再足够&rdquo;。</p>
+<blockquote>
+<h2 id="timothy-leary">Timothy Leary</h2>
+</blockquote>
+<h2 id="蒂莫西利里">蒂莫西·利里</h2>
+<blockquote>
+<p>I was also spending a lot of time hanging out with Timothy Leary, whose suggestion was responsible for my quitting my job at <a href="https://en.wikipedia.org/wiki/Microelectronics_and_Computer_Technology_Corporation">MCC</a> and moving to California. I’d met him at the Hackers 2.0 conference in 1986 and gave him a ride to the San Jose airport. We became fast friends, and I did quite a lot of writing with him, most of which remains unpublished. But that’s a story for later. Timothy, who appears in a samizdat <a href="https://archive.org/details/Timothy_Leary_Archives_005.dv">Autodesk virtual reality video</a>, nicknamed our VR lab “Cyberia”.</p>
+</blockquote>
+<p>我也花了很多时间和蒂莫西·莱利一起闲逛，正是他的建议促使我辞去了在 <a href="https://en.wikipedia.org/wiki/Microelectronics_and_Computer_Technology_Corporation">MCC</a> 的工作并搬到了加利福尼亚。我在1986年的 Hackers 2.0 大会上遇见了他，并顺便送他去了圣何塞机场。我们很快成为了好朋友，我和他一起写了很多东西，其中大部分仍未发表。但那是以后的故事。蒂莫西，他在一份自出版的 <a href="https://archive.org/details/Timothy_Leary_Archives_005.dv">Autodesk virtual reality video</a> 中出现，给我们的 VR 实验室起了个绰号叫 “Cyberia”。</p>
+<blockquote>
+<p>Timothy was a tremendous fan of Gibson, and considered his seminal 1984 novel <em>Neuromancer</em> extremely prescient about the impending digital revolution.</p>
+</blockquote>
+<p>蒂莫西是吉芬（Gibson）的一位狂热粉丝，并认为他的1984年开创性小说《Neuromancer》对即将到来的数字革命</p>
+<blockquote>
+<p>As our VR developments crept slowly towards becoming a product, we at Autodesk applied to register a trademark “cyberspace”. Timothy informed me Gibson was plenty miffed about this, so I wrote him what I felt was a conciliatory letter,<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> though ending snarkily by quoting his own words, “The street finds its own use for things.”</p>
+</blockquote>
+<p>随着我们的 VR 开发逐渐趋向成品，Autodesk 我们申请注册了商标“cyberspace”。Timothy 告诉我 Gibson 对此很不去，于是我写给他的一封安抚信<sup id="fnref1:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>，虽然结尾却用他自己的话说道：“The street finds its own use for things.”（街头总会给东西找个人用。）</p>
+<blockquote>
+<p>In reply, Gibson had his lawyers send Autodesk a letter<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>. Which I recall we ignored.</p>
+</blockquote>
+<p>作为回应，吉布森让他的律师向 Autodesk<sup id="fnref1:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> 发送了一封信函。我记得我们当时忽略了。</p>
+<blockquote>
+<p>Timothy - ever the incorrigible prankster - circulated the rumor that Gibson was attempting to trademark “Eric Gullichsen” in retaliation. Then Barlow, for reasons of his own, <a href="https://w2.eff.org/Misc/Publications/John_Perry_Barlow/HTML/being_in_nothingness.html?utm_source=chatgpt.com">embellished that rumor</a>. Later amplified by <a href="https://www.rudyrucker.com/transrealbooks/collectedessays/#:~:text=%E2%80%9D%20William%20Gibson%20was%20rather,some%20demos%20for%20Autodesk%20Cyberspace">Rudy Rucker</a>.</p>
+</blockquote>
+<p>蒂莫西这个不折不扣的恶作剧者，散布谣言说吉布森试图将“埃里克·古利森”注册为商标，以报复某人。随后，巴洛出于自己的原因，对这个谣言进行了夸大。鲁迪·鲁克后来又进一步扩大了这个传言。 <a href="https://w2.eff.org/Misc/Publications/John_Perry_Barlow/HTML/being_in_nothingness.html?utm_source=chatgpt.com">来源1</a> <a href="https://www.rudyrucker.com/transrealbooks/collectedessays/#:~:text=%E2%80%9D%20William%20Gibson%20was%20rather,some%20demos%20for%20Autodesk%20Cyberspace">来源2</a>。</p>
+<blockquote>
+<h2 id="art-futura-1990">Art Futura 1990</h2>
+</blockquote>
+<h2 id="艺术未来-1990">艺术未来 1990</h2>
+<blockquote>
+<p>About a year later - after I&rsquo;d already left Autodesk for my VR startup, Sense8 Corporation - we were invited to the inaugural Art Futura 1990 in Barcelona. And there, in the lobby of some swank hotel, I met Gibson. He opined in a laconic drawl that although the street finds its own use for things <em>“Autodesk is not the street”</em>.</p>
+</blockquote>
+<p>大约一年后——在我已经离开Autodesk创办VR创业公司之后——我们被邀请参加巴塞罗那首届Art Futura 1990艺术展。在一家高档酒店的大堂里，我遇到了Gibson。他用简洁的语调说道：“虽然街头会为事物找到自己的用途，但‘Autodesk is not the street’。”</p>
+<blockquote>
+<p>There was plenty of cava consumed in the small hours before the time Barcelonans sit down to eat endless rounds of tapas. As I recall, after all the many Art Futura parties we&rsquo;d put the matter behind us, or close enough.</p>
+</blockquote>
+<p>凌晨时分，有人已经喝了不少香槟啤酒，但到了巴塞罗那人们坐下来吃无尽的小吃摆 times 之前，我记得在所有那多艺未来派派对之后，我们把这个问题暂时搁置了，或至少是差不多吧。</p>
+<blockquote>
+<p>And there was a memorable visit to Gaudi’s Park Güell, whose giant lizard of crazy-quilt ceramic appears in <em>Count Zero</em>.</p>
+</blockquote>
+<p>并且有一次难忘的参观 Gaudi’s Park Güell，其巨大的 crazy-quilt ceramic 蜥蜴出现在 <em>Count Zero</em>。</p>
+<blockquote>
+<p>So: Autodesk did <a href="https://uspto.report/TM/73816876">apply to register</a> Cyberspace, and Gibson really did object. But Gibson trying to trademark Eric Gullichsen was Timothy Leary&rsquo;s prank, propagated until it became accepted history.</p>
+</blockquote>
+<p>所以：Autodesk <a href="https://uspto.report/TM/73816876">apply to register</a> Cyberspace，并 Gibson 真的提出了异议。但 Gibson 企图为 Eric Gullichsen 商标的行为是 Timothy Leary 的恶作剧，被传播直到成为被接受的历史。</p>
+<blockquote>
+</blockquote>
+<blockquote>
+</blockquote>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p><a href="https://colo.to/togibson.pdf">Letter to William Gibson.</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p><a href="https://colo.to/lawyerletter.pdf">Lawyer letter.</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+]]></content:encoded></item></channel></rss>
