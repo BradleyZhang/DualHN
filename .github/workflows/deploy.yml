@@ -5,8 +5,8 @@ on:
     branches: [main]
   workflow_dispatch:
   workflow_run:
-    workflows:["fetch and translate"]
-    types:[completed]
+    workflows: ["fetch and translate"]
+    types: [completed]
 
 permissions:
   contents: write
