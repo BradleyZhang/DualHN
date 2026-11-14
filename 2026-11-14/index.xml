@@ -1,0 +1,1376 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>2026-11-14 on DualHN</title><link>https://BradleyZhang.github.io/DualHN/2026-11-14/</link><description>Recent content in 2026-11-14 on DualHN</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Sat, 14 Nov 2026 10:01:14 +0800</lastBuildDate><atom:link href="https://BradleyZhang.github.io/DualHN/2026-11-14/index.xml" rel="self" type="application/rss+xml"/><item><title>Edge0-145B：在您自己的电脑上进行前沿人工智能能力</title><link>https://BradleyZhang.github.io/DualHN/2026-11-14/05-edge0-145b-frontier-ai-capabilities-on-your-own-computer/</link><pubDate>Sat, 14 Nov 2026 10:01:14 +0800</pubDate><guid>https://BradleyZhang.github.io/DualHN/2026-11-14/05-edge0-145b-frontier-ai-capabilities-on-your-own-computer/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;Today, we&amp;rsquo;re open-sourcing &lt;strong&gt;Edge0-145B and Edge0-120B&lt;/strong&gt;, together with our unified inference framework and deployment tools. Edge0-145B is the world&amp;rsquo;s first open-source on-device AI model with 145 billion parameters. It brings coding, reasoning, and agent capabilities that rival frontier cloud models to your own computer.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;今天，我们开源发布了 &lt;strong&gt;Edge0-145B and Edge0-120B&lt;/strong&gt;，并发布了我们的统一推理框架和部署工具。 Edge0-145B 是世界上第一个开源的端侧 AI 模型，拥有 145 billion 参数。它将把能够与最前沿的云端模型相媲美的编码、推理和智能体能力，带到你的电脑上。&lt;/p&gt;</description><content:encoded><![CDATA[<p>from: <a href="https://edge0.ai/blog/introducing-edge0-145b-frontier-ai-capabilities-on-your-own-computer">145B: Open-Source On-Device AI with 145B Parameters</a></p><blockquote>
+<p>Today, we&rsquo;re open-sourcing <strong>Edge0-145B and Edge0-120B</strong>, together with our unified inference framework and deployment tools. Edge0-145B is the world&rsquo;s first open-source on-device AI model with 145 billion parameters. It brings coding, reasoning, and agent capabilities that rival frontier cloud models to your own computer.</p>
+</blockquote>
+<p>今天，我们开源发布了 <strong>Edge0-145B and Edge0-120B</strong>，并发布了我们的统一推理框架和部署工具。 Edge0-145B 是世界上第一个开源的端侧 AI 模型，拥有 145 billion 参数。它将把能够与最前沿的云端模型相媲美的编码、推理和智能体能力，带到你的电脑上。</p>
+<blockquote>
+<p>On-device AI has long forced a tradeoff between model capability and what the hardware can run. Larger models demand more memory, bandwidth, and power; smaller models can struggle with complex work. Moving that work to the cloud adds model-provider fees, data-handling constraints, and a dependence on connectivity.</p>
+</blockquote>
+<p>端侧 AI 长期以来迫使模型能力与硬件可运行内容之间进行权衡。更大的模型需要更多内存、带宽和功耗；更小的模型在处理复杂任务时可能会遇到困难。将这些工作迁移到云端会带来模型提供商费用、数据处理约束以及对网络连接的依赖。</p>
+<blockquote>
+<p>This release addresses those constraints in four ways:</p>
+</blockquote>
+<p>此版本以四种方式解决了这些限制：</p>
+<blockquote>
+<table>
+	<thead>
+			<tr>
+					<th><strong>The constraint</strong></th>
+					<th><strong>What Edge0-145B makes possible</strong></th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Large models are difficult to run on personal hardware.</td>
+					<td>A 145B model runs locally on a compatible laptop, with reported peak memory of 29GB and decoding above 80 tokens/s.</td>
+			</tr>
+			<tr>
+					<td>Small on-device models can fall short on demanding tasks.</td>
+					<td>Coding, reasoning, and instruction-following results are competitive with specific frontier cloud models, as the comparisons below show.</td>
+			</tr>
+			<tr>
+					<td>A useful assistant needs to finish work, not just answer questions.</td>
+					<td>The model plans, writes and runs code, debugs errors, and checks results visually for projects such as 3D scenes, games, hardware programs, and PCB designs.</td>
+			</tr>
+			<tr>
+					<td>Cloud workflows bring recurring fees, sensitive-data restrictions, and network dependence.</td>
+					<td>Local inference incurs no corresponding cloud-model token or API fees; data can stay on the computer, and core capabilities keep working offline. Hardware and electricity still cost money.</td>
+			</tr>
+	</tbody>
+</table>
+</blockquote>
+<table>
+	<thead>
+			<tr>
+					<th><strong>The constraint</strong></th>
+					<th><strong>What Edge0-145B makes possible</strong></th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>大型模型在个人硬件上运行困难。</td>
+					<td>一个 145B 规模的模型可以在兼容笔记本电脑上本地运行，报告峰值内存为 29 GB，并解码速度超过 80 token/秒。</td>
+			</tr>
+			<tr>
+					<td>小型设备端模型可能在苛刻任务上表现不佳。</td>
+					<td>编码、推理和指令遵循的结果与特定前沿云端模型相当，如下比较所示。</td>
+			</tr>
+			<tr>
+					<td>一个有用的助手需要完成工作，而不仅仅是回答问题。</td>
+					<td>该模型规划、编写并运行代码、调试错误，并对项目如 3D 场景、游戏、硬件程序和 PCB 设计进行视觉检查。</td>
+			</tr>
+			<tr>
+					<td>云工作流会带来重复费用、敏感数据限制以及网络依赖。</td>
+					<td>本地推理没有对应的云模型令牌或 API 费用；数据可以留在计算机上，核心能力仍能离线运行。硬件和电力仍然需要付费。</td>
+			</tr>
+	</tbody>
+</table>
+<blockquote>
+<p>We&rsquo;re releasing the full stack so developers can reproduce the results, evaluate or fine-tune the models, and integrate them into their own products.</p>
+</blockquote>
+<p>我们正在发布完整的全栈技术，以便开发者能够复现这些结果、评估或微调（fine-tune）这些模型，并将它们集成到自己的产品中。</p>
+<blockquote>
+<p>Get the <a href="https://huggingface.co/Edge0">model weights</a>, explore the <a href="https://github.com/Edge0-AI/Edge0">inference framework</a>, or try the <a href="https://github.com/Edge0-AI/Edge0/releases/tag/v0.2.0">Edge0 App</a>.</p>
+</blockquote>
+<p>获取<a href="https://huggingface.co/Edge0">模型权重</a>，探索<a href="https://github.com/Edge0-AI/Edge0">推理框架</a>，或试用 <a href="https://github.com/Edge0-AI/Edge0/releases/tag/v0.2.0">Edge0 App</a>。</p>
+<blockquote>
+<h2 id="how-we-make-100b-parameter-ai-run-on-a-personal-computer">How We Make 100B+ Parameter AI Run on a Personal Computer</h2>
+</blockquote>
+<h2 id="如何让-100b-参数-ai-在个人电脑上运行">如何让 100B+ 参数 AI 在个人电脑上运行</h2>
+<blockquote>
+<h3 id="edge0-145b-laptop-performance-memory-speed-and-power">Edge0-145B Laptop Performance: Memory, Speed, and Power</h3>
+</blockquote>
+<h3 id="edge0-145b-笔记本性能内存速度与功耗">Edge0-145B 笔记本性能：内存、速度与功耗</h3>
+<blockquote>
+<p>Edge0-145B makes a 145-billion-parameter model usable on a personal laptop. A useful local model has to fit in memory, process prompts promptly, generate fast enough to use, and keep power consumption under control. It also needs to sustain longer tasks.</p>
+</blockquote>
+<p>Edge0-145B 使一个 1450 亿参数的模型能够在个人笔记本上使用。一个实用的本地模型必须能够装入内存、及时处理提示词、生成速度快到足以使用，并将功耗控制在合理范围内。它还需要能够持续处理较长的任务。</p>
+<blockquote>
+<table>
+	<thead>
+			<tr>
+					<th>Requirement</th>
+					<th>Reported Edge0-145B result</th>
+					<th>What it enables</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Memory</td>
+					<td><strong>29GB peak memory</strong></td>
+					<td>Runs on a compatible personal laptop, such as a MacBook Pro, without a server.</td>
+			</tr>
+			<tr>
+					<td>Prompt processing</td>
+					<td><strong>1,100+ tokens/s prefill</strong></td>
+					<td>Processes long prompts, including dozens of pages of code, before generation begins.</td>
+			</tr>
+			<tr>
+					<td>Generation</td>
+					<td><strong>80+ tokens/s decode</strong></td>
+					<td>Generates faster than a person reads.</td>
+			</tr>
+			<tr>
+					<td>Power</td>
+					<td><strong>Approximately 120W typical power</strong></td>
+					<td>Sustains operation without throttling in the reported setup.</td>
+			</tr>
+			<tr>
+					<td>Long tasks</td>
+					<td><strong>128K–256K context</strong></td>
+					<td>Maintains essentially the same speed on long inputs, supporting extended work.</td>
+			</tr>
+	</tbody>
+</table>
+</blockquote>
+<table>
+	<thead>
+			<tr>
+					<th>需求</th>
+					<th>报告的 Edge0-145B 结果</th>
+					<th>能够实现的功能</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>内存</td>
+					<td><strong>29GB 峰值内存</strong></td>
+					<td>可在兼容的个人笔记本电脑（如 MacBook Pro）上运行，无需服务器。</td>
+			</tr>
+			<tr>
+					<td>Prompt 处理</td>
+					<td><strong>1,100+ tokens/s 预填充</strong></td>
+					<td>在生成开始前处理长 prompt，包括数十页代码。</td>
+			</tr>
+			<tr>
+					<td>生成</td>
+					<td><strong>80+ tokens/s 解码</strong></td>
+					<td>生成速度快于人的阅读速度。</td>
+			</tr>
+			<tr>
+					<td>功耗</td>
+					<td><strong>典型功耗约 120W</strong></td>
+					<td>在报告的配置下可持续运行而不会降频。</td>
+			</tr>
+			<tr>
+					<td>长任务</td>
+					<td><strong>128K–256K 上下文</strong></td>
+					<td>在长输入上保持基本相同的速度，支持扩展工作。</td>
+			</tr>
+	</tbody>
+</table>
+<blockquote>
+<p>Our earlier Edge0-35B phone release reported peak memory below 2.5GB. On an iPhone 18 Pro Max, Edge0-35B delivers 37+ tokens/s using approximately 2.5GB of memory. Edge0-145B has roughly four times as many parameters; its laptop comparison reports 80+ tokens/s and 28GB peak memory. These measurements apply to different models and hardware.</p>
+</blockquote>
+<p>我们此前的 Edge0-35B 手机端发布报告称峰值内存低于 2.5GB。在 iPhone 18 Pro Max 上，Edge0-35B 使用约 2.5GB 内存可实现 37+ tokens/s 的速度。Edge0-145B 的参数量约为其四倍；其笔记本电脑对比测试报告为 80+ tokens/s 和 28GB 峰值内存。这些测量结果适用于不同的模型和硬件。</p>
+<p><img alt="Image" loading="lazy" src="https://cdn.hashnode.com/uploads/gql/6aea03219fa4aa99923b5acf/aeeae022-73c9-4d31-847a-d495a5af3200.png"></p>
+<blockquote>
+<p><em>On-device model scale over time. The chart covers 67 open models of at least 1B parameters from 14 labs, intended for phones, laptops, and AI PCs. Same-size base, instruct, and reasoning variants count once; each line tracks a lab&rsquo;s largest model, including releases before July 2025. Filled points mark new highs and hollow points other releases. The scale is logarithmic below 40B and linear above it. Apple is excluded because its weights are not released. Sources: vendor announcements and model cards.</em></p>
+</blockquote>
+<p><em>端侧模型规模随时间的变化。该图表涵盖来自 14 家实验室的 67 个开放模型，参数规模至少为 1B，适用于手机、笔记本电脑和 AI PC。同尺寸的 base、instruct 和 reasoning 变体仅计一次；每条曲线追踪该实验室规模最大的模型，包括 2025 年 7 月之前的发布。实心点标记新纪录，空心点标记其他发布。纵轴在 40B 以下采用对数刻度，以上采用线性刻度。Apple 因未发布权重而被排除在外。来源：厂商公告和模型卡。</em></p>
+<blockquote>
+<h3 id="why-on-device-models-have-stayed-small">Why On-Device Models Have Stayed Small</h3>
+</blockquote>
+<h3 id="为什么端侧模型规模一直较小">为什么端侧模型规模一直较小</h3>
+<blockquote>
+<p>Memory limits kept most on-device models below 10B parameters before September 2026. Apple Intelligence&rsquo;s on-device foundation model had approximately 3B parameters, while Google&rsquo;s Gemini Nano came in 1.8B and 3.25B versions. Even a 7B model could consume approximately 4GB of memory.</p>
+</blockquote>
+<p>在 2026 年 9 月之前，内存限制使大多数端侧模型的参数量保持在 10B 以下。Apple Intelligence 的端侧基础模型约有 3B 参数，而 Google 的 Gemini Nano 则有 1.8B 和 3.25B 两个版本。即使是 7B 模型也可能消耗约 4GB 内存。</p>
+<blockquote>
+<p>Larger models faced a memory wall. Model weights occupy storage and must be read during generation, competing for limited memory and bandwidth with the operating system and other apps. Even an aggressively compressed 35B model could need approximately 20GB of memory, far more than a phone could make available.</p>
+</blockquote>
+<p>更大的模型面临着内存墙的限制。模型权重占用存储空间，且在生成过程中必须被读取，这导致它们与操作系统及其他应用程序争夺有限的内存和带宽。即使是经过激进压缩的 35B 模型，也可能需要约 20GB 内存，远超手机所能提供的水平。</p>
+<blockquote>
+<p>Compute, bandwidth, and power created competing constraints. Larger models offered more capability, but strained memory capacity, generation speed, and battery life. Making models smaller helped them fit, often at the cost of capability.</p>
+</blockquote>
+<p>算力、带宽和功耗构成了相互竞争的约束。更大的模型提供了更多能力，但内存容量、生成速度和电池寿命都难以兼顾。减小模型尺寸有助于其适配，但通常以牺牲能力为代价。</p>
+<blockquote>
+<p>Privacy alone could not close that gap. Apple Intelligence protected user data, but Apple acknowledged that its on-device model was not designed for agentic applications requiring general world knowledge. The prevailing assumption was that on-device intelligence could not match the cloud.</p>
+</blockquote>
+<p>仅靠隐私无法弥合这一差距。Apple Intelligence 保护了用户数据，但 Apple 承认，其端侧模型并非为需要通用世界知识的 agentic 应用而设计。主流假设是，端侧智能无法与云端匹敌。</p>
+<blockquote>
+<h3 id="under-the-hood-of-edge0-four-layers-of-model-and-inference-design">Under the Hood of Edge0: Four Layers of Model and Inference Design</h3>
+</blockquote>
+<h3 id="edge0-底层揭秘四层模型与推理设计">Edge0 底层揭秘：四层模型与推理设计</h3>
+<blockquote>
+<p>We designed Edge0-145B and its inference engine together to reduce the memory and data movement that make large models difficult to run locally. The design spans architecture, training, loading, and scheduling.</p>
+</blockquote>
+<p>我们将 Edge0-145B 与其推理引擎进行协同设计，以减少阻碍大模型在本地运行的内存占用和数据搬运。该设计涵盖架构、训练、加载和调度。</p>
+<blockquote>
+<p><strong>Architecture: share large matrices across sparse experts.</strong> Sharing matrices substantially reduces the weights that must be stored and moved while keeping the expert count unchanged. Each group of 64 experts shares two large matrices, while each expert retains a small set of parameters that captures its differences. Previously, every expert stored a complete set of matrices. Of the model&rsquo;s 145B total parameters, only approximately 10B participate in computation on each inference step.</p>
+</blockquote>
+<p><strong>架构：跨稀疏专家共享大矩阵。</strong> 通过共享矩阵，可以显著减少存储和传输的权重数量，同时保持专家数量不变。每组 64 个专家共享两个大矩阵，而每个专家则保留一套小型参数，用于捕捉其自身特征。此前，每个专家都需要存储完整的一套矩阵。在模型的 1450亿个总参数中，每次推理时只有约 100 亿个参数参与计算。</p>
+<blockquote>
+<p><strong>Training: build for local execution from day one.</strong> We train the model in its on-device architecture from the outset, with deployment constraints built into its design. This avoids treating local deployment as a compression or pruning step after training a cloud model.</p>
+</blockquote>
+<p><strong>训练：从第一天起就为本地执行而构建。</strong> 我们从一开始就在其端侧架构中训练模型，并将部署约束内置于设计中。这避免了在训练云端模型之后，将本地部署视为压缩或剪枝步骤。</p>
+<blockquote>
+<p><strong>Loading: pipeline GPU memory, system memory, and SSD access.</strong> Reading and computation overlap across three storage tiers, avoiding serial waits. Frequently used “hot experts” remain in GPU memory. An expert library of approximately 40GB sits in system memory, with experts brought into GPU memory as needed. Approximately 48GB of vocabulary data resides on the SSD and is read on demand.</p>
+</blockquote>
+<p>**加载：在 GPU 内存、system memory 与 SSD 之间进行管道化访问。 读取与计算在三个存储层之间并行， 避免串行等待。 常用 “hot experts” 仍然留在 GPU 内存。 一个 约 40GB 的 专家库 位于 system memory 中，随需求将专家加载到 GPU 内存。 大约 48GB 的 词汇数据 位于 SSD 上，按需读取。</p>
+<blockquote>
+<p><strong>Scheduling: use the CPU and GPU together.</strong> The GPU computes cached experts while the CPU handles the remaining work in parallel. Speculative decoding verifies multiple candidate tokens at once, spreading the cost of reading weights across more output tokens. These choices support the reported 80+ tokens/s decode rate.</p>
+</blockquote>
+<p><strong>调度：同时使用 CPU 和 GPU。</strong> GPU 计算缓存专家，而 CPU 并行处理其余工作。投机解码同时验证多个候选 token，将读取权重的成本分摊到更多输出 token 上。这些选择支持了报告的 80+ tokens/s 解码速率。</p>
+<p><img alt="Image" loading="lazy" src="https://cdn.hashnode.com/uploads/gql/6aea03219fa4aa99923b5acf/ad8efc79-2b69-42a0-8ed2-cf582b7c0b58.png"></p>
+<blockquote>
+<p><em>Model and inference-engine design work together to make 100B+ parameter inference practical on personal computers. Source: internal testing.</em></p>
+</blockquote>
+<p><em>模型和推理引擎设计协同工作，使 100B+ 参数推理在个人电脑上可行。来源：内部测试。</em></p>
+<blockquote>
+<p>Together, these changes let parameter counts grow from tens of billions to more than a hundred billion without proportional increases in memory use, power consumption, and latency.</p>
+</blockquote>
+<p>这些改进共同作用，使参数规模从数百亿增长到一千亿以上，而内存占用、功耗和延迟并不会随之成比例地增加。</p>
+<blockquote>
+<h2 id="what-edge0-can-do-anything-from-chat-to-complex-work-on-your-computer">What Edge0 Can Do: Anything From Chat to Complex Work on Your Computer</h2>
+</blockquote>
+<h2 id="edge0-能做什么从聊天到在你的电脑上进行复杂工作">Edge0 能做什么：从聊天到在你的电脑上进行复杂工作</h2>
+<blockquote>
+<p>Edge0-145B can carry a complex task through to a usable result. Its coding and reasoning capabilities support local workflows that combine planning, tool use, execution, debugging, and visual checks. The benchmarks establish its capabilities; the demonstrations show how it puts them to work.</p>
+</blockquote>
+<p>Edge0-145B 能够将复杂的任务执行到可用的结果。其编码和推理能力支持本地工作流，该工作流整合了规划、工具使用、执行、调试和视觉检查等环节。基准测试证明了它的能力，而演示则展示了它如何将这些能力应用到实际场景中。</p>
+<blockquote>
+<h3 id="coding-and-reasoning-that-rival-frontier-cloud-models">Coding and reasoning that rival frontier cloud models</h3>
+</blockquote>
+<h3 id="媲美前沿云模型的编码与推理">媲美前沿云模型的编码与推理</h3>
+<blockquote>
+<p>Edge0-145B is competitive with specific frontier cloud models across coding, reasoning, knowledge, and instruction following:</p>
+</blockquote>
+<p>Edge0-145B 在编程、推理、知识和指令遵循方面与特定的前沿云模型具有竞争力：</p>
+<blockquote>
+<ul>
+<li><strong>Coding:</strong> It scores <strong>64.6 on DeepSWE 1.1</strong>, ahead of Qwen3.8-Flash-Next at 58.7 and DeepSeek-V4-Flash-0731 at 54.4.</li>
+<li><strong>Reasoning and knowledge:</strong> It scores <strong>90.4 on GPQA-Diamond</strong>, close to DeepSeek-V4-Flash-0731 at 90.8 and Claude-Opus-4.6 \(Max\) at 91.3.</li>
+<li><strong>Instruction following:</strong> It scores <strong>80.6 on IFBench</strong>, ahead of DeepSeek-V4-Flash-0731 at 79.2 and Claude-Opus-4.6 \(Max\) at 62.5.</li>
+</ul>
+</blockquote>
+<ul>
+<li><strong>编码能力：</strong> 得分 <strong>64.6 on DeepSWE 1.1</strong>，领先于得分 58.7 的 Qwen3.8-Flash-Next 和得分 54.4 的 DeepSeek-V4-Flash-0731。</li>
+<li><strong>推理与知识：</strong> 得分 <strong>90.4 on GPQA-Diamond</strong>，接近得分 90.8 的 DeepSeek-V4-Flash-0731 和得分 91.3 的 Claude-Opus-4.6 (Max)。</li>
+<li><strong>指令遵循：</strong> 得分 <strong>80.6 on IFBench</strong>，领先于得分 79.2 的 DeepSeek-V4-Flash-0731 和得分 62.5 的 Claude-Opus-4.6 (Max)。</li>
+</ul>
+<blockquote>
+<p>Its <strong>86.52 on Terminal-Bench 2.1</strong> also exceeds Qwen3.8-Flash-Next&rsquo;s 83.3, DeepSeek-V4-Flash-0731&rsquo;s 82.7, and Claude&rsquo;s 78.2. On AA-LCR, Edge0-145B scores 79.3 to Claude&rsquo;s 78.0. These comparisons apply to the named models and evaluations.</p>
+</blockquote>
+<p>其在Terminal-Bench 2.1上的得分高达86.52，不但超过了Qwen3.8-Flash-Next的83.3、DeepSeek-V4-Flash-0731的82.7，也超越了Claude的78.2。在AA-LCR评估中，Edge0-145B的得分为79.3，而Claude为78.0。这些比较结果适用于上述提到的模型及其对应评估项。</p>
+<blockquote>
+<table>
+	<thead>
+			<tr>
+					<th>Model</th>
+					<th>DeepSWE 1.1</th>
+					<th>Terminal-Bench 2.1</th>
+					<th>HLE</th>
+					<th>GPQA-Diamond</th>
+					<th>IFBench</th>
+					<th>AA-LCR</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><strong>Edge0-145B</strong></td>
+					<td><strong>64.6</strong></td>
+					<td><strong>86.52</strong></td>
+					<td><strong>35.4</strong></td>
+					<td><strong>90.4</strong></td>
+					<td><strong>80.6</strong></td>
+					<td><strong>79.3</strong></td>
+			</tr>
+			<tr>
+					<td>Edge0-120B</td>
+					<td>53.6</td>
+					<td>81.3</td>
+					<td>31.0</td>
+					<td>87.4</td>
+					<td>79.3</td>
+					<td>81.0</td>
+			</tr>
+			<tr>
+					<td>Qwen3.8-Flash-Next</td>
+					<td>58.7</td>
+					<td>83.3</td>
+					<td>35.9</td>
+					<td>91.7</td>
+					<td>81.3</td>
+					<td>79.1</td>
+			</tr>
+			<tr>
+					<td>Qwen3.8-27B</td>
+					<td>42.2</td>
+					<td>73.0</td>
+					<td>30.8</td>
+					<td>89.2</td>
+					<td>79.5</td>
+					<td>82.0</td>
+			</tr>
+			<tr>
+					<td>DeepSeek-V4-Flash-0731</td>
+					<td>54.4</td>
+					<td>82.7</td>
+					<td>33.8</td>
+					<td>90.8</td>
+					<td>79.2</td>
+					<td>79.7</td>
+			</tr>
+			<tr>
+					<td>Flint 40B</td>
+					<td>—</td>
+					<td>54.9</td>
+					<td>—</td>
+					<td>—</td>
+					<td>89.2</td>
+					<td>—</td>
+			</tr>
+			<tr>
+					<td>Muse Glimmer</td>
+					<td>—</td>
+					<td>51.7</td>
+					<td>22.0</td>
+					<td>83.5</td>
+					<td>77.0</td>
+					<td>83.3</td>
+			</tr>
+			<tr>
+					<td>Gemma 4</td>
+					<td>—</td>
+					<td>43.4</td>
+					<td>22.7</td>
+					<td>85.7</td>
+					<td>76.0</td>
+					<td>62.0</td>
+			</tr>
+			<tr>
+					<td>Claude-Opus-4.6 \(Max\)</td>
+					<td>—</td>
+					<td>78.2</td>
+					<td>40.0</td>
+					<td>91.3</td>
+					<td>62.5</td>
+					<td>78.0</td>
+			</tr>
+	</tbody>
+</table>
+</blockquote>
+<table>
+	<thead>
+			<tr>
+					<th>模型</th>
+					<th>DeepSWE 1.1</th>
+					<th>Terminal-Bench 2.1</th>
+					<th>HLE</th>
+					<th>GPQA-Diamond</th>
+					<th>IFBench</th>
+					<th>AA-LCR</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><strong>Edge0-145B</strong></td>
+					<td><strong>64.6</strong></td>
+					<td><strong>86.52</strong></td>
+					<td><strong>35.4</strong></td>
+					<td><strong>90.4</strong></td>
+					<td><strong>80.6</strong></td>
+					<td><strong>79.3</strong></td>
+			</tr>
+			<tr>
+					<td>Edge0-120B</td>
+					<td>53.6</td>
+					<td>81.3</td>
+					<td>31.0</td>
+					<td>87.4</td>
+					<td>79.3</td>
+					<td>81.0</td>
+			</tr>
+			<tr>
+					<td>Qwen3.8-Flash-Next</td>
+					<td>58.7</td>
+					<td>83.3</td>
+					<td>35.9</td>
+					<td>91.7</td>
+					<td>81.3</td>
+					<td>79.1</td>
+			</tr>
+			<tr>
+					<td>Qwen3.8-27B</td>
+					<td>42.2</td>
+					<td>73.0</td>
+					<td>30.8</td>
+					<td>89.2</td>
+					<td>79.5</td>
+					<td>82.0</td>
+			</tr>
+			<tr>
+					<td>DeepSeek-V4-Flash-0731</td>
+					<td>54.4</td>
+					<td>82.7</td>
+					<td>33.8</td>
+					<td>90.8</td>
+					<td>79.2</td>
+					<td>79.7</td>
+			</tr>
+			<tr>
+					<td>Flint 40B</td>
+					<td>—</td>
+					<td>54.9</td>
+					<td>—</td>
+					<td>—</td>
+					<td>89.2</td>
+					<td>—</td>
+			</tr>
+			<tr>
+					<td>Muse Glimmer</td>
+					<td>—</td>
+					<td>51.7</td>
+					<td>22.0</td>
+					<td>83.5</td>
+					<td>77.0</td>
+					<td>83.3</td>
+			</tr>
+			<tr>
+					<td>Gemma 4</td>
+					<td>—</td>
+					<td>43.4</td>
+					<td>22.7</td>
+					<td>85.7</td>
+					<td>76.0</td>
+					<td>62.0</td>
+			</tr>
+			<tr>
+					<td>Claude-Opus-4.6 (Max)</td>
+					<td>—</td>
+					<td>78.2</td>
+					<td>40.0</td>
+					<td>91.3</td>
+					<td>62.5</td>
+					<td>78.0</td>
+			</tr>
+	</tbody>
+</table>
+<blockquote>
+<p><em>Scores are percentages; higher is better. A dash means no public score is available, rather than a score of zero.</em></p>
+</blockquote>
+<p><em>分数是按百分比表示，数值越高越好。</em> 短横线表示没有公开评分，而不是零分。</p>
+<blockquote>
+<p>Edge0, Qwen, DeepSeek, and Claude results come from Edge0&rsquo;s internal evaluations. Claude-Opus-4.6 has no public DeepSWE 1.1 score. For Flint, Muse Glimmer, and Gemma 4, Terminal-Bench 2.1 and IFBench results come from the Recursive Flint evaluation; HLE, GPQA, and AA-LCR results come from Artificial Analysis.</p>
+</blockquote>
+<p>Edge0、Qwen、DeepSeek 和 Claude 的结果均来自 Edge0 的内部评估。其中，Claude-Opus-4.6 没有公开的 DeepSWE 1.1 评分。对于 Flint、Muse Glimmer 和 Gemma 4 模型，Terminal-Bench 2.1 和 IFBench 的评估结果来自 Recursive Flint 评测，而 HLE、GPQA 和 AA-LCR 的结果则来自 Artificial Analysis。</p>
+<blockquote>
+<p>The largest gains over Qwen3.8-27B, a mainstream on-device model baseline, are in agent and coding work: <strong>18.5% on Terminal-Bench and 53.1% on DeepSWE</strong>. The relative gains on HLE, GPQA, and IFBench are 14.9%, 1.3%, and 1.4%, respectively.</p>
+</blockquote>
+<p>与主流端侧模型基线 Qwen3.8-27B 相比，在 Agent 和编码任务上增益最大：<strong>Terminal-Bench 提升 18.5%，DeepSWE 提升 53.1%</strong>。在 HLE、GPQA 和 IFBench 上的相对增益分别为 14.9%、1.3% 和 1.4%。</p>
+<blockquote>
+<p>DeepSWE 1.1 and Terminal-Bench 2.1 evaluate agent and coding work. HLE, GPQA-Diamond, and IFBench cover reasoning, knowledge, and instruction following. The complete evaluation setup, hardware environment, and reproduction instructions are being released with our technical report.</p>
+</blockquote>
+<p>DeepSWE 1.1 和 Terminal-Bench 2.1 用于评估 Agent 与编码工作。HLE、GPQA-Diamond 和 IFBench 分别涵盖推理、知识和指令遵循能力。完整的评估设置、硬件环境及复现说明将随技术报告一同发布。</p>
+<p><img alt="Image" loading="lazy" src="https://cdn.hashnode.com/uploads/gql/6aea03219fa4aa99923b5acf/6eef0e15-dc4b-4e23-ac01-3ab5daf5287e.png"></p>
+<blockquote>
+<h3 id="competitive-capability-with-a-smaller-memory-footprint">Competitive capability with a smaller memory footprint</h3>
+</blockquote>
+<p>以更小的内存占用实现竞争性能力</p>
+<blockquote>
+<p>Edge0-145B combines a <strong>72.8 mean score across six benchmarks with 29GB measured peak memory</strong>. Qwen3.8-Flash-Next averages 71.7, with an estimated 70GB footprint for standard 4-bit deployment. That puts Edge0-145B at about 40% of the estimated baseline memory while delivering comparable or higher capability, enabling local use on a 48GB laptop.</p>
+</blockquote>
+<p>Edge0-145B 结合了 <strong>72.8 平均分在六个基准上与 29GB 测量的峰值内存</strong>。Qwen3.8-Flash-Next 平均 71.7，估计标准 4-bit 部署时占用 70GB 的足迹。这使得 Edge0-145B 的估计基线内存约为 40%，同时提供可比或更高的性能，从而允许在 48GB 笔记本电脑上本地使用。</p>
+<blockquote>
+<table>
+	<thead>
+			<tr>
+					<th>Model</th>
+					<th>Mean across six benchmarks</th>
+					<th>Memory footprint \(measured or estimated\)</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><strong>Edge0-145B</strong></td>
+					<td><strong>72.8</strong></td>
+					<td><strong>29GB</strong></td>
+			</tr>
+			<tr>
+					<td>Edge0-120B</td>
+					<td>68.9</td>
+					<td>29GB</td>
+			</tr>
+			<tr>
+					<td>Qwen3.8-27B</td>
+					<td>66.1</td>
+					<td>Approximately 18GB*</td>
+			</tr>
+			<tr>
+					<td>Qwen3.8-Flash-Next</td>
+					<td>71.7</td>
+					<td>Approximately 70GB*</td>
+			</tr>
+			<tr>
+					<td>DeepSeek-V4-Flash-0731</td>
+					<td>70.1</td>
+					<td>Approximately 87GB*</td>
+			</tr>
+	</tbody>
+</table>
+</blockquote>
+<table>
+	<thead>
+			<tr>
+					<th>模型</th>
+					<th>六项基准测试的平均得分</th>
+					<th>内存占用（测量或估算）</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><strong>Edge0-145B</strong></td>
+					<td><strong>72. sebagai8</strong></td>
+					<td><strong>29GB</strong></td>
+			</tr>
+			<tr>
+					<td>Edge0-120B</td>
+					<td>68.9</td>
+					<td>29GB</td>
+			</tr>
+			<tr>
+					<td>Qwen3.8-27B</td>
+					<td>66.1</td>
+					<td>大约 18GB*</td>
+			</tr>
+			<tr>
+					<td>Qwen3.8-Flash-Next</td>
+					<td>71.7</td>
+					<td>大约 70GB*</td>
+			</tr>
+			<tr>
+					<td>DeepSeek-V4-Flash-0731</td>
+					<td>70.1</td>
+					<td>大约 87GB*</td>
+			</tr>
+	</tbody>
+</table>
+<blockquote>
+<p>The means cover DeepSWE 1.1, Terminal-Bench 2.1, HLE, GPQA-Diamond, IFBench, and AA-LCR. Edge0 memory figures are measured internal peaks. Asterisked baseline figures are estimates for standard 4-bit deployment and remain to be measured. Claude is excluded because it is cloud-only and has no DeepSWE score.</p>
+</blockquote>
+<p>涵盖 DeepSWE 1.1、Terminal-Bench 2.1、HLE、GPQA-Diamond、IFBench 和 AA-LCR。Edge0 内存峰值为内部峰值测量。带星号的基准值是标准 4-bit 部署的估计值，仍待测量。Claude 被排除，因为它是 cloud-only 且无 DeepSWE score 。</p>
+<p><img alt="Image" loading="lazy" src="https://cdn.hashnode.com/uploads/gql/6aea03219fa4aa99923b5acf/72bc6257-5a9e-4eca-b73c-e4b9c274bf81.png"></p>
+<blockquote>
+<p>[Figure: Quality versus peak memory, with 48GB laptop and 64GB workstation capacities marked. Lower memory and higher scores are better; the chart&rsquo;s vertical axis does not start at zero.]</p>
+</blockquote>
+<p>[图：质量与峰值内存对比，标注了 48GB 笔记本和 64GB 工作站的容量。内存越低、分数越高越好；图表纵坐标非零起始。]</p>
+<blockquote>
+<h3 id="local-agents-that-plan-code-run-and-check-their-work">Local agents that plan, code, run, and check their work</h3>
+</blockquote>
+<h3 id="本地-agents-可以规划编码运行并检查其工作">本地 agents 可以规划、编码、运行并检查其工作</h3>
+<blockquote>
+<p>A single natural-language request can start an entire local workflow. Edge0-145B breaks down the requirements, plans the steps, writes code, and calls tools to run it. When something fails, it debugs and repairs the code. It then takes screenshots to inspect the result and keeps iterating until the work is complete.</p>
+</blockquote>
+<p>一个自然语言请求可以启动整个本地工作流。Edge0-145B 解析需求，规划步骤，编写代码并调用工具运行。当某事失败时，它调试并修复代码。随后它拍摄截图以检查结果，并不断迭代直到工作完成。</p>
+<blockquote>
+<p>These projects often take dozens of rounds of planning, execution, and review. Local inference means those additional conversations, code revisions, and visual analyses incur no corresponding cloud-model token or API charges. Code and data can stay on the computer, and core model capabilities work offline.</p>
+</blockquote>
+<p>这些项目通常需要数十轮的规划、执行和审查。本地推理意味着额外的对话、代码修订和视觉分析不会产生相应的云模型 token 或 API 收费。代码和数据可以留在计算机上，核心模型能力在离线工作。</p>
+<blockquote>
+<h3 id="video-production-generating-teslas-roadster-explainer-within-an-hour">Video production: generating Tesla&rsquo;s Roadster explainer within an hour</h3>
+</blockquote>
+<h3 id="视频制作-在一小时内生成特斯拉-roadster-说明视频">视频制作： 在一小时内生成特斯拉 Roadster 说明视频</h3>
+<blockquote>
+<p>Edge0-145B produced an explainer about how Roadster could fly, handling technical research, scriptwriting, asset generation, and editing. We asked it to make the principles understandable to a general audience. The model ran locally without cloud-model calls or cloud token consumption, avoiding network round trips for inference.</p>
+</blockquote>
+<p>Edge0-145B 生成了一份关于 Roadster 如何飞行的说明书，涵盖了技术研究、脚本编写、资产生成和编辑。我们请其让这些原理对普通受众都能理解。该模型在本地运行，无云模型调用或云 Token 消耗，避免了推理过程中的网络往返。</p>
+<blockquote>
+<p>The video was generated within an hour. Producing comparable work manually would have taken a director and scriptwriter, a 3D modeler, an editor, and a physics expert a month. An AI video workflow could previously cost more than hundreds of dollars; local inference eliminates the corresponding cloud-model token and API fees.</p>
+</blockquote>
+<p>视频在一小时内生成。手动制作相当的作品需要导演、编剧、3D模型师、编辑和物理专家一个月。AI video workflow 以前可能花费数百美元；local inference 消除了相应的 cloud-model token 和 API 费用。</p>
+<p><img loading="lazy" src="https://www.youtube.com/watch?v=TefX0rfGNkk"></p>
+<blockquote>
+<h3 id="3d-modeling-a-manhattan-city-scene-in-blender">3D modeling: a Manhattan city scene in Blender</h3>
+</blockquote>
+<h3 id="3d-建模blender-中的曼哈顿城市场景">3D 建模：Blender 中的曼哈顿城市场景</h3>
+<blockquote>
+<p>Edge0-145B built a 3D scene of Manhattan within an hour. Working in Blender from text and reference images, it constructed the scene, adjusted materials and lighting, and iterated on the rendered output.</p>
+</blockquote>
+<p>Edge0-145B 在一个小时内构建了曼哈顿的3D场景。它在 Blender 中，从文本和参考图片开始构建场景，调整了材质和光照，并对渲染输出进行迭代。</p>
+<blockquote>
+<p>The workflow brings visual inspection, code generation, and revision together inside Blender. The model works with objects, spatial relationships, and the creative goal, going beyond the pixels in a reference image. It inspects the result, writes code, and makes changes without handing those steps back to a person. The entire process stays local.</p>
+</blockquote>
+<p>工作流将视觉检查、代码生成和修订在 Blender 中整合在一起。该模型可处理物体、空间关系和创意目标，超越参考图像中的像素。它检查结果，编写代码，并进行修改，而不会将这些步骤交还给人。整个流程保持在本地。</p>
+<blockquote>
+<p>Creating a Manhattan-scale city scene manually would typically cost approximately <strong>$12,000-18,000</strong> and take at least a month. A leading cloud model would still incur more than $150 in cloud token charges. Edge0-145B completes the local inference without those cloud-model token fees.</p>
+</blockquote>
+<p>手动创建一个曼哈顿规模的城市场景通常需要约 <strong>$12,000-18,000</strong> 的成本，且至少耗时一个月。即使是领先的云端模型，也会产生超过 $150 的云端 Token 费用。而 Edge0-145B 通过本地推理即可完成，无需支付这些云端模型的 Token 费用。</p>
+<p><img loading="lazy" src="https://www.youtube.com/watch?v=YR9KeFT1p68"></p>
+<blockquote>
+<h3 id="game-development-playable-games-and-a-medieval-city">Game development: playable games and a medieval city</h3>
+</blockquote>
+<p>游戏开发：可玩的游戏与一座中世纪城市</p>
+<blockquote>
+<p>Edge0-145B can create playable games locally. We also used its 3D modeling capabilities to build an original medieval capital for a fantasy RPG and render a <strong>20-second fly-through</strong> at game-trailer quality.</p>
+</blockquote>
+<p>Edge0-145B 可以在本地创建可玩游戏。我们也利用了它的 3D 建模能力，为一款奇幻 RPG 构建了一个原创的中世纪首都，并渲染了一段 <strong>20 秒的</strong> 穿越镜头，其质量达到了游戏宣传片级别。</p>
+<blockquote>
+<p>The model planned the city independently and built it from scratch in Blender: city walls, more than a thousand old-town homes, a plaza fountain, a Gothic twin-tower facade, a rib-vaulted nave, and stained-glass windows.</p>
+</blockquote>
+<p>该模型独立规划了城市，并从零在 Blender 中构建了它：城墙、一千多户旧城屋家、广场喷泉、哥特式双塔立面、肋拱中殿和彩色玻璃窗。</p>
+<blockquote>
+<p>The fixed camera path made errors visible. Geometry clipping, occlusion, or incorrect proportions would appear along the route, so the model inspected the renders and corrected its work as it built. The workflow ran entirely locally.</p>
+</blockquote>
+<p>固定的相机路径让错误得以暴露。几何穿插、遮挡或比例错误会沿路径逐一显现，因此模型会边构建边检查渲染结果，并随时修正自己的工作。整个工作流完全在本地运行。</p>
+<blockquote>
+<p>A leading cloud model required hundreds of tool calls and hundreds of millions of tokens for a single completion, using the same prompt, reference images, and camera route. Edge0-145B delivered it on a laptop without cloud-model token or API fees for local inference. An art team would typically spend weeks and thousands of dollars producing a city scene to this standard.</p>
+</blockquote>
+<p>一个领先的云模型在相同 prompt、参考图像和相机路径下，单次补全需要数百次工具调用和数亿 tokens。Edge0-145B 在笔记本上即可完成本地推理，且无需支付云模型的 token 或 API 费用。美术团队通常需要花费数周时间和数千美元，才能制作出达到这一水准的城市场景。</p>
+<p><img loading="lazy" src="https://www.youtube.com/watch?v=6Rfuh7lBiqY"></p>
+<blockquote>
+<h3 id="hardware-control-code-that-flies-a-real-drone">Hardware control: code that flies a real drone</h3>
+</blockquote>
+<h3 id="硬件控制让真实无人机飞行的代码">硬件控制：让真实无人机飞行的代码</h3>
+<blockquote>
+<p>Edge0-145B wrote the program for a real drone from one instruction: “Write a drone program that navigates through obstacles and finds a red backpack.”</p>
+</blockquote>
+<p>Edge0-145B 仅凭一句“编写一个能够避开障碍物并寻找红色背包的无人机程序”，就为真实无人机编写了程序。</p>
+<blockquote>
+<p>It generated the flight-control and visual-recognition programs locally. The drone then took off indoors, navigated through a dense row of obstacle poles, searched autonomously, and located the red backpack beside a wall. The task required no human-written code and no cloud call.</p>
+</blockquote>
+<p>它在本地生成了飞行控制和视觉识别程序。随后，无人机在室内起飞，穿过一排密集的障碍杆，自主搜索，并在墙边找到了红色背包。该任务无需人工编写代码，也不需要云端调用。</p>
+<blockquote>
+<p>Hardware developers can describe the behavior they want and have the model turn it into a program for a real device, without moving repeatedly between an editor, documentation, and debugging tools.</p>
+</blockquote>
+<p>硬件开发者可以描述他们想要的行为，让模型生成用于实际设备的程序，无需在编辑器、文档和调试工具之间反复切换。</p>
+<blockquote>
+<h3 id="pcb-design-from-kicad-layout-to-an-assembly-animation">PCB design: from KiCad layout to an assembly animation</h3>
+</blockquote>
+<h3 id="pcb-设计从-kicad-布局到装配动画">PCB 设计：从 KiCad 布局到装配动画</h3>
+<blockquote>
+<p>Edge0-145B took a PCB design from component placement through an assembly visualization. We asked it to design a board for itself. It started from scratch in KiCad, placed components, routed a two-layer board, and imported the design into Unreal Engine 5. It then set up cameras and lighting and rendered an animation of PCB fabrication and assembly.</p>
+</blockquote>
+<p>Edge0-145B 完成了一个从元件布局到装配可视化的完整 PCB 设计任务。我们要求它为自己设计一块电路板，它从零开始使用 KiCad 进行设计，包括元件布局和双层板布线，然后将设计导入到 Unreal Engine 5 中。它设置了相机和灯光，并渲染出了一段 PCB 制造和装配的动画。</p>
+<blockquote>
+<p>A single computer delivered work that previously required a hardware engineer and a 3D designer to hand tasks back and forth over several days. Schematics and board layouts can stay on the team&rsquo;s own hardware, supporting trade-secret protection and data-handling requirements without uploading the designs to a cloud model.</p>
+</blockquote>
+<p>一台计算机交付了以往需要硬件工程师和3D 设计师来回传递任务数天的工作。Schematics and board layouts 可以保留在团队自己的 hardware 上，supporting trade-secret protection and data-handling requirements 无需将 designs 上传至 cloud model.</p>
+<blockquote>
+<h2 id="why-edge0-a-full-stack-for-on-device-ai">Why Edge0: A Full Stack for On-Device AI</h2>
+</blockquote>
+<p>##为什么选择 Edge0：面向端侧 AI 的全栈解决方案</p>
+<blockquote>
+<p>Useful on-device AI requires model development, inference engineering, and hardware adaptation to work together. Our progress rests on three capabilities: developing complementary models quickly, optimizing the full stack, and carrying lessons from each deployment into the next.</p>
+</blockquote>
+<p>实用的端侧 AI 需要模型开发、推理工程和硬件适配协同配合。我们的进展建立在三项能力之上：快速开发互补模型、优化全栈，以及将每次部署的经验延续到下一次部署。</p>
+<blockquote>
+<p>Our September release of Edge0-35B showed what that approach could deliver on a phone. Its launch post passed 1.2 million views on its first day without paid promotion in overseas communities. Researchers and technical experts at OpenAI, NVIDIA, Qualcomm, and other companies shared it, and the model reached No. 1 on Hugging Face&rsquo;s overall Trending chart.</p>
+</blockquote>
+<p>我们于 9 月发布的 Edge0-35B 展示了该方法在手机端所能实现的效果。其发布帖在海外社区未进行付费推广的情况下，首日浏览量便突破了 120 万。OpenAI、NVIDIA、Qualcomm 等公司的研究人员和技术专家分享了它，该模型也登上了 Hugging Face 综合 Trending 榜单的第一名。</p>
+<blockquote>
+<p>We released the model weights and unified inference framework together, giving companies and researchers a standard approach they could reproduce. The release helped move the discussion of on-device AI from a few billion parameters to the 35B tier.</p>
+</blockquote>
+<p>我们同时发布了模型权重和统一的推理框架，为企业和研究人员提供了一个可复现的标准方案。此次发布推动端侧 AI 的讨论从数十亿参数级别迈向了 35B 级别。</p>
+<blockquote>
+<h3 id="four-model-families-for-on-device-ai">Four Model Families for On-Device AI</h3>
+</blockquote>
+<h3 id="面向设备端-ai-的四大模型家族">面向设备端 AI 的四大模型家族</h3>
+<blockquote>
+<p>Over the past year, we released 200 models across four families. Each handles a different part of the work, from listening and speaking to fast decisions, memory, and complex agent tasks.</p>
+</blockquote>
+<p>过去一年，我们发布了 200 个模型，涵盖四个系列。每个模型各自负责不同的工作部分，从听觉和语音到快速决策、记忆，再到复杂的 Agent 任务。</p>
+<blockquote>
+<table>
+	<thead>
+			<tr>
+					<th>Model family</th>
+					<th>Role</th>
+					<th>Models and capabilities</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><strong>Edge0</strong></td>
+					<td>Complex agent tasks and vibe coding</td>
+					<td>145B and 120B models for laptops; 35B and 8B models for phones. The laptop models support vibe coding, while the phone models support agent tasks.</td>
+			</tr>
+			<tr>
+					<td><strong>Audio8</strong></td>
+					<td>Listening and speaking</td>
+					<td>ASR-Infinite and 3B, 0.6B, and 0.1B ASR models for speech recognition; 0.6B and 0.1B TTS models for speech synthesis; and a 0.1B Chat model for end-to-end voice interaction.</td>
+			</tr>
+			<tr>
+					<td><strong>Decision0</strong></td>
+					<td>Fast decisions</td>
+					<td>0.6B and 3B models covering text, speech, and vision, with multimodal decisions in approximately 40 milliseconds.</td>
+			</tr>
+			<tr>
+					<td><strong>Embedding0</strong></td>
+					<td>Memory</td>
+					<td>A 0.6B multimodal embedding model for text, speech, images, video, and files, supporting local long-term memory and retrieval-augmented generation \(RAG\).</td>
+			</tr>
+	</tbody>
+</table>
+</blockquote>
+<table>
+	<thead>
+			<tr>
+					<th>模型系列</th>
+					<th>角色</th>
+					<th>模型与能力</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><strong>Edge0</strong></td>
+					<td>复杂 Agent 任务与 vibe coding</td>
+					<td>面向笔记本电脑的 145B 和 120B 模型；面向手机的 35B 和 8B 模型。笔记本电脑模型支持 vibe coding，手机模型支持 Agent 任务。</td>
+			</tr>
+			<tr>
+					<td><strong>Audio8</strong></td>
+					<td>听与说</td>
+					<td>用于语音识别的 ASR-Infinite 及 3B、0.6B 和 0.1B ASR 模型；用于语音合成的 0.6B 和 0.1B TTS 模型；以及用于端到端语音交互的 0.1B Chat 模型。</td>
+			</tr>
+			<tr>
+					<td><strong>Decision0</strong></td>
+					<td>快速决策</td>
+					<td>覆盖文本、语音和视觉的 0.6B 和 3B 模型，可在约 40 毫秒内完成多模态决策。</td>
+			</tr>
+			<tr>
+					<td><strong>Embedding0</strong></td>
+					<td>记忆</td>
+					<td>一个 0.6B 多模态 Embedding 模型，适用于文本、语音、图像、视频和文件，支持本地长期记忆和检索增强生成（RAG）。</td>
+			</tr>
+	</tbody>
+</table>
+<p><img alt="Image" loading="lazy" src="https://cdn.hashnode.com/uploads/gql/6aea03219fa4aa99923b5acf/ad51cd8b-07a0-4b4c-9267-c0c33f2d9698.png"></p>
+<blockquote>
+<p>The portfolio spans tens of millions to more than a hundred billion parameters. Both Edge0 and Audio8 have reached No. 1 on Hugging Face&rsquo;s Trending chart.</p>
+</blockquote>
+<p>该产品线覆盖从数千万到超过千亿参数的模型。Edge0 和 Audio8 均登上 Hugging Face Trending 榜单榜首。</p>
+<blockquote>
+<h3 id="models-and-inference-systems-designed-together">Models and Inference Systems Designed Together</h3>
+</blockquote>
+<h3 id="模型与推理系统的协同设计">模型与推理系统的协同设计</h3>
+<blockquote>
+<p>We develop the model and the inference framework together, building hardware constraints into training and optimizing the engine for different chips. This connects model capability with the software and hardware needed to use it locally.</p>
+</blockquote>
+<p>我们协同开发模型和推理框架，将硬件约束融入训练过程，并针对不同芯片优化引擎。这连接了模型能力与本地使用所需的软硬件。</p>
+<blockquote>
+<p>That work requires expertise in model development, inference frameworks, and low-level hardware adaptation. The combination is difficult for a company focused only on model development to reproduce.</p>
+</blockquote>
+<p>该工作需要在 model development、inference frameworks 和 low-level hardware adaptation 方面具备专业知识，对于只专注于 model development 的公司来说，复制此组合难度很大。</p>
+<blockquote>
+<h3 id="hardware-optimizations-that-carry-into-each-deployment">Hardware Optimizations That Carry into Each Deployment</h3>
+</blockquote>
+<h3 id="硬件优化贯穿每个部署">硬件优化贯穿每个部署</h3>
+<blockquote>
+<p>Each deployment gives us reusable optimizations for the next chip, model, or product. This matters because on-device hardware is fragmented: NPU architectures differ, as does support for numerical formats such as INT4, INT8, and FP4. A general-purpose model cannot automatically make full use of every chip.</p>
+</blockquote>
+<p>每次部署都能为我们下一个芯片、模型或产品提供可重用的优化。这很重要，因为芯片硬件是碎片化的：NPU架构各不相同，对INT4、INT8和FP4等数值格式的支持也有所不同。一个通用模型无法自动充分利用每一种芯片。</p>
+<blockquote>
+<p>We adapt to individual platforms. Our portfolio now covers 95% of mainstream chip platforms, including Qualcomm, BES, Rockchip, Allwinner, D-Robotics, and NVIDIA, across headphones, glasses, phones, PCs, and robots. This is portfolio-wide coverage; model requirements vary, and it does not mean every device can run Edge0-145B.</p>
+</blockquote>
+<p>我们会针对各个平台进行适配。我们的产品组合现已覆盖 95% 的主流芯片平台，包括 Qualcomm、BES、Rockchip、Allwinner、D-Robotics 和 NVIDIA，涵盖耳机、眼镜、手机、PC 和机器人。这是产品组合层面的覆盖；模型要求各不相同，并不意味着每台设备都能运行 Edge0-145B。</p>
+<blockquote>
+<p>That deployment work now spans more than 5 million production devices. Our open-source models passed 15 million downloads within three months. By October 2026, we had more than 110,000 customer organizations.</p>
+</blockquote>
+<p>该部署工作现在覆盖了超过 5 million 台生产设备。我们的开源模型在三个月内下载量突破 15 million。截至 2026 年 10 月，我们服务了超过 110,000 家客户组织。</p>
+<blockquote>
+<p>The portfolio figures come from company papers and internal testing. They describe the broader Edge0 portfolio; the 145B performance results in this article apply specifically to Edge0-145B.</p>
+</blockquote>
+<p>这些数据来自公司文档和内部测试。它们描述了更广泛的 Edge0 ；本文中的 145B 性能结果专门适用于 Edge0-145B 。</p>
+<blockquote>
+<p>For Edge0-145B, day-one support covers macOS, Windows, and Linux, including Apple M-series chips and NVIDIA platforms such as RTX Spark, RTX 4090, and RTX 5090. The release includes one-click deployment tools and hardware guides.</p>
+</blockquote>
+<p>对于 Edge0-145B，首发即支持 macOS、Windows 和 Linux，涵盖 Apple M 系列芯片以及 NVIDIA 平台（如 RTX Spark、RTX 4090 和 RTX 5090）。该版本包含一键部署工具和硬件指南。</p>
+<blockquote>
+<h2 id="the-future-of-on-device-ai-and-the-cloud">The Future of On-Device AI and the Cloud</h2>
+</blockquote>
+<h2 id="端侧-ai-与云的未来">端侧 AI 与云的未来</h2>
+<blockquote>
+<p>More complex work can stay on the device as local models approach cloud-level capability. Privacy, cost control, and offline access have long favored local execution; the remaining question was whether an on-device model could do the work. Edge0-145B expands the range of tasks for which it can.</p>
+</blockquote>
+<p>随着本地模型的能力接近云端级，更复杂的工作也可以留在设备端执行。隐私、成本控制和离线访问长期以来一直有利于本地执行；剩下的问题是设备端模型是否能胜任这些任务。 Edge0-145B 扩展了其可处理的任务范围。</p>
+<blockquote>
+<h3 id="why-more-ai-work-can-stay-local">Why More AI Work Can Stay Local</h3>
+</blockquote>
+<h3 id="为何更多-ai-工作可在本地完成">为何更多 AI 工作可在本地完成</h3>
+<blockquote>
+<p>Local execution addresses four practical obstacles to adopting cloud-only AI:</p>
+</blockquote>
+<p>本地执行 解决 采用 cloud-only AI 的四个实际障碍:</p>
+<blockquote>
+<ul>
+<li><strong>Control cloud-model costs.</strong> Local inference adds no corresponding cloud-model token or API fees as usage grows.</li>
+<li><strong>Keep sensitive data local.</strong> Code, documents, and business records can stay on the hardware, giving teams control over data handling.</li>
+<li><strong>Sustain a responsive experience.</strong> Model and inference-engine design address response speed, power use, system responsiveness, and continuous operation together.</li>
+<li><strong>Keep core capabilities available offline.</strong> Local tasks continue when connectivity drops; features that depend on online information or services still need a connection.</li>
+</ul>
+</blockquote>
+<ul>
+<li><strong>控制云模型成本。</strong> 随着使用量增长，本地推理不会产生相应的云模型 token 或 API 费用。</li>
+<li><strong>保持敏感数据在本地。</strong> 代码、文档和业务记录可以保留在硬件上，让团队能够掌控数据处理方式。</li>
+<li><strong>保持灵敏的响应体验。</strong> 模型与推理引擎的设计需要同时兼顾响应速度、功耗、系统响应能力以及持续运行。</li>
+<li><strong>保持核心功能离线可用。</strong> 网络中断时本地任务仍可继续；依赖在线信息或服务的功能仍需要网络连接。</li>
+</ul>
+<blockquote>
+<h3 id="from-cloud-first-to-more-complex-work-on-device">From Cloud First to More Complex Work On-Device</h3>
+</blockquote>
+<h3 id="从云端优先到更复杂的设备端任务">从云端优先到更复杂的设备端任务</h3>
+<blockquote>
+<p>We see the division of work between devices and the cloud shifting through three stages.</p>
+</blockquote>
+<p>我们看到，设备与云端之间的分工在三个阶段中发生转移。</p>
+<blockquote>
+<p><strong>Before September 2026: cloud first, with on-device support.</strong> Apple Intelligence reflected this stage: it protected privacy, but handled a limited range of tasks locally while more demanding work relied on cloud capabilities.</p>
+</blockquote>
+<p><strong>在 September 2026: cloud first, with on-device support.</strong> Apple Intelligence reflected this stage: it protected privacy, but handled a limited range of tasks locally while more demanding work relied on cloud capabilities.</p>
+<blockquote>
+<p><strong>After Edge0-35B&rsquo;s September 10 release: everyday tasks locally, complex tasks in the cloud.</strong> Local models could take on frequent requests that needed immediate responses. For one leading headphone manufacturer, our hybrid solution now handles 92% of AI usage on-device and 8% in the cloud. Everyday conversation accounts for most use cases on consumer wearables.</p>
+</blockquote>
+<p><strong>Edge0-35B 于 9 月 10 日发布后：日常任务本地处理，复杂任务云端处理。</strong> 本地模型能够处理需要即时响应的高频请求。对于一家知名耳机制造商，我们的混合解决方案已将 92% 的 AI 使用量转移到设备端，仅 8% 在云端处理。日常对话占消费类可穿戴设备应用场景的大部分。</p>
+<blockquote>
+<p><strong>With Edge0-145B: toward on-device first, with cloud support.</strong> Vibe coding and other complex tasks can now run on a personal computer, giving teams more scope to choose local execution. This extends the range of work that can stay on the device while preserving the cloud for tasks and hardware that need it.</p>
+</blockquote>
+<p><strong>With Edge0-145B: 面向设备优先，辅以云端支持。</strong> Vibe coding 和其他复杂任务现在可以在个人电脑上运行，让团队在选择本地执行方面有更多空间。这扩大了可以留在设备端的工作范围，同时保留云端以供需要它的任务和硬件使用。</p>
+<p><img alt="Image" loading="lazy" src="https://cdn.hashnode.com/uploads/gql/6aea03219fa4aa99923b5acf/e20c5a72-6ca4-4c8e-b96a-bf89393b7eda.png"></p>
+<blockquote>
+<p><em>The diagram shows the shift from cloud-first AI to everyday local tasks and then more complex local work. Its colored areas are schematic, not measured usage shares.</em></p>
+</blockquote>
+<p>该图展示了从云端优先的 AI 到日常本地任务，再到更复杂的本地工作的转变。其彩色区域仅为示意图，并非实测的使用份额。</p>
+<blockquote>
+<h3 id="where-cloud-ai-still-fits">Where Cloud AI Still Fits</h3>
+</blockquote>
+<h3 id="云-ai-仍然适用的领域">云 AI 仍然适用的领域</h3>
+<blockquote>
+<p>Hardware constraints still determine which model fits. Compute capacity, heat, and battery life matter: Edge0-35B runs on phones, while Edge0-145B runs on suitably equipped laptops. A very low-compute device cannot currently run a 145B model locally. It needs a smaller model suited to its hardware or cloud access to a model of that size.</p>
+</blockquote>
+<p>硬件限制仍然决定了哪种模型适合使用。计算能力、散热和电池寿命都是关键因素：Edge0-35B 可以在手机上运行，而 Edge0-145B 则需要配备高性能的笔记本电脑。目前，一个计算能力极低的设备无法本地运行 145B 模型。它需要一款适配其硬件的小型模型，或者通过云端访问一个与该模型相当的服务。</p>
+<blockquote>
+<p>Cross-device long-term memory and searches requiring highly current information still require cloud services. Local and cloud models can work together; the appropriate split depends on the task, the hardware, and the information it needs.</p>
+</blockquote>
+<p>跨设备长期记忆以及需要高度时效性信息的搜索仍然需要云服务。本地模型和云模型可以协同工作；适当的分工取决于任务、硬件以及所需的信息。</p>
+<blockquote>
+<p>The aim is to make local execution a practical choice for demanding work, with a capable model that can keep working close to the person using it. That is the next step toward our goal of enabling intelligence at zero distance for everybody.</p>
+</blockquote>
+<p>目标是让本地执行成为处理高要求任务的实用选择，通过一个能力强大的模型，使其能够持续在使用者身边运行。这是我们迈向&quot;让每个人都能实现零距离智能&quot;这一目标的下一步。</p>
+<blockquote>
+<h2 id="get-started-with-edge0">Get Started with Edge0</h2>
+</blockquote>
+<h2 id="edge0-入门">Edge0 入门</h2>
+<blockquote>
+<p>Download the models to run locally, evaluate or fine-tune them, and build them into your own products:</p>
+</blockquote>
+<p>下载模型以在本地运行、评估或微调，并将其集成到您自己的产品中：</p>
+<blockquote>
+<ul>
+<li><strong>Model weights:</strong> <a href="https://huggingface.co/Edge0/Edge0-145B-NVFP4">Edge0-145B</a> and <a href="https://huggingface.co/Edge0/Edge0-120B-NVFP4">Edge0-120B</a> on Hugging Face.</li>
+<li><strong>Inference framework and deployment guides:</strong> <a href="https://github.com/Edge0-AI/Edge0">Edge0 on GitHub</a>.</li>
+<li><strong>Try it without environment setup:</strong> <a href="https://github.com/Edge0-AI/Edge0/releases/tag/v0.2.0">Download the Edge0 App</a>. Its core model capabilities work offline, without an account or usage quota.</li>
+<li><strong>Community:</strong> <a href="https://discord.com/invite/Tg3W2FEuQ">Join us on Discord</a>.</li>
+</ul>
+</blockquote>
+<ul>
+<li><strong>模型权重：</strong> Hugging Face 上的 <a href="https://huggingface.co/Edge0/Edge0-145B-NVFP4">Edge0-145B</a> 和 <a href="https://huggingface.co/Edge0/Edge0-120B-NVFP4">Edge0-120B</a>。</li>
+<li><strong>推理框架与部署指南：</strong> <a href="https://github.com/Edge0-AI/Edge0">Edge0 on GitHub</a>。</li>
+<li><strong>无需配置环境即可体验：</strong> <a href="https://github.com/Edge0-AI/Edge0/releases/tag/v0.2.0">下载 Edge0 App</a>。其核心模型能力可完全离线使用，无需注册账户，也没有用量限制。</li>
+<li><strong>社区：</strong> <a href="https://discord.com/invite/Tg3W2FEuQ">加入我们的 Discord</a>。</li>
+</ul>
+<blockquote>
+<p>For hardware or product integrations, reach the Edge0 team through GitHub or <a href="mailto:contact@autoark.ai">contact@autoark.ai</a>.</p>
+</blockquote>
+<p>如果您有硬件或产品集成方面的需求，请通过 GitHub 或电子邮件 <a href="mailto:contact@autoark.ai">contact@autoark.ai</a> 联系 Edge0 团队。</p>
+]]></content:encoded></item><item><title>英伟达员工联名请愿，要求让黄仁勋回归公司。</title><link>https://BradleyZhang.github.io/DualHN/2026-11-14/04-nvidia-employees-petition-to-bring-back-jensen-huang/</link><pubDate>Sat, 14 Nov 2026 09:52:07 +0800</pubDate><guid>https://BradleyZhang.github.io/DualHN/2026-11-14/04-nvidia-employees-petition-to-bring-back-jensen-huang/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;An internal post urging the board to consider employee sentiment about Nvidia’s former CEO has drawn more than 1,600 comments, the majority in full support of reinstalling him.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;一篇敦促董事会考虑员工对 Nvidia 前 CEO 看法的内部帖子已引来 1,600 多条评论，其中绝大多数完全支持让他复职。&lt;/p&gt;</description><content:encoded><![CDATA[<p>from: <a href="https://www.wired.com/story/nvidia-employees-petition-for-jensen-huangs-return/">‘Bring Back THE Boss’: Nvidia Employees Petition for Jensen Huang’s Return</a></p><blockquote>
+<p>An internal post urging the board to consider employee sentiment about Nvidia’s former CEO has drawn more than 1,600 comments, the majority in full support of reinstalling him.</p>
+</blockquote>
+<p>一篇敦促董事会考虑员工对 Nvidia 前 CEO 看法的内部帖子已引来 1,600 多条评论，其中绝大多数完全支持让他复职。</p>
+<p><img alt="Cofounder President and CEO of US Technology company Nvidia Jensen Huang looks on during a press briefing in Paris on&hellip;" loading="lazy" src="https://media.wired.com/photos/6af6533dc5d481da1362b330/1:1/w_960,c_limit/Petition-Bring-Back-Jensen-Business-2299493060.jpg"></p>
+<blockquote>
+<p>Cofounder President and CEO of US Technology company Nvidia Jensen Huang looks on during a press briefing in Paris on&hellip;</p>
+</blockquote>
+<p>美国科技公司 Nvidia 联合创始人、总裁兼首席执行官黄仁勋在巴黎的新闻发布会上……</p>
+<blockquote>
+<p>Photograph: JOEL SAGET/Getty Images</p>
+</blockquote>
+<p>照片：JOEL SAGET/Getty Images</p>
+<blockquote>
+<p>Some Nvidia employees are calling for <a href="https://www.wired.com/tag/jensen-huang">Jensen Huang’s</a> return even after his multiple reported extramarital affairs and <a href="https://www.wired.com/story/nvidia-ceo-jensen-huang-steps-down/">abrupt resignation</a>, according to internal correspondence reviewed by WIRED.</p>
+</blockquote>
+<p>一些 Nvidia 员工呼吁<a href="https://www.wired.com/tag/jensen-huang">Jensen Huang’s</a>回归即使他的多次报导的婚外情和<a href="https://www.wired.com/story/nvidia-ceo-jensen-huang-steps-down/">突如其来的辞职</a>，据 WIRED 审阅的内部通信。</p>
+<blockquote>
+<p>An internal “suggestion box” post submitted before Huang’s resignation by a longtime engineer at <a href="https://www.wired.com/tag/nvidia/">Nvidia</a> urged the company’s board to take employee sentiment into consideration prior to taking any action. The submission has attracted more than 1,600 comments since then, with several asking board members to find a way to bring back Huang.</p>
+</blockquote>
+<p>在 Huang 辞职之前，Nvidia 的一位资深工程师在公司内部&quot;意见箱&quot;上发布了一篇帖子，敦促公司董事会在采取任何行动之前考虑员工的感受。该帖子自发布以来已吸引超过 1,600 条评论，其中多条评论呼吁董事会成员想办法让 Huang 回归。</p>
+<blockquote>
+<p>“If you believe in the mission, bring back THE boss,” wrote one anonymous commenter.</p>
+</blockquote>
+<p>一位匿名评论者写道：“如果你相信这个使命，就把老板带回来。”</p>
+<blockquote>
+<p>“We are all humans and can make mistakes. Jensen did so many good things and he needs a second chance,” wrote another.</p>
+</blockquote>
+<p>“我们都是人类，会犯错。Jensen 做了很多好事，他需要第二次机会，”另一人写道。</p>
+<blockquote>
+<p>One employee went as far as sending a companywide email demanding transparency into Huang’s exit. “I stand by Jensen,” the staffer wrote. “Not because I believe any person is infallible, but because I refuse to believe that standing for fairness must mean standing at a distance from someone whose leadership has meant so much to us.”</p>
+</blockquote>
+<p>一位员工甚至更进一步，向全公司发送了一封邮件，要求透明公开 Huang 离职的内情。“我支持 Jensen，”这位员工写道，“并不是因为我相信任何人都是完美无缺的，而是因为我拒绝承认，支持公平就意味着必须与一位其领导对我们意义如此重大的人保持距离。”</p>
+<blockquote>
+<p>The employee couldn’t be reached for comment, while the engineer behind the suggestion box post declined to comment.</p>
+</blockquote>
+<p>无法联系到该员工置评，而意见箱帖文背后的工程师拒绝置评。</p>
+<blockquote>
+<p>Nvidia and its new board chair, investor Harvey Jones, didn’t immediately respond to requests for comment.</p>
+</blockquote>
+<p>Nvidia 及其新任董事会主席、投资人 Harvey Jones 没有立即回应置评请求。</p>
+<blockquote>
+<p>Huang, a 63-year-old who had led Nvidia since its founding in 1993, wrote in an email to employees on Sunday that he had been “unfaithful to [his] wife” and that there was “no excuse.” The acknowledgement followed reports of an affair with a <a href="https://www.wired.com/story/chinas-nvidia-honeypot-isnt-surprising-jensen-huang-fell-for-it-anyway/">suspected Chinese intelligence asset</a>. The board announced Huang’s resignation on Thursday morning, following <a href="https://www.nytimes.com/2026/11/11/technology/jensen-huang-nvidia-affair.html">reports</a> of an alleged second affair with a direct report. (This employee has not commented on the matter.) Since then, Reuters <a href="https://www.reuters.com/technology/former-nvidia-ceo-huang-had-relationship-with-second-employee-sources-say-2026-11-12/">reported</a> on an alleged affair with yet another Nvidia employee. Huang hasn’t commented about these reports since his Sunday email.</p>
+</blockquote>
+<p>黄仁勋（Huang），一位自 1993 年 Nvidia 成立以来一直领导该公司的 63 岁人士，周日在给员工的电子邮件中写道，他“对[其]妻子不忠”，并且“没有借口”。</p>
+<p>这一承认是在有关他与一名<a href="https://www.wired.com/story/chinas-nvidia-honeypot-isnt-surprising-jensen-huang-fell-for-it-anyway/">涉嫌中国情报资产</a>的报道之后发生的。</p>
+<p>董事会于周四早晨宣布了 Huang 的辞职，此前有<a href="https://www.nytimes.com/2026/11/11/technology/jensen-huang-nvidia-affair.html">报道</a>称他与一名直属下属涉嫌发生第二段婚外情。（该员工对此事未发表评论。）</p>
+<p>此后，Reuters <a href="https://www.reuters.com/technology/former-nvidia-ceo-huang-had-relationship-with-second-employee-sources-say-2026-11-12/">报道</a>称他与另一名 Nvidia 员工涉嫌有婚外情。</p>
+<p>自周日发出电子邮件以来，Huang 就这些报道未发表评论。</p>
+<blockquote>
+<table>
+	<thead>
+			<tr>
+					<th>Got a Tip?</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Are you a current or former Nvidia employee who wants to talk about what’s happening? We’d like to hear from you. Using a nonwork phone or computer, contact the reporter securely on Signal at peard33.24.</td>
+			</tr>
+	</tbody>
+</table>
+</blockquote>
+<table>
+	<thead>
+			<tr>
+					<th>Got a Tip?</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>你是目前或曾经的 Nvidia 员工，并想谈谈正在发生的事情吗？我们希望能听到你的声音。请使用非工作手机或电脑，通过 Signal 安全地联系记者，账号为 peard33.24。</td>
+			</tr>
+	</tbody>
+</table>
+<blockquote>
+<p>Nvidia’s board is largely made up of early Nvidia investors and Huang’s longtime confidants. It named Nvidia chief financial officer <a href="https://www.wired.com/story/jensen-huang-colette-kress-replacement-powerful-women-in-tech/">Colette Kress</a> <a href="https://www.wired.com/story/who-is-colette-kress-the-woman-who-could-succeed-jensen-huang/">interim CEO</a> and appointed former Synopsys CEO Harvey Jones as chair of the board. The crisis has cost the company <a href="https://www.wired.com/story/jensen-huang-tanked-a-trillion-dollars-in-less-than-a-month/">$1 trillion in market value</a> since the allegations surfaced, prompted investigations from US lawmakers and the FBI, and raised the prospect of new export controls on chips.</p>
+</blockquote>
+<p>Nvidia 的董事会主要由早期 Nvidia 投资者和黄仁勋的长期亲信组成。该公司任命 Nvidia 首席财务官 <a href="https://www.wired.com/story/jensen-huang-colette-kress-replacement-powerful-women-in-tech/">Colette Kress</a> 为临时 <a href="https://www.wired.com/story/who-is-colette-kress-the-woman-who-could-succeed-jensen-huang/">CEO</a>，并任命前 Synopsys CEO Harvey Jones 为董事会主席。自指控曝光以来，这场危机已使该公司损失了 <a href="https://www.wired.com/story/jensen-huang-tanked-a-trillion-dollars-in-less-than-a-month/">1 万亿美元的市值</a>，引发了美国立法者和 FBI 的调查，并可能引发新的芯片出口管制。</p>
+<blockquote>
+<p>It’s been business as usual inside the company throughout this week, but <a href="https://www.wired.com/story/silicon-valley-is-still-defending-jensen-huang/">Huang’s resignation left many employees stunned</a>. In the hours after, about two dozen employees posted on LinkedIn in support of Huang, with one describing their faith in his leadership as unwavering. Over the same period, WIRED couldn’t identify any posts from Nvidia employees in support of his resignation.</p>
+</blockquote>
+<p>本周内，公司内部运作一如既往，但 <a href="https://www.wired.com/story/silicon-valley-is-still-defending-jensen-huang/">Huang 辞职让许多员工震惊</a>。事发后几小时内，约二十四名员工在 LinkedIn 上发帖声援 Huang，其中一人表示对其领导力的信心始终如一。同期，WIRED 未能找到任何 Nvidia 员工发帖支持其辞职的记录。</p>
+<blockquote>
+<p>One employee who has been at Nvidia for a couple of years and wasn’t authorized to speak publicly says they perceive the desire for Huang’s reinstatement as widespread. They worry the company will eventually suffer without its founder at the helm and say that the board must bring him back. “Nvidia is Nvidia because of Jensen,” the employee tells WIRED.</p>
+</blockquote>
+<p>一位在英伟达工作了几年、未获授权公开发言的雇员表示，他们认为希望黄仁勋回归的呼声十分普遍。他们担心，公司若长期缺少这位创始人掌舵，最终将遭受损失，并称董事会必须把他请回来。“英伟达之所以是英伟达，就是因为有黄仁勋，”这位雇员对 WIRED 表示。</p>
+<blockquote>
+<p>Many employees had expected a board investigation to conclude before any big changes would occur. For instance, the suggestion-box post called on the board to share its findings with employees and formally solicit their sentiment “about Jensen’s continuing as our CEO.”</p>
+</blockquote>
+<p>许多员工原本曾预计，董事会调查会在任何大变化发生之前结束。例如，一条建议箱帖子的呼吁，要求董事会分享其调查结果，并正式征求员工对“ Jensen 继续担任我们的 CEO” 的看法。</p>
+<blockquote>
+<p>Instead, Huang left just as the inquiry had begun. Staffers are seeking to better understand why. “If America fails the man who helped build its future,” the employee in the companywide email stated, “then this world does not deserve Jensen Huang.”</p>
+</blockquote>
+<p>相反，黄简森就在调查刚刚开始时离开了。工作人员正努力更好地理解原因。“If America fails the man who helped build its future, the employee in the companywide email stated, ‘Then this world does not deserve Jensen Huang.’”</p>
+]]></content:encoded></item><item><title>IceWM 中文名为冰窗口管理器。</title><link>https://BradleyZhang.github.io/DualHN/2026-11-14/03-icewm/</link><pubDate>Sat, 14 Nov 2026 09:41:20 +0800</pubDate><guid>https://BradleyZhang.github.io/DualHN/2026-11-14/03-icewm/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;&lt;a href="https://ice-wm.org/"&gt;&lt;img alt="IceWM website logo" loading="lazy" src="https://ice-wm.org/images/logom.jpg" title="ice-wm.org"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href="https://ice-wm.org/"&gt;&lt;img alt="IceWM 网站标志" loading="lazy" src="https://ice-wm.org/images/logom.jpg" title="ice-wm.org"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;IceWM is a window manager for the X Window System. The goal of IceWM is speed, simplicity, and not getting in the user’s way. It comes with a taskbar with pager, global and per-window keybindings and a dynamic menu system. Application windows can be managed by keyboard and mouse. Windows can be iconified to the taskbar, to the tray, to the desktop or be made hidden. They are controllable by a quick switch window (Alt+Tab) and in a window list. A handful of configurable focus models are menu-selectable. Setups with multiple monitors are supported by RandR and Xinerama. IceWM is very configurable, themeable and well documented. It includes an optional external background wallpaper manager with transparency support, a simple session manager and a system tray. IceWM &lt;a href="https://ice-wm.org/status/"&gt;is available&lt;/a&gt; on popular Linux distributions like Debian, Ubuntu, Arch, OpenSUSE, Gentoo, Slackware, CentOS, antiX, NixOS and on most *BSDs.&lt;/p&gt;
+&lt;/blockquote&gt;</description><content:encoded><![CDATA[<p>from: <a href="https://ice-wm.org/">Window Manager</a></p><blockquote>
+<p><a href="https://ice-wm.org/"><img alt="IceWM website logo" loading="lazy" src="https://ice-wm.org/images/logom.jpg" title="ice-wm.org"></a></p>
+</blockquote>
+<p><a href="https://ice-wm.org/"><img alt="IceWM 网站标志" loading="lazy" src="https://ice-wm.org/images/logom.jpg" title="ice-wm.org"></a></p>
+<blockquote>
+<p>IceWM is a window manager for the X Window System. The goal of IceWM is speed, simplicity, and not getting in the user’s way. It comes with a taskbar with pager, global and per-window keybindings and a dynamic menu system. Application windows can be managed by keyboard and mouse. Windows can be iconified to the taskbar, to the tray, to the desktop or be made hidden. They are controllable by a quick switch window (Alt+Tab) and in a window list. A handful of configurable focus models are menu-selectable. Setups with multiple monitors are supported by RandR and Xinerama. IceWM is very configurable, themeable and well documented. It includes an optional external background wallpaper manager with transparency support, a simple session manager and a system tray. IceWM <a href="https://ice-wm.org/status/">is available</a> on popular Linux distributions like Debian, Ubuntu, Arch, OpenSUSE, Gentoo, Slackware, CentOS, antiX, NixOS and on most *BSDs.</p>
+</blockquote>
+<p>IceWM 是 X Window System 的一个窗口管理器。IceWM 的目标是速度、简洁，以及不干扰用户操作。它附带一个带分页器（pager）的任务栏、全局和每个窗口的快捷键绑定以及动态菜单系统。应用程序窗口可以通过键盘和鼠标进行管理。窗口可以最小化到任务栏、托盘、桌面，或者隐藏。它们可以通过快速窗口切换（Alt+Tab）和窗口列表进行控制。几种可配置的焦点模型可供菜单选择。多显示器设置受到 RandR 和 Xinerama 的支持。IceWM 可配置性强、支持主题定制，且文档完善。它包含一个可选的、支持透明效果的外部背景壁纸管理器、一个简单的会话管理器和一个系统托盘。IceWM <a href="https://ice-wm.org/status/">is available</a> 在流行的 Linux 发行版（如 Debian、Ubuntu、Arch、OpenSUSE、Gentoo、Slackware、CentOS、antiX、NixOS）以及大多数 *BSD 系统上。</p>
+<blockquote>
+<h3 id="software">Software</h3>
+</blockquote>
+<h3 id="软件">软件</h3>
+<blockquote>
+<p>IceWM was created by Marko Maček in 1997 using C++. It is now maintained at <a href="https://github.com/bbidulock/icewm">Github</a>.</p>
+</blockquote>
+<p>IceWM 由 Marko Maček 于 1997 年使用 C++ 创建。目前由 <a href="https://github.com/bbidulock/icewm">Github</a> 维护。</p>
+<blockquote>
+<h3 id="releases">Releases</h3>
+</blockquote>
+<h3 id="发布">发布</h3>
+<blockquote>
+<p>The <a href="https://github.com/ice-wm/icewm/releases/latest">latest</a> released version is <a href="https://github.com/ice-wm/icewm/releases/download/4.1.0/icewm-4.1.0.tar.lz">4.1.0</a> (2026-08-06).</p>
+</blockquote>
+<p><a href="https://github.com/ice-wm/icewm/releases/latest">最新的</a> 发布版本是 <a href="https://github.com/ice-wm/icewm/releases/download/4.1.0/icewm-4.1.0.tar.lz">4.1.0</a>（2026-08-06）。</p>
+<blockquote>
+<h3 id="features">Features</h3>
+</blockquote>
+<h3 id="功能">功能</h3>
+<blockquote>
+<ul>
+<li>Easy to use, simple and fast</li>
+<li>Standards compliant <a href="https://github.com/ice-wm/icewm/blob/master/COMPLIANCE">→</a></li>
+<li>Fully usable with keyboard</li>
+<li>Alt+Tab window switching</li>
+<li>Efficient resource usage</li>
+<li>Task bar (optional)</li>
+<li>Multiple workspaces</li>
+<li>Fully documented <a href="https://ice-wm.org/man/">→</a></li>
+<li>A large number of themes <a href="https://themes.ice-wm.org/">→</a></li>
+<li>Usable with GNOME and KDE environments</li>
+<li>Regenerates menus when configuration changes</li>
+<li>Support for sound effects <a href="https://ice-wm.org/man/icesound">→</a></li>
+<li>Multiple focus modes</li>
+<li>Manual placement of windows option</li>
+<li>Autoraising of windows option</li>
+<li>Tooltips</li>
+<li>Configurable keybindings <a href="https://ice-wm.org/man/icewm-keys">→</a></li>
+<li>Supports DockApps in a container</li>
+<li>Tabbed windows</li>
+</ul>
+</blockquote>
+<ul>
+<li>易于使用、简单快速</li>
+<li>符合标准 <a href="https://github.com/ice-wm/icewm/blob/master/COMPLIANCE">→</a></li>
+<li>完全支持键盘操作</li>
+<li>Alt+Tab 窗口切换</li>
+<li>高效资源使用</li>
+<li>任务栏（可选）</li>
+<li>多个工作区</li>
+<li>文档完整 <a href="https://ice-wm.org/man/">→</a></li>
+<li>大量主题 <a href="https://themes.ice-wm.org/">→</a></li>
+<li>可在 GNOME 和 KDE 环境中正常使用</li>
+<li>配置更改时重新生成菜单</li>
+<li>支持声音效果 <a href="https://ice-wm.org/man/icesound">→</a></li>
+<li>多种焦点模式</li>
+<li>窗口手动放置选项</li>
+<li>窗口自动拉起选项</li>
+<li>工具提示</li>
+<li>可配置的快捷键 <a href="https://ice-wm.org/man/icewm-keys">→</a></li>
+<li>支持容器中的 DockApp</li>
+<li>标签式窗口</li>
+</ul>
+<blockquote>
+<h3 id="screenshots">Screenshots</h3>
+</blockquote>
+<h3 id="截图">截图</h3>
+<blockquote>
+<p>The <a href="https://ice-wm.org/screenshots/">IceWM Screenshots Collection</a></p>
+</blockquote>
+<p>The <a href="https://ice-wm.org/screenshots/">IceWM 截图合集</a></p>
+<blockquote>
+<h3 id="themes">Themes</h3>
+</blockquote>
+<h3 id="主题">主题</h3>
+<blockquote>
+<p>IceWM is <a href="https://ice-wm.org/themes/">themeable</a>. The visual appearance of icewm can be changed by a theme, which is a collection of settings and small images. Over 450 themes can be downloaded from <a href="https://themes.ice-wm.org/">box-look.org</a>. <a href="https://github.com/ice-wm/icewm-extra/releases/download/themes/icewm-extra.tar.lz">Extra</a> is a collection of 91 highlights. See <code>icewm -i list</code>.</p>
+</blockquote>
+<p>IceWM 是 <a href="https://ice-wm.org/themes/">themeable</a> 的。其视觉外观可以通过 theme 进行更改，theme 是一组设置和小图像。超过 450 themes 可以从 <a href="https://themes.ice-wm.org/">box-look.org</a> 下载。<a href="https://github.com/ice-wm/icewm-extra/releases/download/themes/icewm-extra.tar.lz">Extra</a> 是 91 highlights 的集合。参见 <code>icewm -i list</code>。</p>
+<blockquote>
+<h3 id="translations">Translations</h3>
+</blockquote>
+<h3 id="翻译">翻译</h3>
+<blockquote>
+<p>IceWM is <a href="https://l10n.opensuse.org/projects/icewm/icewm-1-4-branch/">translated</a> into three dozen languages. To improve the translation for your language at Weblate, first register an account either <a href="https://l10n.opensuse.org/accounts/register/">here</a> or <a href="https://idp-portal.suse.com/univention/self-service/#page=createaccount">there</a>, then <a href="https://l10n.opensuse.org/projects/icewm/icewm-1-4-branch/">update</a>.</p>
+</blockquote>
+<p>IceWM 已 <a href="https://l10n.opensuse.org/projects/icewm/icewm-1-4-branch/">被翻译</a> 成三十六种语言。要在 Weblate 上改进您语言的翻译，请先 <a href="https://l10n.opensuse.org/accounts/register/">在此处</a> 或 <a href="https://idp-portal.suse.com/univention/self-service/#page=createaccount">在该处</a> 注册账户，然后 <a href="https://l10n.opensuse.org/projects/icewm/icewm-1-4-branch/">更新</a>。</p>
+<blockquote>
+<h3 id="documentation">Documentation</h3>
+</blockquote>
+<h3 id="文档">文档</h3>
+<blockquote>
+<ul>
+<li><a href="https://ice-wm.org/man/">IceWM man pages</a></li>
+<li><a href="https://ice-wm.org/manual/">IceWM Manual</a></li>
+<li><a href="https://ice-wm.org/themes/">Themes Howto</a></li>
+<li><a href="https://ice-wm.org/FAQ/">IceWM FAQ</a></li>
+</ul>
+</blockquote>
+<ul>
+<li><a href="https://ice-wm.org/man/">IceWM man pages</a></li>
+<li><a href="https://ice-wm.org/manual/">IceWM 手册</a></li>
+<li><a href="https://ice-wm.org/themes/">主题 Howto</a></li>
+<li><a href="https://ice-wm.org/FAQ/">IceWM FAQ</a></li>
+</ul>
+<blockquote>
+<h3 id="bug-tracking">Bug Tracking</h3>
+</blockquote>
+<h3 id="bug-跟踪">Bug 跟踪</h3>
+<blockquote>
+<p>Report your icewm bugs on <a href="https://github.com/ice-wm/icewm/issues">Github</a>. Only report it once and give relevant details.</p>
+</blockquote>
+<p>请在 <a href="https://github.com/ice-wm/icewm/issues">Github</a> 上报告您的 icewm bugs。仅报告一次并提供相关细节。</p>
+<blockquote>
+<h3 id="install-the-latest-release-as-follows">Install the latest release as follows</h3>
+</blockquote>
+<h3 id="安装最新发行版如下">安装最新发行版如下</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ wget https://github.com/ice-wm/icewm/releases/download/4.1.0/icewm-4.1.0.tar.lz
+</span></span><span class="line"><span class="cl">$ tar -x --lzip -vpf icewm-4.1.0.tar.lz
+</span></span><span class="line"><span class="cl">$ <span class="nb">cd</span> icewm-4.1.0
+</span></span><span class="line"><span class="cl">$ ./configure --prefix<span class="o">=</span>/usr
+</span></span><span class="line"><span class="cl">$ make
+</span></span><span class="line"><span class="cl">$ sudo make install
+</span></span></code></pre></div><blockquote>
+<h3 id="install-from-unreleased-development-source-code">Install from unreleased development source code</h3>
+</blockquote>
+<h1 id="从未发布的开发源代码进行安装">从未发布的开发源代码进行安装</h1>
+<blockquote>
+<p>Gettext must be installed.</p>
+</blockquote>
+<p>必须安装 Gettext。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ git clone https://github.com/bbidulock/icewm
+</span></span><span class="line"><span class="cl">$ <span class="nb">cd</span> icewm
+</span></span><span class="line"><span class="cl">$ ./autogen.sh
+</span></span><span class="line"><span class="cl">$ ./configure --prefix<span class="o">=</span>/usr
+</span></span><span class="line"><span class="cl">$ make
+</span></span><span class="line"><span class="cl">$ sudo make install
+</span></span></code></pre></div><blockquote>
+<p>If you have cmake, an alternative is:</p>
+</blockquote>
+<p>如果你有 cmake，另一个方案是：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ git clone https://github.com/bbidulock/icewm
+</span></span><span class="line"><span class="cl">$ <span class="nb">cd</span> icewm
+</span></span><span class="line"><span class="cl">$ ./rebuild.sh -r --prefix<span class="o">=</span>/usr
+</span></span><span class="line"><span class="cl">$ <span class="nb">cd</span> build
+</span></span><span class="line"><span class="cl">$ sudo make install
+</span></span></code></pre></div><blockquote>
+<h3 id="install-package-dependencies">Install package dependencies</h3>
+</blockquote>
+<h3 id="安装包依赖">安装包依赖</h3>
+<blockquote>
+<p>To install all package dependencies in one go use the following script.</p>
+</blockquote>
+<p>要一次性安装所有包依赖，请使用以下脚本。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ wget https://ice-wm.org/scripts/os-depends.sh
+</span></span><span class="line"><span class="cl">$ sudo bash -x ./os-depends.sh
+</span></span></code></pre></div><blockquote>
+<p>Verify package dependencies by:</p>
+</blockquote>
+<p>验证包依赖项：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ pkg-config --modversion x11 xext xcomposite xcursor xdamage xfixes xres xrender xrandr xinerama xft fontconfig sm ice sndfile alsa ao gio-2.0 gio-unix-2.0 gdk-pixbuf-xlib-2.0 imlib2 librsvg-2.0 xpm libpng libjpeg
+</span></span><span class="line"><span class="cl"><span class="c1"># or simpler:</span>
+</span></span><span class="line"><span class="cl">$ ./rebuild.sh -d
+</span></span></code></pre></div><blockquote>
+<h3 id="more-installation-and-configuration">More installation and configuration</h3>
+</blockquote>
+<h3 id="更多安装和配置">更多安装和配置</h3>
+<blockquote>
+<ul>
+<li><a href="http://www.linuxfromscratch.org/blfs/view/svn/x/icewm.html">IceWM from scratch</a>.</li>
+<li><a href="https://wiki.archlinux.org/index.php/IceWM">IceWM on arch wiki</a>.</li>
+<li><a href="https://www.archlinuxuser.com/2013/02/how-to-install-configure-icewm-window.html">IceWM by arch user</a>.</li>
+</ul>
+</blockquote>
+<ul>
+<li><a href="http://www.linuxfromscratch.org/blfs/view/svn/x/icewm.html">从零开始使用 IceWM</a>。</li>
+<li><a href="https://wiki.archlinux.org/index.php/IceWM">Arch Wiki 上的 IceWM</a>。</li>
+<li><a href="https://www.archlinuxuser.com/2013/02/how-to-install-configure-icewm-window.html">Arch 用户编写的 IceWM 指南</a>。</li>
+</ul>
+<blockquote>
+<h3 id="links">Links</h3>
+</blockquote>
+<h3 id="链接">链接</h3>
+<blockquote>
+<ul>
+<li><a href="https://github.com/BaptistMissionsOS/icewm_menuator/releases">IceWM Menuator</a> for managing menu files with a GUI.</li>
+<li><a href="https://ice-wm.org/icewm-sounds">IceWM sound files</a>.</li>
+<li><a href="https://ice-wm.org/versions.html">IceWM release history</a>.</li>
+<li><a href="https://en.wikipedia.org/wiki/Comparison_of_X_window_managers">Compare window managers</a>.</li>
+<li>List of <a href="https://www.gilesorr.com/wm/xwmtable.html">all window managers</a> and their <a href="https://www.gilesorr.com/wm/helpers.html">helper programs</a>.</li>
+<li><a href="https://specifications.freedesktop.org/wm-spec/latest/index.html">Extended window manager hints</a>.</li>
+<li><a href="https://www.cs.ru.nl/bachelors-theses/2019/Max_van_Deurzen___4581903___The_anatomy_of_the_modern_window_manager_-_a_case_study_for_X_in_an_Agile_manner.pdf">The anatomy of the modern window manager</a> (thesis).</li>
+</ul>
+</blockquote>
+<ul>
+<li><a href="https://github.com/BaptistMissionsOS/icewm_menuator/releases">IceWM Menuator</a>，用于通过 GUI 管理菜单文件。</li>
+<li><a href="https://ice-wm.org/icewm-sounds">IceWM 声音文件</a>。</li>
+<li><a href="https://ice-wm.org/versions.html">IceWM 发布历史</a>。</li>
+<li><a href="https://en.wikipedia.org/wiki/Comparison_of_X_window_managers">比较窗口管理器</a>。</li>
+<li>所有<a href="https://www.gilesorr.com/wm/xwmtable.html">窗口管理器</a>及其<a href="https://www.gilesorr.com/wm/helpers.html">辅助程序</a>的列表。</li>
+<li><a href="https://specifications.freedesktop.org/wm-spec/latest/index.html">扩展窗口管理器提示</a>。</li>
+<li><a href="https://www.cs.ru.nl/bachelors-theses/2019/Max_van_Deurzen___4581903___The_anatomy_of_the_modern_window_manager_-_a_case_study_for_X_in_an_Agile_manner.pdf">现代窗口管理器的剖析</a>（论文）。</li>
+</ul>
+<blockquote>
+<h3 id="license">License</h3>
+</blockquote>
+<p>许可证</p>
+<blockquote>
+<p>IceWM is released under the terms of the GNU Library General Public License.</p>
+</blockquote>
+<p>IceWM 根据 GNU Library General Public License 的条款发布。</p>
+<blockquote>
+<h3 id="donate">Donate</h3>
+</blockquote>
+<h3 id="捐赠">捐赠</h3>
+<blockquote>
+<p>Contribute to ongoing development and support of IceWM by <a href="https://gijsbers.github.io/donate/">donating</a>.</p>
+</blockquote>
+<p>为 IceWM 的持续开发和支持做出贡献 <a href="https://gijsbers.github.io/donate()">捐赠</a>.</p>
+]]></content:encoded></item><item><title>LibreOffice 实际上全年无休，365 天都在运行。</title><link>https://BradleyZhang.github.io/DualHN/2026-11-14/02-libreoffice-actually-works-365-days-a-year/</link><pubDate>Sat, 14 Nov 2026 09:41:13 +0800</pubDate><guid>https://BradleyZhang.github.io/DualHN/2026-11-14/02-libreoffice-actually-works-365-days-a-year/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;LibreOffice actually works 365 days a year. Just saying.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;LibreOffice 实际上全年运行365天。只是说一下。&lt;/p&gt;</description><content:encoded><![CDATA[<p>from: <a href="https://twitter.com/LibreOffice/status/2121205272479998268">Post by @LibreOffice on X</a></p><blockquote>
+<p>LibreOffice actually works 365 days a year. Just saying.</p>
+</blockquote>
+<p>LibreOffice 实际上全年运行365天。只是说一下。</p>
+]]></content:encoded></item><item><title>美国联邦航空管理局发布全国停飞令</title><link>https://BradleyZhang.github.io/DualHN/2026-11-14/01-faa-issues-national-ground-stop/</link><pubDate>Sat, 14 Nov 2026 09:27:16 +0800</pubDate><guid>https://BradleyZhang.github.io/DualHN/2026-11-14/01-faa-issues-national-ground-stop/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;Much of the air traffic across the U.S. was suddenly shut down Friday after the Federal Aviation Administration ordered a nationwide ground stop for all departing flights “due to extraordinary circumstances and for reasons of safety.”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;美国大部分航空交通周五突然中止，此前美国联邦航空管理局（Federal Aviation Administration，FAA）下令对所有离港航班实施全国范围地面停飞（ground stop），原因是“由于非同寻常的情况和出于安全考虑”。&lt;/p&gt;</description><content:encoded><![CDATA[<p>from: <a href="https://www.nbcnews.com/news/us-news/faa-orders-nationwide-ground-stop-departing-flights-reasons-safety-rcna609247">Ground stop ordered for all airports nationwide for ‘reasons of safety’</a></p><blockquote>
+<p>Much of the air traffic across the U.S. was suddenly shut down Friday after the Federal Aviation Administration ordered a nationwide ground stop for all departing flights “due to extraordinary circumstances and for reasons of safety.”</p>
+</blockquote>
+<p>美国大部分航空交通周五突然中止，此前美国联邦航空管理局（Federal Aviation Administration，FAA）下令对所有离港航班实施全国范围地面停飞（ground stop），原因是“由于非同寻常的情况和出于安全考虑”。</p>
+<blockquote>
+<p>The unexpected and highly unusual alert, which was issued at 3:54 p.m. ET, contained no other information beyond stating that “all departing traffic should remain ground stopped until further notice.”</p>
+</blockquote>
+<p>意外且极不寻常的警报于 3:54 p.m. ET 发布，除陈述“所有离境航班应保持地面停止，直至另行通知”外，并未包含其他信息。</p>
+<blockquote>
+<p><a href="https://www.nbcnews.com/news/us-news/live-blog/live-updates-flights-grounded-faa-communications-outage-rcna609268"><em><strong>Follow along for live coverage.</strong></em></a></p>
+</blockquote>
+<p><a href="https://www.nbcnews.com/news/us-news/live-blog/live-updates-flights-grounded-faa-communications-outage-rcna609268"><em><strong>敬请关注实时直播报道。</strong></em></a></p>
+<blockquote>
+<p>“Inbound international flights will be managed on a case by case basis,” the FAA said.</p>
+</blockquote>
+<p>国际进境航班将按照个案处理， FAA 表示。</p>
+<blockquote>
+<p>When the FAA issued the alert, 4,042 flights headed for U.S. destinations were airborne, <a href="https://x.com/flightradar24/status/2121379617252810820?a=roPvFTWwSk7-tU2h8k0&amp;s=20">according to Flightradar24</a>, a Swedish service that displays real-time aircraft flight tracking information.</p>
+</blockquote>
+<p>当 FAA 发出警报时，4,042  个航班正在飞往 U.S. 目的地，[据 Flightradar24] (<a href="https://x.com/flightradar24/status/2121379617252810820?a=roPvFTWwSk7-tU2h8k0&amp;s=20">https://x.com/flightradar24/status/2121379617252810820?a=roPvFTWwSk7-tU2h8k0&amp;s=20</a>)，一个瑞典服务，显示实时航空器航班跟踪信息。</p>
+<blockquote>
+<p>Homeland Security Secretary Markwayne Mullin said there was “no indication as of yet” that there was anything “nefarious” that caused the ground stop. He said it was the result of a telecommunications outage “as of now.”</p>
+</blockquote>
+<p>Homeland Security 部长 Markwayne Mullin said “截至目前”没有任何“恶意的”因素导致地面停飞。他表示，这目前是通信中断导致的。</p>
+<blockquote>
+<p>Mullin said President Donald Trump has been briefedand that they “are not ruling out anything at this point” in terms of what caused the communications issue. He said those currently on flights have no reason for concern. “We are assured that everybody is safe,” he said.</p>
+</blockquote>
+<p>马林表示，总统唐纳德·特朗普已听取简报，就通信问题的成因而言，他们“目前不排除任何可能性”。他说，目前在航班上的人没有理由担心。“我们确信所有人都安全，”他说。</p>
+<p><img loading="lazy" src="https://media-cldnry.s-nbcnews.com/image/upload/t_focal-860x484,f_avif,q_auto:best/mpx/2704722219/2026_11/1794608304299_nbc_spec_mullin_outage_261113_S3_1920x1080-78t6ql.jpg"></p>
+<blockquote>
+<p><a href="https://www.nbcnews.com/video/secy-mullin-says-faa-ground-stop-was-caused-by-telecommunication-outage-273475141556">Secy. Mullin says FAA ground stop was caused by &rsquo;telecommunication outage&rsquo;</a></p>
+</blockquote>
+<p><a href="https://www.nbcnews.com/video/secy-mullin-says-faa-ground-stop-was-caused-by-telecommunication-outage-273475141556">穆林部长表示，FAA 地面停飞是由“电信中断”引起的</a></p>
+<blockquote>
+<p>01:51</p>
+</blockquote>
+<p>(无内容)</p>
+<blockquote>
+<p>While the investigation into the failure is in a very early stage, there is no indication that the incident has been caused by malicious activity, officials from multiple agencies that are involved in the situation told NBC News.</p>
+</blockquote>
+<p>虽然针对该故障的调查仍处于非常早期阶段，但参与此事的多个机构的官员告诉 NBC News，目前没有迹象表明该事件是由恶意活动引起的。</p>
+<blockquote>
+<p>They said they haven’t seen the type of activity that would normally be associated with a cyberattack. The officials, however, cautioned that the assessment could change as investigators learn more.</p>
+</blockquote>
+<p>他们表示，尚未看到通常与网络攻击相关的活动。然而，官员警告称，随着调查人员了解更多信息，此评估可能会发生变化。</p>
+<blockquote>
+<p>Three senior officials said there’s nothing that indicates a connection between Friday’s incident with the FAA’s systems and the Microsoft outage the day before.</p>
+</blockquote>
+<p>三名高级官员表示，没有什么迹象表明周五 FAA 系统发生的事件与前一天 Microsoft 发生的故障之间存在联系。</p>
+<blockquote>
+<p>Several hours after the ground stop was announced, a top aviation expert estimated that anywhere from 300,000 to 400,000 passengers were stranded — and it was anybody’s guess when they would get to their destinations.</p>
+</blockquote>
+<p>地面停飞令宣布数小时后，一位顶尖航空专家估计，有多达 30 万至 40 万名乘客滞留——至于他们何时才能抵达目的地，谁都说不准。</p>
+<p><img alt="Nationwide ground stop disrupts flights across US airports" loading="lazy" src="https://media-cldnry.s-nbcnews.com/image/upload/t_fit-560w,f_avif,q_auto:eco,dpr_2/rockcms/2026-11/261113-Nationwide-ground-stop-vsb-1844-0ac2df.jpg"></p>
+<blockquote>
+<p>Chicago O&rsquo;Hare International Airport, filled with waiting passengers. Jacek Boczarski / Anadolu via Getty</p>
+</blockquote>
+<p>芝加哥 O&rsquo;Hare 国际机场，里面挤满了等待的乘客。Jacek Boczarski / Anadolu via Getty</p>
+<blockquote>
+<p>“Daily we have about 25,000 flights in U.S. domestic markets,” Vikrant Vaze, a Dartmouth professor who specializes in commercial aviation logistics, wrote in an email to NBC News. “I would say we should have around 3,000 to 4,000 flights held up at this time over the past 2 plus hours.”</p>
+</blockquote>
+<p>“我们每天在美国国内市场大约有 25,000 个航班，”专攻商业航空物流的达特茅斯学院教授 Vikrant Vaze 在给 NBC News 的电子邮件中写道，“我想说，在过去 2 个多小时里，此时应该有大约 3,000 到 4,000 个航班被延误。”</p>
+<blockquote>
+<p>But by 6 p.m., Reagan Washington National Airport in Arlington, Virginia, was at capacity, and Chicago O’Hare International Airport was nearing capacity, meaning there was no place for the planes to park, a source with knowledge told NBC News.</p>
+</blockquote>
+<p>到傍晚6点，弗吉尼亚州阿灵顿的里根华盛顿国家机场已达到容量上限，芝加哥奥黑尔国际机场也接近饱和，这意味着飞机无处停放，知情人士向 NBC 新闻透露。</p>
+<blockquote>
+<p>With planes stranded on runways, the likelihood increased that some of these planes would have to be diverted to other airports, the source said.</p>
+</blockquote>
+<p>飞机停在跑道上后，某些飞机转发至其他机场的可能性提高了，来源称。</p>
+<iframe title="Datawrapper, Aircraft on the ground at Chicago O’Hare following FAA ground stop" data-src="https://datawrapper.dwcdn.net/rMzFc/4/" src="https://iframe.nbcnews.com/RHWaH5iw?_showcaption=true&amp;app=1" allowfullscreen=""></iframe>
+<blockquote>
+<p>Meanwhile, Air Space Intelligence, the AI tech startup that is a vendor for the FAA on its new <a href="https://www.nbcnews.com/news/us-news/live-blog/live-updates-flights-grounded-faa-communications-outage-rcna609268/rcrd123876?canonicalCard=true">SMART system</a> for air traffic control, insisted its software was not responsible for the nationwide ground stop.</p>
+</blockquote>
+<p>与此同时，作为美国联邦航空局 (FAA) 新型空中交通管制 <a href="https://www.nbcnews.com/news/us-news/live-blog/live-updates-flights-grounded-faa-communications-outage-rcna609268/rcrd123876?canonicalCard=true">SMART系统</a> 供应商的 AI 科技初创公司 Air Space Intelligence 坚称，其软件并非导致全国性地面停飞的原因。</p>
+<blockquote>
+<p>“The current ground stop is not based on or a result of the SMART system, any product of ASI or our integration with FAA and ATC,” the company said in a statement <a href="https://x.com/AirSpaceIntel/status/2121371183836696583">posted to X</a>.</p>
+</blockquote>
+<p>“当前的地面停飞并非基于或由 SMART 系统、ASI 的任何产品或我们与 FAA 和 ATC 的集成所导致，”该公司在一份<a href="https://x.com/AirSpaceIntel/status/2121371183836696583">发布到 X</a>的声明中表示。</p>
+<blockquote>
+<p>Aviation safety expert Jeff Guzzetti called the outage “extraordinary” and said he doesn’t know what would have caused it.</p>
+</blockquote>
+<p>航空安全专家 Jeff Guzzetti 将此次中断称为“ extraordinary”，并表示他不清楚是什么导致了它。</p>
+<blockquote>
+<p>Guzzetti emphasized that pilots are trained to operate through communications outages and that there are redundancies in place for such instances. Pilots “could get information relayed through other means” to ensure planes are spaced properly for landing.</p>
+</blockquote>
+<p>Guzzetti 强调，飞行员受过训练，能够在通信中断情况下运行，并有相应的冗余系统应对此类情况。飞行员可以通过其他途径获取信息，以确保飞机按间距安全着陆。</p>
+<blockquote>
+<p>He added that the situation is turning from a safety issue to a massive logistics problem. Airports are becoming crowded with planes trying to land as the aircraft currently on the ground aren’t able to depart. Planes on the ground may have to move and park on taxiways, Guzzetti said.</p>
+</blockquote>
+<p>他补充说，事态正从安全问题转变为大规模的物流难题。由于地面滞留的飞机无法起飞，试图降落的飞机导致机场变得拥挤不堪。古泽蒂表示，地面上的飞机可能不得不移动并停在滑行道上。</p>
+<blockquote>
+<p>There are different layers of communications — high-altitude, midlevel and the towers on the ground. The high-altitude control centers are the ones affected by the outage.</p>
+</blockquote>
+<p>通信分为不同层级——高空层、中层和地面塔楼。受中断影响的是高空控制中心。</p>
+<p><img loading="lazy" src="https://media-cldnry.s-nbcnews.com/image/upload/t_focal-860x484,f_avif,q_auto:best/mpx/2704722219/2026_11/1794610293869_now_hallie_gosk_plane_space_261113_S3_1920x1080-a3oh0i.jpg"></p>
+<blockquote>
+<p><a href="https://www.nbcnews.com/video/some-airports-beginning-to-run-out-of-space-for-planes-amid-nationwide-ground-stop-273478213938">Some airports beginning to run out of space for planes amid nationwide ground stop</a></p>
+</blockquote>
+<p>部分机场因全国范围内的地面停运而开始失去飞机停放空间。 <a href="https://www.nbcnews.com/video/some-airports-beginning-to-run-out-of-space-for-planes-amid-nationwide-ground-stop-273478213938">https://www.nbcnews.com/video/some-airports-beginning-to-run-out-of-space-for-planes-amid-nationwide-ground-stop-273478213938</a></p>
+<blockquote>
+<p>02:49</p>
+</blockquote>
+<p>您发送的内容“02:49”看起来是时间标记，并非可翻译的英文文本。请提供需要翻译的完整英文原文，我会直接为您翻译。</p>
+<blockquote>
+<p>At Newark Liberty International Airport, personnel in the control tower said the situation is “a whole mess right now,” according to LiveATC. “We’re running out of space” and “there’s significant gate issues” were comments also heard on the live audio feed.</p>
+</blockquote>
+<p>在 Newark Liberty International Airport 的控制塔工作人员表示，当前局势是“一团糟”，据 LiveATC 报道。 “我们正接近空间限制”和“有显著的门口出行问题”也是在直播音频通道中听到的评论。</p>
+<blockquote>
+<p>“I’m as much in the dark as everyone else. I’m not getting any information from anybody,” one controller at Newark said, according to the feed.</p>
+</blockquote>
+<p>“我和其他人一样一无所知。我没有从任何人那里得到任何消息。”据该信息流，纽瓦克的一名管制员说道。</p>
+<blockquote>
+<p>Shortly before the FAA issued its alert, both major airports in Chicago — O’Hare and Midway International Airport — were listed on a ground stop alert due to an “equipment outage,” <a href="https://www.nbcchicago.com/news/local/faa-issues-nationwide-ground-stop-due-to-extraordinary-circumstances-and-safety/4016516/">NBC Chicago</a> reported.</p>
+</blockquote>
+<p>就在 FAA 发布警报前不久，芝加哥的两大主要机场——O’Hare 和 Midway International Airport——因“设备故障”被列入地面停飞警报，<a href="https://www.nbcchicago.com/news/local/faa-issues-nationwide-ground-stop-due-to-extraordinary-circumstances-and-safety/4016516/">NBC Chicago</a> 报道。</p>
+<blockquote>
+<p><a href="https://www.linkedin.com/in/deverenwerne/">Deveren Werne</a> was on an American Airlines jet that was about to take off from Indianapolis to Chicago when suddenly the pilots announced that all flights were grounded.</p>
+</blockquote>
+<p><a href="https://www.linkedin.com/in/deverenwerne/">Deveren Werne</a> 坐在一架即将起飞的 American Airlines 飞机上，从 Indianapolis 飞往 Chicago 时，飞行员突然宣布所有航班已取消。</p>
+<blockquote>
+<p>“At first, the pilot announced that there was some kind of radio issue,” Werne, 55, of Greenville, South Carolina, told NBC News in a telephone interview. “Then a little while later, the pilot said something like, ‘There is something going on that’s more serious than that.’”</p>
+</blockquote>
+<p>“一开始，机长宣布出现了无线电故障，”55岁的韦恩（来自南卡罗来纳州格林威尔）在接受NBC新闻电话采访时说。“过了一会儿，机长又说了一句，大概是：‘情况比这更严重了。’”</p>
+<blockquote>
+<p>Werne, a consultant who helps manufacturers and other industries adapt AI technology, said he is a frequent flyer and this was a first for him. He said there was “a mixture of emotions” from his fellow passengers on hearing the announcement.</p>
+</blockquote>
+<p>Werne，一位帮助制造商和其他行业引入 AI 技术的顾问，他说自己是常飞客，但这次是头一遭。他表示，听到公告后，同机乘客中出现了“情感交织”的情况。</p>
+<blockquote>
+<p>“Then I started hearing from other friends who were on planes, including one in Chicago who was stuck on a runway,” Werne said. “Right now, our plane is heading back to the terminal, so at least we’re going to be able to deplane.”</p>
+</blockquote>
+<p>“然后我开始听到其他在飞机上的朋友的消息，其中有一位在芝加哥的朋友被困在跑道上，” Werne 说。“现在我们乘坐的飞机正返回航站楼，这样我们至少能下飞机了。”</p>
+<blockquote>
+<p>United Airlines issued a statement acknowledging the ground stop. “United flights that are already airborne will continue,” the statement said. “New domestic flights will not depart while the FAA ground stop remains in place.”</p>
+</blockquote>
+<p>United Airlines 发布声明，确认了 ground stop。声明表示：“已经飞起的 United 航班将继续飞行。” “在 FAA ground stop 持续生效期间，新的国内航班将不得起飞。”</p>
+<p><img alt="Nationwide Ground Stop" loading="lazy" src="https://media-cldnry.s-nbcnews.com/image/upload/t_fit-560w,f_avif,q_auto:eco,dpr_2/rockcms/2026-11/2611-Nationwide-Ground-Stop-vsb-1805-47a64d.jpg"></p>
+<blockquote>
+<p>Planes are parked at Harry Reid International Airport during a nationwide ground stop, in Las Vegas. John Locher / AP</p>
+</blockquote>
+<p>在全国范围的停飞期间，飞机停在拉斯维加斯的哈里·里德国际机场。John Locher / AP</p>
+<blockquote>
+<p>Nationwide ground stops are extremely rare.</p>
+</blockquote>
+<p>全国范围的地面停运极为罕见。</p>
+<blockquote>
+<p>After the Sept. 11, 2001, terrorist attacks, the FAA ordered an unprecedented nationwide ground stop. All civilian air traffic across U.S. airspace was halted and airborne planes were ordered to land at the nearest available airports.</p>
+</blockquote>
+<p>在 2001年9月11日 发生的恐怖袭击后，FAA 下令实施 前所未有的 全国范围地面停飞。所有在 U.S. 空域 内的民用航空交通均被中断，空中航班被命令降落在最近可用的机场。</p>
+<blockquote>
+<p>In January 2023, the <a href="https://www.nbcnews.com/tech/tech-news/faa-notam-system-crashed-target-reforms-rcna65272">FAA grounded all flights for a few hours,</a> blaming a failure in the Notice to Air Missions system, which alerts pilots to a host of potential dangers.</p>
+</blockquote>
+<p>2023 年 1 月，<a href="https://www.nbcnews.com/tech/tech-news/faa-notam-system-crashed-target-reforms-rcna65272">FAA 停飞所有航班数小时，</a> 将其归咎于 Notice to Air Missions 系统的故障，该系统用于提醒飞行员注意各种潜在危险。</p>
+<blockquote>
+<p>This is a developing story. Please check back for updates.</p>
+</blockquote>
+<p>这是一个正在发展的故事。 请稍后回来查看更新。</p>
+]]></content:encoded></item></channel></rss>
