@@ -3,7 +3,7 @@ title: '不占用单元格的终端边框'
 date: 2026-11-15T09:18:27+08:00
 draft: false
 source: "Hacker News"
-originalTitle: 'Terminal borders that don't cost a cell'
+originalTitle: 'Terminal borders that don''t cost a cell'
 originalUrl: "https://www.joshka.net/cell-borders/"
 hnUrl: ""
 points: 

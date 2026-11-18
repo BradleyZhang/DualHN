@@ -60,8 +60,8 @@ async function main() {
         await translate(title, "翻译该英文标题为中文，不要换行")
       ).content;
       const frontMater = getFrontMater(
-        translatedTitle.replace(/\s+/g, " ").trim(),
-        page.title,
+        translatedTitle.replace(/\s+/g, " ").trim().replace(/'/g,"''"),
+        page.title.replace(/'/g,"''"),
         url,
         "",
         "",
