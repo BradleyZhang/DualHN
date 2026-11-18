@@ -1,0 +1,1120 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>2026-11-15 on DualHN</title><link>https://BradleyZhang.github.io/DualHN/2026-11-15/</link><description>Recent content in 2026-11-15 on DualHN</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Sun, 15 Nov 2026 09:45:47 +0800</lastBuildDate><atom:link href="https://BradleyZhang.github.io/DualHN/2026-11-15/index.xml" rel="self" type="application/rss+xml"/><item><title>Ggml 版本 1.0.0</title><link>https://BradleyZhang.github.io/DualHN/2026-11-15/04-ggml-v1-0-0/</link><pubDate>Sun, 15 Nov 2026 09:45:47 +0800</pubDate><guid>https://BradleyZhang.github.io/DualHN/2026-11-15/04-ggml-v1-0-0/</guid><description>&lt;blockquote&gt;
+&lt;h2 id="overview"&gt;Overview&lt;/h2&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="概述"&gt;概述&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;ggml 1.0.0 prunes the deprecated public API and the legacy &lt;code&gt;DIAG_MASK&lt;/code&gt; ops, adds configurable YaRN truncation and FP8 support, and brings broad performance work across backends: few-row quantized matmuls and MoE fusion on CUDA/Metal, a Vulkan prefill FlashAttention path, a device-side MoE scheduler on SYCL, decomposed Adreno FlashAttention in OpenCL, new WebGPU kernels, expanded Hexagon op coverage, and scheduler improvements that avoid uploading unused inputs.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;ggml 1.0.0 移除了已弃用的公共 API 和遗留的 &lt;code&gt;DIAG_MASK&lt;/code&gt; 操作，新增可配置的 YaRN truncation 与 FP8 支持，并在多个后端上带来了广泛的性能改进：CUDA/Metal 上的少量行量化 matmul 与 MoE fusion，Vulkan prefill FlashAttention 路径，SYCL 上的设备端 MoE scheduler，OpenCL 中分解式的 Adreno FlashAttention，新的 WebGPU kernel，扩展的 Hexagon 操作覆盖，以及避免上传未使用输入的调度器改进。&lt;/p&gt;</description><content:encoded><![CDATA[<p>from: <a href="https://github.com/ggml-org/ggml/releases/tag/v1.0.0">Release v1.0.0</a></p><blockquote>
+<h2 id="overview">Overview</h2>
+</blockquote>
+<h2 id="概述">概述</h2>
+<blockquote>
+<p>ggml 1.0.0 prunes the deprecated public API and the legacy <code>DIAG_MASK</code> ops, adds configurable YaRN truncation and FP8 support, and brings broad performance work across backends: few-row quantized matmuls and MoE fusion on CUDA/Metal, a Vulkan prefill FlashAttention path, a device-side MoE scheduler on SYCL, decomposed Adreno FlashAttention in OpenCL, new WebGPU kernels, expanded Hexagon op coverage, and scheduler improvements that avoid uploading unused inputs.</p>
+</blockquote>
+<p>ggml 1.0.0 移除了已弃用的公共 API 和遗留的 <code>DIAG_MASK</code> 操作，新增可配置的 YaRN truncation 与 FP8 支持，并在多个后端上带来了广泛的性能改进：CUDA/Metal 上的少量行量化 matmul 与 MoE fusion，Vulkan prefill FlashAttention 路径，SYCL 上的设备端 MoE scheduler，OpenCL 中分解式的 Adreno FlashAttention，新的 WebGPU kernel，扩展的 Hexagon 操作覆盖，以及避免上传未使用输入的调度器改进。</p>
+<blockquote>
+<h3 id="api-changes">API changes</h3>
+</blockquote>
+<h3 id="api-变更">API 变更</h3>
+<blockquote>
+<ul>
+<li>Pruned deprecated API and removed the legacy <code>DIAG_MASK_INF</code>/<code>DIAG_MASK_ZERO</code> ops, bumping the RPC protocol to reject incompatible peers (<a href="https://github.com/ggml-org/llama.cpp/pull/29801">llama/29801</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/31946">llama/31946</a>)</li>
+<li>Added <code>ggml_rope_set_truncate</code>/<code>ggml_rope_get_truncate</code> to control YaRN correction-bound rounding (<a href="https://github.com/ggml-org/llama.cpp/pull/30206">llama/30206</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/30802">llama/30802</a>)</li>
+<li>Implemented the backward pass for <code>TRI</code> (<a href="https://github.com/ggml-org/llama.cpp/pull/30712">llama/30712</a>)</li>
+<li>Added <code>MUL_MAT</code> src1 precision tests and gating for <code>ggml_prec_set_acc</code> (<a href="https://github.com/ggml-org/llama.cpp/pull/31896">llama/31896</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/31851">llama/31851</a>)</li>
+<li>Bumped the RPC protocol to v9 with faster loading and graceful failure on unreachable endpoints or failed handshakes (<a href="https://github.com/ggml-org/llama.cpp/pull/29413">llama/29413</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/30415">llama/30415</a>)</li>
+</ul>
+</blockquote>
+<ul>
+<li>清理了已弃用的 API 并移除旧版 <code>DIAG_MASK_INF</code>/<code>DIAG_MASK_ZERO</code> 操作，并将 RPC 协议升级，以拒绝不兼容的对端 (<a href="https://github.com/ggml-org/llama.cpp/pull/29801">llama/29801</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/31946">llama/31946</a>)</li>
+<li>添加了 <code>ggml_rope_set_truncate</code>/<code>ggml_rope_get_truncate</code> 以控制 YaRN 的校正边界舍入 (<a href="https://github.com/ggml-org/llama.cpp/pull/30206">llama/30206</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/30802">llama/30802</a>)</li>
+<li>实现了 <code>TRI</code> 的反向传播 (<a href="https://github.com/ggml-org/llama.cpp/pull/30712">llama/30712</a>)</li>
+<li>添加了 <code>MUL_MAT</code> src1 精度测试，并为 <code>ggml_prec_set_acc</code> 增加了门控 (<a href="https://github.com/ggml-org/llama.cpp/pull/31896">llama/31896</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/31851">llama/31851</a>)</li>
+<li>将 RPC 协议升级到 v9，采用更快的加载，并在不可达端点或握手失败时实现优雅失败 (<a href="https://github.com/ggml-org/llama.cpp/pull/29413">llama/29413</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/30415">llama/30415</a>)</li>
+</ul>
+<blockquote>
+<h3 id="core-changes">Core changes</h3>
+</blockquote>
+<h3 id="核心更改">核心更改</h3>
+<blockquote>
+<ul>
+<li>Scheduler skips uploading inputs that are not read and prefetches only inputs produced by earlier splits (<a href="https://github.com/ggml-org/llama.cpp/pull/31419">llama/31419</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/32100">llama/32100</a>)</li>
+<li>MoE cache can compute a share of the cache misses on the CPU and copy the results back asynchronously (<a href="https://github.com/ggml-org/llama.cpp/pull/30966">llama/30966</a>)</li>
+<li>Meta backend raises the compute view limit for buffers with few tensors (<a href="https://github.com/ggml-org/llama.cpp/pull/31447">llama/31447</a>)</li>
+</ul>
+</blockquote>
+<ul>
+<li>调度器跳过上传未被读取的输入，并仅预取由先前分片生成的输入（<a href="https://github.com/ggml-org/llama.cpp/pull/31419">llama/31419</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/32100">llama/32100</a>）</li>
+<li>MoE 缓存可以在 CPU 上计算一部分缓存未命中，并异步将结果复制回去（<a href="https://github.com/ggml-org/llama.cpp/pull/30966">llama/30966</a>）</li>
+<li>Meta 后端提高了针对含有少量张量的缓冲区的计算视图限制（<a href="https://github.com/ggml-org/llama.cpp/pull/31447">llama/31447</a>）</li>
+</ul>
+<blockquote>
+<h3 id="backend-changes">Backend changes</h3>
+</blockquote>
+<h3 id="后端变更">后端变更</h3>
+<blockquote>
+<h4 id="cuda">CUDA</h4>
+</blockquote>
+<h4 id="cuda-1">CUDA</h4>
+<blockquote>
+<ul>
+<li>Added few-row MMQ for batch sizes 2-24 and MMVF for BF16 few-row matmuls (<a href="https://github.com/ggml-org/llama.cpp/pull/31533">llama/31533</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/31959">llama/31959</a>)</li>
+<li>Added OCP FP8 support and fused NVFP4 gate/up matmuls with GLU in MMQ (<a href="https://github.com/ggml-org/llama.cpp/pull/28413">llama/28413</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/31296">llama/31296</a>)</li>
+<li>Extended FlashAttention with an sm70 head-size-256 config and MMA head sizes 40/72 (<a href="https://github.com/ggml-org/llama.cpp/pull/27997">llama/27997</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/30285">llama/30285</a>)</li>
+<li>Improved graph handling: skip compat checks on reuse, re-instantiate on cluster-dim changes, move graph state (<a href="https://github.com/ggml-org/llama.cpp/pull/32004">llama/32004</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/31284">llama/31284</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/32001">llama/32001</a>)</li>
+<li>MoE: skip empty MMQ stream-k tiles, linearize the MoE layout, and sanitize post-bias NaNs (<a href="https://github.com/ggml-org/llama.cpp/pull/32067">llama/32067</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/31047">llama/31047</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/31005">llama/31005</a>)</li>
+<li>Added a debug buffer pool and halved the VMM pool reservation with reserve retries (<a href="https://github.com/ggml-org/llama.cpp/pull/31919">llama/31919</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/30542">llama/30542</a>)</li>
+<li>HIP: use a fixed BLAS workspace and add an MFMA lightning indexer for CDNA2 (<a href="https://github.com/ggml-org/llama.cpp/pull/31838">llama/31838</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/29050">llama/29050</a>)</li>
+<li>Added a d_state=64 SSM_SCAN fast path and made radix Top-K deterministic for ties (<a href="https://github.com/ggml-org/llama.cpp/pull/31818">llama/31818</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/31084">llama/31084</a>)</li>
+</ul>
+</blockquote>
+<ul>
+<li>增加了适用于批次大小 2-24 的少数行 MMQ，并为 BF16 少数行矩阵乘法增加了 MMVF（<a href="https://github.com/ggml-org/llama.cpp/pull/31533">llama/31533</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/31959">llama/31959</a>）</li>
+<li>增加了 OCP FP8 支持，并在 MMQ 中融合了 NVFP4 门控/上游矩阵乘法与 GLU（<a href="https://github.com/ggml-org/llama.cpp/pull/28413">llama/28413</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/31296">llama/31296</a>）</li>
+<li>扩展了 FlashAttention，支持 sm70 256 头尺寸配置，并增加了 MMA 40/72 头尺寸支持（<a href="https://github.com/ggml-org/llama.cpp/pull/27997">llama/27997</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/30285">llama/30285</a>）</li>
+<li>优化了图处理流程：在重用时跳过兼容性检查，在集群维度变化时重新实例化，并移动了图状态（<a href="https://github.com/ggml-org/llama.cpp/pull/32004">llama/32004</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/31284">llama/31284</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/32001">llama/32001</a>）</li>
+<li>MoE：跳过空 MMQ stream-k 瓦片，线性化 MoE 布局，并清理 post-bias NaN 值（<a href="https://github.com/ggml-org/llama.cpp/pull/32067">llama/32067</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/31047">llama/31047</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/31005">llama/31005</a>）</li>
+<li>增加了调试缓冲池，并将 VMM 池的保留量减半，同时引入了保留重试机制（<a href="https://github.com/ggml-org/llama.cpp/pull/31919">llama/31919</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/30542">llama/30542</a>）</li>
+<li>HIP：使用固定的 BLAS 工作区，并为 CDNA2 增加了 MFMA 闪电索引器（<a href="https://github.com/ggml-org/llama.cpp/pull/31838">llama/31838</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/29050">llama/29050</a>）</li>
+<li>增加了 d_state=64 SSM_SCAN 快速路径，并使 radix Top-K 在 tie 时确定（<a href="https://github.com/ggml-org/llama.cpp/pull/31818">llama/31818</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/31084">llama/31084</a>）</li>
+</ul>
+<blockquote>
+<h4 id="metal">Metal</h4>
+</blockquote>
+<h4 id="金属">金属</h4>
+<blockquote>
+<ul>
+<li>Fused MoE routing and kept fusable node groups inside a single command buffer (<a href="https://github.com/ggml-org/llama.cpp/pull/31615">llama/31615</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/31688">llama/31688</a>)</li>
+<li>Made radix Top-K deterministic for ties, added mul_mm for 32&lt;=K&lt;64, and switched TRI to select (<a href="https://github.com/ggml-org/llama.cpp/pull/31084">llama/31084</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/30982">llama/30982</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/30711">llama/30711</a>)</li>
+<li>Fixed GROUP_NORM for ne03&gt;1 and out-of-bounds accesses in the FA output and SOLVE_TRI kernels (<a href="https://github.com/ggml-org/llama.cpp/pull/31852">llama/31852</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/31662">llama/31662</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/32103">llama/32103</a>)</li>
+</ul>
+</blockquote>
+<ul>
+<li>融合 MoE 路由，并将可融合节点组保留在单个命令缓冲区内 (<a href="https://github.com/ggml-org/llama.cpp/pull/31615">llama/31615</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/31688">llama/31688</a>)</li>
+<li>使基数 Top-K 在平局时确定性，添加用于 32&lt;=K&lt;64 的 mul_mm，并将 TRI 切换为 select (<a href="https://github.com/ggml-org/llama.cpp/pull/31084">llama/31084</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/30982">llama/30982</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/30711">llama/30711</a>)</li>
+<li>修复了 GROUP_NORM 针对 ne03&gt;1 的问题以及 FA 输出和 SOLVE_TRI 内核中的越界访问 (<a href="https://github.com/ggml-org/llama.cpp/pull/31852">llama/31852</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/31662">llama/31662</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/32103">llama/32103</a>)</li>
+</ul>
+<blockquote>
+<h4 id="vulkan">Vulkan</h4>
+</blockquote>
+<h3 id="vulkan-1">Vulkan</h3>
+<blockquote>
+<ul>
+<li>Added an Intel FlashAttention prefill kernel (<a href="https://github.com/ggml-org/llama.cpp/pull/29357">llama/29357</a>)</li>
+<li>Added batched tensor copies, a test-fusion interface, and ReBAR detection (<a href="https://github.com/ggml-org/llama.cpp/pull/31418">llama/31418</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/30769">llama/30769</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/31658">llama/31658</a>)</li>
+<li>Enabled dequantized KV with CM2, YaRN truncation, RDNA3/4 large-tile split-K, and large coopmat matmul on newer AMD drivers (<a href="https://github.com/ggml-org/llama.cpp/pull/31526">llama/31526</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/30802">llama/30802</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/30280">llama/30280</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/31587">llama/31587</a>)</li>
+<li>Added a tiled-transpose concat shader and FWHT kernels for block widths above 512 (<a href="https://github.com/ggml-org/llama.cpp/pull/30591">llama/30591</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/29772">llama/29772</a>)</li>
+<li>Fixed MoltenVK out-of-bounds accesses, GROUP_NORM workgroup limits, and FA scratch sizing (<a href="https://github.com/ggml-org/llama.cpp/pull/31890">llama/31890</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/31930">llama/31930</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/30487">llama/30487</a>)</li>
+<li>Capped scalar FlashAttention at 8 rows for large heads on Qualcomm (<a href="https://github.com/ggml-org/llama.cpp/pull/30829">llama/30829</a>)</li>
+</ul>
+</blockquote>
+<ul>
+<li>新增 Intel FlashAttention prefill kernel（<a href="https://github.com/ggml-org/llama.cpp/pull/29357">llama/29357</a>）</li>
+<li>新增批量张量拷贝、测试融合接口和 ReBAR 检测（<a href="https://github.com/ggml-org/llama.cpp/pull/31418">llama/31418</a>、<a href="https://github.com/ggml-org/llama.cpp/pull/30769">llama/30769</a>、<a href="https://github.com/ggml-org/llama.cpp/pull/31658">llama/31658</a>）</li>
+<li>启用了配合 CM2 的反量化 KV、YaRN 截断、RDNA3/4 大 tile split-K，以及较新 AMD 驱动上的大型 coopmat matmul（<a href="https://github.com/ggml-org/llama.cpp/pull/31526">llama/31526</a>、<a href="https://github.com/ggml-org/llama.cpp/pull/30802">llama/30802</a>、<a href="https://github.com/ggml-org/llama.cpp/pull/30280">llama/30280</a>、<a href="https://github.com/ggml-org/llama.cpp/pull/31587">llama/31587</a>）</li>
+<li>新增分块转置拼接 shader 和用于 block width 大于 512 的 FWHT kernel（<a href="https://github.com/ggml-org/llama.cpp/pull/30591">llama/30591</a>、<a href="https://github.com/ggml-org/llama.cpp/pull/29772">llama/29772</a>）</li>
+<li>修复了 MoltenVK 越界访问、GROUP_NORM 工作组限制以及 FA scratch 大小问题（<a href="https://github.com/ggml-org/llama.cpp/pull/31890">llama/31890</a>、<a href="https://github.com/ggml-org/llama.cpp/pull/31930">llama/31930</a>、<a href="https://github.com/ggml-org/llama.cpp/pull/30487">llama/30487</a>）</li>
+<li>在 Qualcomm 上将大 head 的标量 FlashAttention 上限设为 8 行（<a href="https://github.com/ggml-org/llama.cpp/pull/30829">llama/30829</a>）</li>
+</ul>
+<blockquote>
+<h4 id="sycl">SYCL</h4>
+</blockquote>
+<p>请提供需要翻译的英文原文，我会为您进行专业翻译。</p>
+<blockquote>
+<ul>
+<li>Added a device-side MoE scheduler (<a href="https://github.com/ggml-org/llama.cpp/pull/30156">llama/30156</a>)</li>
+<li>Made the oneDNN FA cache thread-safe and un-gated fused SDPA for Alchemist at head_dim=64 (<a href="https://github.com/ggml-org/llama.cpp/pull/31138">llama/31138</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/31574">llama/31574</a>)</li>
+<li>Cached the device id and reject buffers that would exceed VRAM (<a href="https://github.com/ggml-org/llama.cpp/pull/31126">llama/31126</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/32013">llama/32013</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/31285">llama/31285</a>)</li>
+<li>Added exact rounding for CPY to Q4_1/Q5_1/Q8_0, strided CLAMP, and f16 SWIGLU_OAI (<a href="https://github.com/ggml-org/llama.cpp/pull/31465">llama/31465</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/31784">llama/31784</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/30857">llama/30857</a>)</li>
+<li>Fixed AOT for allocations above 4GB (<a href="https://github.com/ggml-org/llama.cpp/pull/31873">llama/31873</a>)</li>
+</ul>
+</blockquote>
+<ul>
+<li>添加设备端 MoE 调度器 (<a href="https://github.com/ggml-org/llama.cpp/pull/30156">llama/30156</a>)</li>
+<li>实现了 oneDNN FA cache thread-safe and un-gated fused SDPA for Alchemist at head_dim=64 (<a href="https://github.com/ggml-org/llama.cpp/pull/31138">llama/31138</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/31574">llama/31574</a>)</li>
+<li>缓存设备 ID 并拒绝会导致 VRAM 超出的缓冲区 (<a href="https://github.com/ggml-org/llama.cpp/pull/31126">llama/31126</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/32013">llama/32013</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/31285">llama/31285</a>)</li>
+<li>添加 exact rounding for CPY to Q4_1/Q5_1/Q8_0, strided CLAMP, and f16 SWIGLU_OAI (<a href="https://github.com/ggml-org/llama.cpp/pull/31465">llama/31465</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/31784">llama/31784</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/30857">llama/30857</a>)</li>
+<li>修复 AOT 对 4GB 以上分配的问题 (<a href="https://github.com/ggml-org/llama.cpp/pull/31873">llama/31873</a>)</li>
+</ul>
+<blockquote>
+<h4 id="opencl">OpenCL</h4>
+</blockquote>
+<h4 id="opencl-1">OpenCL</h4>
+<blockquote>
+<ul>
+<li>Added decomposed Adreno FlashAttention and improved decode performance (<a href="https://github.com/ggml-org/llama.cpp/pull/32046">llama/32046</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/31633">llama/31633</a>)</li>
+<li>Added q6_k tiled, q8_0, and f32/q5_k multi-column GEMV kernels and f32 MUL_MAT_ID (<a href="https://github.com/ggml-org/llama.cpp/pull/31758">llama/31758</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/30947">llama/30947</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/31783">llama/31783</a>)</li>
+<li>Added arange, non-contiguous sigmoid, repeat for f16/i32/i16/bf16, and DSV4 HC pre/post kernels (<a href="https://github.com/ggml-org/llama.cpp/pull/31829">llama/31829</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/31687">llama/31687</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/31782">llama/31782</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/31623">llama/31623</a>)</li>
+<li>Enabled multi-column GEMV by default for Adreno X2 (<a href="https://github.com/ggml-org/llama.cpp/pull/31694">llama/31694</a>)</li>
+</ul>
+</blockquote>
+<ul>
+<li>新增分解式 Adreno FlashAttention，并提升 decode 性能（<a href="https://github.com/ggml-org/llama.cpp/pull/32046">llama/32046</a>、<a href="https://github.com/ggml-org/llama.cpp/pull/31633">llama/31633</a>）</li>
+<li>新增 q6_k tiled、q8_0 以及 f32/q5_k 多列 GEMV kernel 和 f32 MUL_MAT_ID（<a href="https://github.com/ggml-org/llama.cpp/pull/31758">llama/31758</a>、<a href="https://github.com/ggml-org/llama.cpp/pull/30947">llama/30947</a>、<a href="https://github.com/ggml-org/llama.cpp/pull/31783">llama/31783</a>）</li>
+<li>新增 arange、非连续 sigmoid、针对 f16/i32/i16/bf16 的 repeat，以及 DSV4 HC pre/post kernel（<a href="https://github.com/ggml-org/llama.cpp/pull/31829">llama/31829</a>、<a href="https://github.com/ggml-org/llama.cpp/pull/31687">llama/31687</a>、<a href="https://github.com/ggml-org/llama.cpp/pull/31782">llama/31782</a>、<a href="https://github.com/ggml-org/llama.cpp/pull/31623">llama/31623</a>）</li>
+<li>为 Adreno X2 默认启用多列 GEMV（<a href="https://github.com/ggml-org/llama.cpp/pull/31694">llama/31694</a>）</li>
+</ul>
+<blockquote>
+<h4 id="webgpu">WebGPU</h4>
+</blockquote>
+<p>您好，我收到了一个词 &ldquo;WebGPU&rdquo;。请问您是要翻译这个词本身，还是有一份完整的 WebGPU 文档需要翻译？请提供完整的英文原文，这样我才能为您进行准确的翻译。</p>
+<blockquote>
+<ul>
+<li>Added batched tensor API support and returned maxBufferSize from get_max_size (<a href="https://github.com/ggml-org/llama.cpp/pull/31473">llama/31473</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/31348">llama/31348</a>)</li>
+<li>Added GROUP_NORM, MEAN, COUNT_EQUAL, and PAD_REFLECT_1D kernels (<a href="https://github.com/ggml-org/llama.cpp/pull/31490">llama/31490</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/31591">llama/31591</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/31578">llama/31578</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/31877">llama/31877</a>)</li>
+<li>Supported the YaRN truncation config (<a href="https://github.com/ggml-org/llama.cpp/pull/30802">llama/30802</a>)</li>
+</ul>
+</blockquote>
+<ul>
+<li>添加了批量 tensor API 支持，并从 get_max_size 返回 maxBufferSize (<a href="https://github.com/ggml-org/llama.cpp/pull/31473">llama/31473</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/31348">llama/31348</a>)</li>
+<li>添加了 GROUP_NORM、MEAN、COUNT_EQUAL 和 PAD_REFLECT_1D 内核 (<a href="https://github.com/ggml-org/llama.cpp/pull/31490">llama/31490</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/31591">llama/31591</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/31578">llama/31578</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/31877">llama/31877</a>)</li>
+<li>支持 YaRN 截断配置 (<a href="https://github.com/ggml-org/llama.cpp/pull/30802">llama/30802</a>)</li>
+</ul>
+<blockquote>
+<h4 id="hexagon">Hexagon</h4>
+</blockquote>
+<h4 id="六边形">六边形</h4>
+<blockquote>
+<ul>
+<li>Added Q5_0/Q5_1 support and optimized conv_2d while adding conv_3d (<a href="https://github.com/ggml-org/llama.cpp/pull/32094">llama/32094</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/31814">llama/31814</a>)</li>
+<li>Fused post-norm residual add into RMS_NORM_MUL and added set_tensor_n (<a href="https://github.com/ggml-org/llama.cpp/pull/31822">llama/31822</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/31744">llama/31744</a>)</li>
+<li>Added automatic libhtp loading and fixed 64-bit FastRPC handle truncation (<a href="https://github.com/ggml-org/llama.cpp/pull/31781">llama/31781</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/30952">llama/30952</a>)</li>
+<li>Fixed the host build with clang-cl on Windows ARM64 (<a href="https://github.com/ggml-org/llama.cpp/pull/32011">llama/32011</a>)</li>
+</ul>
+</blockquote>
+<ul>
+<li>添加对 Q5_0/Q5_1 的支持，并在添加 conv_3d 的同时优化了 conv_2d（<a href="https://github.com/ggml-org/llama.cpp/pull/32094">llama/32094</a>、<a href="https://github.com/ggml-org/llama.cpp/pull/31814">llama/31814</a>）</li>
+<li>将 post-norm 残差相加融合进 RMS_NORM_MUL，并添加 set_tensor_n（<a href="https://github.com/ggml-org/llama.cpp/pull/31822">llama/31822</a>、<a href="https://github.com/ggml-org/llama.cpp/pull/31744">llama/31744</a>）</li>
+<li>添加 libhtp 自动加载，并修复 64 位 FastRPC 句柄截断问题（<a href="https://github.com/ggml-org/llama.cpp/pull/31781">llama/31781</a>、<a href="https://github.com/ggml-org/llama.cpp/pull/30952">llama/30952</a>）</li>
+<li>修复了在 Windows ARM64 上使用 clang-cl 的主机端构建（<a href="https://github.com/ggml-org/llama.cpp/pull/32011">llama/32011</a>）</li>
+</ul>
+<blockquote>
+<h4 id="cpu">CPU</h4>
+</blockquote>
+<h4 id="cpu-1">CPU</h4>
+<blockquote>
+<ul>
+<li>Switched MUL_MAT to F32 src1 and accumulate FlashAttention V in F32 (<a href="https://github.com/ggml-org/llama.cpp/pull/31854">llama/31854</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/29810">llama/29810</a>)</li>
+<li>Added SpacemiT GATED_DELTA_NET RVV and Q4_1 32x256 HP kernels and enabled IME2 MXFP4 repack (<a href="https://github.com/ggml-org/llama.cpp/pull/31897">llama/31897</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/31929">llama/31929</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/31776">llama/31776</a>)</li>
+<li>Enabled the 4x4 simd_gemm tile on ARM NEON and added bf16/q8_0 VXE to llamafile (<a href="https://github.com/ggml-org/llama.cpp/pull/32128">llama/32128</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/31866">llama/31866</a>)</li>
+</ul>
+</blockquote>
+<ul>
+<li>将 MUL_MAT 切换为 F32 src1 并以 F32 累加 FlashAttention V (<a href="https://github.com/ggml-org/llama.cpp/pull/31854">llama/31854</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/29810">llama/29810</a>)</li>
+<li>新增 SpacemiT GATED_DELTA_NET RVV 与 Q4_1 32x256 HP 内核，并启用 IME2 MXFP4 重打包 (<a href="https://github.com/ggml-org/llama.cpp/pull/31897">llama/31897</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/31929">llama/31929</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/31776">llama/31776</a>)</li>
+<li>在 ARM NEON 上启用 4x4 simd_gemm tile 并向 llamafile 添加 bf16/q8_0 VXE (<a href="https://github.com/ggml-org/llama.cpp/pull/32128">llama/32128</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/31866">llama/31866</a>)</li>
+</ul>
+<blockquote>
+<h4 id="cann">CANN</h4>
+</blockquote>
+<h4 id="cann华为神经网络计算架构">CANN（华为神经网络计算架构）</h4>
+<blockquote>
+<ul>
+<li>Fail early when a buffer type is unsupported (<a href="https://github.com/ggml-org/llama.cpp/pull/31270">llama/31270</a>)</li>
+</ul>
+</blockquote>
+<ul>
+<li>在缓冲区类型不受支持时尽早失败 (<a href="https://github.com/ggml-org/llama.cpp/pull/31270">llama/31270</a>)</li>
+</ul>
+<blockquote>
+<h4 id="zdnn">ZDNN</h4>
+</blockquote>
+<p>您好，&ldquo;ZDNN&rdquo; 这个缩写可能指代不同的技术概念，我需要看到完整的上下文或原文才能给出准确的翻译。如果您能提供相关的段落或说明，我会很乐意为您翻译。</p>
+<blockquote>
+<ul>
+<li>Accept non-zdnn tensors, invalidate compute tensors after each op, and fix release backend lib detection (<a href="https://github.com/ggml-org/llama.cpp/pull/31824">llama/31824</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/31905">llama/31905</a>)</li>
+</ul>
+</blockquote>
+<ul>
+<li>接受非 ZDNN 张量，在每次操作后使计算张量失效，并修复发布后端库检测 (<a href="https://github.com/ggml-org/llama.cpp/pull/31824">llama/31824</a>, <a href="https://github.com/ggml-org/llama.cpp/pull/31905">llama/31905</a>)</li>
+</ul>
+<blockquote>
+<h4 id="openvino">OpenVINO</h4>
+</blockquote>
+<h4 id="openvino-1">OpenVINO</h4>
+<blockquote>
+<ul>
+<li>Supported the YaRN truncation config (<a href="https://github.com/ggml-org/llama.cpp/pull/30802">llama/30802</a>)</li>
+</ul>
+</blockquote>
+<ul>
+<li>支持了 YaRN 截断配置 (<a href="https://github.com/ggml-org/llama.cpp/pull/30802">llama/30802</a>)</li>
+</ul>
+<blockquote>
+<h2 id="more-info">More info</h2>
+</blockquote>
+<h2 id="更多信息">更多信息</h2>
+<blockquote>
+<ul>
+<li><a href="https://github.com/ggml-org/ggml/discussions/1579">Releases and versioning of <code>ggml-org</code> projects</a></li>
+</ul>
+</blockquote>
+<ul>
+<li><a href="https://github.com/ggml-org/ggml/discussions/1579">发布和版本管理的 <code>ggml-org</code> 项目</a></li>
+</ul>
+<blockquote>
+<h2 id="changelog-since-v0290">Changelog since v0.29.0</h2>
+</blockquote>
+<h2 id="自-v0290-以来的变更日志">自 v0.29.0 以来的变更日志</h2>
+<blockquote>
+<p><a href="https://github.com/ggml-org/ggml/commit/417a024b4fb6bc3116d41af7c067166a039bdf12">417a024</a> ggml: bump version to 1.0.0 (<a href="https://github.com/ggml-org/ggml/pull/1690">#1690</a>)<br>
+<a href="https://github.com/ggml-org/ggml/commit/771b3d9c45f26d046f1149a37ad01524341857e2">771b3d9</a> requirements: fix numpy for python 3.14 (<a href="https://github.com/ggml-org/ggml/pull/1691">#1691</a>)<br>
+<a href="https://github.com/ggml-org/ggml/commit/f154959e7f1c33a4237c67783fdd360b646eeb89">f154959</a> sync: llama.cpp<br>
+<a href="https://github.com/ggml-org/ggml/commit/ec04faf176635c4edd0d56a7f534e6d7a94f3a22">ec04faf</a> fix(hexagon): make host build work with clang-cl on Windows ARM64 (llama/32011)<br>
+<a href="https://github.com/ggml-org/ggml/commit/b45738e946d6b3eb379d2505afc2b286357591dd">b45738e</a> examples: adapt to removal of ggml_diag_mask_inf<br>
+<a href="https://github.com/ggml-org/ggml/commit/1514439034c6cf8cf5d5f98a82a6d156f3786443">1514439</a> sync: llama.cpp<br>
+<a href="https://github.com/ggml-org/ggml/commit/5f2955545ae1f454c671834d3a07b1457fe2b65f">5f29555</a> ggml: prune (llama/29801)<br>
+<a href="https://github.com/ggml-org/ggml/commit/076861cdfcc5b37ffbbcaa392513786bce9d5b70">076861c</a> hexagon: add Q5_0 and Q5_1 support (llama/32094)<br>
+<a href="https://github.com/ggml-org/ggml/commit/63ec52d4f157f41d93aeb6ff792696f11827b187">63ec52d</a> Title: CUDA: few-row MMQ for BS 2-24 (llama/31533)<br>
+<a href="https://github.com/ggml-org/ggml/commit/c6fe79689e0c7682e182b87c1a0c3d1de55c8828">c6fe796</a> ggml: route GATED_DELTA_NET to the SpacemiT RVV kernel (llama/31897)<br>
+<a href="https://github.com/ggml-org/ggml/commit/4ae6e7214d33a683056bac70668bb07d977fbace">4ae6e72</a> vulkan: Intel FA kernel for prefill. (llama/29357)<br>
+<a href="https://github.com/ggml-org/ggml/commit/b22071c095ac15a20b58e696e7a1a15b63882935">b22071c</a> ggml-cpu: use the 4x4 simd_gemm tile on ARM NEON (llama/32128)<br>
+<a href="https://github.com/ggml-org/ggml/commit/ba8b0130435ca0c327acefffc0427b2d4aa9df6a">ba8b013</a> CUDA: Optimize prefil via fuse of w_s scale in epilogue MMQ for nvfp4 checkpoints (llama/26048)<br>
+<a href="https://github.com/ggml-org/ggml/commit/05f605a25e91c30c5c85621d55f2cfb661ab7eec">05f605a</a> ggml-backend: prefetch only inputs computed by earlier splits (llama/32100)<br>
+<a href="https://github.com/ggml-org/ggml/commit/b8a5b871f9445d6e0ad76d18ee592b5608d1ba74">b8a5b87</a> ggml: dispatch SpacemiT Q4_1 32x256 through the HP kernel (llama/31929)<br>
+<a href="https://github.com/ggml-org/ggml/commit/7a8cef580b1078e45df3864a88cb727a26b4d0c1">7a8cef5</a> sycl: make oneDNN FA cache thread-safe and memoize runtime failures (llama/31138)<br>
+<a href="https://github.com/ggml-org/ggml/commit/6dfea1a1c5a30c3effc70bafb8692fac4f9f193d">6dfea1a</a> sycl: fix AOT for more than 4GB (llama/31873)<br>
+<a href="https://github.com/ggml-org/ggml/commit/012ff44a3c532e6dc61a61be6e111df5a1ecd19e">012ff44</a> sycl: use cached device-id in set_main_device (llama/32013)<br>
+<a href="https://github.com/ggml-org/ggml/commit/2f9d47bb172e8dddb6a5010cf45579b71e608895">2f9d47b</a> CUDA: add cuda debug buffer pool (llama/31919)<br>
+<a href="https://github.com/ggml-org/ggml/commit/522d2575e135aa0a39a887fdceebc9573dccec17">522d257</a> opencl: add bin kernel <code>kernel_gemm_noshuffle_q4_0_f32_32b_trans_ila_a7_bin</code> (llama/30947)<br>
+<a href="https://github.com/ggml-org/ggml/commit/0f9dcb72e3b1fc31f307885cd44a586a76c5cbb1">0f9dcb7</a> CUDA: skip empty MoE tiles in MMQ stream-k fixup (llama/32067)<br>
+<a href="https://github.com/ggml-org/ggml/commit/6bed9a83c1cf9273d0ce4f5f1f2fbe1d323f4c28">6bed9a8</a> opencl: add decomposed FA for Adreno (llama/32046)<br>
+<a href="https://github.com/ggml-org/ggml/commit/a357e7bcddb7d7a65a58c138aaa4df6fd91c580e">a357e7b</a> metal: prevent out-of-bounds reads in SOLVE_TRI kernel (llama/32103)<br>
+<a href="https://github.com/ggml-org/ggml/commit/c36ccd88f56b15cc000e3b34012db5784442b933">c36ccd8</a> vulkan: support batched tensor copy API (llama/31418)<br>
+<a href="https://github.com/ggml-org/ggml/commit/1bffc59d478c8d0908d9e6e0d1a5887034a5e1fa">1bffc59</a> backend: re-instantiate CUDA graphs when the cluster dims of a kernel change (llama/31284)<br>
+<a href="https://github.com/ggml-org/ggml/commit/8153155693491f4e17c825e3dec2ef04345e52e6">8153155</a> ROCm/HIP: fixed BLAS workspace instead of rocBLAS allocating one per call (llama/31838)<br>
+<a href="https://github.com/ggml-org/ggml/commit/ad7d200d601b25ceb6a003c7b80d6370a01d4cd2">ad7d200</a> cpu: accumulate flash attention V in F32 (llama/29810)<br>
+<a href="https://github.com/ggml-org/ggml/commit/7f4a2db327ccb3f517ac030a53106b3bcdd01eba">7f4a2db</a> webgpu: add PAD_REFLECT_1D support (llama/31877)<br>
+<a href="https://github.com/ggml-org/ggml/commit/0f514548be4eb0d0ef99a3f7ee9d9fcc992bb8a1">0f51454</a> vulkan: allow dequantized KV optimization with CM2 (llama/31526)<br>
+<a href="https://github.com/ggml-org/ggml/commit/eb4de491b5d17b161e25fada5853770aba19d406">eb4de49</a> vulkan: allocate the device fault vendor binary buffer (llama/32008)<br>
+<a href="https://github.com/ggml-org/ggml/commit/6b7f47aae3964d006e334c44f317a7757681edb7">6b7f47a</a> cuda: use MMVF for BF16 matrices of few rows at small batch sizes (llama/31959)<br>
+<a href="https://github.com/ggml-org/ggml/commit/77d01f1ba9df7ec52a672010a4361807c0ad7eb1">77d01f1</a> cuda: add sm70 FlashAttention config case for DKQ=256, DV=256, ncols=64 (llama/27997)<br>
+<a href="https://github.com/ggml-org/ggml/commit/bd37ba0dfd4bbedc63d2178f844e9488a52d5b04">bd37ba0</a> cuda: fattn mma head sizes 40 72 (llama/30285)<br>
+<a href="https://github.com/ggml-org/ggml/commit/161ca156a3846b5d176289c5196554b84baafc94">161ca15</a> CUDA: Add OCP FP8 support (llama/28413)<br>
+<a href="https://github.com/ggml-org/ggml/commit/06faf806f1b4746b01e6678f39172797a6e4d8bc">06faf80</a> sycl: fixed sycl CLAMP to actually support strided view (llama/31784)<br>
+<a href="https://github.com/ggml-org/ggml/commit/a986181fe35e83cdfd7b2e8e7fa79a42cfe48996">a986181</a> cuda: remove unused ids and type_src0 parameters (llama/32018)<br>
+<a href="https://github.com/ggml-org/ggml/commit/55104b293feb7f1cc2091cc9aa119df06ce38573">55104b2</a> llama: Add FP8 KV-cache support (llama/28392)<br>
+<a href="https://github.com/ggml-org/ggml/commit/0753641f42d02d3191ff1554bcdfb5b0cf89e521">0753641</a> ggml: add MUL_MAT src1 precision tests and gating (llama/31896)<br>
+<a href="https://github.com/ggml-org/ggml/commit/1cd16bd4aabb5384f48d269cec751094266c3269">1cd16bd</a> cuda: remove unused quantize_cuda_t typedef (llama/31884)<br>
+<a href="https://github.com/ggml-org/ggml/commit/4a18cdd8c807930c5d59aa3a079c034b845ebd1c">4a18cdd</a> cuda: halve VMM pool reservation size and retry on cuMemAddressReserve failure (llama/30542)<br>
+<a href="https://github.com/ggml-org/ggml/commit/1c9ac9d88709fbc5287b09ebd582cf56ef6be50a">1c9ac9d</a> CUDA: skip graph compat check when graph is being reused (llama/32004)<br>
+<a href="https://github.com/ggml-org/ggml/commit/999c7250ec311ab031e96e1cae85876aa064a0d6">999c725</a> ggml: fix FreeBSD Vulkan build by setting _XOPEN_SOURCE=700 (llama/31701)<br>
+<a href="https://github.com/ggml-org/ggml/commit/47bc1d845c141a6fe63244d01140c7248424d126">47bc1d8</a> CUDA: move graph and concurrent stream state out of common.cuh (llama/32001)<br>
+<a href="https://github.com/ggml-org/ggml/commit/df70e121dfa94910f616519766d40c02fd9f5f06">df70e12</a> cann: fail early when checking if buffer type is supported (llama/31270)<br>
+<a href="https://github.com/ggml-org/ggml/commit/e447eb53592717b491d3b6f8a4b1f270af2f85f9">e447eb5</a> sycl: Add device-side MoE scheduler (llama/30156)<br>
+<a href="https://github.com/ggml-org/ggml/commit/9a1c5822a7b8cd015ef83b663cd2f91c04f50ff7">9a1c582</a> vulkan: add tiled-transpose concat shader for Qwen models (llama/30591)<br>
+<a href="https://github.com/ggml-org/ggml/commit/8b3c8cf97fdeb53dd151a7f4189e1937d7600b51">8b3c8cf</a> ggml-rpc: fail gracefully on unreachable endpoints and failed handshakes (llama/30415)<br>
+<a href="https://github.com/ggml-org/ggml/commit/f860f1ddb17a4a78235b78100cb6b7ac8e016e59">f860f1d</a> vulkan: Divide GROUP_NORM workgroup to 2D to avoid maxComputeWorkGroupCount limit (llama/31930)<br>
+<a href="https://github.com/ggml-org/ggml/commit/eb5571a3c9952efe261506f259e352ce70239f1c">eb5571a</a> vulkan: Fix out of bounds reads/writes on MoltenVK (llama/31890)<br>
+<a href="https://github.com/ggml-org/ggml/commit/5a9a2643642264c51b301dba2b916fa7e68f6520">5a9a264</a> vulkan: cap scalar flash attention at 8 rows for large heads on Qualcomm (llama/30829)<br>
+<a href="https://github.com/ggml-org/ggml/commit/5610f41bb6883a57198075a250354aa8a6893339">5610f41</a> sycl: un-gate oneDNN fused SDPA for Alchemist at head_dim=64 (llama/31574)<br>
+<a href="https://github.com/ggml-org/ggml/commit/487cadf89e0eeae16926ca3e00be2ad6667f454f">487cadf</a> hexagon: fix 64-bit FastRPC handle truncation on close (llama/30952)<br>
+<a href="https://github.com/ggml-org/ggml/commit/be37c9cf04eba02a537e313579f5870357540689">be37c9c</a> ggml-zdnn: accept non-zdnn tensors, invalidate compute tensors after every op (llama/31824)<br>
+<a href="https://github.com/ggml-org/ggml/commit/294d5fc5121ad278a4ed1e9a311f856308203e53">294d5fc</a> ggml: implement the backward pass for TRI (llama/30712)<br>
+<a href="https://github.com/ggml-org/ggml/commit/e18c2c600a881d10549cf801c63c80a4ce98cba7">e18c2c6</a> ggml-backend: don&rsquo;t upload inputs that are not read (llama/31419)<br>
+<a href="https://github.com/ggml-org/ggml/commit/e84d36b54b61b91663ccf64dc1e7820e5f2e5839">e84d36b</a> metal: prevent out-of-bounds writes to the Metal FA output buffer (llama/31662)<br>
+<a href="https://github.com/ggml-org/ggml/commit/0dd184f8b4e082e3c9fb2a37493aa69544dc316f">0dd184f</a> metal: make ggml_tri select instead of scaling by the comparison (llama/30711)<br>
+<a href="https://github.com/ggml-org/ggml/commit/b6d482c58b3f24982547d667f1806640c62d126b">b6d482c</a> opencl: include climits (llama/31935)<br>
+<a href="https://github.com/ggml-org/ggml/commit/62de7806fdcdda976bea593f8df0f84aaba54d77">62de780</a> RPC: Improve loading times (llama/29413)<br>
+<a href="https://github.com/ggml-org/ggml/commit/a7276d0ace8ea2b39695a50b6df4906d69647566">a7276d0</a> ggml: support YaRN truncation config on openvino, sycl, vulkan, webgpu, rpc (llama/30802)<br>
+<a href="https://github.com/ggml-org/ggml/commit/da894596c375d437a283f64ed2f408223335585f">da89459</a> sycl: cache device-id (llama/31126)<br>
+<a href="https://github.com/ggml-org/ggml/commit/fb570857a9be9613870878f155877aa7a1b7b3e4">fb57085</a> tests: bound the test_rope tolerance by the f32 angle resolution (llama/31874)<br>
+<a href="https://github.com/ggml-org/ggml/commit/e43d8477bf7ef3dc9bddf98ed799b8b3628c841f">e43d847</a> opencl: add f32 MUL_MAT_ID (llama/31783)<br>
+<a href="https://github.com/ggml-org/ggml/commit/d1c1e4b2c5d8f305f7d2e38bb5767391cf0cc902">d1c1e4b</a> ggml-zdnn: fix release binary not detecting backend lib (llama/31905)<br>
+<a href="https://github.com/ggml-org/ggml/commit/7e7b6e91954f1a574a1b78ec6302539e56d5f313">7e7b6e9</a> mtmd: refactoring: remove clip.h, consolidate code into mtmd (llama/31865)<br>
+<a href="https://github.com/ggml-org/ggml/commit/5a0e5368441ce74a30837831386e5bbafad9b596">5a0e536</a> cpu: enable SpacemiT IME2 MXFP4 dense repack (llama/31776)<br>
+<a href="https://github.com/ggml-org/ggml/commit/7f4b25f743ec2b069b3ffd2d3176982a0bf20504">7f4b25f</a> llamafile: impl bf16 and q8_0 vxe (llama/31866)<br>
+<a href="https://github.com/ggml-org/ggml/commit/f22fc6a2c4bc87f10ae713e91dd9258701048b9d">f22fc6a</a> ggml: update CUDA/Metal radix Top-K to make tied selections deterministic (llama/31084)<br>
+<a href="https://github.com/ggml-org/ggml/commit/47b8b4fc33912bc26fcc6a8847e06b21d35487df">47b8b4f</a> ggml-cuda: add d_state=64 fast path to SSM_SCAN kernel (llama/31818)<br>
+<a href="https://github.com/ggml-org/ggml/commit/b524960690cab0cd7e3d57ac0946ed8519e4abe7">b524960</a> webgpu: add COUNT_EQUAL support (llama/31578)<br>
+<a href="https://github.com/ggml-org/ggml/commit/75a4f5abaa727eb14409f381f72b317f8aeff537">75a4f5a</a> ggml: switch to F32 src1 in the CPU backend (llama/31854)<br>
+<a href="https://github.com/ggml-org/ggml/commit/6cddab2b9c0a96ec0e97f710579fefdba9c5b234">6cddab2</a> llama, mtmd: follow the reference precision of ggml_prec_set_acc calls (llama/31851)<br>
+<a href="https://github.com/ggml-org/ggml/commit/7353275dff29815336ddb91c7e050e7b78f43342">7353275</a> opencl: improve q8_0 and MoE small-n verification for spec (llama/31831)<br>
+<a href="https://github.com/ggml-org/ggml/commit/8f1404ef548189ca05d43dc55e46055104eeabd3">8f1404e</a> hexagon: support for automatic loading of libhtp without legacy env vars (llama/31781)<br>
+<a href="https://github.com/ggml-org/ggml/commit/91c102a6874b8053ca914d306cee6064fb231186">91c102a</a> sycl: exact rounding in CPY to Q4_1, Q5_1 and Q8_0 (llama/31465)<br>
+<a href="https://github.com/ggml-org/ggml/commit/8cf32bc64abfd1beb91c78283f00d6d534a4d919">8cf32bc</a> sycl: refuse device buffers that would exceed VRAM (llama/31285)<br>
+<a href="https://github.com/ggml-org/ggml/commit/d969b07e20e976d2b9e9a79a65d4c0a6812904fa">d969b07</a> hexagon: n_hvx and n_threads cleanup (llama/31857)<br>
+<a href="https://github.com/ggml-org/ggml/commit/5746ebd6dd1324269afba5afaa3986147c729e5f">5746ebd</a> llama_moe_cache: run missed experts on CPU, add tuning script (llama/30966)<br>
+<a href="https://github.com/ggml-org/ggml/commit/a49f174db8e26c97f80faa818d91b47850b9c3bd">a49f174</a> sycl: add f16 support for SWIGLU_OAI (llama/30857)<br>
+<a href="https://github.com/ggml-org/ggml/commit/c6a0780990ee695e12c1f64d7784b1fc76c30e0c">c6a0780</a> metal: fix GROUP_NORM for ne03 &gt; 1 and non-contiguous inputs (llama/31852)<br>
+<a href="https://github.com/ggml-org/ggml/commit/1e5c3e03314ca8ed365053c36bd18a999f7e7207">1e5c3e0</a> webgpu: Implement group norm kernel (llama/31490)<br>
+<a href="https://github.com/ggml-org/ggml/commit/37ecdca3c55e11367f61ac9265099e7d65b75451">37ecdca</a> vulkan: Add &lsquo;readonly&rsquo; to decodeBuf declarations. (llama/31833)<br>
+<a href="https://github.com/ggml-org/ggml/commit/c08538b3a454b4c857084c6b75de30208eee8adf">c08538b</a> CUDA: fix shared memory bank conflicts in the lightning indexer (llama/31803)<br>
+<a href="https://github.com/ggml-org/ggml/commit/07b8362f961c65b5c8e719c9622d12d318994e66">07b8362</a> opencl: add arange (llama/31829)<br>
+<a href="https://github.com/ggml-org/ggml/commit/f55a5045a70e11bd57ea80c0ee6d0d92d5537f90">f55a504</a> meta: raise the compute view limit for buffers with few tensors (llama/31447)<br>
+<a href="https://github.com/ggml-org/ggml/commit/2870133190dbd494804455a5cf7a0d3ebd9efdaf">2870133</a> hexagon: fuse post-norm residual add into RMS_NORM_MUL (llama/31822)<br>
+<a href="https://github.com/ggml-org/ggml/commit/a135ec677f7a3af22243096837eab82fb5e4b154">a135ec6</a> hexagon: conv_2d optimizations and support for conv_3d (llama/31814)<br>
+<a href="https://github.com/ggml-org/ggml/commit/e3d36332b33a302d679daa9d5da36f8e83b1ea65">e3d3633</a> tests: qualify isnan and signbit with std:: (llama/31791)<br>
+<a href="https://github.com/ggml-org/ggml/commit/a7d3330a46a9bba8c99fa6781c0e513355d19f01">a7d3330</a> tests: override hardware_concurrency in CI (llama/31797)<br>
+<a href="https://github.com/ggml-org/ggml/commit/ab7ca9c62d919a2787fa127598efda7001cd8f4f">ab7ca9c</a> opencl: support repeat for f16, i32, i16, bf16 (llama/31782)<br>
+<a href="https://github.com/ggml-org/ggml/commit/9290392e451010eed8c6efc39172bcdf793d306f">9290392</a> webgpu: add batched tensor API (<code>get_tensor_n</code> and <code>set_tensor_n</code>) (llama/31473)<br>
+<a href="https://github.com/ggml-org/ggml/commit/f594fedf92ca0b49240be326aed6308d920cbe18">f594fed</a> vulkan: detect ReBAR support, avoid BAR allocations if unavailable (llama/31658)<br>
+<a href="https://github.com/ggml-org/ggml/commit/38e4be2bf02d8949101c299a38dc141de0e980c7">38e4be2</a> CUDA: fix Maxwell build (llama/31787)<br>
+<a href="https://github.com/ggml-org/ggml/commit/8bd6b61b7a91b3f19eca5916e3e91baf38d6913e">8bd6b61</a> opencl: add q6_k multi column tiled GEMV for speculative verification and refactoring (llama/31758)<br>
+<a href="https://github.com/ggml-org/ggml/commit/d3ce63de46431e45d1d6085802c8294b067747c2">d3ce63d</a> hexagon: Implement set_tensor_n and improve repacking/tiling robustness (llama/31744)<br>
+<a href="https://github.com/ggml-org/ggml/commit/9b1880f93a7aaa5301945b80f7923f5674a5990a">9b1880f</a> ggml-cuda: sanitize post-bias NaNs in MoE selection (llama/31005)<br>
+<a href="https://github.com/ggml-org/ggml/commit/7e607b8fee548b3f68ef4ba4af4eb588c412f570">7e607b8</a> vulkan: Implement test-fusion interface (llama/30769)<br>
+<a href="https://github.com/ggml-org/ggml/commit/2188d132ce259b4ced3057639c98473903280ec2">2188d13</a> CUDA: use highest compiled arch in get_mmvq_mmid_max_batch (llama/31679)<br>
+<a href="https://github.com/ggml-org/ggml/commit/114ce5ed7e78d693403ae4e1b70f58e592ac5943">114ce5e</a> vulkan: RDNA3/4 Large-Tile Split-K Optimization (llama/30280)<br>
+<a href="https://github.com/ggml-org/ggml/commit/e074347a0c89f9eca517ff9aa47ad195243cc16e">e074347</a> metal: fuse DeepSeek-V4/V4.1 and GLM MoE routing (llama/31615)<br>
+<a href="https://github.com/ggml-org/ggml/commit/f0f5b42042d9ddaf0bda406441cb704e9807366b">f0f5b42</a> CUDA/HIP: matrix-core (MFMA) lightning indexer for CDNA2 (gfx90a) (llama/29050)<br>
+<a href="https://github.com/ggml-org/ggml/commit/fa8c6179b3663e16bcefc475e909bda73f901014">fa8c617</a> CUDA: linearize MoE data layout for MMQ/MMF (llama/31047)<br>
+<a href="https://github.com/ggml-org/ggml/commit/1690d2e166a69438d26a5fb646d620f039396437">1690d2e</a> vulkan: FWHT kernels for block widths above 512 (llama/29772)<br>
+<a href="https://github.com/ggml-org/ggml/commit/40278c41a43a1162a2c348a1b57ec0b970e80413">40278c4</a> vulkan: check combined K+V f16 scratch size in FA dequant path (llama/30487)<br>
+<a href="https://github.com/ggml-org/ggml/commit/2dccfdb222d1ac791cc9f3461a078ce278019f1d">2dccfdb</a> sync: llama.cpp<br>
+<a href="https://github.com/ggml-org/ggml/commit/25b845e8d88870e85ba2176161f9da3d41f90771">25b845e</a> ggml: support <code>truncate=false</code> for YaRN (llama/30206)<br>
+<a href="https://github.com/ggml-org/ggml/commit/accf2a1fbc78993310a61a1cd3829b17c66f5498">accf2a1</a> sync: llama.cpp<br>
+<a href="https://github.com/ggml-org/ggml/commit/b2ce926cd4b46a23fb08d384037a9c9c11844984">b2ce926</a> metal: use mul_mm for 32 &lt;= K &lt; 64 (llama/30982)<br>
+<a href="https://github.com/ggml-org/ggml/commit/1a5f4771609c9b6f7308a293611168085a06d726">1a5f477</a> webgpu: add MEAN support (llama/31591)<br>
+<a href="https://github.com/ggml-org/ggml/commit/2ab6d6c44e5050ad29f227b8c60ed448f5391d02">2ab6d6c</a> vulkan: Re-enable large coopmat matmul configuration on AMD proprietary driver 26.10.1+ (llama/31587)<br>
+<a href="https://github.com/ggml-org/ggml/commit/19df6cfea5755a9e3dce2923b832edeab9d56e4c">19df6cf</a> tests: fix CI flakes of TOPK_MOE caused by near ties (llama/31426)<br>
+<a href="https://github.com/ggml-org/ggml/commit/a0df99d731a720caf097fc93765b097d29c34014">a0df99d</a> metal: keep fusable node groups inside one command buffer (llama/31688)<br>
+<a href="https://github.com/ggml-org/ggml/commit/3a996dba9b1a025b75cffb3c7006ea3fb193ffd4">3a996db</a> opencl: enable f32 and q5_k multi column GEMV by default for Adreno X2 (llama/31694)<br>
+<a href="https://github.com/ggml-org/ggml/commit/d75184ebf244d53f9074cd4f5e7320239ce0e466">d75184e</a> opencl: support non-contig sigmoid (llama/31687)<br>
+<a href="https://github.com/ggml-org/ggml/commit/c6345010f9010fa01d790507abfd8f7a8fbe6b18">c634501</a> opencl: add DSV4_HC_PRE and DSV4_HC_POST (llama/31623)<br>
+<a href="https://github.com/ggml-org/ggml/commit/08161372fcfa4aa545a0f346d7d15af00f433f30">0816137</a> Title: CUDA: fuse NVFP4 gate/up matmuls and GLU in MMQ (llama/31296)<br>
+<a href="https://github.com/ggml-org/ggml/commit/4ac0dae8acb8c8a66f10051394af051d48db939f">4ac0dae</a> opencl: improve decode perf with FA (llama/31633)<br>
+<a href="https://github.com/ggml-org/ggml/commit/4f681f28cbafc27f7a1e916d0f50092963de1437">4f681f2</a> webgpu: return maxBufferSize from get_max_size and avoid whole-buffer bindings in memset/clear (llama/31348)<br>
+<a href="https://github.com/ggml-org/ggml/commit/cd6d2b75f5d3e4b2f3fe8e8fbc6c8b84ac80e74a">cd6d2b7</a> docs: sync ggml_type enum in gguf.md (<a href="https://github.com/ggml-org/ggml/pull/1685">#1685</a>)</p>
+</blockquote>
+<p><a href="https://github.com/ggml-org/ggml/commit/417a024b4fb6bc3116d41af7c067166a039bdf12">417a024</a> ggml：将版本更新至 1.0.0 (<a href="https://github.com/ggml-org/ggml/pull/1690">#1690</a>)<br>
+<a href="https://github.com/ggml-org/ggml/commit/771b3d9c45f26d046f1149a37ad01524341857e2">771b3d9</a> requirements：修复 Python 3.14 的 numpy (<a href="https://github.com/ggml-org/ggml/pull/1691">#1691</a>)<br>
+<a href="https://github.com/ggml-org/ggml/commit/f154959e7f1c33a4237c67783fdd360b646eeb89">f154959</a> 同步：llama.cpp<br>
+<a href="https://github.com/ggml-org/ggml/commit/ec04faf176635c4edd0d56a7f534e6d7a94f3a22">ec04faf</a> fix(hexagon)：使 Windows ARM64 上的 clang-cl 主机构建正常工作 (llama/32011)<br>
+<a href="https://github.com/ggml-org/ggml/commit/b45738e946d6b3eb379d2505afc2b286357591dd">b45738e</a> examples：适配 ggml_diag_mask_inf 的移除<br>
+<a href="https://github.com/ggml-org/ggml/commit/1514439034c6cf8cf5d5f98a82a6d156f3786443">1514439</a> 同步：llama.cpp<br>
+<a href="https://github.com/ggml-org/ggml/commit/5f2955545ae1f454c671834d3a07b1457fe2b65f">5f29555</a> ggml：修剪 (llama/29801)<br>
+<a href="https://github.com/ggml-org/ggml/commit/076861cdfcc5b37ffbbcaa392513786bce9d5b70">076861c</a> hexagon：添加 Q5_0 和 Q5_1 支持 (llama/32094)<br>
+<a href="https://github.com/ggml-org/ggml/commit/63ec52d4f157f41d93aeb6ff792696f11827b187">63ec52d</a> Title：CUDA：适用于 BS 2-24 的少行 MMQ (llama/31533)<br>
+<a href="https://github.com/ggml-org/ggml/commit/c6fe79689e0c7682e182b87c1a0c3d1de55c8828">c6fe796</a> ggml：将 GATED_DELTA_NET 路由到 SpacemiT RVV 内核 (llama/31897)<br>
+<a href="https://github.com/ggml-org/ggml/commit/4ae6e7214d33a683056bac70668bb07d977fbace">4ae6e72</a> vulkan：为预填充添加 Intel FA 内核 (llama/29357)<br>
+<a href="https://github.com/ggml-org/ggml/commit/b22071c095ac15a20b58e696e7a1a15b63882935">b22071c</a> ggml-cpu：在 ARM NEON 上使用 4x4 simd_gemm 瓦片 (llama/32128)<br>
+<a href="https://github.com/ggml-org/ggml/commit/ba8b0130435ca0c327acefffc0427b2d4aa9df6a">ba8b013</a> CUDA：通过为 nvfp4 检查点在 epilogue MMQ 中融合 w_s 缩放来优化 prefil (llama/26048)<br>
+<a href="https://github.com/ggml-org/ggml/commit/05f605a25e91c30c5c85621d55f2cfb661ab7eec">05f605a</a> ggml-backend：预取仅由先前拆分计算得出的数据 (llama/32100)<br>
+<a href="https://github.com/ggml-org/ggml/commit/b8a5b871f9445d6e0ad76d18ee592b5608d1ba74">b8a5b87</a> ggml：通过 HP 内核调度 SpacemiT Q4_1 32x256 (llama/31929)<br>
+<a href="https://github.com/ggml-org/ggml/commit/7a8cef580b1078e45df3864a88cb727a26b4d0c1">7a8cef5</a> sycl：使 oneDNN FA 缓存线程安全，并记忆化运行时失败 (llama/31138)<br>
+<a href="https://github.com/ggml-org/ggml/commit/6dfea1a1c5a30c3effc70bafb8692fac4f9f193d">6dfea1a</a> sycl：修复超过 4GB 的 AOT (llama/31873)<br>
+<a href="https://github.com/ggml-org/ggml/commit/012ff44a3c532e6dc61a61be6e111df5a1ecd19e">012ff44</a> sycl：在 set_main_device 中使用缓存的 device-id (llama/32013)<br>
+<a href="https://github.com/ggml-org/ggml/commit/2f9d47bb172e8dddb6a5010cf45579b71e608895">2f9d47b</a> CUDA：添加 CUDA debug 缓冲区池 (llama/31919)<br>
+<a href="https://github.com/ggml-org/ggml/commit/522d2575e135aa0a39a887fdceebc9573dccec17">522d257</a> opencl：添加 bin 内核 <code>kernel_gemm_noshuffle_q4_0_f32_32b_trans_ila_a7_bin</code> (llama/30947)<br>
+<a href="https://github.com/ggml-org/ggml/commit/0f9dcb72e3b1fc31f307885cd44a586a76c5cbb1">0f9dcb7</a> CUDA：在 MMQ stream-k 修复中跳过空 MoE 瓦片 (llama/32067)<br>
+<a href="https://github.com/ggml-org/ggml/commit/6bed9a83c1cf9273d0ce4f5f1f2fbe1d323f4c28">6bed9a8</a> opencl：为 Adreno 添加分解 FA (llama/32046)<br>
+<a href="https://github.com/ggml-org/ggml/commit/a357e7bcddb7d7a65a58c138aaa4df6fd91c580e">a357e7b</a> metal：防止 SOLVE_TRI 内核越界读取 (llama/32103)<br>
+<a href="https://github.com/ggml-org/ggml/commit/c36ccd88f56b15cc000e3b34012db5784442b933">c36ccd8</a> vulkan：支持批量张量复制 API (llama/31418)<br>
+<a href="https://github.com/ggml-org/ggml/commit/1bffc59d478c8d0908d9e6e0d1a5887034a5e1fa">1bffc59</a> backend：当内核集群维度变化时重新实例化 CUDA 图 (llama/31284)<br>
+<a href="https://github.com/ggml-org/ggml/commit/8153155693491f4e17c825e3dec2ef04345e52e6">8153155</a> CUDA：修复 BLAS 工作区，而不是 rocBLAS 每次调用分配一个 (llama/31838)<br>
+<a href="https://github.com/ggml-org/ggml/commit/ad7d200d601b25ceb6a003c7b80d6370a01d4cd2">ad7d200</a> cpu：在 F32 中累积 Flash Attention V<br>
+<a href="https://github.com/ggml-org/ggml/commit/7f4a2db327ccb3f517ac030a53106b3bcdd01eba">7f4a2db</a> webgpu：添加 PAD_REFLECT_1D 支持 (llama/31877)<br>
+<a href="https://github.com/ggml-org/ggml/commit/0f514548be4eb0d0ef99a3f7ee9d9fcc992bb8a1">0f51454</a> vulkan：允许在使用 CM2 时对去量化 KV 进行优化 (llama/31526)<br>
+<a href="https://github.com/ggml-org/ggml/commit/eb4de491b5d17b161e25fada5853770aba19d406">eb4de49</a> vulkan：分配设备故障供应商二进制缓冲区 (llama/32008)<br>
+<a href="https://github.com/ggml-org/ggml/commit/6b7f47aae3964d006e334c44f317a7757681edb7">6b7f47a</a> cuda：在小批量大小下为少行 BF16 矩阵使用 MMVF (llama/31959)<br>
+<a href="https://github.com/ggml-org/ggml/commit/77d01f1ba9df7ec52a672010a4361807c0ad7eb1">77d01f1</a> cuda：为 DKQ=256、DV=256、ncols=64 添加 sm70 FlashAttention 配置用例 (llama/27997)<br>
+<a href="https://github.com/ggml-org/ggml/commit/bd37ba0dfd4bbedc63d2178f844e9488a52d5b04">bd37ba0</a> cuda：fattn mma 头大小 40 72 (llama/30285)<br>
+<a href="https://github.com/ggml-org/ggml/commit/161ca156a3846b5d176289c5196554b84baafc94">161ca15</a> CUDA：添加 OCP FP8 支持 (llama/28413)<br>
+<a href="https://github.com/ggml-org/ggml/commit/06faf806f1b4746b01e6678f39172797a6e4d8bc">06faf80</a> sycl：修复 sycl CLAMP 实际支持步进视图 (llama/31784)<br>
+<a href="https://github.com/ggml-org/ggml/commit/a986181fe35e83cdfd7b2e8e7fa79a42cfe48996">a986181</a> cuda：移除未使用的 ids 和 type_src0 参数 (llama/32018)<br>
+<a href="https://github.com/ggml-org/ggml/commit/55104b293feb7f1cc2091cc9aa119df06ce38573">55104b2</a> llama：添加 FP8 KV-cache 支持 (llama/28392)<br>
+<a href="https://github.com/ggml-org/ggml/commit/0753641f42d02d3191ff1554bcdfb5b0cf89e521">0753641</a> ggml：添加 MUL_MAT src1 精度测试和门控 (llama/31896)<br>
+<a href="https://github.com/ggml-org/ggml/commit/1cd16bd4aabb5384f48d269cec751094266c3269">1cd16bd</a> cuda：移除未使用的 quantize_cuda_t 类型定义 (llama/31884)<br>
+<a href="https://github.com/ggml-org/ggml/commit/4a18cdd8c807930c5d59aa3a079c034b845ebd1c">4a18cdd</a> cuda：将 VMM 池预留大小减半，并在 cuMemAddressReserve 失败时重试 (llama/30542)<br>
+<a href="https://github.com/ggml-org/ggml/commit/1c9ac9d88709fbc5287b09ebd582cf56ef6be50a">1c9ac9d</a> CUDA：在复用图时跳过图兼容性检查 (llama/32004)<br>
+<a href="https://github.com/ggml-org/ggml/commit/999c7250ec311ab031e96e1cae85876aa064a0d6">999c725</a> ggml：通过设置 _XOPEN_SOURCE=700 修复 FreeBSD Vulkan 构建 (llama/31701)<br>
+<a href="https://github.com/ggml-org/ggml/commit/47bc1d845c141a6fe63244d01140c7248424d126">47bc1d8</a> CUDA：将图和并发流状态移出 common.cuh (llama/32001)<br>
+<a href="https://github.com/ggml-org/ggml/commit/df70e121dfa94910f616519766d40c02fd9f5f06">df70e12</a> cann：在检查缓冲区类型是否受支持时提前失败 (llama/31270)<br>
+<a href="https://github.com/ggml-org/ggml/commit/e447eb53592717b491d3b6f8a4b1f270af2f85f9">e447eb5</a> sycl：添加设备侧 MoE 调度器 (llama/30156)<br>
+<a href="https://github.com/ggml-org/ggml/commit/9a1c5822a7b8cd015ef83b663cd2f91c04f50ff7">9a1c582</a> vulkan：为 Qwen 模型添加 tiled-transpose 拼接着色器 (llama/30591)<br>
+<a href="https://github.com/ggml-org/ggml/commit/8b3c8cf97fdeb53dd151a7f4189e1937d7600b51">8b3c8cf</a> ggml-rpc：在不可达端点和握手失败时优雅失败 (llama/30415)<br>
+<a href="https://github.com/ggml-org/ggml/commit/f860f1ddb17a4a78235b78100cb6b7ac8e016e59">f860f1d</a> vulkan：将 GROUP_NORM 工作组划分为 2D，以避免 maxComputeWorkGroupCount 限制 (llama/31930)<br>
+<a href="https://github.com/ggml-org/ggml/commit/eb5571a3c9952efe261506f259e352ce70239f1c">eb5571a</a> vulkan：修复 MoltenVK 上的越界读取/写入 (llama/31890)<br>
+<a href="https://github.com/ggml-org/ggml/commit/5a9a2643642264c51b301dba2b916fa7e68f6520">5a9a264</a> vulkan：在高通平台的大头上将标量 Flash Attention 限制为 8 行 (llama/30829)<br>
+<a href="https://github.com/ggml-org/ggml/commit/5610f41bb6883a57198075a250354aa8a6893339">5610f41</a> sycl：在 head_dim=64 时解锁 oneDNN 融合 SDPA (llama/31574)<br>
+<a href="https://github.com/ggml-org/ggml/commit/487cadf89e0eeae16926ca3e00be2ad6667f454f">487cadf</a> hexagon：修复关闭时 64 位 FastRPC 句柄截断问题 (llama/30952)<br>
+<a href="https://github.com/ggml-org/ggml/commit/be37c9cf04eba02a537e313579f5870357540689">be37c9c</a> ggml-zdnn：接受非 zdnn 张量，并在每次操作后使计算张量失效 (llama/31824)<br>
+<a href="https://github.com/ggml-org/ggml/commit/294d5fc5121ad278a4ed1e9a311f856308203e53">294d5fc</a> ggml：实现 TRI 的反向传播 (llama/30712)<br>
+<a href="https://github.com/ggml-org/ggml/commit/e18c2c600a881d10549cf801c63c80a4ce98cba7">e18c2c6</a> ggml-backend：不要上传未被读取的输入 (llama/31419)<br>
+<a href="https://github.com/ggml-org/ggml/commit/e84d36b54b61b91663ccf64dc1e7820e5f2e5839">e84d36b</a> metal：防止写入 Metal FA 输出缓冲区越界 (llama/31662)<br>
+<a href="https://github.com/ggml-org/ggml/commit/0dd184f8b4e082e3c9fb2a37493aa69544dc316f">0dd184f</a> metal：使 ggml_tri 进行选择，而不是按比较值缩放 (llama/30711)<br>
+<a href="https://github.com/ggml-org/ggml/commit/b6d482c58b3f24982547d667f1806640c62d126b">b6d482c</a> opencl：包含 climits (llama/31935)<br>
+<a href="https://github.com/ggml-org/ggml/commit/62de7806fdcdda976bea593f8df0f84aaba54d77">62de780</a> RPC：改进加载时间 (llama/29413)<br>
+<a href="https://github.com/ggml-org/ggml/commit/a7276d0ace8ea2b39695a50b6df4906d69647566">a7276d0</a> ggml：在 openvino、sycl、vulkan、webgpu、rpc 上支持 YaRN 截断配置 (llama/30802)<br>
+<a href="https://github.com/ggml-org/ggml/commit/da894596c375d437a283f64ed2f408223335585f">da89459</a> sycl：缓存 device-id (llama/31126)<br>
+<a href="https://github.com/ggml-org/ggml/commit/fb570857a9be9613870878f155877aa7a1b7b3e4">fb57085</a> tests：将 test_rope 容差限制为 f32 角度分辨率 (llama/31874)<br>
+<a href="https://github.com/ggml-org/ggml/commit/e43d8477bf7ef3dc9bddf98ed799b8b3628c841f">e43d847</a> opencl：添加 f32 MUL_MAT_ID (llama/31783)<br>
+<a href="https://github.com/ggml-org/ggml/commit/d1c1e4b2c5d8f305f7d2e38bb5767391cf0cc902">d1c1e4b</a> ggml-zdnn：修复发布二进制文件未检测后端库的问题 (llama/31905)<br>
+<a href="https://github.com/ggml-org/ggml/commit/7e7b6e91954f1a574a1b78ec6302539e56d5f313">7e7b6e9</a> mtmd：重构：移除 clip.h，将代码合并到 mtmd 中 (llama/31865)<br>
+<a href="https://github.com/ggml-org/ggml/commit/5a0e5368441ce74a30837831386e5bbafad9b596">5a0e536</a> cpu：启用 SpacemiT IME2 MXFP4 稠密重新打包 (llama/31776)<br>
+<a href="https://github.com/ggml-org/ggml/commit/7f4b25f743ec2b069b3ffd2d3176982a0bf20504">7f4b25f</a> llamafile：实现 bf16 和 q8_0 vxe (llama/31866)<br>
+<a href="https://github.com/ggml-org/ggml/commit/f22fc6a2c4bc87f10ae713e91dd9258701048b9d">f22fc6a</a> ggml：更新 CUDA/Metal 的 radix Top-K，使绑定选择确定性 (llama/31084)<br>
+<a href="https://github.com/ggml-org/ggml/commit/47b8b4fc33912bc26fcc6a8847e06b21d35487df">47b8b4f</a> ggml-cuda：为 SSM_SCAN 内核添加 d_state=64 快速路径 (llama/31818)<br>
+<a href="https://github.com/ggml-org/ggml/commit/b524960690cab0cd7e3d57ac0946ed8519e4abe7">b524960</a> webgpu：添加 COUNT_EQUAL 支持 (llama/31578)<br>
+<a href="https://github.com/ggml-org/ggml/commit/75a4f5abaa727eb14409f381f72b317f8aeff537">75a4f5a</a> ggml：在 CPU 后端中切换到 F32 src1 (llama/31854)<br>
+<a href="https://github.com/ggml-org/ggml/commit/6cddab2b9c0a96ec0e97f710579fefdba9c5b234">6cddab2</a> llama、mtmd：遵循 ggml_prec_set_acc 调用的参考精度 (llama/31851)<br>
+<a href="https://github.com/ggml-org/ggml/commit/7353275dff29815336ddb91c7e050e7b78f43342">7353275</a> opencl：改进针对 spec 的 q8_0 和 MoE small-n 验证 (llama/31831)<br>
+<a href="https://github.com/ggml-org/ggml/commit/8f1404ef548189ca05d43dc55e46055104eeabd3">8f1404e</a> hexagon：支持在没有旧版环境变量的情况下自动加载 libhtp (llama/31781)<br>
+<a href="https://github.com/ggml-org/ggml/commit/91c102a6874b8053ca914d306cee6064fb231186">91c102a</a> sycl：在 CPY 到 Q4_1、Q5_1 和 Q8_0 时进行精确舍入 (llama/31465)<br>
+<a href="https://github.com/ggml-org/ggml/commit/8cf32bc64abfd1beb91c78283f00d6d534a4d919">8cf32bc</a> sycl：拒绝会导致超过 VRAM 的设备缓冲区 (llama/31285)<br>
+<a href="https://github.com/ggml-org/ggml/commit/d969b07e20e976d2b9e9a79a65d4c0a6812904fa">d969b07</a> hexagon：n_hvx 和 n_threads 清理 (llama/31857)<br>
+<a href="https://github.com/ggml-org/ggml/commit/5746ebd6dd1324269afba5afaa3986147c729e5f">5746ebd</a> llama_moe_cache：在 CPU 上运行未执行的专家，添加调优脚本 (llama/30966)<br>
+<a href="https://github.com/ggml-org/ggml/commit/a49f174db8e26c97f80faa818d91b47850b9c3bd">a49f174</a> sycl：为 SWIGLU_OAI 添加 f16 支持 (llama/30857)<br>
+<a href="https://github.com/ggml-org/ggml/commit/c6a0780990ee695e12c1f64d7784b1fc76c30e0c">c6a0780</a> metal：修复 ne03 &gt; 1 且输入非连续时的 GROUP_NORM (llama/31852)<br>
+<a href="https://github.com/ggml-org/ggml/commit/1e5c3e03314ca8ed365053c36bd18a999f7e7207">1e5c3e0</a> webgpu：实现 group norm 内核 (llama/31490)<br>
+<a href="https://github.com/ggml-org/ggml/commit/37ecdca3c55e11367f61ac9265099e7d65b75451">37ecdca</a> vulkan：在 decodeBuf 声明中添加 &lsquo;readonly&rsquo; (llama/31833)<br>
+<a href="https://github.com/ggml-org/ggml/commit/c08538b3a454b4c857084c6b75de30208eee8adf">c08538b</a> CUDA：修复 lightning indexer 中的共享内存银行冲突 (llama/31803)<br>
+<a href="https://github.com/ggml-org/ggml/commit/07b8362f961c65b5c8e719c9622d12d318994e66">07b8362</a> opencl：添加 arange (llama/31829)<br>
+<a href="https://github.com/ggml-org/ggml/commit/f55a5045a70e11bd57ea80c0ee6d0d92d5537f90">f55a504</a> meta：提高具有少量张量的缓冲区的计算视图限制 (llama/31447)<br>
+<a href="https://github.com/ggml-org/ggml/commit/2870133190dbd494804455a5cf7a0d3ebd9efdaf">2870133</a> hexagon：将后范数残差加法融合到 RMS_NORM_MUL 中 (llama/31822)<br>
+<a href="https://github.com/ggml-org/ggml/commit/a135ec677f7a3af22243096837eab82fb5e4b154">a135ec6</a> hexagon：conv_2d 优化及 conv_3d 支持 (llama/31814)<br>
+<a href="https://github.com/ggml-org/ggml/commit/e3d36332b33a302d679daa9d5da36f8e83b1ea65">e3d3633</a> tests：使用 std:: 限定 isnan 和 signbit (llama/31791)<br>
+<a href="https://github.com/ggml-org/ggml/commit/a7d3330a46a9bba8c99fa6781c0e513355d19f01">a7d3330</a> tests：在 CI 中覆盖 hardware_concurrency (llama/31797)<br>
+<a href="https://github.com/ggml-org/ggml/commit/ab7ca9c62d919a2787fa127598efda7001cd8f4f">ab7ca9c</a> opencl：为 f16、i32、i16、bf16 支持 repeat (llama/31782)<br>
+<a href="https://github.com/ggml-org/ggml/commit/9290392e451010eed8c6efc39172bcdf793d306f">9290392</a> webgpu：添加批量张量 API（<code>get_tensor_n</code> 和 <code>set_tensor_n</code>） (llama/31473)<br>
+<a href="https://github.com/ggml-org/ggml/commit/f594fedf92ca0b49240be326aed6308d920cbe18">f594fed</a> vulkan：检测 ReBAR 支持，如果不可用则避免 BAR 分配 (llama/31658)<br>
+<a href="https://github.com/ggml-org/ggml/commit/38e4be2bf02d8949101c299a38dc141de0e980c7">38e4be2</a> CUDA：修复 Maxwell 构建 (llama/31787)<br>
+<a href="https://github.com/ggml-org/ggml/commit/8bd6b61b7a91b3f19eca5916e3e91baf38d6913e">8bd6b61</a> opencl：添加 q6_k 多列平铺 GEMV，用于推测验证和重构 (llama/31758)<br>
+<a href="https://github.com/ggml-org/ggml/commit/d3ce63de46431e45d1d6085802c8294b067747c2">d3ce63d</a> hexagon：实现 set_tensor_n 并改进重新打包/平铺鲁棒性 (llama/31744)<br>
+<a href="https://github.com/ggml-org/ggml/commit/9b1880f93a7aaa5301945b80f7923f5674a5990a">9b1880f</a> ggml-cuda：在 MoE 选择后清理 bias 后的 NaN (llama/31005)<br>
+<a href="https://github.com/ggml-org/ggml/commit/7e607b8fee548b3f68ef4ba4af4eb588c412f570">7e607b8</a> vulkan：实现测试融合接口 (llama/30769)<br>
+<a href="https://github.com/ggml-org/ggml/commit/2188d132ce259b4ced3057639c98473903280ec2">2188d13</a> CUDA：在 get_mmvq_mmid_max_batch 中使用最高编译架构 (llama/31679)<br>
+<a href="https://github.com/ggml-org/ggml/commit/114ce5ed7e78d693403ae4e1b70f58e592ac5943">114ce5e</a> vulkan：RDNA3/4 大瓦片 Split-K 优化 (llama/30280)<br>
+<a href="https://github.com/ggml-org/ggml/commit/e074347a0c89f9eca517ff9aa47ad195243cc16e">e074347</a> metal：融合 DeepSeek-V4/V4.1 和 GLM 的 MoE 路由 (llama/31615)<br>
+<a href="https://github.com/ggml-org/ggml/commit/f0f5b42042d9ddaf0bda406441cb704e9807366b">f0f5b42</a> CUDA/HIP：CDNA2（gfx90a）的矩阵核心（MFMA）lightning indexer (llama/29050)<br>
+<a href="https://github.com/ggml-org/ggml/commit/fa8c6179b3663e16bcefc475e909bda73f901014">fa8c617</a> CUDA：为 MMQ/MMF 线性化 MoE 数据布局 (llama/31047)<br>
+<a href="https://github.com/ggml-org/ggml/commit/1690d2e166a69438d26a5fb646d620f039396437">1690d2e</a> vulkan：512 以上的块宽度的 FWHT 内核 (llama/29772)<br>
+<a href="https://github.com/ggml-org/ggml/commit/40278c41a43a1162a2c348a1b57ec0b970e80413">40278c4</a> vulkan：在 FA 去量化路径中检查组合 K+V f16 临时存储大小 (llama/30487)<br>
+<a href="https://github.com/ggml-org/ggml/commit/2dccfdb222d1ac791cc9f3461a078ce278019f1d">2dccfdb</a> 同步：llama.cpp<br>
+<a href="https://github.com/ggml-org/ggml/commit/25b845e8d88870e85ba2176161f9da3d41f90771">25b845e</a> ggml：支持 YaRN 的 <code>truncate=false</code> (llama/30206)<br>
+<a href="https://github.com/ggml-org/ggml/commit/accf2a1fbc78993310a61a1cd3829b17c66f5498">accf2a1</a> 同步：llama.cpp<br>
+<a href="https://github.com/ggml-org/ggml/commit/b2ce926cd4b46a23fb08d384037a9c9c11844984">b2ce926</a> metal：对 32 &lt;= K &lt; 64 使用 mul_mm (llama/30982)<br>
+<a href="https://github.com/ggml-org/ggml/commit/1a5f4771609c9b6f7308a293611168085a06d726">1a5f477</a> webgpu：添加 MEAN 支持 (llama/31591)<br>
+<a href="https://github.com/ggml-org/ggml/commit/2ab6d6c44e5050ad29f227b8c60ed448f5391d02">2ab6d6c</a> vulkan：在 AMD 专有驱动 26.10.1+ 上重新启用大型 coopmat 矩阵乘法配置 (llama/31587)<br>
+<a href="https://github.com/ggml-org/ggml/commit/19df6cfea5755a9e3dce2923b832edeab9d56e4c">19df6cf</a> tests：修复因接近平局导致的 TOPK_MOE CI 不稳定问题 (llama/31426)<br>
+<a href="https://github.com/ggml-org/ggml/commit/a0df99d731a720caf097fc93765b097d29c34014">a0df99d</a> metal：将可融合节点组保留在同一个命令缓冲区中 (llama/31688)<br>
+<a href="https://github.com/ggml-org/ggml/commit/3a996dba9b1a025b75cffb3c7006ea3fb193ffd4">3a996db</a> opencl：为 Adreno X2 默认启用 f32 和 q5_k 多列 GEMV (llama/31694)<br>
+<a href="https://github.com/ggml-org/ggml/commit/d75184ebf244d53f9074cd4f5e7320239ce0e466">d75184e</a> opencl：支持非连续 sigmoid (llama/31687)<br>
+<a href="https://github.com/ggml-org/ggml/commit/c6345010f9010fa01d790507abfd8f7a8fbe6b18">c634501</a> opencl：添加 DSV4_HC_PRE 和 DSV4_HC_POST (llama/31623)<br>
+<a href="https://github.com/ggml-org/ggml/commit/08161372fcfa4aa545a0f346d7d15af00f433f30">0816137</a> Title：CUDA：在 MMQ 中融合 NVFP4 门/上矩阵乘法和 GLU (llama/31296)<br>
+<a href="https://github.com/ggml-org/ggml/commit/4ac0dae8acb8c8a66f10051394af051d48db939f">4ac0dae</a> opencl：利用 FA 改进解码性能 (llama/31633)<br>
+<a href="https://github.com/ggml-org/ggml/commit/4f681f28cbafc27f7a1e916d0f50092963de1437">4f681f2</a> webgpu：从 get_max_size 返回 maxBufferSize，并在 memset/clear 中避免整缓冲区绑定 (llama/31348)<br>
+<a href="https://github.com/ggml-org/ggml/commit/cd6d2b75f5d3e4b2f3fe8e8fbc6c8b84ac80e74a">cd6d2b7</a> docs：在 gguf.md 中同步 ggml_type 枚举 (<a href="https://github.com/ggml-org/ggml/pull/1685">#1685</a>)</p>
+]]></content:encoded></item><item><title>不占用单元格的终端边框</title><link>https://BradleyZhang.github.io/DualHN/2026-11-15/03-terminal-borders-that-dont-cost-a-cell/</link><pubDate>Sun, 15 Nov 2026 09:18:27 +0800</pubDate><guid>https://BradleyZhang.github.io/DualHN/2026-11-15/03-terminal-borders-that-dont-cost-a-cell/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;This post (and the code behind it) was written with a lot of help from AI. I&amp;rsquo;m not going to apologize for that. If that bothers you, feel free to close the tab.&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;em&gt;这篇文章（及其背后的代码）是在 AI 的大力帮助下写成的。我不会为此道歉。如果你觉得这令人不快，可以随时关闭标签。&lt;/em&gt;&lt;/p&gt;</description><content:encoded><![CDATA[<p>from: <a href="https://www.joshka.net/cell-borders/">Terminal borders that don't cost a cell</a></p><blockquote>
+<p><em>This post (and the code behind it) was written with a lot of help from AI. I&rsquo;m not going to apologize for that. If that bothers you, feel free to close the tab.</em></p>
+</blockquote>
+<p><em>这篇文章（及其背后的代码）是在 AI 的大力帮助下写成的。我不会为此道歉。如果你觉得这令人不快，可以随时关闭标签。</em></p>
+<blockquote>
+<p>I maintain <a href="https://ratatui.rs/">Ratatui</a>, so I see a lot of the TUIs people build. Many of them end up looking fairly same-ish: plain boxes on a boring background, missing a bunch of the things that good design in other mediums brings us.</p>
+</blockquote>
+<p>我维护 <a href="https://ratatui.rs/">Ratatui</a>，所以我看到很多人构建的 TUI（终端用户界面）。其中很多最终看起来大同小异：单调背景上的朴素方框，缺少了其他媒介中优秀设计所带来的诸多要素。</p>
+<blockquote>
+<p>Borders are part of the problem. They have to take up space, so they become part of the panels people want to build. One option is to drop them and just use color, but borders are really nice for delineating and surrounding things. There are lots of ways to sort of get borders in a terminal, but none that are 100% good. I&rsquo;ve drawn enough <code>┌──┐</code> by hand to have opinions about this.</p>
+</blockquote>
+<p>边框本身就是问题的一部分。它们必须占据空间，因此会成为人们想要构建的面板的一部分。一种选择是放弃边框，只用颜色，但边框在划定和包围内容方面确实很好用。在终端里获得边框的方式有很多，但没有一种能 100% 完美。我手工画过足够多的 <code>┌──┐</code>，所以对此有自己的一些看法。</p>
+<blockquote>
+<p>The usual way is the Unicode Box Drawing block, which has 128 characters for lines, corners and joins. Somehow that&rsquo;s still not enough:</p>
+</blockquote>
+<p>通常做法是 Unicode Box Drawing block，它有 128 个字符用于线、角和连接。其实这仍然不够：</p>
+<blockquote>
+<p><a href="https://www.joshka.net/cell-borders/box-drawing-block.png"><img alt="The Unicode Box Drawing block, U+2500 to U+257F, rendered in Ghostty" loading="lazy" src="https://www.joshka.net/cell-borders/box-drawing-block.png"></a></p>
+</blockquote>
+<p><a href="https://www.joshka.net/cell-borders/box-drawing-block.png"><img alt="Unicode 方框绘制块 U+2500 到 U+257F, 由 Ghostty 渲染" loading="lazy" src="https://www.joshka.net/cell-borders/box-drawing-block.png"></a></p>
+<blockquote>
+<p>So I&rsquo;ve been working on a terminal protocol that draws thin lines on the edges of cells instead. I&rsquo;ve got it working as <a href="https://github.com/joshka/ghostty/tree/joshka/cell-borders">a patch to Ghostty</a> (and <a href="https://github.com/raphamorim/rio/pull/1947">an earlier version in Rio</a> before that), and I&rsquo;ve built demo apps for it with Ratatui. I&rsquo;d like feedback from terminal and TUI authors.</p>
+</blockquote>
+<p>所以我一直在开发一个 terminal protocol，它不在单元格内部绘制，而是在单元格边缘绘制细线。我已经将其作为 <a href="https://github.com/joshka/ghostty/tree/joshka/cell-borders">Ghostty 的补丁</a> 实现了（在此之前还有 <a href="https://github.com/raphamorim/rio/pull/1947">Rio 中的早期版本</a>），我还使用 Ratatui 为其构建了演示应用。我希望来自 terminal 和 TUI 作者的反馈。</p>
+<blockquote>
+<p><a href="https://www.joshka.net/cell-borders/panes.png"><img alt="A tiling window manager demo built with Ratatui, using cell borders for panes, tabs, form fields and buttons" loading="lazy" src="https://www.joshka.net/cell-borders/panes.png"></a></p>
+</blockquote>
+<p><img alt="使用 Ratatui 构建的分层窗口管理器演示，使用单元格边框 实现窗格、标签、表单字段和按钮" loading="lazy" src="https://www.joshka.net/cell-borders/panes.png">](<a href="https://www.joshka.net/cell-borders/panes.png">https://www.joshka.net/cell-borders/panes.png</a>)</p>
+<blockquote>
+<p>Every line in that screenshot is a cell border. None of them use up a row or column. The tab labels sit on the top edge of each pane, the text fields are underlined right under the text, and the buttons are one row tall and rounded.</p>
+</blockquote>
+<p>截图中的每一条线都是单元格边框。它们都没有占用行或列。选项卡标签位于每个窗格的顶部边缘，文本字段在文本正下方带下划线，并且按钮有一行高且是圆角的。</p>
+<blockquote>
+<p>Here&rsquo;s the same app in a terminal without cell borders, falling back to box-drawing characters:</p>
+</blockquote>
+<p>这是同一个在终端中没有单元格边框的应用，回退到使用框线字符：</p>
+<blockquote>
+<p><a href="https://www.joshka.net/cell-borders/panes-box.png"><img alt="The same demo drawn with box-drawing characters" loading="lazy" src="https://www.joshka.net/cell-borders/panes-box.png"></a></p>
+</blockquote>
+<p><a href="https://www.joshka.net/cell-borders/panes-box.png"><img alt="使用 box-drawing 字符绘制的同款 demo" loading="lazy" src="https://www.joshka.net/cell-borders/panes-box.png"></a></p>
+<blockquote>
+<p>Each pane loses a row and a column on every side, so the log pane shows two fewer lines and the notes wrap differently. The tab labels move inside the frame. The text fields use the underline attribute instead, and the checkbox and buttons turn into brackets.</p>
+</blockquote>
+<p>每个面板在四边都会损失一行和一列，因此日志面板显示的行少两个，备注的换行方式也不同。标签页移动到框架内部。文本框改用下划线属性，而复选框和按钮则变成了方括号。</p>
+<blockquote>
+<h2 id="what-id-use-it-for">What I&rsquo;d use it for</h2>
+</blockquote>
+<h2 id="我将如何使用它">我将如何使用它</h2>
+<blockquote>
+<ul>
+<li>Borders, obviously. Panes and panels that don&rsquo;t eat a row and column on every side.</li>
+<li>Menus and popups that sit on top of other content and still look like they&rsquo;re on top.</li>
+<li>Panel style apps, where the layout is a set of regions that each want an edge.</li>
+<li>Widgets like text fields, buttons and checkboxes, which want a line right up against their text.</li>
+<li>Making things look neater in general. A border on the outer edge of a panel&rsquo;s background looks a lot cleaner, and text can run right up to it.</li>
+</ul>
+</blockquote>
+<ul>
+<li>边界问题显然是存在的，比如窗格和面板，它们不会占用每个侧边的一整行和一整列。</li>
+<li>菜单和弹出窗口可以覆盖在其他内容之上，但看起来仍然是置顶的。</li>
+<li>面板式应用的布局通常是一组区域，每个区域都需要一个边缘来布局。</li>
+<li>文本输入框、按钮和复选框等小部件，需要在文本旁边留出一条直线。</li>
+<li>整体让界面看起来更整洁一些。面板背景的外边缘加一个边框会让整个界面更干净，文本可以直接延伸到边框处。</li>
+</ul>
+<blockquote>
+<h3 id="up-close">Up close</h3>
+</blockquote>
+<h3 id="近距离">近距离</h3>
+<blockquote>
+<p>The settings form, with cell borders and then with the box-drawing fallback:</p>
+</blockquote>
+<p>设置表单，先展示带单元格边框的效果，再展示使用框绘制字符回退的效果：</p>
+<blockquote>
+<p><a href="https://www.joshka.net/cell-borders/zoom-form.png"><img alt="A form with underlined text fields, a checkbox and rounded buttons drawn with cell borders" loading="lazy" src="https://www.joshka.net/cell-borders/zoom-form.png"></a></p>
+</blockquote>
+<p><a href="https://www.joshka.net/cell-borders/zoom-form.png"><img alt="一个由单元格边框绘制的表单，带有下划线文本框、复选框和圆角按钮" loading="lazy" src="https://www.joshka.net/cell-borders/zoom-form.png"></a></p>
+<blockquote>
+<p><a href="https://www.joshka.net/cell-borders/zoom-form-box.png"><img alt="The same form with the underline attribute and bracketed buttons" loading="lazy" src="https://www.joshka.net/cell-borders/zoom-form-box.png"></a></p>
+</blockquote>
+<p><a href="https://www.joshka.net/cell-borders/zoom-form-box.png"><img alt="具有下划线属性和方括号按钮的同一表单" loading="lazy" src="https://www.joshka.net/cell-borders/zoom-form-box.png"></a></p>
+<blockquote>
+<p>The tabs are the same story. With cell borders they sit on the pane&rsquo;s top edge. With box characters they need their own row inside the frame:</p>
+</blockquote>
+<p>选项卡也是如此。使用单元格边框时，它们位于窗格顶部边缘。使用方框字符时，它们需要在框架内部单独占据一行：</p>
+<blockquote>
+<p><a href="https://www.joshka.net/cell-borders/zoom-tabs.png"><img alt="Pane tabs drawn on the top edge of the pane with cell borders" loading="lazy" src="https://www.joshka.net/cell-borders/zoom-tabs.png"></a></p>
+</blockquote>
+<p><a href="https://www.joshka.net/cell-borders/zoom-tabs.png"><img alt="窗格标签绘制在带有单元格边框的窗格顶部边缘" loading="lazy" src="https://www.joshka.net/cell-borders/zoom-tabs.png"></a></p>
+<blockquote>
+<p><a href="https://www.joshka.net/cell-borders/zoom-tabs-box.png"><img alt="The same tabs inside a box-drawing frame" loading="lazy" src="https://www.joshka.net/cell-borders/zoom-tabs-box.png"></a></p>
+</blockquote>
+<p><a href="https://www.joshka.net/cell-borders/zoom-tabs-box.png"><img alt="框绘字符框架中的相同标签页" loading="lazy" src="https://www.joshka.net/cell-borders/zoom-tabs-box.png"></a></p>
+<blockquote>
+<h3 id="charts">Charts</h3>
+</blockquote>
+<h3 id="图表">图表</h3>
+<blockquote>
+<p>Lines between cells also work for charts. btop-style braille graphs fill every cell with dots, so there&rsquo;s nowhere to put a gridline or an average line without giving up a row. With cell borders they sit on the cell edges between the dots. Here&rsquo;s a monitor in that style, built with Ratatui:</p>
+</blockquote>
+<p>单元格间线条也适用于图表。btop-style 盲文图 在每个单元格中填满点，因此若不牺牲一行，就无法放置网格线或平均线。使用单元格边框时，它们位于点之间的单元格边缘上。下面是该风格的监视器，基于 Ratatui 构建：</p>
+<blockquote>
+<p><a href="https://www.joshka.net/cell-borders/chart.png"><img alt="A braille CPU graph with gridlines and an average line drawn on the cell edges" loading="lazy" src="https://www.joshka.net/cell-borders/chart.png"></a></p>
+</blockquote>
+<p><a href="https://www.joshka.net/cell-borders/chart.png"><img alt="一幅盲文 CPU 图表，带有网格线，并在单元格边缘绘制了平均线" loading="lazy" src="https://www.joshka.net/cell-borders/chart.png"></a></p>
+<blockquote>
+<p>And the fallback, which has to drop the gridlines:</p>
+</blockquote>
+<p>以及回退方案，该方案必须去掉网格线：</p>
+<blockquote>
+<p><a href="https://www.joshka.net/cell-borders/chart-box.png"><img alt="The same braille graph without gridlines" loading="lazy" src="https://www.joshka.net/cell-borders/chart-box.png"></a></p>
+</blockquote>
+<p><a href="https://www.joshka.net/cell-borders/chart-box.png"><img alt="没有网格线的同一本盲文图" loading="lazy" src="https://www.joshka.net/cell-borders/chart-box.png"></a></p>
+<blockquote>
+<h3 id="in-motion">In motion</h3>
+</blockquote>
+<h3 id="正在运动">正在运动</h3>
+<blockquote>
+<p>Here&rsquo;s the tiling panes demo moving panes around, opening menus and the about dialog:</p>
+</blockquote>
+<p>这是平铺窗格演示，用于移动窗格、打开菜单和关于对话框：</p>
+<blockquote>
+<p><a href="https://www.joshka.net/cell-borders/tour.webp"><img alt="An animation of panes being dragged, split and retiled, with a menu and dialog" loading="lazy" src="https://www.joshka.net/cell-borders/tour.webp"></a></p>
+</blockquote>
+<p><a href="https://www.joshka.net/cell-borders/tour.webp"><img alt="一个展示窗格拖拽、分割和重新平铺的动画，包含菜单和对话框" loading="lazy" src="https://www.joshka.net/cell-borders/tour.webp"></a></p>
+<blockquote>
+<p>Partway through, it turns on a checkerboard of the cells, which shows how everything lines up with the grid. Toggle it here:</p>
+</blockquote>
+<p>在部分过程中，它会启用一个棋盘状的单元格网格，展示所有内容如何与网格对齐。切换它这里：</p>
+<blockquote>
+<p><a href="https://www.joshka.net/cell-borders/grid-off.png"><img alt="Two panes drawn with cell borders" loading="lazy" src="https://www.joshka.net/cell-borders/grid-off.png"></a> <a href="https://www.joshka.net/cell-borders/grid-on.png"><img alt="The same panes with alternate cells shaded, showing the borders on cell edges" loading="lazy" src="https://www.joshka.net/cell-borders/grid-on.png"></a></p>
+</blockquote>
+<p><a href="https://www.joshka.net/cell-borders/grid-off.png"><img alt="绘制了单元格边框的两个窗格" loading="lazy" src="https://www.joshka.net/cell-borders/grid-off.png"></a> <a href="https://www.joshka.net/cell-borders/grid-on.png"><img alt="同一窗格交替单元格着色，显示单元格边缘边框" loading="lazy" src="https://www.joshka.net/cell-borders/grid-on.png"></a></p>
+<blockquote>
+<h2 id="what-box-characters-cant-do">What box characters can&rsquo;t do</h2>
+</blockquote>
+<h2 id="方框字符无法做到的事">方框字符无法做到的事</h2>
+<blockquote>
+<p>The root of it is that box-drawing characters are text. Each line is a glyph that takes up a whole cell, and pretty much everything annoying about them falls out of that.</p>
+</blockquote>
+<p>问题的根源在于，绘图字符本质上是文本。每一条线都是一个占据整个单元格的字形，而关于它们的大部分令人恼火的特性都由此衍生。</p>
+<blockquote>
+<p>Space is the obvious one. On my 16&quot; laptop with a font I can actually read, the terminal is something like 200x50 (your prefs will move that around a bit). Columns are mostly fine at that size. Rows aren&rsquo;t. A layout with a couple of levels of nested panels can easily spend 6 or 8 of those 50 rows on nothing but lines. That&rsquo;s a lot of screen to give up for decoration.</p>
+</blockquote>
+<p>空间是显而易见的一个。在我这台 16 英寸的笔记本电脑上，使用一个我实际能看清的字体，终端尺寸大概是 200x50（你的配置会让这个数值略有浮动）。在这个尺寸下，列数基本够用，但行数不够。一个包含几层嵌套面板的布局，光是分割线就能轻易占掉这 50 行中的 6 到 8 行。为了装饰而牺牲这么多屏幕空间，实在得不偿失。</p>
+<blockquote>
+<p>You also can&rsquo;t put a line between two cells that both have something in them. So there&rsquo;s no way to underline a text field right under its text, or to outline a button, without adding padding around it. Rounded corners sort of work, except the corner glyph has one background color, and when the panel&rsquo;s background is different from what&rsquo;s around it you get a little square of the wrong color in each corner. And the line itself is whatever the font decides it is, weight and position included.</p>
+</blockquote>
+<p>你也无法在两个都包含内容的单元格之间添加分隔线。因此，若不在周围添加内边距，就无法在文本正下方为文本字段添加下划线，也无法为按钮添加轮廓线。圆角在一定程度上可行，只不过角落的字形只有一种背景色，当面板的背景色与周围环境不同时，每个角落都会出现一小块颜色错误的方块。而且线条本身的粗细和位置完全取决于字体的定义。</p>
+<blockquote>
+<p>Then there&rsquo;s copy and paste. Select some text inside a box and you get the box too. Everyone who&rsquo;s pasted from a TUI into Slack knows the little <code>│</code> cleanup dance. Sometimes you do want the box (pasting a table into a chat, say), but mostly it&rsquo;s junk. Cell borders aren&rsquo;t text, so they never get copied, which cuts both ways.</p>
+</blockquote>
+<p>然后还有复制粘贴。在某个框里选中一些文本，你也会选中这个框。所有从 TUI 粘贴到 Slack 的人都知道那场小小的 <code>│</code> 清理舞。有时你确实需要这个框（比如把表格粘贴到聊天里），但多半是无用的东西。单元格边框并不是文本，所以它们永远不会被复制，这也两种情况都不太理想。</p>
+<blockquote>
+<h2 id="how-it-works">How it works</h2>
+</blockquote>
+<h2 id="它是如何工作的">它是如何工作的</h2>
+<blockquote>
+<p>A cell border is a cell attribute, like a background color. Each cell can carry up to twelve line segments: the two halves of each of its four edges, and four arms from its center. Each segment has its own color, width, placement and style, and the terminal draws them over the cell grid. Borders are stored in the cells, so they scroll, erase, insert and reflow with the text. What happens on erase or scroll already has an answer, the same one as for colors.</p>
+</blockquote>
+<p>单元格边框是单元格属性，如背景色。每个单元格可承载多达十二条线段：其四条边各两半，以及从中心延伸出的四个臂。每条线段各自具有颜色、宽度、位置和样式，终端在单元格网格之上绘制它们。边框存储在单元格中，因此它们随文本一起滚动、擦除、插入和重排。擦除或滚动时的行为已经有答案了，与颜色相同。</p>
+<blockquote>
+<p>The edges are split into halves so borders line up with quadrant block characters (<code>▖▗▘▝</code> and friends). That makes it easy to draw a shape that&rsquo;s a half cell in from the grid and still put a neat border around it. Yes, that still uses a character for the fill, and there might be a better way to do that part. One problem at a time.</p>
+</blockquote>
+<p>边缘被分成两半，使边框与四分位块字符（<code>▖▗▘▝</code> 和 同类字符）对齐。这使得在网格内偏移半个单元格的位置绘制形状变得容易，同时仍可在其周围画出整齐的边框。是的，它仍然使用字符作为填充，而且可能有更好的方法来处理这部分。一个问题一次。</p>
+<blockquote>
+<p>The same idea could stretch to sextants and octants, or to quarter and eighth widths, if designs need them.</p>
+</blockquote>
+<p>同样的理念也可延伸到六分制和八分制，或四分之一和八分之一的宽度，如果设计需要的话。</p>
+<blockquote>
+<h3 id="styles-and-joints">Styles and joints</h3>
+</blockquote>
+<h3 id="样式和关节">样式和关节</h3>
+<blockquote>
+<p><a href="https://www.joshka.net/cell-borders/styles.png"><img alt="The gallery script showing solid, double, dashed and dotted lines, rounded corners, forks and junctions" loading="lazy" src="https://www.joshka.net/cell-borders/styles.png"></a></p>
+</blockquote>
+<p><a href="https://www.joshka.net/cell-borders/styles.png"><img alt="展示实线、双线、破折线和点线、圆角、分叉和连接点的画廊脚本" loading="lazy" src="https://www.joshka.net/cell-borders/styles.png"></a></p>
+<blockquote>
+<p><a href="https://www.joshka.net/cell-borders/zoom-outside.png"><img alt="Rounded panels with and without an outside fill color. The first has square patches of background at its corners" loading="lazy" src="https://www.joshka.net/cell-borders/zoom-outside.png"></a></p>
+</blockquote>
+<p><a href="https://www.joshka.net/cell-borders/zoom-outside.png"><img alt="带有和不带有外部填充色的圆角面板。第一个在角落处有方形背景色块" loading="lazy" src="https://www.joshka.net/cell-borders/zoom-outside.png"></a></p>
+<blockquote>
+<p>Lines can be solid, double, dashed or dotted. Each corner and center of a cell can be square or rounded, with a configurable radius and anti-aliased arcs. A rounded corner can name an outside color, so the area outside the arc is painted correctly when the panel&rsquo;s background differs from what&rsquo;s behind it.</p>
+</blockquote>
+<p>线条可以是实线、双线、虚线或点线。单元格的每个角和中心均可为方形或圆角，并支持可配置的半径和抗锯齿圆弧。圆角可指定外部颜色，以便当面板背景与其后方的内容不同时，圆弧外部的区域能被正确绘制。</p>
+<blockquote>
+<p>When two neighboring cells both put a line on their shared edge, they merge into one line. The stroke with the higher <code>priority</code> wins, then the wider one, then the one to the right or below. That way a focused pane can raise its priority and keep its whole outline, whatever order its neighbors were drawn in. My first try was &ldquo;right/bottom always wins&rdquo;, which lasted until the focused pane lost half its outline to its neighbor.</p>
+</blockquote>
+<p>当两个相邻的 cell 都在它们共享的边上画线时，这两条线会合并成一条。<code>priority</code> 更高的那条 stroke 胜出，其次是更宽的那条，最后取位于右侧或下方的那条。如此一来，聚焦的 pane 便可以提升自身的 <code>priority</code>，无论它的邻居以什么顺序绘制，都能保持完整的轮廓。我最初的方案是“右侧/底部永远胜出”，它一直奏效，直到聚焦的 pane 把一半轮廓输给了邻居。</p>
+<blockquote>
+<h2 id="the-wire-format">The wire format</h2>
+</blockquote>
+<h2 id="传输格式">传输格式</h2>
+<blockquote>
+<p>Everything is one DCS string with a namespace:</p>
+</blockquote>
+<p>一切都是一个 DCS 字符串，带有一个 namespace：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">ESC P 1 + b cell-border ; OP ; FIELDS... ESC \
+</span></span></code></pre></div><blockquote>
+<p>The common path is a pen, held in the cursor like the current background color. Set it, print some text, and the printed cells get the borders:</p>
+</blockquote>
+<p>常见路径是使用画笔，它像当前背景色一样保存在光标中。设置它，打印一些文本，打印出的单元格就会获得边框：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">ESC P 1 + b cell-border;pen;48;32;7aa2f7;0;0 ESC \     bottom edge, blue: an underline
+</span></span><span class="line"><span class="cl">hello
+</span></span><span class="line"><span class="cl">ESC [ 0 m                                              SGR 0 clears the pen
+</span></span></code></pre></div><blockquote>
+<p>There are also rectangle commands that set or clear borders on existing cells without touching the pen, and a capability query. An app sends the query followed by DA1. If the DA1 reply arrives without a <code>cell-border</code> reply first, the terminal doesn&rsquo;t support it, so the app falls back to box characters and reserves the space they need. Terminals that don&rsquo;t understand the DCS ignore it, the same as any unknown DCS.</p>
+</blockquote>
+<p>此外，还存在矩形命令，它们可以在不触动笔的情况下设置或清除现有单元格的边界，并且还有能力查询。一个应用发送查询，然后发送 DA1。如果 DA1 响应先没有 <code>cell-border</code> 响应，终端不支持它，因此应用回退到方框字符并预留它们所需的空间。那些不理解 DCS 的终端会忽略它，就像任何未知 DCS 一样。</p>
+<blockquote>
+<p>The minimum a terminal needs is the pen, the rectangle commands and solid strokes. I&rsquo;ve tried to keep that first cut small, because there&rsquo;s always one more &ldquo;&hellip; and this&rdquo; to add, and that&rsquo;s a slippery slope.</p>
+</blockquote>
+<p>终端所需要的最低配置是笔、矩形命令和实线描边。我特意把第一次裁剪保持在最小范围内，因为总会有“还有这个……”需要添加，而这是一条滑向深渊的路径。</p>
+<blockquote>
+<p>Line styles, rounded joints, priority and outside colors are extension fields listed in the capability reply, and unknown fields are ignored, so they can be added later. I&rsquo;d rather the early decisions be two way doors where possible.</p>
+</blockquote>
+<p>线条样式、圆角连接、优先级和外部颜色是能力应答中列出的扩展字段，未知字段会被忽略，因此它们可以后续再添加。我希望早期决策尽可能都是双向门。</p>
+<blockquote>
+<p>The spec calls itself version 1 (it&rsquo;s the <code>1</code> in <code>DCS 1 + b</code>). That&rsquo;s v1 in the old sense, before we all got bogged down in semver. It doesn&rsquo;t mean done or stable, it means it&rsquo;s the first one I was willing to write down. Read it as v0.1, or a draft, or whatever you prefer.</p>
+</blockquote>
+<p>这份规范自称版本 1（也就是 <code>DCS 1 + b</code> 中的那个 <code>1</code>）。这是旧意义上的 v1，那时我们还没都被 semver 搞得焦头烂额。它并不意味着完成或稳定，只意味着这是第一份我愿意写下来的版本。你可以把它读作 v0.1，或草案，或任何你喜欢的说法。</p>
+<blockquote>
+<h2 id="prior-art">Prior art</h2>
+</blockquote>
+<h2 id="现有技术">现有技术</h2>
+<blockquote>
+<p>Parts of this have been done before:</p>
+</blockquote>
+<p>其中部分工作以前已经做过：</p>
+<blockquote>
+<ul>
+<li><strong>DEC ruled lines</strong> in DECterm (extension 43 in the DA1 reply) draw lines around rectangles. They scroll with the text, but they&rsquo;re a separate layer: clearing the screen leaves them behind, and they&rsquo;re always one pixel wide in the normal text color.</li>
+<li><strong>SGR 51 to 65</strong>: framed, encircled, overline and the ideogram side lines. Some terminals draw borders with them, but they&rsquo;re on/off attributes with no color, width or joins, and there&rsquo;s no attribute for the bottom edge.</li>
+<li>The <strong>Win32 console</strong> has per-cell grid flags for the top, left and right edges. <strong>PDCurses</strong> and <strong>X/Open curses</strong> (<code>WA_TOP</code>, <code>WA_LEFT</code> and friends) have similar attributes. These are the closest to this protocol, but they have no bottom edge (Win32), color, width or halves.</li>
+<li><strong>IBM 3270</strong> terminals can outline whole input fields.</li>
+</ul>
+</blockquote>
+<ul>
+<li><strong>DEC ruled lines</strong> in DECterm (extension 43 in the DA1 reply) 围绕矩形绘制线条。它们随文本滚动，但它们是一个独立图层：清除屏幕会留下它们，且它们始终在正常文本粗细的单像素宽度。</li>
+<li><strong>SGR 51 to 65</strong>: framed, encircled, overline and the ideogram side lines. 一些终端使用它们绘制边框，但它们是开/关属性，无色、无宽度、无连接，且无底边属性。</li>
+<li>The <strong>Win32 console</strong> has per-cell grid flags for the top, left and right edges. <strong>PDCurses</strong> and <strong>X/Open curses</strong> (<code>WA_TOP</code>, <code>WA_LEFT</code> and friends) 有相似属性。这些是 protocol 最接近的，但它们没有底边 (Win32), color, width or halves.</li>
+<li><strong>IBM 3270</strong> 终端可以轮廓化整个输入域。</li>
+</ul>
+<blockquote>
+<p>What none of these give you is a line with its own color and width on each edge. The <a href="https://github.com/joshka/ghostty/blob/joshka/cell-borders/specs/cell-border-rationale.md">rationale document</a> covers the prior art in more detail and explains each choice in the protocol.</p>
+</blockquote>
+<p>这些方案都无法提供的一点是：每条边上的线条都具有各自的颜色和宽度。<a href="https://github.com/joshka/ghostty/blob/joshka/cell-borders/specs/cell-border-rationale.md">理由文档</a> 更详细地介绍了现有技术，并解释了协议中的每项选择。</p>
+<blockquote>
+<p>My own first prototype was in Rio (<a href="https://github.com/raphamorim/rio/pull/1947">raphamorim/rio#1947</a>), with an earlier version of the spec that used APC instead of DCS. Feedback pointed out that APC isn&rsquo;t safe to reuse: Kermit 95 has run APC payloads as Kermit commands since the 90s. DCS is where structured terminal commands already live, and terminals ignore DCS strings they don&rsquo;t recognize, so I switched to that.</p>
+</blockquote>
+<p>我自己的第一个原型是基于 Rio 的（<a href="https://github.com/raphamorim/rio/pull/1947">raphamorim/rio#1947</a>），该规范的早期版本使用 APC 而不是 DCS。反馈指出，APC 不能安全地复用：Kermit 95 自 90 年代以来就把 APC 负载作为 Kermit 命令运行。DCS 是结构化终端命令已经所在的地方，终端会忽略它们不认识的 DCS 字符串，因此我切换到了那个。</p>
+<blockquote>
+<h2 id="the-awkward-edge-cases">The awkward (edge) cases</h2>
+</blockquote>
+<h2 id="那些棘手的边界情况">那些棘手的（边界）情况</h2>
+<blockquote>
+<p>When I first showed this around, most of the questions were about these. The spec goes into all of them properly, but here&rsquo;s roughly where I landed.</p>
+</blockquote>
+<p>当我第一次展示这个时，大部分问题都是关于这些的。规范文档对它们都做了详细说明，但以下是我大致的结论。</p>
+<blockquote>
+<p>Multiplexers were the first thing people asked about. tmux and friends redraw panes from their own idea of the cell grid, so passing these sequences through would just put borders in the wrong place. A multiplexer that doesn&rsquo;t know about the protocol should drop them and answer DA1 itself, and then apps running inside it fall back to box characters like they would anywhere else. One that does know about it can store borders like any other attribute and redraw them.</p>
+</blockquote>
+<p>终端复用器是人们最先问到的东西。tmux 及同类工具会依照自己维护的 cell grid 模型来重绘 pane，因此直接把这些序列透传下去，只会让边框被画到错误的位置。不了解该协议的复用器应当丢弃这些序列，并自行响应 DA1，这样运行在其中的应用就会像在别处一样退回到 box 字符。而了解该协议的复用器则可以像处理其他属性那样把边框存储起来，并在重绘时一并还原。</p>
+<blockquote>
+<p>Conflicting lines on a shared edge are settled when the terminal renders, using the priority rule above, so it doesn&rsquo;t matter what order the app wrote the cells in.</p>
+</blockquote>
+<p>共享边上的冲突线条在终端渲染时由上述优先级规则确定，因此应用写入单元格的顺序无关紧要。</p>
+<blockquote>
+<p>Erase, insert and delete all work the way they do for background colors. Erased cells pick up the current pen, and lines that get inserted or deleted take their borders along. Scrollback, the alternate screen and reflow mostly come for free, because the border lives in the cell.</p>
+</blockquote>
+<p>擦除、插入和删除操作的工作方式与背景颜色一致。被擦除的单元格会继承当前画笔，而被插入或删除的行会连同边框一起移动。由于边框存储在单元格中，滚动历史、备用屏幕和重排大多无需额外处理即可自动支持。</p>
+<blockquote>
+<p>On cost: the Ghostty change is about 1,650 lines, and a fair chunk of that is tests. Each cell gets a 16-bit border ID, which fits in padding that was already there, so cells don&rsquo;t get any bigger and a screen with no borders costs nothing extra. The IDs point into a table of distinct border sets (about 100 bytes each) that&rsquo;s shared by the whole terminal. A typical TUI only uses a handful of distinct sets, but the table is never freed, so in the worst case (all 65,535 IDs in use) it&rsquo;s somewhere around 10-15 MB.</p>
+</blockquote>
+<p>关于成本问题， Ghostty 的改动大概有 1,650 行代码，其中很大一部分是测试代码。每个单元格都会分配一个 16 位边框 ID，该 ID 完全嵌入到已有的填充空间中，因此单元格的大小不会发生变化，且无边框的屏幕也不会产生额外开销。这些 ID 指向一个由整个终端共享的表，存储了不同的边框组（每个组约 100 字节）。典型的 TUI 仅使用少量不同的边框组，但该表不会被释放，因此在最坏的情况下（所有 65,535 个 ID 都在使用），它大约会占用 10-15 MB 的内存。</p>
+<blockquote>
+<p>Rendering only does extra work for cells that have borders. Each one looks at its four neighbors to resolve shared edges, so changing a row also rebuilds the rows either side of it. Straight lines are a few solid quads per cell. Rounded corners cost more, because the anti-aliased arc is drawn as rows of small quads, roughly one per edge pixel. I haven&rsquo;t benchmarked any of this properly yet, and it&rsquo;s the part I&rsquo;d most like another set of eyes on.</p>
+</blockquote>
+<p>渲染仅对带有边框的单元格执行额外工作。每个单元格都会检查其四个邻居以解决共享边，因此更改一行也会重建其相邻行。直线每个单元格只有几块实心四边形。圆角的开销更高，因为抗锯齿弧线是作为由小四边形组成的行绘制的，大约每个边缘像素一个。我还没有真正对这部分做过基准测试，而且这是我最希望再请一双眼睛来看的地方。</p>
+<blockquote>
+<h2 id="try-it">Try it</h2>
+</blockquote>
+<h2 id="试一试">试一试</h2>
+<blockquote>
+<p>The <a href="https://github.com/joshka/ghostty/blob/joshka/cell-borders/specs/cell-border-protocol.md">spec</a> and <a href="https://github.com/joshka/ghostty/blob/joshka/cell-borders/specs/cell-border-rationale.md">rationale</a> are on my Ghostty fork. The <a href="https://github.com/joshka/ghostty/tree/joshka/cell-borders">Ghostty branch</a> implements all of version 1. I&rsquo;ve only built and run it on macOS so far, so the GTK and OpenGL builds are untested. To build and run it (you&rsquo;ll need Zig 0.17 and Xcode):</p>
+</blockquote>
+<p>该 <a href="https://github.com/joshka/ghostty/blob/joshka/cell-borders/specs/cell-border-protocol.md">spec</a> 和 <a href="https://github.com/joshka/ghostty/blob/joshka/cell-borders/specs/cell-border-rationale.md">rationale</a> 位于我的 Ghostty fork 上。该 <a href="https://github.com/joshka/ghostty/tree/joshka/cell-borders">Ghostty branch</a> 实现了 version 1。我只在 macOS 上构建和运行它，因此 GTK 和 OpenGL 构建均未测试。要构建和运行它，你需要 Zig 0.17 和 Xcode：</p>
+<pre tabindex="0"><code class="language-shellscript" data-lang="shellscript">git clone -b joshka/cell-borders https://github.com/joshka/ghostty.git
+cd ghostty
+zig build -Doptimize=ReleaseFast -Dxcframework-target=native
+open zig-out/Ghostty.app
+</code></pre><blockquote>
+<p>Inside that Ghostty, the gallery script on the same branch draws the style gallery above. It detects support first, so it&rsquo;s also a quick check for another terminal&rsquo;s implementation:</p>
+</blockquote>
+<p>在该 Ghostty 中，同一分支上的图库脚本会在上方绘制样式图库。它首先检测支持情况，因此也可以快速检查其他终端的实现：</p>
+<pre tabindex="0"><code class="language-shellscript" data-lang="shellscript">python3 scripts/cell-borders.py            # the default view
+python3 scripts/cell-borders.py --styles   # line styles, joints and outside fill
+</code></pre><blockquote>
+<p>Once it&rsquo;s running you can flip between views with keys: <code>p</code> placement, <code>c</code> colors, <code>h</code> blocks, <code>j</code> junctions, <code>e</code> halves, <code>s</code> styles and <code>l</code> live. <code>w</code> cycles the stroke width, <code>b</code> turns borders off so you can compare, and <code>q</code> quits. Each view also has a matching flag (<code>--placement</code>, <code>--styles</code> and so on) if you want to start on it.</p>
+</blockquote>
+<p>一旦运行，你可以使用 <code>p</code> placement、<code>c</code> colors、<code>h</code> blocks、<code>j</code> junctions、<code>e</code> halves、<code>s</code> styles 和 <code>l</code> live 在视图之间切换。<code>w</code> 切换笔画宽度，<code>b</code> 关闭边框以便你进行比较，<code>q</code> 退出。每个视图也有一个匹配的标志（<code>--placement</code>、<code>--styles</code> 等等），如果你想从该视图开始。</p>
+<blockquote>
+<p>The tiling panes demo is on the <a href="https://github.com/joshka/ratatui/tree/joshka/cell-borders">Ratatui branch</a>. It falls back to box-drawing characters when the terminal doesn&rsquo;t support cell borders, which is how I made the comparison shots above:</p>
+</blockquote>
+<p>平铺窗格演示位于 <a href="https://github.com/joshka/ratatui/tree/joshka/cell-borders">Ratatui 分支</a>。当终端不支持单元格边框时，它会回退到绘图字符，这也是我制作上面对比截图的方法：</p>
+<pre tabindex="0"><code class="language-shellscript" data-lang="shellscript">git clone -b joshka/cell-borders https://github.com/joshka/ratatui.git
+cd ratatui
+cargo run -p tiling-panes
+</code></pre><blockquote>
+<p>Drag panes around with the mouse to retile them. <code>n</code> and <code>v</code> split, <code>x</code> closes, and right click opens a pane menu. Press <code>b</code> to switch between cell borders and box drawing, or <code>g</code> to shade alternate cells and see where the edges are.</p>
+</blockquote>
+<p>拖动窗格可重新排列平铺布局。<code>n</code> 和 <code>v</code> 用于分割，<code>x</code> 用于关闭，右键点击可打开窗格菜单。按 <code>b</code> 在单元格边框与盒绘字符间切换，或按 <code>g</code> 为交替单元格着色以查看边缘位置。</p>
+<blockquote>
+<p>The btop-style monitor from the chart screenshots is in the same branch. Given how much of it an AI wrote, I did briefly consider calling it bslop:</p>
+</blockquote>
+<p>图表截图中展示的那个 btop 风格的 monitor 就在同一个分支里。考虑到其中很大一部分是 AI 写的，我确实曾短暂考虑过把它叫做 bslop：</p>
+<blockquote>
+<p><a href="https://www.joshka.net/cell-borders/bslop.png"><img alt="The full btop-style monitor drawn with cell borders. The hostname is blurred" loading="lazy" src="https://www.joshka.net/cell-borders/bslop.png"></a></p>
+</blockquote>
+<p><a href="https://www.joshka.net/cell-borders/bslop.png"><img alt="用单元格边框绘制的完整 btop 风格监视器。主机名已模糊处理" loading="lazy" src="https://www.joshka.net/cell-borders/bslop.png"></a></p>
+<blockquote>
+<p>To run it:</p>
+</blockquote>
+<p>运行方法：</p>
+<pre tabindex="0"><code class="language-shellscript" data-lang="shellscript">cargo run -p cell-border-top
+</code></pre><blockquote>
+<p>It&rsquo;s a real system monitor (it reads your actual CPU, memory, network and processes), so it&rsquo;s a better test of how this looks on a busy screen than the panes demo. <code>1</code> to <code>4</code> show and hide the boxes, <code>b</code> and <code>g</code> work the same as in the panes demo, and <code>h</code> or <code>?</code> lists the rest of the keys. It needs a newer Rust (1.95) than the rest of Ratatui because of the <code>sysinfo</code> dependency.</p>
+</blockquote>
+<p>它是一个真实的系统监控器 (它读取你的实际 CPU、 memory、 network 和 processes) ，所以它比 panes demo 的繁忙屏幕更适合测试该界面的外观。<code>1</code> 到 <code>4</code> 显示和隐藏方框，<code>b</code> 和 <code>g</code> 与 panes demo 中的行为相同，<code>h</code> 或 <code>?</code> 列出其余的键。它需要 比 Ratatui 的其余部分更高版本的 Rust ( 1.95 )，因为 <code>sysinfo</code> 依赖。</p>
+<blockquote>
+<h2 id="what-id-like-to-hear">What I&rsquo;d like to hear</h2>
+</blockquote>
+<h2 id="我想听到什么">我想听到什么？</h2>
+<blockquote>
+<p>I&rsquo;m not attached to this being the exact solution, but I think it&rsquo;s a problem worth solving, and I&rsquo;d like it to be more than one terminal&rsquo;s feature (and more than one weekend&rsquo;s worth of yak shaving). If you work on a terminal, would you implement this, and which parts look expensive? If you work on a TUI library or app, which of your widgets would use it, and what would they need that isn&rsquo;t here? Comments are welcome on the <a href="https://github.com/ghostty-org/ghostty/discussions/14324">Ghostty discussion</a>.</p>
+</blockquote>
+<p>我并不执着于这必须是唯一的解决方案，但我认为这是一个值得解决的问题，而且希望它能超越单个终端的功能范畴（也不仅仅是一个周末的“剃牦牛毛”式折腾）。如果你在开发终端，会实现这个功能吗？哪些部分看起来成本最高？如果你在开发 TUI 库或应用，你的哪些组件会用到它，还需要哪些目前未涵盖的能力？欢迎在 <a href="https://github.com/ghostty-org/ghostty/discussions/14324">Ghostty 讨论区</a> 留言交流。</p>
+]]></content:encoded></item><item><title>英伟达据称通过资助人工智能初创公司购买其GPU来人为制造稀缺性</title><link>https://BradleyZhang.github.io/DualHN/2026-11-15/02-nvidia-allegedly-engineered-scarcity-by-funding-ai-startups-to-buy-its-gpus/</link><pubDate>Sun, 15 Nov 2026 09:11:18 +0800</pubDate><guid>https://BradleyZhang.github.io/DualHN/2026-11-15/02-nvidia-allegedly-engineered-scarcity-by-funding-ai-startups-to-buy-its-gpus/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;Friday, November 13th 2026&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;2026 年 11 月 13 日，星期五&lt;/p&gt;
+&lt;p&gt;&lt;img loading="lazy" src="https://tpucdn.com/images/news/nvidia@2x-v1793811817.png" title="NVIDIA"&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Following the &lt;a href="https://www.techpowerup.com/354732/nvidia-co-founder-and-ceo-jensen-huang-officially-resigns"&gt;departure of now-former NVIDIA CEO, Jensen Huang&lt;/a&gt;, a new report by &lt;a href="https://www.wsj.com/tech/jensen-huang-colette-kress-nvidia-ceo-eb289097?"&gt;The Wall Street Journal&lt;/a&gt; (via &lt;a href="https://wccftech.com/jensen-huang-financed-ai-startups-absorb-excess-silicon/"&gt;Wccftech&lt;/a&gt;) has emerged alleging that NVIDIA artificially inflated the ongoing GPU and memory shortage by investing in AI startups that would go on to buy NVIDIA GPUs and build data centers. The reason behind this was to maintain the perception of ongoing high demand and to move an oversupply of semiconductors from TSMC.&lt;/p&gt;
+&lt;/blockquote&gt;</description><content:encoded><![CDATA[<p>from: <a href="https://www.techpowerup.com/354814/nvidia-allegedly-engineered-scarcity-by-funding-ai-startups-to-buy-its-gpus">NVIDIA Allegedly Engineered Scarcity By Funding AI Startups To Buy Its GPUs</a></p><blockquote>
+<p>Friday, November 13th 2026</p>
+</blockquote>
+<p>2026 年 11 月 13 日，星期五</p>
+<p><img loading="lazy" src="https://tpucdn.com/images/news/nvidia@2x-v1793811817.png" title="NVIDIA"></p>
+<blockquote>
+<p>Following the <a href="https://www.techpowerup.com/354732/nvidia-co-founder-and-ceo-jensen-huang-officially-resigns">departure of now-former NVIDIA CEO, Jensen Huang</a>, a new report by <a href="https://www.wsj.com/tech/jensen-huang-colette-kress-nvidia-ceo-eb289097?">The Wall Street Journal</a> (via <a href="https://wccftech.com/jensen-huang-financed-ai-startups-absorb-excess-silicon/">Wccftech</a>) has emerged alleging that NVIDIA artificially inflated the ongoing GPU and memory shortage by investing in AI startups that would go on to buy NVIDIA GPUs and build data centers. The reason behind this was to maintain the perception of ongoing high demand and to move an oversupply of semiconductors from TSMC.</p>
+</blockquote>
+<p>在英伟达现任首席执行官黄仁勋宣布辞职后，《华尔街日报》的一份新报告（经由 Wccftech 发布，链接为 <a href="https://wccftech.com/jensen-huang-financed-ai-startups-absorb-excess-silicon/">https://wccftech.com/jensen-huang-financed-ai-startups-absorb-excess-silicon/</a>）声称，英伟达通过投资那些将购买英伟达 GPU 并建设数据中心的 AI 初创公司，人为制造了当前 GPU 和内存市场的短缺。报告指出，此举的目的是维持市场对持续高需求的感知，并将其过剩的半导体产能转移给台积电。</p>
+<p>这篇报道由 Techpowerup 网站（链接为 <a href="https://www.techpowerup.com/354732/nvidia-co-founder-and-ceo-jensen-huang-officially-resigns">https://www.techpowerup.com/354732/nvidia-co-founder-and-ceo-jensen-huang-officially-resigns</a>）进行报道，而《华尔街日报》的相关报道链接为 <a href="https://www.wsj.com/tech/jensen-huang-colette-kress-nvidia-ceo-eb289097">https://www.wsj.com/tech/jensen-huang-colette-kress-nvidia-ceo-eb289097</a>?。</p>
+<blockquote>
+<p>The WSJ report cites an August meeting between Huang and his senior finance team, including NVIDIA&rsquo;s CFO and acting CEO, Colette Kress, during which Kress pushed for a reduction in circular financing agreements, in response to which Huang allegedly lay into Kress, calling her a &ldquo;deer in the headlights,&rdquo; after she had pushed to scale back <a href="https://www.techpowerup.com/351120/nvidia-and-openai-reportedly-discuss-usd-250-billion-deal-for-10-gigawatt-ohio-data-center">NVIDIA&rsquo;s $250 billion deal with OpenAI</a>. Jensen&rsquo;s push for further investment into small-scale cloud providers was seemingly in response to the changing tide that saw AI hyperscalers move away from off-the-shelf components in favor of custom solutions.</p>
+</blockquote>
+<p>《华尔街日报》援引 8 月份黄仁勋与其高级财务团队（包括 NVIDIA 首席财务官兼代理首席执行官 Colette Kress）的一次会议报道称，会上 Kress 推动削减循环融资协议，黄仁勋据称因此对 Kress 破口大骂，称她为“吓呆了的鹿”（deer in the headlights）；此前 Kress 曾主张缩减 <a href="https://www.techpowerup.com/351120/nvidia-and-openai-reportedly-discuss-usd-250-billion-deal-for-10-gigawatt-ohio-data-center">NVIDIA 与 OpenAI 的 2500 亿美元交易</a>。黄仁勋大力推动对中小型云服务商进行进一步投资，似乎是为了应对 AI 超大规模厂商不再青睐现成组件、转而青睐定制化解决方案这一风向变化。</p>
+<blockquote>
+<p><a href="https://www.techpowerup.com/img/ooCln2q3jkKNGHen.jpg"><img loading="lazy" src="https://tpucdn.com/img/ooCln2q3jkKNGHen_thm.jpg"></a></p>
+</blockquote>
+<p><a href="https://www.techpowerup.com/img/ooCln2q3jkKNGHen.jpg"><img loading="lazy" src="https://tpucdn.com/img/ooCln2q3jkKNGHen_thm.jpg"></a></p>
+<blockquote>
+<p>The situation described in the report saw NVIDIA on the hook for an &ldquo;avalanche&rdquo; of GPUs from TSMC, for which it would have no immediate buyers. Part of the issue highlighted by Kress was also that these small-scale cloud providers NVIDIA was investing in could not afford to buy NVIDIA GPUs, meaning they, too, could be a financial dead end.</p>
+</blockquote>
+<p>报告中所描述的情况显示，NVIDIA 因 TSMC 的&quot;雪崩&quot;式 GPU 供应而陷入困境，而这些 GPU 暂时找不到买家。Kress 指出的另一个问题是，NVIDIA 投资的这些小型云服务提供商根本无力购买 NVIDIA GPU，这意味着它们同样可能成为财务上的无底洞。</p>
+<blockquote>
+<p>Sources: <a href="https://www.wsj.com/tech/jensen-huang-colette-kress-nvidia-ceo-eb289097?">The Wall Street Journal</a>, <a href="https://wccftech.com/jensen-huang-financed-ai-startups-absorb-excess-silicon/">via Wccftech</a></p>
+</blockquote>
+<p>来源：<a href="https://www.wsj.com/tech/jensen-huang-colette-kress-nvidia-ceo-eb289097?">The Wall Street Journal</a>, <a href="https://wccftech.com/jensen-huang-financed-ai-startups-absorb-excess-silicon/">通过 Wccftech</a></p>
+<blockquote>
+<p>Nov 14th, 2026 20:11 EST <a href="#">change timezone</a></p>
+</blockquote>
+<p>2026 年 11 月 14 日 20:11 EST <a href="#">change timezone</a></p>
+<blockquote>
+<h2 id="latest-gpu-drivers">Latest GPU Drivers</h2>
+</blockquote>
+<h2 id="最新-gpu-驱动">最新 GPU 驱动</h2>
+<blockquote>
+<p><a href="https://www.techpowerup.com/reviyuu/b784/3027er/images/gmchjhj.png"><img loading="lazy" src="https://www.techpowerup.com/reviyuu/b784/_35940dc7.png"></a></p>
+</blockquote>
+<p>抱歉，您提供的内容是一张图片的链接，并非需要翻译的英文文本。请提供完整的英文原文，我将为您进行专业翻译。</p>
+<blockquote>
+<h2 id="new-forum-posts">New Forum Posts</h2>
+</blockquote>
+<h2 id="新的论坛帖子">新的论坛帖子</h2>
+<blockquote>
+<ul>
+<li><a href="https://www.techpowerup.com/forums/threads/honestly-do-you-care-about-gta-vi.354842/unread">Honestly, do you care about GTA VI?</a> (18)</li>
+<li><a href="https://www.techpowerup.com/forums/threads/what-is-in-your-fleet-size-and-contents.354479/unread">What is in your fleet, size and contents?</a> (28)</li>
+<li><a href="https://www.techpowerup.com/forums/threads/warpcorebench-scores.354631/unread">WarpCoreBench scores!</a> (33)</li>
+<li><a href="https://www.techpowerup.com/forums/threads/9070-gre-3-9ghz-validation-reached.354345/unread">9070 GRE 3.9ghz validation reached.</a> (10)</li>
+<li><a href="https://www.techpowerup.com/forums/threads/x79-and-or-rampage-iv-ocing-thread-for-those-of-us-still-left.225209/unread">X79 and/or rampage IV OC&rsquo;ing thread for those of us still left&hellip;.</a> (2452)</li>
+<li><a href="https://www.techpowerup.com/forums/threads/can-you-guess-which-game-it-is.334696/unread">Can you guess Which game it is?</a> (317)</li>
+<li><a href="https://www.techpowerup.com/forums/threads/what-can-the-fx-8320-do-today-here-is-the-answer.354828/unread">What can the FX 8320 do today? Here is the answer.</a> (43)</li>
+<li><a href="https://www.techpowerup.com/forums/threads/ryzen-7-8700g-oc.354722/unread">Ryzen 7 8700G OC</a> (8)</li>
+<li><a href="https://www.techpowerup.com/forums/threads/auto-closed-by-somethings-by-actions.354813/unread">auto-closed by somethings by actions</a> (2)</li>
+<li><a href="https://www.techpowerup.com/forums/threads/community-benchmark-mrh-opencl-benchmark-2-0e-windows-only-%E2%80%93-cpu-gpu.354760/unread">[Community Benchmark] MrH OpenCL Benchmark 2.0e (Windows Only – CPU &amp; GPU)</a> (2)</li>
+</ul>
+</blockquote>
+<ul>
+<li><a href="https://www.techpowerup.com/forums/threads/honestly-do-you-care-about-gta-vi.354842/unread">说真的，你关心过 GTA VI 吗？</a> (18)</li>
+<li><a href="https://www.techpowerup.com/forums/threads/what-is-in-your-fleet-size-and-contents.354479/unread">你装备里都有什么？机型和配置是什么？</a> (28)</li>
+<li><a href="https://www.techpowerup.com/forums/threads/warpcorebench-scores.354631/unread">WarpCoreBench 跑分！</a> (33)</li>
+<li><a href="https://www.techpowerup.com/forums/threads/9070-gre-3-9ghz-validation-reached.354345/unread">9070 GRE 3.9GHz 验证成功。</a> (10)</li>
+<li><a href="https://www.techpowerup.com/forums/threads/x79-and-or-rampage-iv-ocing-thread-for-those-of-us-still-left.225209/unread">X79 以及/或 Rampage IV 的过频主题，给那些“被留下的人”&hellip;.</a> (2452)</li>
+<li><a href="https://www.techpowerup.com/forums/threads/can-you-guess-which-game-it-is.334696/unread">你能猜出来这是什么游戏？</a> (317)</li>
+<li><a href="https://www.techpowerup.com/forums/threads/what-can-the-fx-8320-do-today-here-is-the-answer.354828/unread">今天的 FX 8320 还能做什么？答案在这里。</a> (43)</li>
+<li><a href="https://www.techpowerup.com/forums/threads/ryzen-7-8700g-oc.354722/unread">Ryzen 7 8700G 过频</a> (8)</li>
+<li><a href="https://www.techpowerup.com/forums/threads/auto-closed-by-somethings-by-actions.354813/unread">被某些操作自动关闭了</a> (2)</li>
+<li><a href="https://www.techpowerup.com/forums/threads/community-benchmark-mrh-opencl-benchmark-2-0e-windows-only-%E2%80%93-cpu-gpu.354760/unread">[Community Benchmark] MrH OpenCL Benchmark 2.0e (Windows Only – CPU &amp; GPU)</a> (2)</li>
+</ul>
+<blockquote>
+<p><a href="https://www.techpowerup.com/reviyuu/b784/4002er/images/gmchjhj.png"><img loading="lazy" src="https://www.techpowerup.com/reviyuu/b784/_fd39c240.png"></a></p>
+</blockquote>
+<p><a href="https://www.techpowerup.com/reviyuu/b784/4002er/images/gmchjhj.png"><img loading="lazy" src="https://www.techpowerup.com/reviyuu/b784/_fd39c240.png"></a></p>
+<blockquote>
+<h2 id="tpu-on-youtube">TPU on YouTube</h2>
+</blockquote>
+<h2 id="tpu-在-youtube-上">TPU 在 YouTube 上</h2>
+<blockquote>
+<h2 id="controversial-news-posts">Controversial News Posts</h2>
+</blockquote>
+<h2 id="争议性新闻帖子">争议性新闻帖子</h2>
+<blockquote>
+<ul>
+<li><a href="https://www.techpowerup.com/354732/nvidia-co-founder-and-ceo-jensen-huang-officially-resigns">NVIDIA Co-Founder and CEO Jensen Huang Officially Resigns</a> (406)</li>
+<li><a href="https://www.techpowerup.com/354346/openai-ceo-argues-home-pcs-waste-the-worlds-limited-dram-supply">OpenAI CEO Argues Home PCs Waste the World&rsquo;s Limited DRAM Supply</a> (152)</li>
+<li><a href="https://www.techpowerup.com/354594/nvidia-launches-investigation-into-jensen-huangs-relationship-with-suspected-chinese-spy">NVIDIA Launches Investigation Into Jensen Huang&rsquo;s Relationship With Suspected Chinese Spy</a> (136)</li>
+<li><a href="https://www.techpowerup.com/354145/intel-raptor-lake-next-16-core-and-20-core-cpus-surface">Intel &ldquo;Raptor Lake Next&rdquo; 16-Core and 20-Core CPUs Surface</a> (130)</li>
+<li><a href="https://www.techpowerup.com/353984/legendary-game-studio-bioware-shuts-down-following-ea-layoffs">Legendary Game Studio BioWare Shuts Down Following EA Layoffs</a> (104)</li>
+<li><a href="https://www.techpowerup.com/353947/dell-ceo-says-the-memory-shortage-will-get-worse-in-2027">Dell CEO Says the Memory Shortage Will Get Worse in 2027</a> (95)</li>
+<li><a href="https://www.techpowerup.com/354427/nvidia-geforce-rtx-50-series-scheduled-for-up-to-usd-500-price-hike-this-week">NVIDIA GeForce RTX 50-Series Scheduled for up to $500 Price Hike This Week</a> (89)</li>
+<li><a href="https://www.techpowerup.com/353812/modder-fits-rtx-5090-with-four-8-pin-connectors-halving-current-per-wire">Modder Fits RTX 5090 With Four 8-Pin Connectors, Halving Current per Wire</a> (80)</li>
+</ul>
+</blockquote>
+<ul>
+<li><a href="https://www.techpowerup.com/354732/nvidia-co-founder-and-ceo-jensen-huang-officially-resigns">NVIDIA 联合创始人兼 CEO 黄仁勋正式辞职</a> (406)</li>
+<li><a href="https://www.techpowerup.com/354346/openai-ceo-argues-home-pcs-waste-the-worlds-limited-dram-supply">OpenAI CEO 称家用 PC 浪费了全球有限的 DRAM 供应</a> (152)</li>
+<li><a href="https://www.techpowerup.com/354594/nvidia-launches-investigation-into-jensen-huangs-relationship-with-suspected-chinese-spy">NVIDIA 调查黄仁勋与疑似中国间谍的关系</a> (136)</li>
+<li><a href="https://www.techpowerup.com/354145/intel-raptor-lake-next-16-core-and-20-core-cpus-surface">Intel &ldquo;Raptor Lake Next&rdquo; 16 核和 20 核 CPU 曝光</a> (130)</li>
+<li><a href="https://www.techpowerup.com/353984/legendary-game-studio-bioware-shuts-down-following-ea-layoffs">传奇游戏工作室 BioWare 在 EA 裁员后关闭</a> (104)</li>
+<li><a href="https://www.techpowerup.com/353947/dell-ceo-says-the-memory-shortage-will-get-worse-in-2027">Dell CEO 称内存短缺将在 2027 年加剧</a> (95)</li>
+<li><a href="https://www.techpowerup.com/354427/nvidia-geforce-rtx-50-series-scheduled-for-up-to-usd-500-price-hike-this-week">NVIDIA GeForce RTX 50 系列本周计划涨价最高 500 美元</a> (89)</li>
+<li><a href="https://www.techpowerup.com/353812/modder-fits-rtx-5090-with-four-8-pin-connectors-halving-current-per-wire">改装者给 RTX 5090 装上四个 8-Pin 接口，将每根线电流减半</a> (80)</li>
+</ul>
+]]></content:encoded></item><item><title>既然有旧手机，何必买昂贵的树莓派？</title><link>https://BradleyZhang.github.io/DualHN/2026-11-15/01-why-get-an-expensive-pi-when-i-have-an-old-phone/</link><pubDate>Sun, 15 Nov 2026 09:03:49 +0800</pubDate><guid>https://BradleyZhang.github.io/DualHN/2026-11-15/01-why-get-an-expensive-pi-when-i-have-an-old-phone/</guid><description>&lt;p&gt;&lt;img alt="Rooted Redmi 13C 5G running the Moth Rig app, connected by USB-C to a controller for an LED strip" loading="lazy" src="https://so.long.thanks.fish/why-pi-when-i-have-an-old-phone/redmi-leds-1200.webp"&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The rooted Redmi talking over USB-C to the LED controller.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;已 Root 的 Redmi 通过 USB-C 与 LED 控制器通信。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;I’m working on a project that needs a high resolution camera, GPS, storage, and a microcontroller to control some lights. (More on the project soon!) I’ve been designing PCB adapters around a Raspberry Pi, an Arducam 64MP camera, and a GPS module. Every time I add another part, the bill grows.&lt;/p&gt;
+&lt;/blockquote&gt;</description><content:encoded><![CDATA[<p>from: <a href="https://so.long.thanks.fish/why-pi-when-i-have-an-old-phone/">Why get an expensive Pi when I have an old phone?</a></p><p><img alt="Rooted Redmi 13C 5G running the Moth Rig app, connected by USB-C to a controller for an LED strip" loading="lazy" src="https://so.long.thanks.fish/why-pi-when-i-have-an-old-phone/redmi-leds-1200.webp"></p>
+<blockquote>
+<p>The rooted Redmi talking over USB-C to the LED controller.</p>
+</blockquote>
+<p>已 Root 的 Redmi 通过 USB-C 与 LED 控制器通信。</p>
+<blockquote>
+<p>I’m working on a project that needs a high resolution camera, GPS, storage, and a microcontroller to control some lights. (More on the project soon!) I’ve been designing PCB adapters around a Raspberry Pi, an Arducam 64MP camera, and a GPS module. Every time I add another part, the bill grows.</p>
+</blockquote>
+<p>我正在开展一个项目，需要高分辨率相机、 GPS、 存储和一个用于控制某些灯光的微控制器。（关于该项目的更多内容即将分享！）我一直在围绕 Raspberry Pi、 Arducam 64MP 相机和 GPS 模块设计 PCB 适配器。每添加一个部件，账单就会变长。</p>
+<blockquote>
+<p>I’m also trying an ESP32-P4 board, which will get its own post soon. But the alternative I keep coming back to is an old smartphone.</p>
+</blockquote>
+<p>我还在尝试 ESP32-P4 开发板，很快会有专门的文章。但我一直回想的另一种选择是一部旧智能手机。</p>
+<blockquote>
+<p>I have a Redmi 13C 5G and a Huawei Mate 30 5G. Phones like these turn up second hand on Taobao for roughly <strong>¥300–500 (£33–56 / €40–67 / $45–75)</strong>. The Redmi gives me a camera that saves 50MP JPEGs; the Mate 30 has a 40MP main camera and a telephoto lens. Both already contain GPS, storage, a clock, a battery, mobile data, and a touchscreen. Their USB-C ports give me a route to the PCB that will handle the lights and other sensors.</p>
+</blockquote>
+<p>我有一部 Redmi 13C 5G 和一部 Huawei Mate 30 5G。这些手机在淘宝二手市场上约 <strong>¥ 300–500 (£ 33–56 / € 40–67 / $ 45–75)</strong> 售卖。Redmi 的相机可保存 50MP JPEGs；Mate 30 配备 40MP 主摄和一颗长焦镜头。两者均已包含 GPS、存储、时钟、电池、移动数据和触摸屏。它们的 USB-C 接口为我提供通往 PCB 的途径，该 PCB 将控制灯光和其他传感器。</p>
+<blockquote>
+<p>Here is the rough parts comparison I made while deciding what to build next:</p>
+</blockquote>
+<p>以下是我在决定下一步构建什么时所做的粗略部件对比：</p>
+<blockquote>
+<table>
+	<thead>
+			<tr>
+					<th>What I need</th>
+					<th>Used Redmi or Mate 30</th>
+					<th>Raspberry Pi 4 approach</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Computer</td>
+					<td>Included in phone price</td>
+					<td><a href="https://mall.dfrobot.com.cn/goods-1977.html">Pi 4, 4GB</a>: ¥880 / £98 / €118 / $132</td>
+			</tr>
+			<tr>
+					<td>High resolution camera</td>
+					<td>Redmi 50MP JPEG; Mate 30 40MP</td>
+					<td><a href="https://www.arducam.com/arducam-1-1-32-64mp-autofocus-camera-module-for-raspebrry-pi.html">Arducam 64MP</a>: ~¥400 / £45 / €53 / $60</td>
+			</tr>
+			<tr>
+					<td>GPS</td>
+					<td>Included</td>
+					<td><a href="https://www.waveshare.com/product/ai/expansions/l76k-gps-hat.htm">GPS HAT</a>: ~¥153 / £17 / €20 / $23</td>
+			</tr>
+			<tr>
+					<td>Storage</td>
+					<td>Built in</td>
+					<td><a href="https://www.microsoftstore.com.cn/hidden/sandisk-tf-card-64gb">64GB microSD</a>: ~¥50 / £6 / €7 / $7</td>
+			</tr>
+			<tr>
+					<td>Core total</td>
+					<td>¥300–500 / £33–56 / €40–67 / $45–75</td>
+					<td>~¥1,483 / £165 / €198 / $222</td>
+			</tr>
+			<tr>
+					<td>Clock</td>
+					<td>Included</td>
+					<td><a href="https://www.waveshare.com/product/modules/others/rtc.htm">RTC HAT</a>: ~¥80 / £9 / €11 / $12</td>
+			</tr>
+			<tr>
+					<td>Battery backup</td>
+					<td>Included</td>
+					<td><a href="https://www.waveshare.com/product/ups-hat.htm">UPS HAT</a>: ~¥133 / £15 / €18 / $20, plus cells</td>
+			</tr>
+			<tr>
+					<td>Touch display</td>
+					<td>Included</td>
+					<td><a href="https://www.waveshare.com/product/displays/5-dsi-touch-b.htm">5″ touchscreen</a>: ~¥247 / £28 / €33 / $37</td>
+			</tr>
+			<tr>
+					<td>Mobile data</td>
+					<td>Built in, with a SIM</td>
+					<td><a href="https://www.waveshare.com/sim7600ce-4g-hat.htm">4G HAT</a>: ~¥527 / £59 / €70 / $79</td>
+			</tr>
+			<tr>
+					<td>More fully equipped total</td>
+					<td>¥300–500 / £33–56 / €40–67 / $45–75</td>
+					<td>~¥2,317 / £258 / €310 / $347, plus batteries</td>
+			</tr>
+	</tbody>
+</table>
+</blockquote>
+<table>
+	<thead>
+			<tr>
+					<th>需要</th>
+					<th>Redmi 或 Mate 30 使用</th>
+					<th>Raspberry Pi 4 方法</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>电脑</td>
+					<td>已包含在手机价格中</td>
+					<td><a href="https://mall.dfrobot.com.cn/goods-1977.html">Pi 4, 4GB</a>: ¥880 / £98 / €118 / $132</td>
+			</tr>
+			<tr>
+					<td>高分辨率相机</td>
+					<td>Redmi 50MP JPEG; Mate 30 40MP</td>
+					<td><a href="https://www.arducam.com/arducam-1-1-32-64mp-autofocus-camera-module-for-raspebrry-pi.html">Arducam 64MP</a>: ~¥400 / £45 / €53 / $60</td>
+			</tr>
+			<tr>
+					<td>GPS</td>
+					<td>已包含</td>
+					<td><a href="https://www.waveshare.com/product/ai/expansions/l76k-gps-hat.htm">GPS HAT</a>: ~¥153 / £17 / €20 / $23</td>
+			</tr>
+			<tr>
+					<td>存储</td>
+					<td>自带</td>
+					<td><a href="https://www.microsoftstore.com.cn/hidden/sandisk-tf-card-64gb">64GB microSD</a>: ~¥50 / £6 / €7 / $7</td>
+			</tr>
+			<tr>
+					<td>核心总价</td>
+					<td>¥300–500 / £33–56 / €40–67 / $45–75</td>
+					<td>~¥1,483 / £165 / €198 / $222</td>
+			</tr>
+			<tr>
+					<td>时钟</td>
+					<td>已包含</td>
+					<td><a href="https://www.waveshare.com/product/modules/others/rtc.htm">RTC HAT</a>: ~¥80 / £9 / €11 / $12</td>
+			</tr>
+			<tr>
+					<td>电池备用</td>
+					<td>已包含</td>
+					<td><a href="https://www.waveshare.com/product/ups-hat.htm">UPS HAT</a>: ~¥133 / £15 / €18 / $20, plus cells</td>
+			</tr>
+			<tr>
+					<td>触摸显示屏</td>
+					<td>已包含</td>
+					<td><a href="https://www.waveshare.com/product/displays/5-dsi-touch-b.htm">5″ touchscreen</a>: ~¥247 / £28 / €33 / $37</td>
+			</tr>
+			<tr>
+					<td>移动数据</td>
+					<td>内置并配有SIM</td>
+					<td><a href="https://www.waveshare.com/sim7600ce-4g-hat.htm">4G HAT</a>: ~¥527 / £59 / €70 / $79</td>
+			</tr>
+			<tr>
+					<td>更全面配置总价</td>
+					<td>¥300–500 / £33–56 / €40–67 / $45–75</td>
+					<td>~¥2,317 / £258 / €310 / $347, plus batteries</td>
+			</tr>
+	</tbody>
+</table>
+<blockquote>
+<p>These are illustrative November 2026 listings. The more fully equipped Pi total uses the cellular HAT’s GPS instead of buying the separate GPS HAT; its modem is 4G, while the phones are 5G models. Neither side includes my custom light controller PCB, a SIM or data plan, or an enclosure. The conversions use 10 November 2026 mid market rates of approximately ¥1 = <a href="https://www.xe.com/currencyconverter/convert/?Amount=1&amp;From=CNY&amp;To=GBP">£0.111531</a> / <a href="https://www.xe.com/currencyconverter/convert/?Amount=1&amp;From=CNY&amp;To=EUR">€0.133643</a> / <a href="https://www.xe.com/currencyconverter/convert/?Amount=1&amp;From=CNY&amp;To=USD">$0.14991</a>, rounded to whole units in the table.</p>
+</blockquote>
+<p>以下是 2026 年 11 月 的 示例列表。更完整配置的 Pi total 使用了 cellular HAT’s GPS，而不是购买 separate GPS HAT；它的 modem 是 4G，而手机是 5G 模型。两边都没有我自定义的 light controller PCB、SIM 或 data plan，或一个 enclosure。换算使用 2026 年 11 月 10 日的 mid market rates，约为 ¥1 = <a href="https://www.xe.com/currencyconverter/convert/?Amount=1&amp;From=CNY&amp;To=GBP">£0.111531</a> / <a href="https://www.xe.com/currencyconverter/convert/?Amount=1&amp;From=CNY&amp;To=EUR">€0.133643</a> / <a href="https://www.xe.com/currencyconverter/convert/?Amount=1&amp;From=CNY&amp;To=USD">$0.14991</a>，四舍五入到整单位在表格中。</p>
+<blockquote>
+<p>The phone is already becoming more than a price exercise. I’ve unlocked and rooted the Redmi, tested its camera, and got it sleeping and waking for scheduled work. I can plug it into my computer and have Codex configure and test the pieces I need. The Huawei is harder to root, but I can still run a kiosk app on it. I’ve made a stand to photograph the same target with the Redmi and Arducam side by side; I want to see what detail each camera actually captures. A 50MP JPEG file does not, by itself, settle that question.</p>
+</blockquote>
+<p>手机已经不再仅仅是一次价格实验。我已经解锁并 root 了 Redmi ，测试了它的相机 ，并且让它进入睡眠和唤醒状态以进行计划工作。Huawei 更难 root ，但我仍可在其上运行一个 kiosk 应用。我安排了一个站位，用 Redmi 和 Arducam 并排拍摄同一目标；我想看看每台相机实际捕捉到的细节。一个 50MP JPEG 文件本身并不能解决这个问题。</p>
+<blockquote>
+<p>The open question is supply. Finding two good used phones is easy; finding a few hundred matching ones, with healthy batteries and predictable camera behaviour, would take more work. I feel increasingly confident that it’s possible.</p>
+</blockquote>
+<p>待解决的关键问题是供应。寻找两部成色良好的二手手机易如反掌；但要寻得几百部型号一致、电池健康且摄像头表现可预期的设备，则需要投入大量精力。我对此越来越有信心。</p>
+<blockquote>
+<p>This could be useful well beyond the current project. For digital artworks and installations, we’ve often used a Pi or a Mac mini. Imagine instead posting a client a configured phone: plug it into the display and it runs. With mobile data and remote access, I can fix something without asking a gallery for Wi-Fi privileges or an open port.</p>
+</blockquote>
+<p>这可能远超当前项目的效用。对于数字艺术品和装置，我们常使用 Pi 或 Mac mini。想象一下，直接向客户寄送一台配置好的手机：插入显示器后即可运行。借助移动数据和远程访问，我无需向画廊请求 Wi-Fi 特权或开放端口即可修复问题。</p>
+<blockquote>
+<p>There’s something fun about taking a device made in enormous numbers, giving it a second life, and finding that most of the hardware I was about to assemble is already inside it.</p>
+</blockquote>
+<p>把一台产量巨大的设备改造成另一种用途、让它重获新生，却发现我原本准备组装的硬件大部分早已装在它里面 —— 这件事挺有意思。</p>
+]]></content:encoded></item></channel></rss>

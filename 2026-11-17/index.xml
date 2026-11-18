@@ -1,0 +1,655 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>2026-11-17 on DualHN</title><link>https://BradleyZhang.github.io/DualHN/2026-11-17/</link><description>Recent content in 2026-11-17 on DualHN</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Tue, 17 Nov 2026 12:17:52 +0800</lastBuildDate><atom:link href="https://BradleyZhang.github.io/DualHN/2026-11-17/index.xml" rel="self" type="application/rss+xml"/><item><title>英伟达的下一步是什么？</title><link>https://BradleyZhang.github.io/DualHN/2026-11-17/05-whats-next-for-nvidia/</link><pubDate>Tue, 17 Nov 2026 12:17:52 +0800</pubDate><guid>https://BradleyZhang.github.io/DualHN/2026-11-17/05-whats-next-for-nvidia/</guid><description>&lt;blockquote&gt;
+&lt;h2 id="whats-next-for-nvidia"&gt;What’s Next For Nvidia?&lt;/h2&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="nvidia-接下来的规划"&gt;Nvidia 接下来的规划？&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Nvidia’s board &lt;a href="https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-CEO-Transition/"&gt;announced&lt;/a&gt; that Jensen Huang had resigned 33 years after he co-founded the company.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Nvidia 的董事会 &lt;a href="https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-CEO-Transition/"&gt;宣布&lt;/a&gt; 表示，Jensen Huang 在联合创立该公司 33 年后辞职。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;What happens to a company when a visionary CEO is gone? Most often innovation dies and the company coasts for years on momentum and its brand. Rarely does it regain its former glory.&lt;/p&gt;
+&lt;/blockquote&gt;</description><content:encoded><![CDATA[<p>from: <a href="https://steveblank.com/2026/11/15/whats-next-for-nvidia/">Steve Blank What’s Next For Nvidia?</a></p><blockquote>
+<h2 id="whats-next-for-nvidia">What’s Next For Nvidia?</h2>
+</blockquote>
+<h2 id="nvidia-接下来的规划">Nvidia 接下来的规划？</h2>
+<blockquote>
+<p>Nvidia’s board <a href="https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-CEO-Transition/">announced</a> that Jensen Huang had resigned 33 years after he co-founded the company.</p>
+</blockquote>
+<p>Nvidia 的董事会 <a href="https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-CEO-Transition/">宣布</a> 表示，Jensen Huang 在联合创立该公司 33 年后辞职。</p>
+<blockquote>
+<p>What happens to a company when a visionary CEO is gone? Most often innovation dies and the company coasts for years on momentum and its brand. Rarely does it regain its former glory.</p>
+</blockquote>
+<p>当一位富有远见的CEO离职时，公司通常会失去创新动力，只能靠着原有的势头和品牌维持多年，很难再恢复到从前的辉煌。</p>
+<blockquote>
+<p>That’s the danger facing Nvidia. Here’s what their board should be considering.</p>
+</blockquote>
+<p>这就是英伟达面临的危险。以下是其董事会应当考量的事项。</p>
+<blockquote>
+<p>Here’s why.</p>
+</blockquote>
+<p>请提供完整的英文原文。</p>
+<blockquote>
+<hr>
+</blockquote>
+<p>请提供需要翻译的英文原文。</p>
+<blockquote>
+<p>Jensen Huang reinvented Nvidia three times. In 2006 he launched <a href="https://en.wikipedia.org/wiki/CUDA">CUDA</a>, turning a graphics chip for PC gamers into a general-purpose computing platform – and funded it for years ahead of any revenue. In 2012, when researchers used Nvidia chips to win the <a href="https://en.wikipedia.org/wiki/ImageNet">ImageNet contest</a>, he pointed the company to deep learning. In 2020, with the <a href="https://nvidianews.nvidia.com/news/nvidia-completes-acquisition-of-mellanox-creating-major-force-driving-next-gen-data-centers">acquisition of Mellanox</a>, Nvidia went from selling boards with GPUs to selling integrated racks that power AI datacenters.</p>
+</blockquote>
+<p>Jensen Huang 三次重塑了 Nvidia。2006年，他推出了 <a href="https://en.wikipedia.org/wiki/CUDA">CUDA</a>，将面向 PC 玩家的显卡转变为通用计算平台——并提前多年为其提供资金，早于获得收入。2012年，当研究人员使用 Nvidia 芯片赢得 <a href="https://en.wikipedia.org/wiki/ImageNet">ImageNet 竞赛</a> 时，他将公司引向深度学习。2020年，随着 <a href="https://nvidianews.nvidia.com/news/nvidia-completes-acquisition-of-mellanox-creating-major-force-driving-next-gen-data-centers">Mellanox 的收购</a>，Nvidia 从销售配备 GPU 的板卡，转向销售驱动 AI 数据中心的集成机架。</p>
+<blockquote>
+<p>These were not just product transitions, but radical business model transitions; new channels, new customers and new markets. Nvidia pivoted from a vendor of graphics boards, to a software platform, and then to systems company. It’s hard to imagine a CEO focused on executing an existing business model funding <a href="https://www.nvidia.com/en-us/on-demand/session/gtc25-S72571/">CUDA</a> through those years.</p>
+</blockquote>
+<p>这些不仅仅是产品转型，而是彻底的业务模式转型； 新渠道、新客户和新市场。 Nvidia 从图形板供应商转型为软件平台，随后转型为系统公司。 想象一下， 一个专注于执行现有业务模式并为 [CUDA] (<a href="https://www.nvidia.com/en-us/on-demand/session/gtc25-S72571/">https://www.nvidia.com/en-us/on-demand/session/gtc25-S72571/</a>) 通过这些年 CEO 很难想象。</p>
+<p><img loading="lazy" src="https://i0.wp.com/steveblank.com/wp-content/uploads/2026/11/nvidia-reinventions.jpg?w=1430&ssl=1"></p>
+<blockquote>
+<p>Steve Jobs did the same at Apple, transforming it from a niche computer company into the most profitable company in the world. Between 2001 and 2008, Jobs reinvented the company three times.</p>
+</blockquote>
+<p>史蒂夫·乔布斯在苹果公司做了同样的事情，将一家小众电脑公司转变为全球最有利可图的公司。2001年至2008年期间，乔布斯三次对这家公司进行了彻底革新。</p>
+<blockquote>
+<p>Visionary CEOs are not “just” great at assuring world-class <em>execution</em> of a successful business model, they are also world-class <em>innovators</em>.</p>
+</blockquote>
+<p>有远见的 CEO 并不是仅仅擅长确保一个成功的商业模式的世界级执行，他们也是世界级的创新者。</p>
+<blockquote>
+<p>The best are agile and know how to pivot, making substantive changes to their business model while or before their market has shifted. The very best of them <em>shape</em> markets – they know how to create new markets by seeing opportunities <em>before anyone else</em>. They remain entrepreneurs.</p>
+</blockquote>
+<p>最优秀的创业者灵活敏捷，懂得如何转型，能在市场发生转变之前或同时，对其商业模式做出实质性的调整。其中最顶尖的创业者能够<em>塑造</em>市场——他们懂得通过<em>比任何人都更早</em>地发现机会来创造新市场。他们始终保持着创业者的本色。</p>
+<p><img loading="lazy" src="https://i0.wp.com/steveblank.com/wp-content/uploads/2026/11/sweet-spot-for-transformation.jpg?w=300&ssl=1"></p>
+<blockquote>
+<p>Visionary CEOs don’t need someone else to demo the company’s key products for them. They deeply understand products, and they have their own coherent and consistent vision of where the industry/business models and customers are today, and where they need to take the company. They know who their customers are because they spend time talking to them. They use strategy committees and the exec staff for advice, but <em>none of these CEOs pivot by committee</em>.</p>
+</blockquote>
+<p>有远见的 CEO 不需要别人为他们演示公司的核心产品。他们深刻理解产品，对行业/商业模式和客户的现状，以及公司需要走向何方，有着自己连贯一致的愿景。他们了解自己的客户，因为他们会花时间与客户交流。他们会借助战略委员会和高管团队来获取建议，但<em>这些 CEO 从不会通过委员会来做出转型决策</em>。</p>
+<blockquote>
+<p>Microsoft and Apple are two examples of what happens when a visionary CEO is replaced by an execution CEO.</p>
+</blockquote>
+<p>微软和苹果是当一名前锋CEO被替换为执行CEO时，会发生何种结局的两个典型例子。</p>
+<blockquote>
+<p>**Microsoft and the Cost of Missing the Next Market<br>
+**Microsoft entered the 21st century as the dominant software provider for anyone who interacted with a computing device. After running Microsoft for 25 years, Bill Gates handed the reins of Microsoft to Steve Ballmer in January 2000. Ballmer went on to run Microsoft for the next 14 years.</p>
+</blockquote>
+<p><strong>微软与错失下一个市场的代价</strong></p>
+<p>进入 21 世纪时，对于任何与计算设备交互的人来说，微软都是占主导地位的软件提供商。在执掌微软 25 年后，比尔·盖茨于 2000 年 1 月将微软的领导权交给了史蒂夫·鲍尔默。鲍尔默随后继续执掌微软 14 年。</p>
+<blockquote>
+<p>Ballmer organized the company around <em>execution</em> of its then current strengths – Windows and Office businesses. He tripled Microsoft’s sales to $78 billion and profits more than doubled from $9 billion to $22 billion, but those results hid missed opportunities that would reshape computing.</p>
+</blockquote>
+<p>巴勒默围绕当时公司的核心优势——Windows和Office业务——进行了组织架构调整。他将微软的销售额提高了三倍，达到780亿美元，利润则从90亿美元增长到220多亿美元，但这些成就掩盖了错失一些本可以重塑计算机行业的机会。</p>
+<blockquote>
+<p>Ballmer failed to understand and execute on the five most important technology trends of the 21st century: in search – losing to Google; in smartphones – losing to Apple; in mobile operating systems – losing to Google/Apple; in media – losing to Apple/Netflix; and in the cloud – losing to Amazon.</p>
+</blockquote>
+<p>Ballmer 未能理解并执行 21 世纪五大最重要的技术趋势： 在搜索引擎领域，输给 Google；在智能手机领域，输给 Apple；在移动操作系统领域，输给 Google/Apple；在媒体领域，输给 Apple/Netflix；以及在云端，输给 Amazon。</p>
+<blockquote>
+<p>In early 2014, Satya Nadella took charge. Nadella got Microsoft organized around the cloud (Azure), freed the Office and Azure teams from Windows and killed the phone business. Nadella saved Microsoft from irrelevance. Today Microsoft is worth <a href="https://www.thestar.com.my/tech/tech-news/2026/11/11/microsoft-tops-nvidia039s-market-cap-for-first-time-since-june-2025">about $4 trillion</a>. It is one of the few companies that regained its former glory, after its board replaced a salesman with a product and engineering insider.</p>
+</blockquote>
+<p>2014 年初，萨提亚·纳德拉（Satya Nadella）执掌微软。纳德拉带领微软围绕云（Azure）进行重组，将 Office 和 Azure 团队从 Windows 的束缚中解放出来，并砍掉了手机业务。纳德拉拯救了微软，使其免于走向边缘化。如今，微软的市值已达到 [约 $4 万亿美元](<a href="https://www.thestar.com.my/tech/tech-news/2026/11/11/microsoft-tops-nvidia039s-market-cap-for-first-time-since-june">https://www.thestar.com.my/tech/tech-news/2026/11/11/microsoft-tops-nvidia039s-market-cap-for-first-time-since-june</a> 2025)。在其董事会用一位产品和工程背景的内部人士取代了销售型高管之后，微软成为了少数重振昔日辉煌的公司之一。</p>
+<blockquote>
+<p>**Innovation CEOs Hire Execution VPs<br>
+**<em>Successful</em> visionary CEOs build an executive staff of world-class operating executives and technical leaders (and they unconsciously force out any world-class innovators from their direct reports). The problem is in a company driven by a visionary CEO; there is only one visionary.</p>
+</blockquote>
+<p>**创新CEO聘请执行副总裁<br>
+**<em>成功的</em> 愿景型CEO构建了一个由世界级运营高管和技术领袖组成的高管团队（并且他们潜意识地将任何世界级创新者从其直接下属中排挤出去）。问题在于，在一个由愿景型CEO驱动的公司中，只有一个有远见的人。</p>
+<p><img loading="lazy" src="https://i0.wp.com/steveblank.com/wp-content/uploads/2026/11/visionary-ceo-org-chart.jpg?w=468&ssl=1"></p>
+<blockquote>
+<p>Nvidia is the extreme case. Jensen had <a href="https://fortune.com/2024/11/12/jensen-huang-nvidia-ceo-leadership-mpp">about 60 direct reports</a> and discouraged one-on-one meetings. No long-term plans. Much like Jobs, he made himself the point where technical, product and business decisions came together. Replacing that role is harder than filling a box on an organization chart. He said he <a href="https://www.abc.net.au/news/2026-11-12/jensen-huang-nvidia-ceo-succession-plan-after-spy-plot/107376722">didn’t believe in succession planning</a>.</p>
+</blockquote>
+<p>Nvidia 是一个极端案例。Jensen 有大约 60 名直接下属，并且不鼓励一对一会议。没有长期计划。与 Jobs 非常相似，他将自己打造成技术、产品和商业决策的汇聚点。替代这一角色比填补组织架构图上的一个方框更难。他说他 <a href="https://www.abc.net.au/news/2026-11-12/jensen-huang-nvidia-ceo-succession-plan-after-spy-plot/107376722">不相信接班人计划</a>。</p>
+<p><img loading="lazy" src="https://i0.wp.com/steveblank.com/wp-content/uploads/2026/11/nvidia-org-chart.jpg?w=1430&ssl=1"></p>
+<blockquote>
+<p>When visionary founders depart (resignation, death, firing, etc.), their operating executives believe it’s their turn to run the company. At Microsoft, Bill Gates chose Steve Ballmer, and at Apple Steve Jobs chose Tim Cook. Jensen anointed no one.</p>
+</blockquote>
+<p>当有有远见的创始人离开公司（辞职、去世、被解雇等）时，他们的运营高管认为，是轮到他们来经营公司了。在微软，比尔·盖茨选择了史蒂夫·巴尔默；在苹果，史蒂夫·乔布斯选择了蒂姆·库克。Jensen 没有钦定任何人。</p>
+<blockquote>
+<p>Once in charge, one of the first things these operations/execution CEOs do is to get rid of the chaos and turbulence in the organization. Execution CEOs value stability, process and repeatable execution. On one hand that’s great for predictability, but it often starts a <em>creative death spiral</em> – creative people start to leave, and other executors (without the innovation talent of the old leader) are put into more senior roles – hiring more process people, which in turn forces out the remaining creative talent. This culture shift ripples down from the top and <em>what once felt like a company on a mission to change the world now feels like another job</em>.</p>
+</blockquote>
+<p>一旦掌权，这些运营型或执行型CEO的首要任务之一就是消除组织内部的混乱和动荡。执行型CEO重视稳定、流程和可重复的执行，这无疑有助于提高可预测性，但往往会导致“创造力死亡螺旋”：创意人才开始离去，而缺乏创新能力的其他执行者则被提拔到更高级别，招聘更多流程型人才，这反过来又迫使剩余的创意人才离开。这种文化转变从上至下蔓延，曾经令人热血沸腾的“改变世界”的公司，如今却让人感到不过是另一份平凡的工作。</p>
+<blockquote>
+<p>(Amazon is a counterexample. Before succeeding Jeff Bezos, Andy Jassy had already <a href="https://ir.aboutamazon.com/officers-and-directors/person-details/default.aspx?ItemId=be0a9875-4456-4f84-b4d9-ec2e4b97d1d8">founded and led AWS</a>. He was an innovator who had built a new business inside the existing company.)</p>
+</blockquote>
+<p>（Amazon 则是一个反例。在 Jeff Bezos 之前接任的 Andy Jassy 早已<a href="https://ir.aboutamazon.com/officers-and-directors/person-details/default.aspx?ItemId=be0a9875-4456-4f84-b4d9-ec2e4b97d1d8">创建并领导了 AWS</a>。他是一位在既有公司内部打造出全新业务的创新者。）</p>
+<blockquote>
+<p>At Nvidia this step isn’t optional. No one else can run a company with 60 direct reports, so the next CEO’s first move will be to add layers of management.</p>
+</blockquote>
+<p>在英特尔，这一步并非可选。然而，没有人能够管理一个拥有60名直接下属的公司，因此下一任CEO的第一个行动将是增加管理层级。</p>
+<blockquote>
+<p>**Why Tim Cook Was the New Steve Ballmer<br>
+**Tim Cook ran Apple for 15 years. Apple under Cook grew its revenues from $108 billion to $416 billion and its market value from $350 billion to about $4 trillion. The iPhone continued its annual upgrades of incremental improvements. The transition to Apple silicon showed that major technical change on the chip level was possible under his leadership. But Apple silicon was a better engine for the existing products Apple already had, not a new market.</p>
+</blockquote>
+<p><strong>为什么蒂姆·库克是新的史蒂夫·鲍尔默</strong></p>
+<p>蒂姆·库克执掌苹果 15 年。在库克领导下，苹果的营收从 1080 亿美元增至 4160 亿美元，市值从 3500 亿美元增至约 4 万亿美元。iPhone 依然保持着每年一次的渐进式改进升级。向 Apple silicon 的转型表明，在他的领导下，芯片层面的重大技术变革是可行的。但 Apple silicon 只是为苹果现有产品提供了一个更好的引擎，而不是开辟了一个新市场。</p>
+<blockquote>
+<p>Apple stumbled badly on the one major product category launched under Cook – <a href="https://www.macrumors.com/2026/04/29/apple-vision-pro-m5-flop/">Apple Vision Pro</a> and missed badly on AI (Siri was actually first with a Chatbot.) This year it turned to Google to help fix Siri. In September 2026 Cook handed the job to John Ternus.</p>
+</blockquote>
+<p>库克任内推出的唯一一个重大产品品类 <a href="https://www.macrumors.com/2026/04/29/apple-vision-pro-m5-flop/">Apple Vision Pro</a> 遭遇了严重失利，在 AI 方面也大败而归（其实 Siri 才是最早推出聊天机器人的）。今年，它转而求助于 Google 来修复 Siri。2026 年 9 月，库克将这项工作交给了 John Ternus。</p>
+<blockquote>
+<p>**How Nvidia Could Miss the Boat<br>
+**The threat to Nvidia is already visible: its biggest customers are becoming its competitors. Google, Amazon, Microsoft, Meta, OpenAI and Tesla are all <a href="https://techcentral.co.za/nvidias-best-customers-are-becoming-its-biggest-threat/285506/">building their own AI chips</a>. Jensen’s answer was to keep innovating and bring to market a new generation of chips every year, build a moat around an integrated hardware and software platform (<a href="https://developer.nvidia.com/cuda/toolkit">CUDA</a>), and invest ~$50 billion in the AI labs that run on Nvidia.</p>
+</blockquote>
+<p><strong>Nvidia 如何可能错失良机</strong></p>
+<p>Nvidia 面临的威胁已经显而易见：其最大的客户正在变成其竞争对手。Google、Amazon、Microsoft、Meta、OpenAI 和 Tesla 都在<a href="https://techcentral.co.za/nvidias-best-customers-are-becoming-its-biggest-threat/285506/">打造自己的 AI 芯片</a>。Jensen 的应对之策是持续创新，每年推出新一代芯片，围绕软硬件一体化平台（<a href="https://developer.nvidia.com/cuda/toolkit">CUDA</a>）构建护城河，并向基于 Nvidia 运行的 AI 实验室投资约 500 亿美元。</p>
+<blockquote>
+<p>It’s likely these are the bets an execution CEO trims first.</p>
+</blockquote>
+<p>执行型首席执行官最可能首先削减的，就是这些押注。</p>
+<blockquote>
+<p><em>The irony is that in the 21st century, the tighter you hold on to your current product/markets, the likelier you will be disrupted</em>. The rapid change of technology will create new disruptions that will force “bet the company” decisions about product direction, markets, pricing, supply chain, operations and the reorganization necessary to execute a new business model. In the GPU market, the difference between market dominance and Chapter 11 may be a hands-on product/customer, and business model-centric CEO with an entrepreneurial vision of the future.</p>
+</blockquote>
+<p>*讽刺的是，在21世纪，你对现有产品和市场的掌控越紧密，就越有可能被颠覆。*技术的快速变革将催生新的颠覆性力量，迫使企业就产品方向、市场、价格、供应链、运营以及执行新商业模式所需的重组做出“押公司”的决定。在GPU市场，市场主导地位与破产（Chapter 11）之间的差异，可能就在于一位以产品和客户为中心的、以业务模式为核心、拥有未来创业愿景的CEO。</p>
+<blockquote>
+<p>**Four Challenges for the Board of Directors<br>
+**The dilemma facing the board at Nvidia or any board of directors on the departure of an innovative CEO is <em>strategic</em>: Do we still want to be an innovative, risk taking company? Or should we now focus on execution of our core business, reduce our risky bets and maximize shareholder return. Ultimately a board would like both – preserving the speed and ambition of Jensen’s decision-making while distributing enough authority for the company to function without him.</p>
+</blockquote>
+<p><strong>董事会的四大挑战</strong>
+<strong>英伟达或任何公司董事会在创新型CEO离任时都会面临一个战略性难题：我们是否仍希望保持创新精神和冒风险的态度？还是应该专注于核心业务的执行，减少高风险投资，并最大化股东回报？董事会最终希望同时实现这两个目标——既要保持詹姆斯（Jensen）的决策速度和远大目标，又要分配足够的权力，让公司能够在没有他的情况下继续运营。</strong></p>
+<blockquote>
+<p><em>Tactically</em>, that question results in asking: Do you search for another innovator from outside, promote one of the executors or go deeper down the organization to find an innovator?</p>
+</blockquote>
+<p><em>Tactically</em> 该问题结果是在问：你是搜索另一个外部的创新者，提拔执行者之一，还是深入组织内部去寻找创新者？</p>
+<blockquote>
+<p>Herein lies four challenges.</p>
+</blockquote>
+<p>此处存在四大挑战。</p>
+<blockquote>
+<ol>
+<li>Steve Jobs and Bill Gates chose execution executives as their successors. The result was they confused world-class execution with the passion for product and customers, and market insight. From the perspective of Gates there was no difference between him and Ballmer and Jobs believed Cook could be equally creative. Yet history has shown they were world-class stewards of a business model each had been handed. Yet <em>long-term</em> survival in markets that change rapidly require innovation and execution..</li>
+</ol>
+</blockquote>
+<ol>
+<li>Steve Jobs 和 Bill Gates 选择将执行官作为他们的继任者。结果是，他们混淆了世界级执行力与对产品和客户以及市场洞察的热情。从 Bill Gates 的角度来看，他和 Ballmer 之间没有区别，而 Jobs 认为 Cook 也能同样有创造力。然而历史表明，他们各自都是对自己手中交给他们的商业模式的世界级管理者。然而，在那些变化迅速的市场中，<em>long-term</em> 的生存需要创新和执行.</li>
+</ol>
+<blockquote>
+<p>Nvidia’s board has a different version of this problem. Jensen suggested no one, and he left the board the day he left the job. The decision belongs to a board in crisis, led by the first chair the company has ever had. Boards in crisis reach for stability. That gets you an execution CEO by a different road. Nvidia’s board should ask what its candidates have built under uncertainty.
+2. If the board decides that the company needs another innovator at the helm, you can almost guarantee that the best executor – the number 2 and/or 3 vice president in the company – will leave, feeling that they deserved the job. Now the board is faced with not only having lost its CEO, but potentially the best of the executive staff.
+3. Many innovative/visionary CEOs have become part of the company’s brand. Steve Jobs, Mark Zuckerberg, Elon Musk and Jensen Huang. This isn’t a new phenomenon, think of 20th-century icons like Walt Disney, Edwin Land at Polaroid and Henry Ford. But they’re not only an external face to the company, they were often the touchstone for <em>internal</em> decision-making. Years after a visionary CEO is gone, companies are still asking, “What would Walt Disney/Steve Jobs/Henry Ford have done?” rather than figuring out what <em>they</em> should now be doing in the changing market.</p>
+</blockquote>
+<p>Nvidia 的董事会面临不同版本的这个问题。Jensen 建议不任他人，他离职的当天也随即离开了董事会。决定权属于一家陷入危机的董事会，该董事会由公司历史上第一位董事长领导。处于危机的董事会会寻求稳定。这条路让你得到一位执行型 CEO。Nvidia 的董事会应该询问其候选人在不确定性中建立了什么。</p>
+<ol start="2">
+<li>
+<p>如果董事会决定公司需要另一位创新者掌舵，你几乎可以保证，公司最好的 executor – number 2 and/or 3 vice president in the company – 会离开，感到他们理应得到这份工作。现在，董事会不仅面临失去 CEO，还可能失去公司最好的高管团队。</p>
+</li>
+<li>
+<p>许多创新/远见卓识的 CEO 已成为公司的 brand 一部分。Steve Jobs, Mark Zuckerberg, Elon Musk and Jensen Huang。这并非新现象，举个例子，还有 20th-century 如 Walt Disney, Edwin Land at Polaroid and Henry Ford 等图标。但他们不只是公司的外部形象， 还是<em>internal</em>决策的基石。一位创新 CEO 被替换后多年，公司仍在问，“What would Walt Disney/Steve Jobs/Henry Ford have done？”而不是想一想 <em>they</em> 应该现在在变化的市场里做什么。</p>
+</li>
+</ol>
+<blockquote>
+<p>Jensen was more than the brand. He set Nvidia’s foreign policy, and was the company’s face in Washington, Beijing and Taipei. No Nvidia operating VP has done that job. The next Nvidia CEO inherits a Congress and investigators asking how many restricted Nvidia chips reached China.
+4. As companies grow larger and management falls prey to the fallacy that it only exists to maximize shareholder <em>short-term</em> return on investment, companies become risk averse. Large companies and their boards live in fear of losing what they spent years gaining (customers, market share, revenue, profits.) This may work in stable markets and technologies. But today very few of those remain. And certainly not Nvidia’s market.</p>
+</blockquote>
+<p>黄仁勋不仅仅是一个品牌。他制定了英伟达的外交政策，也是该公司在华盛顿、北京和台北的代言人。英伟达没有任何一位运营副总裁承担过这项工作。下一任英伟达 CEO 接手时，将面对国会和调查人员质询：有多少受限的英伟达芯片流入了中国。</p>
+<ol start="4">
+<li>随着公司规模扩大，管理层又陷入那种认为公司只应为最大化股东短期投资回报而存在的谬误，公司便趋于规避风险。大公司及其董事会生活在一种恐惧之中，害怕失去他们花数年时间才获得的东西（客户、市场份额、营收、利润）。这在稳定的市场和技术环境中或许行得通。但如今这类稳定的市场和技术已所剩无几，英伟达的市场更不在其列。</li>
+</ol>
+<blockquote>
+<p><strong>Lessons Learned</strong></p>
+</blockquote>
+<p><strong>经验教训</strong></p>
+<blockquote>
+<blockquote>
+<ul>
+<li>Nvidia’s order book and CUDA will make the next two or three years look fine no matter who is CEO
+<ul>
+<li>(unless a meaningful share of that revenue turns out to be <a href="https://culperresearch.com/wp-content/uploads/2026/05/Culper_NVDA_5-13-2026.pdf">chips that were diverted to China</a>.)</li>
+</ul>
+</li>
+<li>Innovation CEOs are almost always replaced by one of their execution VPs
+<ul>
+<li>If they have inherited a powerful business model (like Nvidia) this often results in gains in revenue and profits that can continue for years
+<ul>
+<li>However, as soon as the market, business model, technology shifts, these execution CEOs are ill-equipped to deal with the change</li>
+<li>The result is a company obsoleted by more agile competitors and their company is left to live off momentum in its twilight years</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Nvidia’s board has to decide what it is hiring its next CEO to do. Executing today’s business is essential. So is reinventing it before someone else makes it obsolete.</li>
+<li>Execution pays your salary, innovation pays your pension</li>
+</ul>
+</blockquote>
+</blockquote>
+<blockquote>
+<ul>
+<li>Nvidia&rsquo;s order book and CUDA 无论谁当 CEO，接下来的两三年都会看起来很顺畅
+<ul>
+<li>(unless a meaningful share of that revenue turns out to be <a href="https://culperresearch.com/wp-content/uploads/2026/05/Culper_NVDA_5-13-2026.pdf">流向 China 的芯片</a>.)</li>
+</ul>
+</li>
+<li>Innovation CEOs 几乎总是被他们的执行 VP 取代
+<ul>
+<li>如果他们继承了一个强大的商业模式（如 Nvidia），这通常会带来几年的收入和利润增长，可持续多年
+<ul>
+<li>然而，随着市场、商业模型和技术的转变，这些 execution CEOs 无法妥应对变化</li>
+<li>结果是一家被更敏捷竞争对手淘汰的公司，其公司只能依靠黄昏期的动力维持</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Nvidia&rsquo;s 董事会必须决定聘任下一位 CEO 的目的。执行当前的业务至关重要。同样重要的是在其他人使其 obsolete 之前对其进行革新。</li>
+<li>执行支付你的薪水，创新支付你的养老金</li>
+</ul>
+</blockquote>
+<iframe width="100%" height="95" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F2439690666&amp;width=false&amp;auto_play=false&amp;hide_related=false&amp;visual=false&amp;show_comments=false&amp;color=false&amp;show_user=false&amp;show_reposts=false"></iframe>
+<blockquote>
+<p>« <a href="https://steveblank.com/2026/10/24/europe-gets-a-wake-up-call/">Elon Musk Just Gave Europe a Reason to Replace American Technology</a></p>
+</blockquote>
+<p><a href="https://steveblank.com/2026/10/24/europe-gets-a-wake-up-call/">Elon Musk 刚刚给了欧洲一个替换美国技术的理由</a></p>
+]]></content:encoded></item><item><title>如何制作几乎任何东西</title><link>https://BradleyZhang.github.io/DualHN/2026-11-17/04-how-to-make-almost-anything/</link><pubDate>Tue, 17 Nov 2026 12:08:36 +0800</pubDate><guid>https://BradleyZhang.github.io/DualHN/2026-11-17/04-how-to-make-almost-anything/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;MAS.863/4.140/6.9020&lt;/strong&gt;&lt;br&gt;
+&lt;em&gt;&lt;strong&gt;How To Make (almost) Anything&lt;/strong&gt;&lt;/em&gt;&lt;br&gt;
+&lt;strong&gt;Wednesdays 1:00-4:00 E14-633&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;2026&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;MAS.863/4.140/6.9020&lt;/strong&gt;&lt;br&gt;
+&lt;em&gt;&lt;strong&gt;如何制作（几乎）任何东西&lt;/strong&gt;&lt;/em&gt;&lt;br&gt;
+&lt;strong&gt;周三 1:00-4:00 E14-633&lt;/strong&gt;&lt;br&gt;
+&lt;strong&gt;2026&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://pub.cba.mit.edu/863.26/site/file/app.html"&gt;Application&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href="https://pub.cba.mit.edu/863.26/site/file/app.html"&gt;应用程序&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Schedule&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;日程&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;09/09: &lt;a href="http://academy.cba.mit.edu/classes/principles_practices/index.html"&gt;introduction&lt;/a&gt;, &lt;a href="http://academy.cba.mit.edu/classes/computer_design/index.html"&gt;computer-aided design&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;09/09: &lt;a href="http://academy.cba.mit.edu/classes/principles_practices/index.html"&gt;引言&lt;/a&gt;, &lt;a href="http://academy.cba.mit.edu/classes/computer_design/index.html"&gt;计算机辅助设计&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;recitation&lt;/em&gt; (9/10 5:00-6:00): &lt;a href="https://pub.cba.mit.edu/863.26/site/recitations/version/index.html"&gt;version control and Web development&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;em&gt;复习课&lt;/em&gt; (9/10 5:00-6:00): &lt;a href="https://pub.cba.mit.edu/863.26/site/recitations/version/index.html"&gt;版本控制与 Web 开发&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;09/16: &lt;a href="http://academy.cba.mit.edu/classes/project_management/index.html"&gt;project management&lt;/a&gt;, &lt;a href="http://academy.cba.mit.edu/classes/computer_cutting/index.html"&gt;computer-controlled cutting&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;09/16: &lt;a href="http://academy.cba.mit.edu/classes/project_management/index.html"&gt;项目管理&lt;/a&gt;，&lt;a href="http://academy.cba.mit.edu/classes/computer_cutting/index.html"&gt;计算机控制切割&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;recitation&lt;/em&gt; (9/17 5:00-6:00): &lt;a href="https://pub.cba.mit.edu/alfonso.parra/HTMAA-CAD-Recitation/"&gt;parametric design&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;em&gt;辅导课&lt;/em&gt; (9/17 5:00-6:00): &lt;a href="https://pub.cba.mit.edu/alfonso.parra/HTMAA-CAD-Recitation/"&gt;参数化设计&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;09/23: &lt;a href="http://academy.cba.mit.edu/classes/embedded_programming/index.html"&gt;embedded programming&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;09/23: &lt;a href="http://academy.cba.mit.edu/classes/embedded_programming/index.html"&gt;嵌入式编程&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;recitation&lt;/em&gt; (9/24 5:00-6:00): &lt;a href="https://docs.google.com/presentation/d/1yi74tyA7pndkprdBvipFG7vPN_mt5oaKWDUpzZvqBeQ/edit?usp=sharing"&gt;electronics&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;</description><content:encoded><![CDATA[<p>from: <a href="https://pub.cba.mit.edu/863.26/site/">HTMAA 2026</a></p><blockquote>
+<p><strong>MAS.863/4.140/6.9020</strong><br>
+<em><strong>How To Make (almost) Anything</strong></em><br>
+<strong>Wednesdays 1:00-4:00 E14-633</strong><br>
+<strong>2026</strong></p>
+</blockquote>
+<p><strong>MAS.863/4.140/6.9020</strong><br>
+<em><strong>如何制作（几乎）任何东西</strong></em><br>
+<strong>周三 1:00-4:00 E14-633</strong><br>
+<strong>2026</strong></p>
+<blockquote>
+<p><strong><a href="https://pub.cba.mit.edu/863.26/site/file/app.html">Application</a></strong></p>
+</blockquote>
+<p><a href="https://pub.cba.mit.edu/863.26/site/file/app.html">应用程序</a></p>
+<blockquote>
+<p><strong>Schedule</strong></p>
+</blockquote>
+<p><strong>日程</strong></p>
+<blockquote>
+<p>09/09: <a href="http://academy.cba.mit.edu/classes/principles_practices/index.html">introduction</a>, <a href="http://academy.cba.mit.edu/classes/computer_design/index.html">computer-aided design</a></p>
+</blockquote>
+<p>09/09: <a href="http://academy.cba.mit.edu/classes/principles_practices/index.html">引言</a>, <a href="http://academy.cba.mit.edu/classes/computer_design/index.html">计算机辅助设计</a></p>
+<blockquote>
+<p><em>recitation</em> (9/10 5:00-6:00): <a href="https://pub.cba.mit.edu/863.26/site/recitations/version/index.html">version control and Web development</a></p>
+</blockquote>
+<p><em>复习课</em> (9/10 5:00-6:00): <a href="https://pub.cba.mit.edu/863.26/site/recitations/version/index.html">版本控制与 Web 开发</a></p>
+<blockquote>
+<p>09/16: <a href="http://academy.cba.mit.edu/classes/project_management/index.html">project management</a>, <a href="http://academy.cba.mit.edu/classes/computer_cutting/index.html">computer-controlled cutting</a></p>
+</blockquote>
+<p>09/16: <a href="http://academy.cba.mit.edu/classes/project_management/index.html">项目管理</a>，<a href="http://academy.cba.mit.edu/classes/computer_cutting/index.html">计算机控制切割</a></p>
+<blockquote>
+<p><em>recitation</em> (9/17 5:00-6:00): <a href="https://pub.cba.mit.edu/alfonso.parra/HTMAA-CAD-Recitation/">parametric design</a></p>
+</blockquote>
+<p><em>辅导课</em> (9/17 5:00-6:00): <a href="https://pub.cba.mit.edu/alfonso.parra/HTMAA-CAD-Recitation/">参数化设计</a></p>
+<blockquote>
+<p>09/23: <a href="http://academy.cba.mit.edu/classes/embedded_programming/index.html">embedded programming</a></p>
+</blockquote>
+<p>09/23: <a href="http://academy.cba.mit.edu/classes/embedded_programming/index.html">嵌入式编程</a></p>
+<blockquote>
+<p><em>recitation</em> (9/24 5:00-6:00): <a href="https://docs.google.com/presentation/d/1yi74tyA7pndkprdBvipFG7vPN_mt5oaKWDUpzZvqBeQ/edit?usp=sharing">electronics</a></p>
+</blockquote>
+<p><em>复诵</em> (9月24日 5:00-6:00)：<a href="https://docs.google.com/presentation/d/1yi74tyA7pndkprdBvipFG7vPN_mt5oaKWDUpzZvqBeQ/edit?usp=sharing">电子</a></p>
+<blockquote>
+<p>09/30: <a href="http://academy.cba.mit.edu/classes/scanning_printing/index.html">3D scanning and printing</a></p>
+</blockquote>
+<p>09/30: <a href="http://academy.cba.mit.edu/classes/scanning_printing/index.html">3D扫描与打印</a></p>
+<blockquote>
+<p><em>recitation</em> (10/01 5:00-6:00): <a href="https://pub.cba.mit.edu/863.26/site/recitations/AI/index.html">AI agents</a></p>
+</blockquote>
+<p><em>讲座</em> (10/01 5:00-6:00): <a href="https://pub.cba.mit.edu/863.26/site/recitations/AI/index.html">AI agents</a></p>
+<blockquote>
+<p>10/07: <a href="http://academy.cba.mit.edu/classes/electronics_design/index.html">electronics design</a>, <a href="http://academy.cba.mit.edu/classes/reviews/first.html">first review</a></p>
+</blockquote>
+<p>10/07： <a href="http://academy.cba.mit.edu/classes/electronics_design/index.html">电子设计</a>，<a href="http://academy.cba.mit.edu/classes/reviews/first.html">第一次评审</a></p>
+<blockquote>
+<p><em>recitation</em> (10/08 5:00-6:00): <a href="https://pub.cba.mit.edu/863.26/site/recitations/EDA/EDA_recitation_10-08.pdf">EDA (Electronic Design Automation)</a></p>
+</blockquote>
+<p><em>辅导课</em> (10/08 5:00-6:00)：<a href="https://pub.cba.mit.edu/863.26/site/recitations/EDA/EDA_recitation_10-08.pdf">EDA (Electronic Design Automation)</a></p>
+<blockquote>
+<p>10/14: <a href="http://academy.cba.mit.edu/classes/electronics_production/index.html">electronics production</a></p>
+</blockquote>
+<p>10/14：<a href="http://academy.cba.mit.edu/classes/electronics_production/index.html">电子生产</a></p>
+<blockquote>
+<p><em>recitation</em> (10/15 5:00-6:00): <a href="https://docs.google.com/presentation/d/1rCjAHXTtOT6wu7UAMmudnBsidMiCNB94gpR2nMy-xGw/edit?usp=sharing">debugging</a></p>
+</blockquote>
+<p><em>朗读</em> (10/15 5:00-6:00): <a href="https://docs.google.com/presentation/d/1rCjAHXTtOT6wu7UAMmudnBsidMiCNB94gpR2nMy-xGw/edit?usp=sharing">debugging</a></p>
+<blockquote>
+<p>10/21: <a href="http://academy.cba.mit.edu/classes/computer_machining/index.html">computer-controlled machining</a></p>
+</blockquote>
+<p>10/21: <a href="http://academy.cba.mit.edu/classes/computer_machining/index.html">数控加工</a></p>
+<blockquote>
+<p><em>recitation</em> (10/22 5:00-6:00): <a href="https://docs.google.com/presentation/d/1pmB81ebrsAB84UiewVSpeEZ-BaWs2pfRtmKS7dmI_tc/edit?usp=sharing">CAM (Computer-Aided Manufacturing)</a></p>
+</blockquote>
+<p><em>复习课</em>（10月22日5:00-6:00）：<a href="https://docs.google.com/presentation/d/1pmB81ebrsAB84UiewVSpeEZ-BaWs2pfRtmKS7dmI_tc/edit?usp=sharing">CAM（计算机辅助制造）</a></p>
+<blockquote>
+<p>10/28: <a href="http://academy.cba.mit.edu/classes/input_devices/index.html">input devices</a></p>
+</blockquote>
+<p>10/28：<a href="http://academy.cba.mit.edu/classes/input_devices/index.html">输入设备</a></p>
+<blockquote>
+<p><em>recitation</em> (10/29 5:00-6:00): Edge AI <a href="https://pub.cba.mit.edu/863.26/site/recitations/edge_ai/">slides</a>, <a href="https://forge.cba.mit.edu/erik.strand/embedded_ai">code</a></p>
+</blockquote>
+<p><em>背诵</em>（10/29 5:00-6:00）：边缘 AI <a href="https://pub.cba.mit.edu/863.26/site/recitations/edge_ai/">幻灯片</a>，<a href="https://forge.cba.mit.edu/erik.strand/embedded_ai">代码</a></p>
+<blockquote>
+<p>11/04: <a href="http://academy.cba.mit.edu/classes/output_devices/index.html">output devices</a></p>
+</blockquote>
+<p>11/04：<a href="http://academy.cba.mit.edu/classes/output_devices/index.html">输出设备</a></p>
+<blockquote>
+<p><em>recitation</em> (11/05 5:00-6:00): <a href="https://pub.cba.mit.edu/863.26/site/recitations/motor_control/">motor and motion control</a></p>
+</blockquote>
+<p><em>recitation</em> (11/05 5:00-6:00)：<a href="https://pub.cba.mit.edu/863.26/site/recitations/motor_control/">电机与运动控制</a></p>
+<blockquote>
+<p>11/11: <a href="http://academy.cba.mit.edu/classes/mechanical_design/index.html">mechanical</a>, <a href="http://academy.cba.mit.edu/classes/machine_design/index.html">machine design</a></p>
+</blockquote>
+<p>11/11：<a href="http://academy.cba.mit.edu/classes/mechanical_design/index.html">机械</a>，<a href="http://academy.cba.mit.edu/classes/machine_design/index.html">机器设计</a></p>
+<blockquote>
+<p><em>recitation</em> (11/12 5:00-6:00): machine building</p>
+</blockquote>
+<p>请提供需要翻译的完整英文原文，我将为您翻译。</p>
+<blockquote>
+<p>11/18: <a href="http://academy.cba.mit.edu/classes/wildcard/index.html">wildcard week</a>, <a href="http://academy.cba.mit.edu/classes/reviews/second.html">second review</a></p>
+</blockquote>
+<p>11/18: <a href="http://academy.cba.mit.edu/classes/wildcard/index.html">通配符周</a>, <a href="http://academy.cba.mit.edu/classes/reviews/second.html">第二次审阅</a></p>
+<blockquote>
+<p><em>recitation</em>: (11/19 5:00-6:00): molding and casting</p>
+</blockquote>
+<p><em>习题课</em>: (11/19 5:00-6:00): 成型与铸造</p>
+<blockquote>
+<p>11/25: <a href="http://academy.cba.mit.edu/classes/networking_communications/index.html">networking and communications</a>, <a href="http://academy.cba.mit.edu/classes/interface_application_programming/index.html">interface and application programming</a></p>
+</blockquote>
+<p>11/25：<a href="http://academy.cba.mit.edu/classes/networking_communications/index.html">网络与通信</a>，<a href="http://academy.cba.mit.edu/classes/interface_application_programming/index.html">界面与应用程序编程</a></p>
+<blockquote>
+<p><em>recitation</em> (11/30 5:00-6:00): mesh networks</p>
+</blockquote>
+<p>网状网络</p>
+<blockquote>
+<p>12/02: <a href="https://fabacademy.org/2026/classes/system_integration/index.html">system integration</a></p>
+</blockquote>
+<p>12月2日：<a href="https://fabacademy.org/2026/classes/system_integration/index.html">系统集成</a></p>
+<blockquote>
+<p><em>recitation</em> (12/03 5:00-6:00): help session</p>
+</blockquote>
+<p><em>习题课</em>（12/03 5:00-6:00）：答疑辅导</p>
+<blockquote>
+<p>12/04: final assignments and orders<br>
+12/09: <a href="http://academy.cba.mit.edu/classes/project_development/index.html">project development</a></p>
+</blockquote>
+<p>12/04：最终作业与订单<br>
+12/09：<a href="http://academy.cba.mit.edu/classes/project_development/index.html">项目开发</a></p>
+<blockquote>
+<p><em>recitation</em> (12/10 5:00-6:00): help session</p>
+</blockquote>
+<p><em>朗读</em> (12/10 5:00-6:00): 帮助会话</p>
+<blockquote>
+<p>12/15: <a href="http://academy.cba.mit.edu/classes/project_presentation/index.html">project presentation</a></p>
+</blockquote>
+<p>12/15: <a href="http://academy.cba.mit.edu/classes/project_presentation/index.html">项目汇报</a></p>
+<blockquote>
+<p><em>prep:</em> 9:00-1:30<br>
+<em><a href="https://pub.cba.mit.edu/863.26/site/file/timing.html">final exam</a>:</em> 1:30-4:30<br>
+<em>open house:</em> 5:00-6:30</p>
+</blockquote>
+<p><em>准备：</em> 9:00-1:30<br>
+<em><a href="https://pub.cba.mit.edu/863.26/site/file/timing.html">期末考试</a>：</em> 1:30-4:30<br>
+<em>开放日：</em> 5:00-6:30</p>
+<blockquote>
+<p><strong><a href="https://pub.cba.mit.edu/863.26/site/people.html">People</a></strong></p>
+</blockquote>
+<p><strong><a href="https://pub.cba.mit.edu/863.26/site/people.html">人员</a></strong></p>
+<blockquote>
+<p><strong><a href="https://pub.cba.mit.edu/863.26/site/doc/index.html">Docs</a></strong></p>
+</blockquote>
+<p><strong><a href="https://pub.cba.mit.edu/863.26/site/doc/index.html">文档</a></strong></p>
+<blockquote>
+<p><strong><a href="https://pub.cba.mit.edu/863.26/site/file/prior.html">Prior years</a></strong></p>
+</blockquote>
+<p><strong><a href="https://pub.cba.mit.edu/863.26/site/file/prior.html">往年</a></strong></p>
+<blockquote>
+<p><strong>Search</strong></p>
+</blockquote>
+<p><strong>搜索</strong></p>
+]]></content:encoded></item><item><title>uBlock Origin 因网站驱动的元素选择器导致通用 XSS 漏洞</title><link>https://BradleyZhang.github.io/DualHN/2026-11-17/03-universal-xss-in-ublock-origin-from-website-driven-element-picker/</link><pubDate>Tue, 17 Nov 2026 11:58:49 +0800</pubDate><guid>https://BradleyZhang.github.io/DualHN/2026-11-17/03-universal-xss-in-ublock-origin-from-website-driven-element-picker/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;Earlier this month I found a one-click universal XSS issue with uBlock Origin (the MV2 Firefox version, although a similar but less problematic issue also affected the MV3 version, uBO Lite), where a malicious website could trick the extension into adding arbitrary trusted filters. Trusted filters can inject JavaScript code into pages, and so the malicious website could create a trusted filter on another website and run arbitrary JS in the context of any site. This issue is fixed now; you can read &lt;a href="https://github.com/gorhill/uBlock/security/advisories/GHSA-cmqw-9r2w-6wv2"&gt;the GitHub advisory&lt;/a&gt; for some more details.&lt;/p&gt;
+&lt;/blockquote&gt;</description><content:encoded><![CDATA[<p>from: <a href="https://iter.ca/post/ubo-uxss/">Universal XSS in uBlock Origin from website-driven element picker</a></p><blockquote>
+<p>Earlier this month I found a one-click universal XSS issue with uBlock Origin (the MV2 Firefox version, although a similar but less problematic issue also affected the MV3 version, uBO Lite), where a malicious website could trick the extension into adding arbitrary trusted filters. Trusted filters can inject JavaScript code into pages, and so the malicious website could create a trusted filter on another website and run arbitrary JS in the context of any site. This issue is fixed now; you can read <a href="https://github.com/gorhill/uBlock/security/advisories/GHSA-cmqw-9r2w-6wv2">the GitHub advisory</a> for some more details.</p>
+</blockquote>
+<p>本月早些时候，我发现 uBlock Origin（MV2 的 Firefox 版本，尽管一个类似但影响较小的问题也影响了 MV3 版本 uBO Lite）存在一个一键通用 XSS 漏洞，恶意网站可以诱骗该扩展添加任意受信任过滤器。受信任过滤器可以向页面注入 JavaScript 代码，因此恶意网站可以在另一个网站上创建受信任过滤器，并在任何网站的上下文中运行任意 JS。该问题现已修复；你可以阅读 <a href="https://github.com/gorhill/uBlock/security/advisories/GHSA-cmqw-9r2w-6wv2">GitHub 安全公告</a> 了解更多详情。</p>
+<blockquote>
+<p>GPT-5.6 Sol did most of the hard work of finding the issue. I figured there might be some kind of UXSS from filter injection, so I asked it to take a look, and it found the issue. I then checked and verified the issue it proposed. I wrote all of the prose in this post myself; Claude wrote most of the code for the PoC.</p>
+</blockquote>
+<p>GPT-5.6 Sol 完成了查找该问题的大部分困难工作。我猜测可能存在由过滤器注入导致的某种 UXSS，于是让它查看了一下，它找到了这个问题。随后我检查并验证了它提出的问题。这篇文章中的所有文字都是我自己撰写的；Claude 编写了 PoC 的大部分代码。</p>
+<blockquote>
+<h2 id="the-issue">The issue</h2>
+</blockquote>
+<h2 id="问题">问题</h2>
+<blockquote>
+<p>uBlock Origin has an element picker that you can pull up by right-clicking on the page. You can use this to create a filter rule to block an element on the page without leaving the page.</p>
+</blockquote>
+<p>uBlock Origin 有一个元素选择器，你可以通过在页面上右键单击来调出它。你可以使用它创建过滤规则，以便在不离开当前页面的情况下屏蔽页面上的某个元素。</p>
+<p><img alt="uBO element picker" loading="lazy" src="https://iter.ca/ubo-epicker.png"></p>
+<blockquote>
+<p>The element picker is implemented by injecting an iframe to a URL like <code>moz-extension://76b2331a-894c-4d25-8b89-fcce37e79cc4/web_accessible_resources/epicker-ui.html</code>. That page can talk to the extension background script and tell it to add filters.</p>
+</blockquote>
+<p>元素拾取器通过将 iframe 注入到类似于 <code>moz-extension://76b2331a-894c-4d25-8b89-fcce37e79cc4/web_accessible_resources/epicker-ui.html</code> 的 URL 来实现。该页面可以与扩展背景脚本通信，并告诉它添加过滤器。</p>
+<blockquote>
+<p>Basically the attack here is:</p>
+</blockquote>
+<p>这里的攻击基本上是：</p>
+<blockquote>
+<ol>
+<li>Figure out the element picker URL</li>
+<li>Create our own invisible (opacity 0) iframe that embeds it</li>
+<li>Drive the picker to put the filter we want in it</li>
+<li>Position the invisible iframe to trick the user into pressing the invisible “Create” button</li>
+</ol>
+</blockquote>
+<ol>
+<li>确定 元素选择器 URL</li>
+<li>创建 我们自己的 invisible (opacity 0) iframe 将其嵌入</li>
+<li>驱动 元素选择器 将我们想要的过滤器放入它</li>
+<li>将 不可见 （opacity 0）iframe 位置调整， 误导用户按下不可见的 “Create” 按钮</li>
+</ol>
+<blockquote>
+<h3 id="figuring-out-the-element-picker-url">Figuring out the element picker URL</h3>
+</blockquote>
+<h3 id="弄清楚元素选择器的-url">弄清楚元素选择器的 URL</h3>
+<blockquote>
+<p>On Firefox, the only information we needed to figure out was the extension internal UUID which is random per-installation.</p>
+</blockquote>
+<p>在 Firefox 上，我们唯一需要弄清楚的信息是扩展内部的 UUID，它在每次安装时都是随机的。</p>
+<blockquote>
+<p>On the default setup uBO has a <code>lootdest.*##+js(no-fetch-if, adsbygoogle, war:googlesyndication_adsbygoogle.js)</code> filter rule (from uAssets), which hooks <code>fetch</code>. From inside the <code>fetch</code> hook, it makes an XHR request to <code>moz-extension://&lt;extension UUID&gt;/web_accessible_resources/googlesyndication_adsbygoogle.js</code> and returns the response from that as the fetch body, instead of actually making the request. The filter rule is intended to replace a network request for JS from an ad server with a dummy script that has the correct API but doesn’t do anything.</p>
+</blockquote>
+<p>默认设置下 uBO 有一个 <code>lootdest.*##+js(no-fetch-if, adsbygoogle, war:googlesyndication_adsbygoogle.js)</code> 过滤规则（来自 uAssets），它会钩住 <code>fetch</code>。从 <code>fetch</code> 钩子内部，它会向 <code>moz-extension://&lt;extension UUID&gt;/web_accessible_resources/googlesyndication_adsbygoogle.js</code> 发出 XHR 请求，并将该响应作为 fetch 响应体返回，而不是实际发出请求。该过滤规则旨在将来自广告服务器的 JS 网络请求替换为一个带有正确 API 但不执行任何操作的虚拟脚本。</p>
+<blockquote>
+<p>But the attacker website can itself hook the XHR made from inside the <code>no-fetch-if</code> hook to extract the random extension UUID.</p>
+</blockquote>
+<p>但攻击者网站可以自身 hook the XHR made from inside the <code>no-fetch-if</code> hook to extract the 随机 extension UUID.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">origOpen</span> <span class="o">=</span> <span class="nx">XMLHttpRequest</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">open</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">XMLHttpRequest</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">open</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">m</span><span class="p">,</span> <span class="nx">url</span><span class="p">,</span> <span class="p">...</span><span class="nx">a</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">e</span> <span class="o">=</span> <span class="sr">/^moz-extension:\/\/[^/]+/</span><span class="p">.</span><span class="nx">exec</span><span class="p">(</span><span class="nx">url</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">e</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1">// &lt;- has the extension UUID!
+</span></span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">origOpen</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">m</span><span class="p">,</span> <span class="nx">url</span><span class="p">,</span> <span class="p">...</span><span class="nx">a</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></div><blockquote>
+<p>Then the attacker website can run <code>fetch('/adsbygoogle.js').catch(() =&gt; {});</code> to trigger the filter, and make their hooked XHR run. Note that there are several ways that the extension internal UUID could be leaked; it’s not just this one filter rule.</p>
+</blockquote>
+<p>然后，攻击者网站可以运行 <code>fetch('/adsbygoogle.js').catch(() =&gt; {});</code> 来触发过滤器，并使其 hooked XHR 运行。请注意，扩展内部 UUID 可能以多种方式泄露；这不仅仅是这一条过滤规则。</p>
+<blockquote>
+<h3 id="creating-an-iframe">Creating an iframe</h3>
+</blockquote>
+<h3 id="创建-iframe">创建 iframe</h3>
+<blockquote>
+<p>Then you can use that to iframe the element picker. Given an iframe element in the page, you just set its src to <code>`moz-extension://${origin}/web_accessible_resources/epicker-ui.html`</code>.</p>
+</blockquote>
+<p>然后你可以用它来内嵌元素选择器。给定一个页面中的 iframe 元素，你只需将其 src 设置为 <code>`moz-extension://${origin}/web_accessible_resources/epicker-ui.html`</code>。</p>
+<blockquote>
+<h3 id="sending-messages-to-it">Sending messages to it</h3>
+</blockquote>
+<h3 id="向它发送消息">向它发送消息</h3>
+<blockquote>
+<p>Now we can drive the element picker. We can create a MessageChannel and do <code>iframe.contentWindow.postMessage({ what: 'epickerStart' }, '*', [ch.port2]);</code> to send it to the picker iframe. Then we talk to it: it sends us a <code>start</code> message, we send it a <code>showDialog</code> message with a filter and a <code>resultsetDetails</code> message<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> to enable the create button and set <code>opt</code>.</p>
+</blockquote>
+<p>现在我们可以驱动元素选择器了。我们可以创建一个 MessageChannel，并执行 <code>iframe.contentWindow.postMessage({ what: 'epickerStart' }, '*', [ch.port2]);</code> 将其发送给 picker iframe。然后我们与它进行通信：它会向我们发送一条 <code>start</code> 消息，而我们会向其发送一条带有过滤器的 <code>showDialog</code> 消息和一条 <code>resultsetDetails</code> 消息<sup id="fnref1:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>，以启用创建按钮并设置 <code>opt</code>。</p>
+<blockquote>
+<p>Normally the picker restricts what filters you can enter, and doesn’t let you add scriptlet filters. But there’s a trick we can do to add arbitrary filters. There’s an <code>opt</code> field we set in the second message which is normally the type of network request to match (like <code>image</code>), and gets appended to the filter with a <code>$</code> if set, like <code>$image</code>. But since we control it, we can put a newline in it and make it <code>&quot;image\ngoogle.com##+js(trusted-rpnt, script, ...)&quot;</code> to inject an arbitrary trusted filter that injects a script.<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></p>
+</blockquote>
+<p>通常选择器限制可输入的过滤器，并且不允许添加脚本过滤器。我们可以通过一个技巧来添加任意过滤器。在第二条消息中我们设置一个 <code>opt</code> 字段，它通常是用于匹配的 网络 请求 类型（例如 <code>image</code>），如果设置则会将其与过滤器连接，并在前面加上 <code>$</code>，例如 <code>$image$</code> ，但由于我们控制它，我们可以在它中插入换行符并使其变为 <code>&quot;image\ngoogle.com##+js(trusted-rpnt, script, ...)&quot;</code> 以 注入 任意 可信 的 过滤器 并 注入 脚本。<sup id="fnref1:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></p>
+<blockquote>
+<p>This is where the main issue is - the element picker shouldn’t accept messages from the attacker. One of the fixes was having a secret password that the real element picker gets from the content script, that the element picker sends in the initial postMessage.</p>
+</blockquote>
+<p>这就是主要问题所在——元素选择器不应接受来自攻击者的消息。其中一种修复方法是使用一个秘密密码，真实的元素选择器从 content script 获取该密码，并在初始的 postMessage 中发送它。</p>
+<blockquote>
+<h3 id="getting-the-click">Getting the click</h3>
+</blockquote>
+<h3 id="获得点击">获得点击</h3>
+<blockquote>
+<p>I didn’t bother actually implementing this, but malicious websites could overlay stuff on top of the embedded element picker or make it invisible by setting the iframe opacity to 0. So as long as the website can get the user to click on the page, it can add arbitrary trusted filters for arbitrary domains.</p>
+</blockquote>
+<p>我没有实际费力实现这件事，但恶意网站可以在嵌入 element picker 之上叠加内容，或通过将 iframe 的 opacity 设置为 0 使其不可见。因此只要网站能让用户点击页面，它就可以为任意域添加任意受信任的过滤器。</p>
+<blockquote>
+<p>Filters added by the element picker are always treated as trusted (at least until a recompile), which is why it can add a trusted filter. If the user later changes their custom filters it would cause a recompile, clearing the filter trust. But in practice the attacker could just immediately open the victim webpage, so this doesn’t help much.</p>
+</blockquote>
+<p>由 element picker 添加的过滤器始终被视为可信 (at least until a recompile)，因而可以添加一个可信过滤器。如果用户后来更改他们的自定义过滤器，将导致重新编译，清除过滤器的信任。但现实中，攻击者只需立即打开受害者的网页，所以这没什么帮助。</p>
+<blockquote>
+</blockquote>
+<p><sup id="fnref2:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>：我最初是针对选择器发出的 <code>dialogSetFilter</code> 消息进行回复，但后来发现可以直接发送消息，而不必等待回复。</p>
+<blockquote>
+</blockquote>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>Originally I sent that message in reply to a <code>dialogSetFilter</code> message from the picker, but it turns out you can just send it right away instead of waiting to reply.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref2:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>Assuming the shown filter is a network filter.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+]]></content:encoded></item><item><title>亚马逊许多“黑五”和“网一”“特价”商品并未真降价</title><link>https://BradleyZhang.github.io/DualHN/2026-11-17/02-many-of-amazons-black-friday-and-cyber-monday-deals-offered-no-savings/</link><pubDate>Tue, 17 Nov 2026 11:55:14 +0800</pubDate><guid>https://BradleyZhang.github.io/DualHN/2026-11-17/02-many-of-amazons-black-friday-and-cyber-monday-deals-offered-no-savings/</guid><description>&lt;blockquote&gt;
+&lt;h4 id="amazons-decoy-deals-groundwork-investigation-reveals-nearly-1-in-3-black-friday-and-cyber-monday-deals-advertised-by-amazon-offered-no-savings-to-shoppers-nearly-1-in-10-were-actually-more-expensive"&gt;Amazon’s Decoy Deals: Groundwork Investigation Reveals Nearly 1 in 3 Black Friday and Cyber Monday “Deals” Advertised by Amazon Offered No Savings to Shoppers, Nearly 1 in 10 Were Actually More Expensive&lt;/h4&gt;
+&lt;/blockquote&gt;
+&lt;h4 id="amazon-的诱饵式促销groundwork-调查揭示amazon-在-black-friday-和-cyber-monday-宣传的近-13优惠并未给购物者带来任何节省近-110-实际上更贵"&gt;Amazon 的诱饵式促销：Groundwork 调查揭示，Amazon 在 Black Friday 和 Cyber Monday 宣传的近 1/3“优惠”并未给购物者带来任何节省，近 1/10 实际上更贵&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A blockbuster new investigation from &lt;a href="https://groundworkcollaborative.org/"&gt;Groundwork Collaborative&lt;/a&gt; exposes how &lt;strong&gt;Amazon shoppers may be getting hosed during the retail giant’s much-touted Black Friday and Cyber Monday sale events&lt;/strong&gt;. The report, &lt;em&gt;&lt;a href="http://groundworkcollaborative.org/amazon"&gt;Deal or Decoy? Amazon’s Deceptive Discounts&lt;/a&gt;&lt;/em&gt;, examines products the retailer showcased as some the “best” discounts of the year to shoppers hunting for bargains during these sale events. A closer look at hundreds of these “deals” finds that Amazon frequently offered shoppers the same price, or in some cases a higher price, during recent holiday sale events than they could have paid just weeks earlier.&lt;/p&gt;
+&lt;/blockquote&gt;</description><content:encoded><![CDATA[<p>from: <a href="http://groundworkcollaborative.org/news/amazons-decoy-deals-groundwork-investigation-reveals-nearly-1-in-3-black-friday-and-cyber-monday-deals-advertised-by-amazon-offered-no-savings-to-shoppers-nearly-1-in-10-w/">Amazon’s Decoy Deals: Groundwork Investigation Reveals Nearly 1 in 3 Black Friday and Cyber Monday “Deals” Advertised by Amazon Offered No Savings to Shoppers, Nearly 1 in 10 Were Actually More Expensive</a></p><blockquote>
+<h4 id="amazons-decoy-deals-groundwork-investigation-reveals-nearly-1-in-3-black-friday-and-cyber-monday-deals-advertised-by-amazon-offered-no-savings-to-shoppers-nearly-1-in-10-were-actually-more-expensive">Amazon’s Decoy Deals: Groundwork Investigation Reveals Nearly 1 in 3 Black Friday and Cyber Monday “Deals” Advertised by Amazon Offered No Savings to Shoppers, Nearly 1 in 10 Were Actually More Expensive</h4>
+</blockquote>
+<h4 id="amazon-的诱饵式促销groundwork-调查揭示amazon-在-black-friday-和-cyber-monday-宣传的近-13优惠并未给购物者带来任何节省近-110-实际上更贵">Amazon 的诱饵式促销：Groundwork 调查揭示，Amazon 在 Black Friday 和 Cyber Monday 宣传的近 1/3“优惠”并未给购物者带来任何节省，近 1/10 实际上更贵</h4>
+<blockquote>
+<p>A blockbuster new investigation from <a href="https://groundworkcollaborative.org/">Groundwork Collaborative</a> exposes how <strong>Amazon shoppers may be getting hosed during the retail giant’s much-touted Black Friday and Cyber Monday sale events</strong>. The report, <em><a href="http://groundworkcollaborative.org/amazon">Deal or Decoy? Amazon’s Deceptive Discounts</a></em>, examines products the retailer showcased as some the “best” discounts of the year to shoppers hunting for bargains during these sale events. A closer look at hundreds of these “deals” finds that Amazon frequently offered shoppers the same price, or in some cases a higher price, during recent holiday sale events than they could have paid just weeks earlier.</p>
+</blockquote>
+<p>Groundwork Collaborative 发布的一项重磅新调查揭露，亚马逊购物者在该零售巨头大肆宣传的黑色星期五（Black Friday）和网络星期一（Cyber Monday）大促期间可能正在吃亏。该报告《优惠还是诱饵？亚马逊的欺骗性折扣》审视了该零售商在促销活动中向寻觅优惠的购物者展示的部分“最佳”折扣产品。对数百个此类“优惠”的深入分析发现，亚马逊在近期假日大促期间向购物者提供的价格，往往与几周前持平，甚至在某些情况下价格更高。</p>
+<blockquote>
+<p><strong>The report’s authors, Breyon Williams, Elizabeth Pancotti, and Lindsay Owens, find that nearly 1 in 3 of these Amazon “deals” offered no real savings</strong> – the exact same products were sold for the same price or less in the month before the sale. <strong>During Black Friday and Cyber Monday sales in the past two years, prices for nearly 1 in 10 products advertised as “deals” were <em>higher</em></strong> than what customers could have paid for the products in the month leading up to the sales.</p>
+</blockquote>
+<p><strong>该报告的作者 Breyon Williams、Elizabeth Pancotti 和 Lindsay Owens 发现，在这些 Amazon “deals” 中，近三分之一并没有提供真正的省钱优惠</strong>——在促销前的一个月里，完全相同的产品售价相同或更低。<strong>在过去两年的 Black Friday 和 Cyber Monday 促销期间，近十分之一标榜为 “deals” 的产品价格甚至<em>更高</em></strong>，高于促销前一个月顾客本可以支付的产品价格。</p>
+<blockquote>
+<p>Groundwork’s analysis examined the prices of more than 350 products included on Amazon’s own deal pages for the Black Friday and Cyber Monday sale events in 2024 and 2025. These pages promote these deals as some of the “best” deals available. Amazon’s Black Friday 2025 deals page says, “With so many deals to explore, we’ve handpicked some of the best ones you’ll find.”</p>
+</blockquote>
+<p>Groundwork 的分析研究了 2024 年和 2025 年黑色星期五（Black Friday）与网络星期一（Cyber Monday）促销活动中，Amazon 自身优惠页面收录的 350 多种产品的价格。这些页面将这些优惠宣传为现有的“最佳”优惠。Amazon 2025 年黑色星期五优惠页面写道：“有这么多优惠可以探索，我们精心挑选了一些你能找到的最好的优惠。”</p>
+<blockquote>
+<p><strong>Groundwork Collaborative President and CEO and report co-author <a href="https://groundworkcollaborative.org/person/lindsay-owens/">Lindsay Owens</a>, shared the following reaction:</strong></p>
+</blockquote>
+<p><strong>Groundwork Collaborative 主席兼首席执行官及报告合著者 <a href="https://groundworkcollaborative.org/person/lindsay-owens/">Lindsay Owens</a>，发表了如下反应：</strong></p>
+<blockquote>
+<p>“Millions of Americans wait all year for Black Friday and Cyber Monday to score the biggest bargains on stocking stuffers and household staples. Shoppers trust that the deals advertised to them deliver real savings because Amazon promotes them that way. But it turns out that these major sales aren’t all they’re cracked up to be. Instead, our investigation reveals that shoppers who wait for these major sale events may be playing rip-off roulette.</p>
+</blockquote>
+<p>数百万美国人全年都在等待 Black Friday 和 Cyber Monday，以便在圣诞袜小礼物和家庭日用品上抢到最划算的优惠。购物者相信，向他们宣传的这些交易能带来真正的节省，因为 Amazon 就是这样宣传的。但事实证明，这些大型促销并不像宣传的那么好。相反，我们的调查揭示，等待这些大型促销活动的购物者可能是在玩一场“宰客轮盘赌”。</p>
+<blockquote>
+<p>“Amazon dominates online shopping, and families count on its sale events to stretch their dollars. With the holiday shopping season upon us and prices continuing to rise, shoppers deserve to know they can trust every deal Amazon promises them. If Amazon can’t deliver that basic promise, lawmakers should hold them accountable.”</p>
+</blockquote>
+<p>亚马逊主导了在线购物，家庭们依靠其促销活动来节省开支。随着假日购物季来临，物价持续上涨，消费者理应知道他们可以信任亚马逊许下的每一笔交易。如果亚马逊无法兑现这一基本承诺，立法者就应当追究其责任。</p>
+<blockquote>
+<p>Owens is the author of the recent book <em><a href="https://gougedbook.com/">Gouged: The End of a Fair Price—And What That Means for Your Wallet</a></em>, which exposes how corporations are sophisticated pricing schemes to overcharge consumers.</p>
+</blockquote>
+<p>欧文斯是近期新书 <em>《Gouged: The End of a Fair Price—And What That Means for Your Wallet》</em> 的作者，该书揭露了企业如何利用复杂的定价手段向消费者收取过高费用。</p>
+<blockquote>
+<ul>
+<li><strong>The report’s key findings include:</strong>
+<ul>
+<li><strong>The price of nearly 1 in 3 products that Amazon described as “deals” was the same – or higher – during sale events than what customers could have purchased them for in the month leading up to the sale.</strong>
+<ul>
+<li><strong>Some Amazon “deals” offered shoppers higher prices than they could have paid before the sale.</strong></li>
+<li><strong>On Black Friday 2025,</strong> a pair of yellow Hunter Women’s Short Rain Boots “on sale” for $126.99 had been $79.97 nine days before the sale event started, meaning customers looking for a deal could’ve paid 59% more if they waited for the sale.
+- <strong>On Cyber Monday 2025,</strong> a pair of men’s UGG Butte boots “on sale” for $179.98 had been $98.40 roughly four weeks before the start of the sale event, meaning the “deal” cost 83% more than the recent low.
+- <strong>Among these “worse” deals, the median sale-event price was 19% higher than what shoppers could have paid for the products in the weeks leading up to the sale.</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Since learning of our study, Amazon has removed the aforementioned deal pages our study drew from,</strong> but archived versions of these pages can be found at the following links: <a href="https://web.archive.org/web/20241126224714/https://www.aboutamazon.com/news/retail/best-black-friday-deals-amazon">Black Friday 2024</a>, <a href="https://web.archive.org/web/20241213115036/https://www.aboutamazon.com/news/retail/cyber-monday-deals-2024-amazon">Cyber Monday 2024</a>, <a href="https://web.archive.org/web/20251213195446/https://www.aboutamazon.com/news/retail/amazon-black-friday-best-deals-shop-2025-us">Black Friday 2025</a>, <a href="https://web.archive.org/web/20251208033637/https://www.aboutamazon.com/news/retail/cyber-monday-tech-deals-2025-us">Cyber Monday 2025</a>.</li>
+<li><strong>Amidst the ongoing affordability crisis, millions of Americans count on holiday sale events, like Black Friday, to deliver real savings.</strong> In 2025, a <a href="https://nrf.com/media-center/press-releases/thanksgiving-holiday-weekend-draws-a-record-203-million-shoppers">record</a> 203 million Americans shopped between Thanksgiving and Cyber Monday, and this year, <a href="https://www.bain.com/about/media-center/press-releases/2026/black-friday-through-cyber-monday-weekend-sales-to-surpass-$85-billion-bain-company/">70%</a> of U.S. customers plan to take advantage of holiday promotions.</li>
+<li><strong><em>Deal or Decoy</em> calls on federal and state regulators to crack down on misleading discounts</strong> and require retailers to show the lowest price a product sold for in the previous 30 days when advertising a sale.</li>
+</ul>
+</blockquote>
+<ul>
+<li><strong>报告的主要发现包括：</strong>
+<ul>
+<li><strong>在 Amazon 标注为&quot;优惠&quot;的商品中，近三分之一在促销活动期间的售价与消费者在大促前一个月内购买所需支付的价格相同，甚至更高。</strong>
+<ul>
+<li><strong>一些 Amazon 的&quot;优惠&quot;向消费者提供的价格甚至高于大促前的价格。</strong></li>
+<li><strong>在 2025 年 Black Friday，</strong> 一双黄色 Hunter Women&rsquo;s Short Rain Boots 的&quot;促销价&quot;为 $126.99，而在大促开始前九天，其价格仅为 $79.97，这意味着等待促销的消费者可能多支付 59% 的费用。
+- <strong>在 2025 年 Cyber Monday，</strong> 一双男士 UGG Butte 靴子的&quot;促销价&quot;为 $179.98，而在大促开始前约四周，其价格仅为 $98.40，这意味着该&quot;优惠&quot;比近期最低价高出 83%。
+- <strong>在这些&quot;更差&quot;的优惠中，促销期间的中位价格比消费者在大促前几周购买所需支付的价格高出 19%。</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>在得知我们的研究后，Amazon 已删除了我们研究引用的上述优惠页面，但这些页面的存档版本可通过以下链接访问：</strong> <a href="https://web.archive.org/web/20241126224714/https://www.aboutamazon.com/news/retail/best-black-friday-deals-amazon">Black Friday 2024</a>, <a href="https://web.archive.org/web/20241213115036/https://www.aboutamazon.com/news/retail/cyber-monday-deals-2024-amazon">Cyber Monday 2024</a>, <a href="https://web.archive.org/web/20251213195446/https://www.aboutamazon.com/news/retail/amazon-black-friday-best-deals-shop-2025-us">Black Friday 2025</a>, <a href="https://web.archive.org/web/20251208033637/https://www.aboutamazon.com/news/retail/cyber-monday-tech-deals-2025-us">Cyber Monday 2025</a>.</li>
+<li><strong>在持续的生活成本危机中，数百万美国人都指望 Black Friday 等假日促销活动带来真正的省钱机会。</strong> 2025 年，在 Thanksgiving 至 Cyber Monday 期间，共有创纪录的 2.03 亿美国消费者进行了购物，而今年，<a href="https://www.bain.com/about/media-center/press-releases/2026/black-friday-through-cyber-monday-weekend-sales-to-surpass-$85-billion-bain-company/">70%</a> 的美国消费者计划利用假日促销活动。</li>
+<li><em><strong>Deal or Decoy</strong></em> 呼吁联邦和州监管机构打击误导性折扣行为，并要求零售商在宣传促销时展示该商品过去 30 天内的最低售价。</li>
+</ul>
+<blockquote>
+<p><strong>ADDITIONAL BACKGROUND</strong></p>
+</blockquote>
+<p><strong>补充背景</strong></p>
+<blockquote>
+<p><strong>The new report builds on Groundwork’s work exposing corporate pricing abuses and delivering results for American consumers.</strong></p>
+</blockquote>
+<p>新的报告基于 Groundwork 的工作，该工作揭露了企业定价滥用行为，并为美国消费者带来了成果。</p>
+<blockquote>
+<ul>
+<li>In December 2025, Groundwork teamed up with Consumer Reports and More Perfect Union to <a href="https://groundworkcollaborative.org/work/instacart/">expose how Instacart</a> was charging shoppers different prices for the exact same groceries at the same store and time.
+<ul>
+<li>The findings made <a href="https://www.nytimes.com/2025/12/09/business/instacart-algorithmic-pricing.html">national headlines</a>, triggered investigations by the <a href="https://www.reuters.com/legal/litigation/ftc-investigating-instacarts-ai-pricing-tool-source-says-2025-12-17/">Federal Trade Commission</a> and <a href="https://ag.ny.gov/press-release/2026/attorney-general-james-demands-answers-instacart-about-algorithmic-pricing">New York Attorney General</a>, and prompted Instacart to <a href="https://company.instacart.com/updates/ending-item-price-tests-on-instacart">end the practice</a> just weeks later.</li>
+</ul>
+</li>
+<li>Following the publication of Groundwork’s Owens’ book <em>Gouged: The End of a Fair Price—And What That Means for Your Wallet</em>, the Federal Trade Commission launched an <a href="https://www.ftc.gov/news-events/news/press-releases/2026/10/ftc-launches-personalized-pricing-compensation-inquiry">investigation</a> into major retailers’ use of customers’ personal data to set prices, adding to growing scrutiny of corporate pricing practices and their impact on Americans’ wallets in response to Groundwork and Owens’ research.</li>
+<li>In October 2026, Groundwork exposed Walmart’s creepy patent filings and pricing playbook. The <a href="https://groundworkcollaborative.org/work/the-walmart-watchtower/">report</a> digs into patent filings, privacy disclosures, and technology investments to reveal how the retailer is building the infrastructure that could allow it to deploy personalized pricing at scale.</li>
+</ul>
+</blockquote>
+<ul>
+<li>2025 年 12 月，Groundwork 联合 Consumer Reports 与 More Perfect Union，<a href="https://groundworkcollaborative.org/work/instacart/">揭露了 Instacart</a> 在同一时间、同一商店对同一杂货向不同购物者收取不同价格的做法。
+<ul>
+<li>该调查结果登上<a href="https://www.nytimes.com/2025/12/09/business/instacart-algorithmic-pricing.html">全国头条</a>，引发<a href="https://www.reuters.com/legal/litigation/ftc-investigating-instacarts-ai-pricing-tool-source-says-2025-12-17/">联邦贸易委员会 (FTC)</a> 和<a href="https://ag.ny.gov/press-release/2026/attorney-general-james-demands-answers-instacart-about-algorithmic-pricing">纽约州总检察长</a>的调查，并迫使 Instacart 在几周后<a href="https://company.instacart.com/updates/ending-item-price-tests-on-instacart">终止了该做法</a>。</li>
+</ul>
+</li>
+<li>随着 Groundwork 研究员 Owens 的新书 <em>Gouged: The End of a Fair Price—And What That Means for Your Wallet</em> 出版，联邦贸易委员会发起<a href="https://www.ftc.gov/news-events/news/press-releases/2026/10/ftc-launches-personalized-pricing-compensation-inquiry">调查</a>，针对大型零售商利用客户个人数据制定价格的行为，这进一步加剧了在 Groundwork 和 Owens 研究推动下，对企业定价行为及其对美国民众钱包影响的审视。</li>
+<li>2026 年 10 月，Groundwork 曝光了 Walmart 令人不安的专利申请与定价策略手册。该<a href="https://groundworkcollaborative.org/work/the-walmart-watchtower/">报告</a>深入挖掘专利文件、隐私披露及技术投资，揭示这家零售商正在构建大规模部署个性化定价所需的基础设施。</li>
+</ul>
+]]></content:encoded></item><item><title>千问4-Max</title><link>https://BradleyZhang.github.io/DualHN/2026-11-17/01-qwen4-max/</link><pubDate>Tue, 17 Nov 2026 11:55:12 +0800</pubDate><guid>https://BradleyZhang.github.io/DualHN/2026-11-17/01-qwen4-max/</guid><description/></item></channel></rss>
