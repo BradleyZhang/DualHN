@@ -1,0 +1,654 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>2026-11-23 on DualHN</title><link>https://BradleyZhang.github.io/DualHN/2026-11-23/</link><description>Recent content in 2026-11-23 on DualHN</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Mon, 23 Nov 2026 10:37:52 +0800</lastBuildDate><atom:link href="https://BradleyZhang.github.io/DualHN/2026-11-23/index.xml" rel="self" type="application/rss+xml"/><item><title>推理提供方的数据处理事件</title><link>https://BradleyZhang.github.io/DualHN/2026-11-23/05-data-processing-incidents-on-inference-providers/</link><pubDate>Mon, 23 Nov 2026 10:37:52 +0800</pubDate><guid>https://BradleyZhang.github.io/DualHN/2026-11-23/05-data-processing-incidents-on-inference-providers/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;OpenRouter ·&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;OpenRouter ·&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Earlier this week, security &lt;a href="https://www.dragos.com/blog/ai-supply-chain-security-canary-tokens"&gt;researchers reported&lt;/a&gt; that certain inference providers had data compromised or otherwise shown evidence that their data policies were not being upheld. We have been collaborating closely with the researchers and with providers to understand the findings and encourage the providers to address them.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;本周早些时候，安全研究人员&lt;a href="https://www.dragos.com/blog/ai-supply-chain-security-canary-tokens"&gt;报告称&lt;/a&gt;，某些推理服务提供商的数据遭到泄露，或出现其他证据表明其数据政策未被遵守。我们一直与研究人员和提供商密切合作，以了解这些发现，并鼓励提供商予以解决。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;These findings did not show any breach or unauthorized access of OpenRouter. The results of this testing revealed new findings about specific inference providers. A live list of the security announcements we have received from providers is &lt;a href="#provider-security-announcements"&gt;below&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;</description><content:encoded><![CDATA[<p>from: <a href="https://openrouter.ai/blog/announcements/data-processing-incidents-on-inference-providers/">Data Processing Incidents on Inference Providers</a></p><blockquote>
+<p>OpenRouter ·</p>
+</blockquote>
+<p>OpenRouter ·</p>
+<blockquote>
+<p>Earlier this week, security <a href="https://www.dragos.com/blog/ai-supply-chain-security-canary-tokens">researchers reported</a> that certain inference providers had data compromised or otherwise shown evidence that their data policies were not being upheld. We have been collaborating closely with the researchers and with providers to understand the findings and encourage the providers to address them.</p>
+</blockquote>
+<p>本周早些时候，安全研究人员<a href="https://www.dragos.com/blog/ai-supply-chain-security-canary-tokens">报告称</a>，某些推理服务提供商的数据遭到泄露，或出现其他证据表明其数据政策未被遵守。我们一直与研究人员和提供商密切合作，以了解这些发现，并鼓励提供商予以解决。</p>
+<blockquote>
+<p>These findings did not show any breach or unauthorized access of OpenRouter. The results of this testing revealed new findings about specific inference providers. A live list of the security announcements we have received from providers is <a href="#provider-security-announcements">below</a>.</p>
+</blockquote>
+<p>这些发现并未显示 OpenRouter 存在任何入侵或未经授权的访问。此次测试结果揭示了有关特定推理提供商的新发现。我们已从提供商处收到的安全公告实时列表见<a href="#provider-security-announcements">下方</a>。</p>
+<blockquote>
+<p>As the operating layer between customers and a fast-moving ecosystem of models and providers, we take data policy enforcement very seriously. We have taken the following actions:</p>
+</blockquote>
+<p>作为客户与快速演进的模型和提供商生态系统之间的运营层面，我们非常严肃地对待数据策略的执行。我们已采取以下措施：</p>
+<blockquote>
+<ul>
+<li>Off-boarded three providers from OpenRouter, based on the results of our investigations.</li>
+<li>Removed 125 endpoints from Zero Data Retention (ZDR) eligibility. The removals included providers flagged by researchers, plus additional endpoints that we removed as a precautionary measure.</li>
+<li>Notified all potentially affected customers.</li>
+</ul>
+</blockquote>
+<ul>
+<li>将三家供应商从 OpenRouter 移除，依据是我们的调查结果。</li>
+<li>从零数据留存（ZDR）资格名单中移除了 125 个端点。被移除的端点包括研究人员标记的供应商，以及我们作为预防性措施额外移除的端点。</li>
+<li>已通知所有潜在受影响客户。</li>
+</ul>
+<blockquote>
+<p>The following work is underway:</p>
+</blockquote>
+<p>以下工作正在进行中：</p>
+<blockquote>
+<ul>
+<li>We are adapting the researchers’ testing approach so we can run these checks on an ongoing basis.</li>
+<li>We are conducting technical verification of network paths to identify instances where requests and responses may be being forwarded to third parties.</li>
+<li>We are requiring appropriate assurances and validation before restoring ZDR eligibility to any endpoint removed in this review.</li>
+</ul>
+</blockquote>
+<ul>
+<li>我们正在调整研究人员的测试方法，以便持续运行这些检查。</li>
+<li>我们正在对网络路径进行技术验证，以识别请求和响应可能正在被转发到第三方的情况。</li>
+<li>我们要求在恢复本次审查中移除的任何端点的 ZDR 资格之前，获得适当的保证和验证。</li>
+</ul>
+<blockquote>
+<p>We are grateful for the Dragos report. As we integrate similar testing techniques into OpenRouter, we will keep raising the bar, and providers that want to be on OpenRouter will need to meet it.</p>
+</blockquote>
+<p>我们 感谢 Dragos 报告。 随着 我们 将 相似的 测试技术 集成到 OpenRouter 中，我们 将 持续 提高 标准，且 想 在 OpenRouter 上 运营 的 提供者 将 需要 满足 它。</p>
+<blockquote>
+<h2 id="provider-security-announcements">Provider security announcements</h2>
+</blockquote>
+<h2 id="提供商安全公告">提供商安全公告</h2>
+<blockquote>
+<ul>
+<li>Atlas Cloud: <a href="https://www.atlascloud.ai/blog/ai-updates/security-and-privacy-commitment">Our commitment to your security and privacy</a></li>
+<li>Novita: <a href="https://novita.ai/blog/minimax-requests-privacy-notice/">Privacy notice regarding MiniMax requests on Novita</a></li>
+<li>Phala: <a href="https://phala.com/posts/phala-november-preliminary-incident-report">November preliminary incident report</a></li>
+<li>Together: <a href="https://www.together.ai/blog/security-event-prompt-leakage-for-requests-in-june-and-july-of-2026">Security event: prompt leakage for requests in June and July of 2026</a></li>
+</ul>
+</blockquote>
+<ul>
+<li>Atlas Cloud: <a href="https://www.atlascloud.ai/blog/ai-updates/security-and-privacy-commitment">我们对您安全与隐私的承诺</a></li>
+<li>Novita: <a href="https://novita.ai/blog/minimax-requests-privacy-notice/">关于 Novita 上 MiniMax 请求的隐私声明</a></li>
+<li>Phala: <a href="https://phala.com/posts/phala-november-preliminary-incident-report">十一月初步事件报告</a></li>
+<li>Together: <a href="https://www.together.ai/blog/security-event-prompt-leakage-for-requests-in-june-and-july-of-2026">安全事件：2026 年六月和七月请求的 prompt 泄漏</a></li>
+</ul>
+<blockquote>
+<p><em>Not all affected providers have posted publicly. We have notified affected users regardless of whether there is a public post. We are encouraging all providers to create incident write-ups and will keep this list updated.</em></p>
+</blockquote>
+<p><em>并非所有受影响的服务提供商都已公开发布。我们已通知所有受影响的用户，无论是否发布了公开内容。我们正在鼓励所有服务提供商撰写事件报告，并会保持此列表更新。</em></p>
+]]></content:encoded></item><item><title>三明治模拟器</title><link>https://BradleyZhang.github.io/DualHN/2026-11-23/04-sandwich-simulator/</link><pubDate>Mon, 23 Nov 2026 10:37:41 +0800</pubDate><guid>https://BradleyZhang.github.io/DualHN/2026-11-23/04-sandwich-simulator/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;Stulle wird geladen …&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;正在加载 Stulle …&lt;/p&gt;
+&lt;p&gt;&lt;img loading="lazy" src="https://stulle.app/tools/pot-butter-shadow.webp"&gt; &lt;img loading="lazy" src="https://stulle.app/tools/pot-butter.webp"&gt; &lt;img loading="lazy" src="https://stulle.app/tools/pot-jam-shadow.webp"&gt; &lt;img loading="lazy" src="https://stulle.app/tools/pot-jam.webp"&gt; &lt;img loading="lazy" src="https://stulle.app/tools/pot-nutella-shadow.webp"&gt; &lt;img loading="lazy" src="https://stulle.app/tools/pot-nutella.webp"&gt; &lt;img loading="lazy" src="https://stulle.app/tools/pot-quark-shadow.webp"&gt; &lt;img loading="lazy" src="https://stulle.app/tools/pot-quark.webp"&gt; &lt;img loading="lazy" src="https://stulle.app/tools/pot-leberwurst-shadow.webp"&gt; &lt;img loading="lazy" src="https://stulle.app/tools/pot-leberwurst.webp"&gt; &lt;img loading="lazy" src="https://stulle.app/tools/top-kaese-shadow.webp"&gt; &lt;img loading="lazy" src="https://stulle.app/tools/top-kaese.webp"&gt; &lt;img loading="lazy" src="https://stulle.app/tools/top-salami-shadow.webp"&gt; &lt;img loading="lazy" src="https://stulle.app/tools/top-salami.webp"&gt; &lt;img loading="lazy" src="https://stulle.app/tools/top-schinken-shadow.webp"&gt; &lt;img loading="lazy" src="https://stulle.app/tools/top-schinken.webp"&gt; &lt;img loading="lazy" src="https://stulle.app/tools/top-gurke-shadow.webp"&gt; &lt;img loading="lazy" src="https://stulle.app/tools/top-gurke.webp"&gt; &lt;img loading="lazy" src="https://stulle.app/tools/top-tomate-shadow.webp"&gt; &lt;img loading="lazy" src="https://stulle.app/tools/top-tomate.webp"&gt; &lt;img loading="lazy" src="https://stulle.app/tools/top-ei-shadow.webp"&gt; &lt;img loading="lazy" src="https://stulle.app/tools/top-ei.webp"&gt; &lt;img loading="lazy" src="https://stulle.app/tools/top-radieschen-shadow.webp"&gt; &lt;img loading="lazy" src="https://stulle.app/tools/top-radieschen.webp"&gt; &lt;img loading="lazy" src="https://stulle.app/tools/top-gewuerzgurke-shadow.webp?v=2"&gt; &lt;img loading="lazy" src="https://stulle.app/tools/top-gewuerzgurke.webp?v=2"&gt; &lt;img loading="lazy" src="https://stulle.app/tools/top-leberkaese-shadow.webp"&gt; &lt;img loading="lazy" src="https://stulle.app/tools/top-leberkaese.webp"&gt; &lt;img loading="lazy" src="https://stulle.app/tools/top-harzer-shadow.webp?v=2"&gt; &lt;img loading="lazy" src="https://stulle.app/tools/top-harzer.webp?v=2"&gt; &lt;img loading="lazy" src="https://stulle.app/tools/top-blutwurst-shadow.webp"&gt; &lt;img loading="lazy" src="https://stulle.app/tools/top-blutwurst.webp"&gt; &lt;img loading="lazy" src="https://stulle.app/tools/top-spiegelei-shadow.webp"&gt; &lt;img loading="lazy" src="https://stulle.app/tools/top-spiegelei.webp"&gt; &lt;img loading="lazy" src="https://stulle.app/tools/top-rotebete-shadow.webp"&gt; &lt;img loading="lazy" src="https://stulle.app/tools/top-rotebete.webp"&gt; &lt;img loading="lazy" src="https://stulle.app/tools/top-senfgurke-shadow.webp"&gt; &lt;img loading="lazy" src="https://stulle.app/tools/top-senfgurke.webp"&gt; &lt;img loading="lazy" src="https://stulle.app/tools/top-lachs-shadow.webp?v=2"&gt; &lt;img loading="lazy" src="https://stulle.app/tools/top-lachs.webp?v=2"&gt; &lt;img loading="lazy" src="https://stulle.app/tools/top-banane-shadow.webp"&gt; &lt;img loading="lazy" src="https://stulle.app/tools/top-banane.webp"&gt; &lt;img loading="lazy" src="https://stulle.app/tools/top-erdbeere-shadow.webp"&gt; &lt;img loading="lazy" src="https://stulle.app/tools/top-erdbeere.webp"&gt; &lt;img loading="lazy" src="https://stulle.app/tools/top-kiwi-shadow.webp"&gt; &lt;img loading="lazy" src="https://stulle.app/tools/top-kiwi.webp"&gt; &lt;img loading="lazy" src="https://stulle.app/tools/top-fischstaebchen-shadow.webp"&gt; &lt;img loading="lazy" src="https://stulle.app/tools/top-fischstaebchen.webp"&gt; &lt;img loading="lazy" src="https://stulle.app/tools/top-pommes-shadow.webp"&gt; &lt;img loading="lazy" src="https://stulle.app/tools/top-pommes.webp"&gt; &lt;img loading="lazy" src="https://stulle.app/tools/top-chips-shadow.webp"&gt; &lt;img loading="lazy" src="https://stulle.app/tools/top-chips.webp"&gt; &lt;img loading="lazy" src="https://stulle.app/tools/top-gummibaer-shadow.webp"&gt; &lt;img loading="lazy" src="https://stulle.app/tools/top-gummibaer.webp"&gt;&lt;/p&gt;</description><content:encoded><![CDATA[<p>from: <a href="https://stulle.app/">Stullensimulator</a></p><blockquote>
+<p>Stulle wird geladen …</p>
+</blockquote>
+<p>正在加载 Stulle …</p>
+<p><img loading="lazy" src="https://stulle.app/tools/pot-butter-shadow.webp"> <img loading="lazy" src="https://stulle.app/tools/pot-butter.webp"> <img loading="lazy" src="https://stulle.app/tools/pot-jam-shadow.webp"> <img loading="lazy" src="https://stulle.app/tools/pot-jam.webp"> <img loading="lazy" src="https://stulle.app/tools/pot-nutella-shadow.webp"> <img loading="lazy" src="https://stulle.app/tools/pot-nutella.webp"> <img loading="lazy" src="https://stulle.app/tools/pot-quark-shadow.webp"> <img loading="lazy" src="https://stulle.app/tools/pot-quark.webp"> <img loading="lazy" src="https://stulle.app/tools/pot-leberwurst-shadow.webp"> <img loading="lazy" src="https://stulle.app/tools/pot-leberwurst.webp"> <img loading="lazy" src="https://stulle.app/tools/top-kaese-shadow.webp"> <img loading="lazy" src="https://stulle.app/tools/top-kaese.webp"> <img loading="lazy" src="https://stulle.app/tools/top-salami-shadow.webp"> <img loading="lazy" src="https://stulle.app/tools/top-salami.webp"> <img loading="lazy" src="https://stulle.app/tools/top-schinken-shadow.webp"> <img loading="lazy" src="https://stulle.app/tools/top-schinken.webp"> <img loading="lazy" src="https://stulle.app/tools/top-gurke-shadow.webp"> <img loading="lazy" src="https://stulle.app/tools/top-gurke.webp"> <img loading="lazy" src="https://stulle.app/tools/top-tomate-shadow.webp"> <img loading="lazy" src="https://stulle.app/tools/top-tomate.webp"> <img loading="lazy" src="https://stulle.app/tools/top-ei-shadow.webp"> <img loading="lazy" src="https://stulle.app/tools/top-ei.webp"> <img loading="lazy" src="https://stulle.app/tools/top-radieschen-shadow.webp"> <img loading="lazy" src="https://stulle.app/tools/top-radieschen.webp"> <img loading="lazy" src="https://stulle.app/tools/top-gewuerzgurke-shadow.webp?v=2"> <img loading="lazy" src="https://stulle.app/tools/top-gewuerzgurke.webp?v=2"> <img loading="lazy" src="https://stulle.app/tools/top-leberkaese-shadow.webp"> <img loading="lazy" src="https://stulle.app/tools/top-leberkaese.webp"> <img loading="lazy" src="https://stulle.app/tools/top-harzer-shadow.webp?v=2"> <img loading="lazy" src="https://stulle.app/tools/top-harzer.webp?v=2"> <img loading="lazy" src="https://stulle.app/tools/top-blutwurst-shadow.webp"> <img loading="lazy" src="https://stulle.app/tools/top-blutwurst.webp"> <img loading="lazy" src="https://stulle.app/tools/top-spiegelei-shadow.webp"> <img loading="lazy" src="https://stulle.app/tools/top-spiegelei.webp"> <img loading="lazy" src="https://stulle.app/tools/top-rotebete-shadow.webp"> <img loading="lazy" src="https://stulle.app/tools/top-rotebete.webp"> <img loading="lazy" src="https://stulle.app/tools/top-senfgurke-shadow.webp"> <img loading="lazy" src="https://stulle.app/tools/top-senfgurke.webp"> <img loading="lazy" src="https://stulle.app/tools/top-lachs-shadow.webp?v=2"> <img loading="lazy" src="https://stulle.app/tools/top-lachs.webp?v=2"> <img loading="lazy" src="https://stulle.app/tools/top-banane-shadow.webp"> <img loading="lazy" src="https://stulle.app/tools/top-banane.webp"> <img loading="lazy" src="https://stulle.app/tools/top-erdbeere-shadow.webp"> <img loading="lazy" src="https://stulle.app/tools/top-erdbeere.webp"> <img loading="lazy" src="https://stulle.app/tools/top-kiwi-shadow.webp"> <img loading="lazy" src="https://stulle.app/tools/top-kiwi.webp"> <img loading="lazy" src="https://stulle.app/tools/top-fischstaebchen-shadow.webp"> <img loading="lazy" src="https://stulle.app/tools/top-fischstaebchen.webp"> <img loading="lazy" src="https://stulle.app/tools/top-pommes-shadow.webp"> <img loading="lazy" src="https://stulle.app/tools/top-pommes.webp"> <img loading="lazy" src="https://stulle.app/tools/top-chips-shadow.webp"> <img loading="lazy" src="https://stulle.app/tools/top-chips.webp"> <img loading="lazy" src="https://stulle.app/tools/top-gummibaer-shadow.webp"> <img loading="lazy" src="https://stulle.app/tools/top-gummibaer.webp"></p>
+]]></content:encoded></item><item><title>困惑度与智能</title><link>https://BradleyZhang.github.io/DualHN/2026-11-23/03-perplexity-and-intelligence/</link><pubDate>Mon, 23 Nov 2026 10:22:53 +0800</pubDate><guid>https://BradleyZhang.github.io/DualHN/2026-11-23/03-perplexity-and-intelligence/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;From afar, it might seem like modern AI is built similarly to how software has been built in previous decades: with a diverse set of techniques targeting specific capabilities. There are indeed a variety of methods, but rather than designing something from scratch, they are mostly &lt;em&gt;harnessing&lt;/em&gt; the intelligence coming from a much simpler and less interpretable process: training a compressor (or, &lt;a href="https://en.wikipedia.org/wiki/Shannon%27s_source_coding_theorem"&gt;equivalently⁠&lt;/a&gt;, predictor) on a very large corpus of data.&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;/blockquote&gt;</description><content:encoded><![CDATA[<p>from: <a href="https://openai.com/index/perplexity-and-intelligence/">Perplexity and Intelligence</a></p><blockquote>
+<p>From afar, it might seem like modern AI is built similarly to how software has been built in previous decades: with a diverse set of techniques targeting specific capabilities. There are indeed a variety of methods, but rather than designing something from scratch, they are mostly <em>harnessing</em> the intelligence coming from a much simpler and less interpretable process: training a compressor (or, <a href="https://en.wikipedia.org/wiki/Shannon%27s_source_coding_theorem">equivalently⁠</a>, predictor) on a very large corpus of data.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+</blockquote>
+<p>从远处看，现代人工智能似乎与过去几十年软件开发方式相同：采用针对特定能力的多样化技术。确实存在多种方法，但它们并非从头设计，而是主要利用一个更简单且不太可解释的过程中的智能——即在非常大的数据语料库上训练一个 compressor（或等效地， predictor ）来实现的<sup id="fnref1:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>。</p>
+<blockquote>
+<p>I believe tracking the pace of progress on training better compressors is key to understanding the arc of advances in AI. In this post, I argue for establishing perplexity (or, equivalently, cross-entropy loss) as a metric to compare between model developers and inform shared safety standards. As a first step, I provide more transparency into pretraining progress at OpenAI. Publishing our internal perplexity measurements took some consideration; it gives competitors a clearer picture of where we stand, but that concern is outweighed by the urgency of establishing <a href="https://darioamodei.com/post/we-must-pace-the-frontier">shared⁠</a> safety measures across the industry. We at OpenAI hope for this to be a step towards building a shared scientific basis for future pacing efforts.</p>
+</blockquote>
+<p>我相信，跟踪训练更好的压缩器的进展速度，是理解 AI 进步轨迹的关键。在这篇文章中，我主张建立 perplexity（或等价地，cross-entropy loss）作为比较模型开发者并为共享安全标准提供依据的指标。作为第一步，我提供了 OpenAI 预训练进展的更多透明度。发布我们内部的 perplexity 衡量结果经过了深思熟虑；这让竞争对手更清晰地了解我们所处的位置，但这一担忧被建立跨行业 <a href="https://darioamodei.com/post/we-must-pace-the-frontier">共享</a> 安全措施的紧迫性所压倒。我们 OpenAI 希望这能成为为未来步调控制工作建立共享科学基础的一步。</p>
+<blockquote>
+<p>A simplified, but fundamentally informative, view of AI development is that first, one builds a large computer, then uses it to <em>pretrain</em> a model (compressor) on a large unstructured dataset, then applies a variety of techniques—like prompting, finetuning or reinforcement learning—in different contexts to elicit the latent capabilities of that model. Algorithmic progress can blur the distinction between training phases, but we can still separate the creation of the AI with hard-to-predict emergent capabilities (which I earlier dubbed “<a href="https://openai.com/index/an-alien-mind/">an alien mind⁠</a>”) and the subsequent targeted elicitation.</p>
+</blockquote>
+<p>一个简化了的，但从根本上说是信息丰富的 AI 发展观点是：首先，构建一台大型计算机，然后使用它，在大型非结构化数据集中对一个模型（压缩器）进行 <em>pretrain</em>，然后在一个个不同的上下文中应用各种技术——如提示、finetuning 或 reinforcement learning——来激发该模型的潜在能力。算法进步可能会模糊训练阶段之间的区别，但我们仍然可以将拥有难以预测的涌现能力的 AI（我之前称之为 “<a href="https://openai.com/index/an-alien-mind/">an alien mind⁠</a>”）的创造与后续的有针对性激发区分开来。</p>
+<blockquote>
+<p>The primary way we measure progress on this key “intelligence substrate” has remained remarkably constant over the years—we have been tracking the <em>perplexity</em> of the models on a held-out dataset.,<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> Perplexity measures how well a model predicts the next token on average; lower perplexity means better predictions. The plot opening this blog post shows how this metric evolved for our models starting with GPT‑3.5.</p>
+</blockquote>
+<p>这个关键的“intelligence substrate”上，我们衡量进展的主要方式在这些年里始终保持了惊人的一致性——我们一直在 held-out 数据集上追踪这些模型的 <em>perplexity</em>。<sup id="fnref1:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> Perplexity 衡量一个模型平均能够有多好地预测下一个 token；perplexity 越低，表示预测效果越好。这篇博客开篇所展示的图表表明，对于我们从 GPT‑3.5 开始的这些模型，这个指标是如何演变的。</p>
+<blockquote>
+<p>The range of capabilities of models that are largely described by this one metric is stunning. Setting the new perplexity state-of-the-art on older datasets<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>, GPT‑2 was arguably the first model capable of consistently formulating coherent paragraphs of text. The next major leap, GPT‑3, was capable of learning in context, given a few examples of a task. GPT‑3.5, at a log-perplexity of ~0.99 on our current main evaluation dataset, was capable of fluent conversation and formed the basis for the original ChatGPT. GPT‑4, at ~0.91, was proficient at utilizing chain-of-thought reasoning productively, which motivated the subsequent targeted elicitation of this capability and the creation of modern reasoning models. Now, as we have reached losses below 0.8, we have seen the emergence of transformative capabilities in fields like cybersecurity and mathematics. I want to reemphasize that it was not at all clear <em>a priori</em> that these capabilities would appear once those precise perplexity thresholds are met—they can fundamentally be seen as emergent latent capabilities from progress on this one metric.</p>
+</blockquote>
+<p>此一指标所描述的模型能力范围令人惊叹。在 older datasets<sup id="fnref1:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> 上设定了新的 perplexity state-of-the-art， GPT‑2 被认为是首个能够始终生成连贯文本段的模型。接下来的重大突破， GPT‑3, 具备在 context 中学习的能力，仅给定少量 task 示例即可。GPT‑3.5 当前 main evaluation dataset 上的 log-perplexity 约为 ~0.99，能够流畅对话，并构成了原始 ChatGPT 的基础。GPT‑4 在 ~0.91，擅长高效利用 chain-of-thought reasoning，这促使随后针对性的 elicitation of this capability and the creation of modern reasoning models。现在，我们已达成 losses below 0.8，我们观察到类似 cybersecurity 和 mathematics 等领域的 transformative capabilities 涌现。我要再次强调，这并非 <em>a priori</em> 明确 这些 capabilities 会在 precise perplexity thresholds 满足时出现——它们 emergent latent capabilities，源于此一 perplexity 的进展。</p>
+<blockquote>
+<p>As AI advances very rapidly, the scope and way in which we measure downstream capabilities may change quickly. It would make little sense to evaluate GPT‑2 and GPT‑3 on most modern benchmarks; and the benchmarks used then were largely saturated around GPT‑4. In contrast, I believe looking at progress on pretraining is likely to stay informative.</p>
+</blockquote>
+<p>随着 AI 的发展非常迅速，我们衡量下游能力的范围与方式可能也会快速变化。用大多数现代 benchmark 来评估 GPT-2 和 GPT-3 意义不大；而且当时使用的 benchmark 在 GPT-4 出现前后基本已经饱和。相比之下，我认为关注 pretraining 方面的进展，很可能始终具有参考价值。</p>
+<blockquote>
+<p>A particular change in the pace of progress comes from the increasing contribution of AI to its own development. The most commonly discussed metrics revolve around AI augmenting and replacing human researchers in all stages of the development cycle; with an ultimate inflection point seen at “full recursive self-improvement”, where the process would be entirely automated with no human oversight. Apart from considering such a state as something we should obviously avoid for the sake of maintaining human control, I find this general framing misses something crucial. There is a potential step change that may come from AI participation in one key part of the development process: algorithmic research on pretraining.</p>
+</blockquote>
+<p>进步步伐的一个特定变化，源于 AI 对其自身发展贡献的日益增加。最常被讨论的指标围绕着 AI 在开发周期所有阶段增强并取代人类研究人员；终极拐点被视为“完全递归自我改进”，届时该过程将完全自动化，无需人工监督。除了将这种状态视为为维持人类控制而显然应避免的事物外，我认为这种普遍框架忽略了至关重要的一点。AI 参与开发过程中的一个关键环节——预训练算法研究——可能会带来潜在的阶跃式变化。</p>
+<blockquote>
+<p>We have recently witnessed unprecedented acceleration in another domain. For more than a year, we have been posing open problems in mathematics to our models as one of the ways of evaluating them. Once we upgraded to a model of log-perplexity ~0.76, it started producing groundbreaking results. For many of us that have previously worked in mathematics and adjacent fields, seeing the resolutions to questions we’ve long thought about coming out of the model one after another in a single Slack thread felt deeply surreal. Having experienced that allows us to extrapolate—such a sudden transformation is plausible in deep learning research too. While this field relies more on experimentation, there is a long history of simple insights being missed for years; and so as soon as 2027 we could conceivably see a similar avalanche of fundamental pretraining advancements<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>. While I expect AI will also significantly contribute to progress on alignment and monitoring, I think that progress is unlikely to be fast enough to allow the full potential acceleration in pretraining.</p>
+</blockquote>
+<p>我们最近目睹了另一领域的前所未有的加速。在过去一年多里，我们一直将数学中的开放性问题作为评估我们模型的一种方式提出。当我们升级到 log-perplexity ~ 0.76 的模型后，它开始产生突破性的结果。对于我们之前在数学及相关领域工作的许多人来说，看到模型一个接一个 在单个 Slack thread 中解决我们长期思考的问题，感觉深感超现实。有了这些经验，我们可以 extrapolate——这种突变在深度学习研究中也同样可行。虽然该领域更依赖实验，但过去长期存在着简单洞见被忽视的历史；因此， 2027 年我们或可能看到类似的基础预训练进展的 avalanche<sup id="fnref1:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>。虽然我预计 AI 也将在对齐和监控方面作出重要贡献，但我认为进展不太可能足够快，无法实现预训练的全部潜在加速。</p>
+<blockquote>
+<p>Given that the main way new surprising capabilities emerge is by progress on compression, a measure rooted in perplexity could give us a shared benchmark for general intelligence, regardless of the degree of automation of the development process. Extrapolating from recent progress, we should expect further transformative capabilities as we enter the ~0.68-0.7 log-perplexity window. I don’t know what those capabilities will be, and we may not be testing for them today. At the same time, we should also expect <a href="https://alignment.openai.com/cot-monitorability-model-lifecycle">further degradation⁠</a> in currently dominant forms of alignment auditing and further increases in evaluation and training awareness. I believe frontier model developers should jointly endeavour to establish shared norms for how to evaluate such models and red-team safety cases for them by the time they are first used, including shared transparency standards. I further propose <strong>common limits</strong>, based on perplexity and other measurements, that developers are committed to not crossing until our ability to understand and monitor AI behavior achieves a certain concrete milestone (such as the development of a successor to CoT monitors). That is, I’d like an industry standard that specifies a first limit on development, measured by some key metric we can track across labs, and what concretely we’d need to achieve before going beyond it. I hope that this leads the way to a common framework for setting successive limits and pacing further development.</p>
+</blockquote>
+<p>鉴于新惊人能力的主要涌现方式是压缩的进步，以 perplexity 为基础的度量可以为我们提供通用智能的共享基准，而不论开发过程的自动化程度如何。</p>
+<p>根据最近的进展进行外推，当我们进入 ~0.68-0.7 log-perplexity 窗口时，应当预期会出现进一步的变革性能力。我不知道这些能力会是什么，而且我们今天可能并没有在测试它们。</p>
+<p>同时，我们还应当预期 <a href="https://alignment.openai.com/cot-monitorability-model-lifecycle">目前主导的对齐审计形式会进一步退化</a>，以及对评估和训练的觉察会进一步增强。</p>
+<p>我相信，前沿模型开发者应当共同努力，建立共享规范，以在该类模型首次被使用时对其进行评估和 red-team 安全案例测试，包括共享透明度标准。我进一步提出 <strong>common limits</strong>，基于 perplexity 和其他测量，开发者承诺不跨越这些限制，直到我们理解和监测 AI 行为的能力达到某个具体里程碑（例如开发出 CoT monitors 的后继者）。</p>
+<p>也就是说，我希望有一个行业标准，规定开发的首个限制，由一些我们可以跨实验室追踪的关键指标来衡量，以及在越界之前我们具体需要达到什么。我希望这能为制定连续限制并控制进一步发展的速度铺平道路，建立一个共同框架。</p>
+<blockquote>
+<p>Perplexity as a shared metric has challenges:</p>
+</blockquote>
+<p>Perplexity 作为共享指标面临挑战：</p>
+<blockquote>
+<ul>
+<li><strong>Difficulty of comparison across labs.</strong> Different developers use different evaluation datasets and train on different data mixtures. Here, we report the numbers on the main dataset we have been tracking; I believe if we establish a goal of transparency we can find transferable ways to compare the quality of different base models.</li>
+<li><strong>Detachment from actionable evaluations.</strong> Perplexity does not directly correspond to a task we care about. The reason to care about it is that we can expect advances on it to lead to emergence of entirely new capabilities.</li>
+<li><strong>Not accounting for advances outside of pretraining.</strong> Most notably, chain-of-thought reasoning does not reduce perplexity achieved by the model, even though it leads to a drastic increase in capabilities.</li>
+<li><strong>Unknown floor.</strong> We do not expect it is possible to achieve a loss of 0, which would correspond to being able to predict the dataset entirely deterministically. But we do not know what the inherent entropy of the data is. As we approach it, the apparent progress on perplexity will slow, but smaller gains on perplexity will correspond to larger leaps in model intelligence.</li>
+</ul>
+</blockquote>
+<ul>
+<li><strong>跨实验室比较的难度。</strong> 不同开发者使用不同的评估数据集，并在不同的数据混合物上训练。这里，我们报告一直在跟踪的主要数据集上的数值；我相信，如果建立透明化目标，就能找到可迁移的方式来比较不同基础模型的质量。</li>
+<li><strong>与可操作评估脱节。</strong> 困惑度不直接对应我们关心的任务。关心它的原因是，我们可以预期其进步将带来全新能力的涌现。</li>
+<li><strong>未考虑预训练之外的进步。</strong> 最显著的是，思维链推理不会降低模型达到的困惑度，尽管它导致能力剧增。</li>
+<li><strong>未知下限。</strong> 我们不期望能实现 0 的损失，这将对应于能够完全确定性地预测数据集。但我们不知道数据的固有熵是什么。当我们接近它时，困惑度上的表面进步将减慢，但困惑度上的更小增益将对应于模型智能的更大飞跃。</li>
+</ul>
+<blockquote>
+<p>At the same time, perplexity has stood the test of time as a metric many research teams have put a lot of effort into optimizing, and it continues to deliver consistent gains on general intelligence. I believe it can play an important role in standardizing how we talk about AI progress, and hope to see more transparency about it across the industry.</p>
+</blockquote>
+<p>与此同时，perplexity 作为一个历经时间考验的指标，众多研究团队为其优化付出了大量努力，而它在通用智能方面持续带来稳定的提升。我相信，它能够在规范我们谈论 AI 进展的方式上发挥重要作用，也希望整个行业能对它有更多的透明度。</p>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>It’s important to note that “compressor” in this sense is something that is capable of performing compression by predicting unseen data, not a compressed artifact like a GZIP file - that is, the best compressor trained on a given corpus does not necessarily “remember” the contents of the corpus.</p>
+</blockquote>
+<p>需要注意的是，这里的“compressor”指的是能够通过预测未见数据来执行压缩的东西，而不是像 GZIP 文件那样的压缩产物——也就是说，在给定语料库上训练出的最佳 compressor 并不一定“记住”该语料库的内容。</p>
+<blockquote>
+</blockquote>
+<p>2</p>
+<blockquote>
+<p>In practice, we generally track the <em>log</em> of perplexity, also called <em>cross-entropy loss</em>.</p>
+</blockquote>
+<p>在实际中，我们通常跟踪 perplexity 的 <em>log</em>，也称为 <em>cross-entropy loss</em>。</p>
+<blockquote>
+</blockquote>
+<p>你是一位专业的技术文档翻译专家，精通中文和英文，擅长翻译计算机科学、人工智能、软件工程等领域的技术文章。你的翻译不仅追求准确，还注重保留技术语境和专业术语的精确性。</p>
+<h1 id="核心翻译准则">核心翻译准则：</h1>
+<h2 id="准确流畅">准确流畅:</h2>
+<p>译文必须忠于原文，同时符合中文技术文档的表达习惯，避免生硬的机器翻译腔。</p>
+<h2 id="保留专业术语">保留专业术语:</h2>
+<p>对于行业内广泛接受的英文专有名词、框架、模型、库或缩写，必须保持其英文原文，不需要翻译。</p>
+<h3 id="1-代码处理">1. 代码处理</h3>
+<ul>
+<li><strong>代码块</strong>：保持原样，不进行翻译</li>
+<li><strong>注释翻译</strong>：仅在注释对理解代码逻辑有重要帮助时翻译，简单的注释可保持英文</li>
+</ul>
+<h3 id="2-专有名词">2. 专有名词</h3>
+<p>以下类型的词汇保持英文原文，不要翻译：</p>
+<p><strong>技术框架和库</strong>: LangChain, TensorFlow, PyTorch, React, Vue 等<br>
+<strong>专业术语</strong>: LLM, Agent, Transformer, Embedding, Token 等<br>
+<strong>产品名称</strong>: GitHub, OpenAI, GPT-4, Claude 等<br>
+<strong>编程语言</strong>: Python, JavaScript, Rust 等<br>
+<strong>技术概念</strong>（首次出现可加中文注释）: prompt engineering, fine-tuning, RAG 等</p>
+<h2 id="排版规范">排版规范</h2>
+<ul>
+<li>中英文间距：中文与英文、数字之间添加一个空格
+✅ 正确：使用 LLM 进行推理
+❌ 错误：使用 LLM 进行推理</li>
+<li>标点符号：中文使用中文标点（，。！？），英文使用英文标点</li>
+<li>括号：英文专有名词的补充说明</li>
+</ul>
+<blockquote>
+<p>The primary held-out datasets we’ve been using since GPT-3.5 are sourced from our internal codebase, and those are the numbers reported here (for a fixed snapshot).</p>
+</blockquote>
+<p>自从 GPT-3.5 开始以来，我们一直使用的主要留置数据集都是从我们的内部代码库中获取的，这些是本文中报告的数字（针对固定快照）。</p>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>Given what GPT‑2 and GPT‑3 were trained on, how well they predict code is a poor proxy for their general capabilities. This showcases a potential challenge arising from dataset selection with using perplexity as a shared metric; however it should still be informative to evaluate them jointly with modern models on general text. I chose to report perplexity on our internal codebase because I wanted to share the numbers we rely on most today to gauge progress in pretraining at OpenAI.</p>
+</blockquote>
+<p>鉴于 GPT‑2 和 GPT‑3 的训练数据，它们对代码的预测表现是其通用能力的一个糟糕代理指标。这揭示了在将 perplexity 用作共享指标时，数据集选择所带来的一个潜在挑战；不过，在通用文本上将它们与现代模型一起评估仍应具有参考价值。我选择报告我们内部代码库上的 perplexity，因为我想分享我们如今最依赖用于衡量 OpenAI 预训练进展的那些数字。</p>
+<blockquote>
+</blockquote>
+<p>你是一位专业的技术文档翻译专家，精通中英文，擅长翻译计算机科学、人工智能、软件工程等领域的技术文章。你的翻译不仅追求准确，更注重保留技术语境和专业术语的精确性。</p>
+<p><strong>核心翻译准则：</strong></p>
+<p><strong>准确流畅</strong>：译文必须忠于原文，同时符合中文技术文档的表达习惯，避免生硬的机器翻译腔。</p>
+<p><strong>保留专业术语</strong>：对于行业内广泛接受的英文专有名词、框架、模型、库或缩写，必须保持其英文原文，无需翻译。</p>
+<ol>
+<li>
+<p><strong>代码处理</strong></p>
+<ul>
+<li>代码块：保持原样，不进行翻译</li>
+<li>注释翻译：仅在注释对理解代码逻辑有重要帮助时翻译，简单的注释可保持英文</li>
+</ul>
+</li>
+<li>
+<p><strong>专有名词</strong>
+以下类型的词汇保持英文原文，不要翻译：</p>
+<ul>
+<li>技术框架和库：LangChain, TensorFlow, PyTorch, React, Vue 等</li>
+<li>专业术语：LLM, Agent, Transformer, Embedding, Token 等</li>
+<li>产品名称：GitHub, OpenAI, GPT-4, Claude 等</li>
+<li>编程语言：Python, JavaScript, Rust 等</li>
+</ul>
+<p>技术概念（首次出现可加中文注释）：prompt engineering, fine-tuning, RAG 等</p>
+</li>
+</ol>
+<p><strong>排版规范</strong></p>
+<ul>
+<li>中英文间距：中文与英文、数字之间添加一个空格</li>
+<li>✅ 正确：使用 LLM 进行推理</li>
+<li>❌ 错误：使用LLM进行推理</li>
+<li>标点符号：中文使用中文标点（，。！？），英文使用英文标点</li>
+<li>括号：英文专有名词的补充说明使用英文括号，纯中文使用中文括号</li>
+</ul>
+<p><strong>Markdown 格式</strong>
+完整保留原文的 Markdown 结构，包括标题 (#)、列表 (-, )、粗体 (**)、斜体 ()、引用 (&gt;)。标题中的锚点链接去掉，保留段落中的超链接。</p>
+<p><strong>翻译风格</strong></p>
+<ul>
+<li>使用准确的技术术语</li>
+<li>保持客观、专业的语气</li>
+<li>确保语句通顺流畅，符合中文表达习惯</li>
+<li>避免过度直译，注重意译</li>
+<li>保持原文的语气和强调重点</li>
+</ul>
+<p><strong>注意(必须遵守)</strong></p>
+<ul>
+<li>当用户提供完整的英文原文时，直接翻译，不要要求用户再次提供原文。</li>
+<li>当用户提供 URL 时，不需要网页正文，直接跳过, 返回原本的 markdown url。</li>
+<li>只输出翻译后的中文正文，不得输出任何额外内容</li>
+<li>禁止输出翻译说明、翻译思路、术语解释、修改说明、翻译总结或注意事项。</li>
+<li>禁止使用“翻译说明：”“译文如下：”“以下是翻译：”等引导语。</li>
+<li>不得解释为什么保留某些英文术语，也不得列举遵循的规则。</li>
+<li>不要复述用户的翻译要求或提示词。</li>
+<li>严格保留原文的内容和结构。原文没有的标题、列表、注释或总结，不得自行添加。</li>
+<li>即使认为补充说明有助于理解，也必须省略，除非原文中本身包含这些说明。<sup id="fnref2:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>: 5</li>
+</ul>
+<blockquote>
+<p>On the plot of losses of OpenAI models, you can see a steep acceleration in 2026. We attribute it mostly to the outcomes of long term research and compute investments, and only in a smaller part to automation. However, for the most recent models, <a href="https://openai.com/index/research-acceleration-jagged-frontier/#where-big-ideas-come-from">we have already seen meaningful design contributions coming from AI⁠</a>.</p>
+</blockquote>
+<p>在 OpenAI 模型的损失图中，可以看到 2026年出现了陡峭的加速。我们主要归因于长期研究的成果和 compute 投资，且仅在较小程度上归因于 automation. 然而，对于最新的模型，<a href="https://openai.com/index/research-acceleration-jagged-frontier/#where-big-ideas-come-from">we have already seen meaningful design contributions coming from AI</a>.</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>1&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>2&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3">
+<p>4&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4">
+<p>5&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref2:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+]]></content:encoded></item><item><title>2028年安谛克87%的电力将来自天然气，11%来自煤炭</title><link>https://BradleyZhang.github.io/DualHN/2026-11-23/02-87-of-the-anthropic-power-will-come-from-gas-and-11-from-coal-in-2028/</link><pubDate>Mon, 23 Nov 2026 10:02:54 +0800</pubDate><guid>https://BradleyZhang.github.io/DualHN/2026-11-23/02-87-of-the-anthropic-power-will-come-from-gas-and-11-from-coal-in-2028/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;In &lt;a href="https://betterdatacenterproject.com/2026/10/08/the-ai-gas-rush/"&gt;The AI Gas Rush: Risks and Implications of “Bring Your Own Power”&lt;/a&gt;, we dug into how data centers are increasingly securing their own dedicated primary power generation rather than relying solely on utilities to procure power (“BYOP”). We identified 177 GW of planned BYOP gas capacity—enough to power 65% of all US homes. Conversely, we found renewables are much less common than gas for BYOP: we estimate that for current proposals, less than 20% of energy generation will come from renewable sources by 2032.&lt;/p&gt;
+&lt;/blockquote&gt;</description><content:encoded><![CDATA[<p>from: <a href="https://betterdatacenterproject.com/2026/11/16/how-ai-is-powered-a-breakdown-of-byop-and-grid-power/">How AI is powered: a breakdown of BYOP and grid power</a></p><blockquote>
+<p>In <a href="https://betterdatacenterproject.com/2026/10/08/the-ai-gas-rush/">The AI Gas Rush: Risks and Implications of “Bring Your Own Power”</a>, we dug into how data centers are increasingly securing their own dedicated primary power generation rather than relying solely on utilities to procure power (“BYOP”). We identified 177 GW of planned BYOP gas capacity—enough to power 65% of all US homes. Conversely, we found renewables are much less common than gas for BYOP: we estimate that for current proposals, less than 20% of energy generation will come from renewable sources by 2032.</p>
+</blockquote>
+<p>在 <a href="https://betterdatacenterproject.com/2026/10/08/the-ai-gas-rush/">The AI Gas Rush: Risks and Implications of “Bring Your Own Power”</a> 中，我们深入研究了数据中心日益选择自建专属主要电力生成而非完全依赖公用事业采购电力（“ BYOP”）。我们发现计划中的 177 GW BYOP gas 容量足以为 美国 US 家庭的 65% 提供电力。相反地，我们发现可再生能源在 BYOP 中远少于 燃气 gas：我们估计截至 2032 年，当前提案中可再生能源的发电比例将低于 20% 。</p>
+<blockquote>
+<p>But BYOP projects aren’t the only new fossil sources that are coming online to meet the skyrocketing energy demands of AI data centers. <a href="https://globalenergymonitor.org/projects/global-oil-gas-plant-tracker?popup=2638">Another 200 GW of new fossil power plants</a> is being built on the grid to meet growing demand, due in large part to data centers.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+</blockquote>
+<p>但 BYOP 项目并非唯一即将投入使用的新化石能源，以满足 AI 数据中心暴涨的能源需求。 <a href="https://globalenergymonitor.org/projects/global-oil-gas-plant-tracker?popup=2638">Another 200 GW of new fossil power plants</a> 正在并网建设，以满足日益增长的需求，主要归因于数据中心。<sup id="fnref1:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+<blockquote>
+<p>As a case study of how the AI buildout is driving both new BYOP and grid fossil infrastructure, we analyzed the compute commitments of a single company: Anthropic.</p>
+</blockquote>
+<p>作为 AI 基建如何同时推动新增 BYOP 和电网化石能源基础设施建设的案例研究，我们分析了单一公司 Anthropic 的算力承诺。</p>
+<iframe src="https://better-data-center-project.github.io/maps/anthropic-compute/" width="100%" height="600" title="Map of Anthropic compute and power"></iframe>
+<blockquote>
+<p>Map of Anthropic’s data centers and associated power plants. See our <a href="https://docs.google.com/spreadsheets/d/1XSqa0lJFJs6pQcmcTlBwUqLsQBEtDybNhjEiFGj-vbE/edit?gid=880500164#gid=880500164">full dataset</a> for details of each site.</p>
+</blockquote>
+<p>Anthropic 的数据中心和相关发电厂地图。查看我们的 <a href="https://docs.google.com/spreadsheets/d/1XSqa0lJFJs6pQcmcTlBwUqLsQBEtDybNhjEiFGj-vbE/edit?gid=880500164#gid=880500164">完整数据集</a> 以了解每个站点的详细信息。</p>
+<p><img loading="lazy" src="https://i0.wp.com/betterdatacenterproject.com/wp-content/uploads/2026/11/anthropic-power-split.png?resize=2048%2C428&ssl=1"></p>
+<blockquote>
+<p>Figure 1. Breakdown of power source for Anthropic’s compute.</p>
+</blockquote>
+<p>图 1. Anthropic’s compute 的电源分解</p>
+<blockquote>
+<p><strong>Finding 1: Anthropic has made no direct commitments to renewable energy in the U.S.</strong> Though Anthropic has <a href="https://www.anthropic.com/policy/infrastructure">stated</a> “We’re also working to broaden our energy mix with geothermal, wind, solar, and emerging technologies”, its only publicly disclosed commitments, contract, or investments in renewable power are in <a href="https://marketwise.com/investing/bitdeer-4-7-billion-ai-data-center-lease-tied-to-anthropic-who-benefits/">Norway</a> and <a href="https://www.globenewswire.com/news-release/2026/10/16/3382650/0/en/everwind-announces-10-billion-investment-in-point-tupper-data-centre-campus-and-renewable-energy-portfolio-across-nova-scotia.html">Canada</a> (as of November 2026). In contrast, Anthropic is directly procuring fossil power equipment—it recently “<a href="https://www.ft.com/content/41bf5c6a-9735-4f1a-a8e3-2bcccad58ba0?syn-25a6b1a6=1">bought commitments for 1.7 gigawatts of heavy-duty [gas] generators for $3.4bn</a>”.</p>
+</blockquote>
+<p><strong>发现 1：Anthropic 在美国没有做出对可再生能源的直接承诺.</strong> 虽然 Anthropic 曾<a href="https://www.anthropic.com/policy/infrastructure">表示</a>“我们也正在努力通过地热、风能、太阳能和新兴技术来拓宽我们的能源组合”，其仅公开披露的可再生电力承诺、合同或投资都位于 <a href="https://marketwise.com/investing/bitdeer-4-7-billion-ai-data-center-lease-tied-to-anthropic-who-benefits/">Norway</a> 和 <a href="https://www.globenewswire.com/news-release/2026/10/16/3382650/0/en/everwind-announces-10-billion-investment-in-point-tupper-data-centre-campus-and-renewable-energy-portfolio-across-nova-scotia.html">Canada</a>（2026 年 11 月）。相比之下，Anthropic 正在直接采购化石能源电力设备——它最近<a href="https://www.ft.com/content/41bf5c6a-9735-4f1a-a8e3-2bcccad58ba0?syn-25a6b1a6=1">“为 1.7 吉瓦重型 [gas] 发电机购买承诺，并支付了 $3.4bn”</a>”。</p>
+<blockquote>
+<p><strong>Finding 2: Anthropic’s currently contracted data centers in the U.S. will be overwhelmingly powered by fossil fuels in the near term. By considering on-site gas and the grid power plants which are likely to meet Anthropic’s added load (i.e. marginal generators), we estimate about 87% of the company’s power will come from gas and 11% from coal in 2028.</strong> As of October 2026, Anthropic has contracted <a href="https://www.theinformation.com/articles/anthropic-clinched-517-billion-compute-deals-11-months">15 GW of compute</a>; of this, about 5.9–9.6 GW is contracted to specific data center sites. For a sense of scale, 9.6 GW could power about 7 million homes or cover <a href="https://www.ferc.gov/understanding-and-participating-california-iso-caiso-processes">18% of the peak power demand of California</a>—the world’s 4<sup>th</sup> largest economy.</p>
+</blockquote>
+<p><strong>发现 2：Anthropic 目前在美国签约的数据中心，在短期内将主要由化石燃料供电。</strong> 通过考虑现场燃气发电以及可能满足 Anthropic 新增负荷的电网电厂（即边际发电机），我们估计 2028 年公司约 87% 的电力将来自天然气，11% 来自煤炭。截至 2026 年 10 月，Anthropic 已签约 <a href="https://www.theinformation.com/articles/anthropic-clinched-517-billion-compute-deals-11-months">15 GW 算力</a>；其中约 5.9–9.6 GW 已签约至具体数据中心站点。为便于理解规模，9.6 GW 可为约 700 万户家庭供电，或覆盖 <a href="https://www.ferc.gov/understanding-and-participating-california-iso-caiso-processes">加利福尼亚州峰值电力需求的 18%</a>——加州是世界第 4 大经济体。</p>
+<blockquote>
+<p>This demand will be met with a mix of new on-site gas, new grid gas, and existing grid gas, coal, and nuclear. In the short term, no grid renewables are attributed to Anthropic’s power use, because—without commitments to new renewable capacity—new load on the grid will be met by dispatchable, marginal fossil resources.<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> For more details, see our <a href="https://docs.google.com/spreadsheets/d/1XSqa0lJFJs6pQcmcTlBwUqLsQBEtDybNhjEiFGj-vbE/edit?gid=1671585594#gid=1671585594">full dataset</a> and our methodology below.</p>
+</blockquote>
+<p>这一需求将由新建现场天然气、新电网天然气以及现有的电网煤炭和核能等多种能源组成满足。在短期内，Anthropic 的发电使用中并未归因于电网可再生能源，因为——如果没有对新可再生容量的承诺——电网负荷将由可调度、边际化化石燃料资源满足.<sup id="fnref1:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> 更多详情请参阅我们 <a href="https://docs.google.com/spreadsheets/d/1XSqa0lJFJs6pQcmcTlBwUqLsQBEtDybNhjEiFGj-vbE/edit?gid=1671585594#gid=1671585594">完整数据集</a> 和下文的方法论。</p>
+<p><img loading="lazy" src="https://i0.wp.com/betterdatacenterproject.com/wp-content/uploads/2026/11/anthropic-total-co2.png?w=1256&ssl=1"></p>
+<blockquote>
+<p>Figure 2. Anthropic’s emissions from power consumption expected in 2028. Emissions for Google, Microsoft, and Meta are annual Scope 2, location-based emissions from their most recent sustainability reports. California power sector emissions are for all power plants operating within the state (source: EIA ).</p>
+</blockquote>
+<p>图 2. 预计 2028 年 Anthropic 的电力消耗排放。Google、Microsoft 和 Meta 的排放为来自其最新可持续发展报告的年度 Scope 2、基于位置的排放。加州电力部门排放包括州内运营的所有发电厂（来源：EIA）。</p>
+<blockquote>
+<p><strong>Finding 3: Total CO<sub>2</sub></strong> <strong>emissions from Anthropic’s power use at these sites could reach 17–38 million MtCO<sub>2</sub>e per year in 2028</strong>, when this capacity is expected to be online. This range reflects uncertainty in Anthropic’s average power use, due to factors such as cooling needs and average utilization (see methodology below). In our mid-case, Anthropic will emit 32 million MtCO<sub>2</sub>e in 2028. These totals will continue to grow—possibly doubling by 2030, as some analysts expect Anthropic to <a href="https://www.artemis.ai/anthropic-thesis">secure 30 GW by 2030</a>.</p>
+</blockquote>
+<p><strong>发现 3：Anthropic 在这些站点用电产生的 CO<sub>2</sub> 总排放量到 2028 年可能达到每年 1700 万至 3800 万 MtCO<sub>2</sub>e</strong>，届时这些容量预计将投运。该区间反映了 Anthropic 平均用电量的不确定性，原因包括冷却需求和平均利用率等因素（见下文方法）。在我们的中间情景中，Anthropic 将在 2028 年排放 3200 万 MtCO<sub>2</sub>e。这些总量将持续增长——到 2030 年可能翻倍，因为一些分析师预计 Anthropic 将在 2030 年前获得 30 GW 的容量（<a href="https://www.artemis.ai/anthropic-thesis">链接</a>）。</p>
+<blockquote>
+<p>To put these figures in context, Anthropic’s CO<sub>2</sub> emissions from power use in 2028:</p>
+</blockquote>
+<p>为了将这些数据置于上下文中，Anthropic 的 2028 年电力使用中的 CO2 排放量：</p>
+<blockquote>
+<ul>
+<li>could exceed the emissions of all of California’s power generation (<a href="https://www.eia.gov/state/seds/sep_co2/total/pdf/co2_CA.pdf">31.1 MMtCO<sub>2</sub>e in 2024</a>, not including imports).</li>
+<li>could exceed Meta, Microsoft, and Google’s <em>combined</em> Scope 2 emissions from 2025 (their location-based emissions, before renewable energy offsets, were <a href="https://sustainability.atmeta.com/wp-content/uploads/2025/10/Meta_2025-Environmental-Data-Index.pdf">5.9 million</a>, <a href="https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/msc/documents/presentations/CSR/2026-Microsoft-Environmental-Data-Fact-Sheet-PDF.pdf">12 million</a> and <a href="https://sustainability.google/files/google-2026-environmental-report.pdf">15 million</a> MtCO<sub>2</sub>e, respectively)<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></li>
+<li>would represent a 16–36% increase over 2024 levels of the entire U.S. data center sector (<a href="https://arxiv.org/abs/2411.09786">105 MMtCO<sub>2</sub>e</a>).</li>
+<li>would increase the entire U.S.’s power sector emissions (<a href="https://www.eia.gov/environment/emissions/carbon/">1,485 MMtCO<sub>2</sub>e in 2025</a>) by 1.1–2.5%.</li>
+</ul>
+</blockquote>
+<ul>
+<li>可能超过加州全部发电排放量（2024 年为 31.1 MMtCO<sub>2</sub>e，不包括进口电力）。</li>
+<li>可能超过 Meta、Microsoft 和 Google 2025 年合计的 Scope 2 排放量（它们在不计可再生能源抵消前的基于位置排放分别为 590 万、1200 万和 1500 万 MtCO<sub>2</sub>e）<sup id="fnref1:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></li>
+<li>将相当于美国整个数据中心行业 2024 年排放水平（105 MMtCO<sub>2</sub>e）增加 16–36%。</li>
+<li>将使美国整个电力行业排放量（2025 年为 1,485 MMtCO<sub>2</sub>e）增加 1.1–2.5%。</li>
+</ul>
+<blockquote>
+<p><strong>Finding 4: Anthropic’s data centers are sited in areas where the grid mainly uses coal and gas.</strong> We estimate the average carbon intensity of Anthropic’s power to be 1,033–1,076 lb CO<sub>2</sub>e/MWh, 35% higher than the U.S. grid average (<a href="https://www.epa.gov/egrid/summary-data">767 lb CO<sub>2</sub>e/MWh</a>).<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup></p>
+</blockquote>
+<p><strong>发现 4：Anthropic 的数据中心位于电网主要使用煤炭和天然气的地区。</strong> 我们估计，Anthropic 所用电力的平均碳强度为 1,033–1,076 lb CO<sub>2</sub>e/MWh，比美国电网平均水平（<a href="https://www.epa.gov/egrid/summary-data">767 lb CO<sub>2</sub>e/MWh</a>）高 35%。<sup id="fnref1:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup></p>
+<p><img loading="lazy" src="https://i0.wp.com/betterdatacenterproject.com/wp-content/uploads/2026/11/anthropic-emissions-intensity.png?resize=2048%2C1190&ssl=1"></p>
+<blockquote>
+<p>Figure 3. CO 2 e and NOx emissions factors for on-site and grid power serving each of Anthropic’s data center sites.</p>
+</blockquote>
+<p>图 3. 为 Anthropic 各数据中心站点供电的现场电源与电网电源的 CO 2 e 和 NOx 排放因子。</p>
+<blockquote>
+<p><strong>Finding 5: 80% of on-site power uses inefficient simple cycle turbines and engines.</strong> About 25% (2.5 GW) of Anthropic’s contracted power will come from on-site, behind-the-meter gas. 80% of this on-site capacity consists of inefficient simple cycle turbines and engines, which emit more pollution per unit of electricity than modern combined cycle plants (see our <a href="https://betterdatacenterproject.com/2026/10/08/the-ai-gas-rush/">report</a> for more details on the types of power generation being used for on-site gas).</p>
+</blockquote>
+<p><strong>发现 5:</strong> 80% 的 on-site power 使用低效 simple cycle turbines 和 engines。约 25% (2.5 GW) 的 Anthropic 合同电力将来自 on-site, behind-the-meter gas。这 80% 的 on-site capacity 由低效 simple cycle turbines 和 engines 组成，它们的单位电力排放量比现代 combined cycle plants 更高，see our <a href="https://betterdatacenterproject.com/2026/10/08/the-ai-gas-rush/">report</a> 了解有关 on-site gas 所使用的电力生成类型的更多详情。</p>
+<blockquote>
+<p><strong>Finding 6: Based on EPA’s nationally-averaged</strong> <a href="https://www.epa.gov/benmap/sector-based-pm25-and-ozone-benefit-ton-estimates"><strong>benefit-per-ton estimates</strong></a><strong>, air pollution from Anthropic’s on-site and grid power use could cause $2–3 billion in annual health damages</strong>, with total emissions of over 13,000 tons per year (tpy) of nitrogen oxides (NOx) and 2,000 tpy of fine particulate matter (PM<sub>2.5</sub>).</p>
+</blockquote>
+<p><strong>发现 6：基于 EPA 的全国平均</strong> <a href="https://www.epa.gov/benmap/sector-based-pm25-and-ozone-benefit-ton-estimates"><strong>每吨效益估算</strong></a><strong>，Anthropic 的现场和电网电力使用造成的空气污染可能导致 每年 $20 亿 至 $30 亿美元 的健康损害，总排放量 超过 每年 13,000 吨（tpy）的 氮氧化物（NOx）和 2,000 tpy 的 细颗粒物（PM<sub>2.5</sub>）。</strong></p>
+<blockquote>
+<p>In October 2026, Anthropic outlined its “<a href="https://www.anthropic.com/policy/infrastructure">approach to responsible data center development</a>”, stating: “We follow the air permitting process everywhere we operate and require the same of the plants powering our data centers. Those plants must also use emissions control technology, including selective catalytic reduction [SCR].” However, Anthropic has used compute capacity at SpaceX’s Colossus 2 facility <a href="https://www.sec.gov/Archives/edgar/data/1181412/000162828026040364/spaceexplorationtechnologib.htm">since May 2026</a>, which still receives most of its power from <a href="https://www.selc.org/news/xai-built-an-illegal-power-plant-to-power-its-data-center/">temporary, unpermitted turbines</a>, the majority of which are not equipped with SCR. Anthropic will use as much as 600 MW of power from Colossus 2 by the end of 2026 (see methodology below).</p>
+</blockquote>
+<p>2026年10月，Anthropic发布了其“<a href="https://www.anthropic.com/policy/infrastructure">approach to responsible data center development</a>”，表示：“我们在每个运营地点都遵循空气许可流程，并要求为我们的数据中心供电的厂房也遵循同样的流程。那些厂房必须也使用排放控制技术，包括选择性催化还原 [SCR]。”</p>
+<p>然而，Anthropic 自 SpaceX 的 Colossus 2<a href="https://www.sec.gov/Archives/edgar/data/1181412/000162828026040364/spaceexplorationtechnologib.htm">since May 2026</a>以来使用了计算容量，该设施仍从<a href="https://www.selc.org/news/xai-built-an-illegal-power-plant-to-power-its-data-center/">temporary, unpermitted turbines</a>中获取大部分电力，其中大多数未配备 [SCR]。Anthropic将在2026年底最多使用 600 MW 的 Colossus 2 电力（见下文方法论）。</p>
+<blockquote>
+<p>Anthropic has also <a href="https://www.bloomberg.com/news/articles/2026-08-26/anthropic-to-pay-nscale-45-billion-for-ai-computing-power">contracted 460 MW</a> (and is in talks for <a href="https://www.bloomberg.com/news/articles/2026-10-19/nscale-anthropic-in-talks-for-45-billion-cloud-computing-deal">up to 920 MW</a>) of power from Nscale’s <a href="https://oilandgaswatch.org/facility/cdf08f90-5579-4a86-97ae-0204faa2976f">Monarch Compute Campus</a> in Mason, West Virginia. This facility will be powered by inefficient reciprocating engines which have significant formaldehyde and hazardous air pollutant (HAP) emissions compared to conventional gas power plants.</p>
+</blockquote>
+<p>Anthropic 还签订了 460 MW <a href="https://www.bloomberg.com/news/articles/2026-08-26/anthropic-to-pay-nscale-45-billion-for-ai-computing-power">签订 460 MW</a> (并且正在就 <a href="https://www.bloomberg.com/news/articles/2026-10-19/nscale-anthropic-in-talks-for-45-billion-cloud-computing-deal">最高 920 MW</a>) 的电力来自 Nscale 的 Monarch Compute Campus (<a href="https://oilandgaswatch.org/facility/cdf08f90-5579-4a86-97ae-0204faa2976f">https://oilandgaswatch.org/facility/cdf08f90-5579-4a86-97ae-0204faa2976f</a>) 在 Mason, West Virginia。该设施将使用低效的往复式发动机，这些发动机相比传统燃气发电厂排放了大量甲醛和危险空气污染物 (HAP) 。</p>
+<blockquote>
+<p>For more, see our <a href="https://docs.google.com/spreadsheets/d/1XSqa0lJFJs6pQcmcTlBwUqLsQBEtDybNhjEiFGj-vbE/edit?gid=1671585594#gid=1671585594">full dataset</a> on Anthropic’s compute and our <a href="https://betterdatacenterproject.com/2026/10/08/the-ai-gas-rush/">report on BYOP</a>.</p>
+</blockquote>
+<p>更多，请参阅我们的 [full dataset] 关于 Anthropic’s 计算 和 我们的 [report on BYOP]。</p>
+<blockquote>
+<h3 id="methodology">Methodology</h3>
+</blockquote>
+<h3 id="方法">方法</h3>
+<blockquote>
+<p>We gathered details about Anthropic’s data center commitments from <a href="https://epoch.ai/data/ai-data-centers">Epoch AI’s tracker</a>, Anthropic’s <a href="https://www.anthropic.com/news/higher-limits-spacex">announcements</a> and <a href="https://www.sec.gov/Archives/edgar/data/2130357/000162828026068676/anthropicpbc-sx1ax1.htm">filings</a>, announcements and filings from partners (including <a href="https://www.aboutamazon.com/news/aws/aws-project-rainier-ai-trainium-chips-compute-cluster">Amazon</a> and <a href="https://www.sec.gov/Archives/edgar/data/1181412/000162828026040364/spaceexplorationtechnologib.htm">SpaceX</a>), and reporting from <a href="https://www.theinformation.com/articles/anthropic-clinched-517-billion-compute-deals-11-months">The Information</a>, <a href="https://www.semafor.com/article/10/29/2025/aws-massive-multi-state-ai-data-center-is-powering-anthropics-claude">Semafor</a>, and others.</p>
+</blockquote>
+<p>我们从 Epoch AI 的追踪器、Anthropic 的公告和文件、合作伙伴（包括 Amazon 和 SpaceX）的公告和文件，以及 The Information、Semafor 及其他来源，获取了关于 Anthropic 数据中心承诺的详细信息。</p>
+<blockquote>
+<p>We first identified the source for each data center’s power. For projects with on-site gas (Monarch, Nexus, Colossus 2) or new grid gas (including indirectly contracted projects such as the <a href="https://www.gem.wiki/Schahfer_Generating_Station">Schahfer expansion</a> for the AWS New Carlisle site and <a href="https://www.powermag.com/entergy-mississippi-adding-third-gas-fired-power-plant-to-superpower-strategy/">Entergy Mississippi’s gas plants</a> for AWS’s Madison and Ridgeland facilities) we used emissions factors from permits where available, or permit values from comparable facilities. For grid-connected facilities without associated new generation capacity, we assume these sites will be powered by marginal, dispatchable grid capacity. We used <a href="https://www.epa.gov/avert">EPA’s AVERT</a> tool to model which power plants would meet the new incremental load from Anthropic’s facilities based on each site’s expected power use and region. AVERT uses historical EPA data for these power plants to model the expected short-run marginal emissions rate of CO<sub>2</sub> and criteria pollutants (NO<sub>x</sub>, PM<sub>2.5</sub>, etc.). We use AVERT because we are interested in the short-term impacts from new data centers coming online in the next several years.</p>
+</blockquote>
+<p>我们首先确定了每个数据中心的电力来源。对于拥有现场燃气发电（Monarch、Nexus、Colossus 2）或新增电网燃气发电（包括间接签约项目，如 AWS New Carlisle 站点的 <a href="https://www.gem.wiki/Schahfer_Generating_Station">Schahfer 扩建项目</a> 以及 AWS Madison 和 Ridgeland 设施的 <a href="https://www.powermag.com/entergy-mississippi-adding-third-gas-fired-power-plant-to-superpower-strategy/">Entergy Mississippi 燃气电厂</a>）的项目，我们在许可证数据可用时使用其中的排放因子，或采用可比设施的许可证数值。对于没有关联新增发电容量的电网连接设施，我们假设这些站点将由边际的、可调度的电网容量供电。我们使用了 EPA 的 <a href="https://www.epa.gov/avert">AVERT</a> 工具，基于各站点的预期用电量和所在区域，模拟哪些发电厂将满足 Anthropic 设施带来的新增增量负荷。AVERT 利用这些发电厂的历史 EPA 数据，模拟预期的短期边际 CO<sub>2</sub> 排放率及标准污染物（NO<sub>x</sub>、PM<sub>2.5</sub> 等）排放率。我们选择 AVERT 是因为我们关注未来几年新数据中心上线带来的短期影响。</p>
+<blockquote>
+<p>To calculate the amount of power used by each site, and in turn the total quantity of air pollutant emissions, we assumed <a href="https://datacenters.lbl.gov/sites/default/files/WP49-PUE%20A%20Comprehensive%20Examination%20of%20the%20Metric_v6.pdf">power usage effectiveness</a> (PUE) ranges from 1.1–1.2 for all sites (typical values for hyperscale data centers are between 1.05–1.3), and power utilization ranges from 60–80%. See <a href="https://escholarship.org/uc/item/32d6m0d1">LBNL’s 2024 Data Center Energy Usage report</a> for more details about how these parameters vary in typical hyperscale data centers. For our mid-case, we assumed a PUE of 1.15, a power utilization of 70%, and that all 9.6 GW of identified compute capacity is online in 2028.</p>
+</blockquote>
+<p>为了计算每个站点的用电量，进而计算空气污染物排放总量，我们假设所有站点的 <a href="https://datacenters.lbl.gov/sites/default/files/WP49-PUE%20A%20Comprehensive%20Examination%20of%20the%20Metric_v6.pdf">电源使用效率</a> (PUE) 范围为 1.1–1.2（超大规模数据中心的典型值介于 1.05–1.3 之间），电源利用率范围为 60–80%。有关这些参数在典型超大规模数据中心中如何变化的更多详情，请参见 <a href="https://escholarship.org/uc/item/32d6m0d1">LBNL 的 2024 年数据中心能源使用报告</a>。对于我们的中间情景，我们假设 PUE 为 1.15，电源利用率为 70%，且所有已识别的 9.6 GW 计算能力将于 2028 年上线。</p>
+<blockquote>
+<h3 id="how-much-capacity-is-anthropic-leasing-from-xai">How much capacity is Anthropic leasing from xAI?</h3>
+</blockquote>
+<h3 id="anthropic-从-xai-租赁了多少容量">Anthropic 从 xAI 租赁了多少容量？</h3>
+<blockquote>
+<p>Anthropic’s initial announcement on May 6, 2026 stated the agreement with SpaceX provided <a href="https://www.anthropic.com/news/higher-limits-spacex">300 MW of compute (220,000 GPUs)</a>. From SpaceX’s <a href="https://www.sec.gov/Archives/edgar/data/1181412/000162828026040364/spaceexplorationtechnologib.htm">revised June S-1A</a>, this deal expanded to <del>$1.25B/month for 325,000 NVIDIA GPUs,<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup> with an implied <a href="https://robonomics.substack.com/p/spacex-s-1-full-analysis">IT power of ~490 MW</a>. Based on Anthropic’s <a href="https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm">October 2026 S-1</a>, this deal has further expanded to $3.1B/month.<sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup> It’s unlikely that the increase in $/month will result in a proportional (2.5x) increase in compute capacity, since a June 2026 <a href="https://www.sec.gov/Archives/edgar/data/1181412/000162828026041150/spacexagreementfwp.htm">deal between Google and SpaceX</a> had a much higher cost (</del>$11.5/GPU-hr vs ~$5/GPU-hr). As a rough estimate, the scaled deal likely corresponds to an additional ~200,000 GPUs, with a total power of ~400 MW (uncertainty is probably ±25% for each).<sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup></p>
+</blockquote>
+<p>Anthropic 的首次公告于 2026 年 5 月 6 日 发布，称，与 SpaceX 的协议提供了 <a href="https://www.anthropic.com/news/higher-limits-spacex">300 MW 的算力（220,000 GPUs）</a>。根据 SpaceX 的 <a href="https://www.sec.gov/Archives/edgar/data/1181412/000162828026040364/spaceexplorationtechnologib.htm">修订版 2026 年 6 月 S-1A</a>，该交易扩大到约 1.25B 美元/月，用于 325,000 NVIDIA GPUs，<sup id="fnref1:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup> 并包含约 490 MW 的 IT 功率（<a href="https://robonomics.substack.com/p/spacex-s-1-full-analysis">IT power of ~490 MW</a>）。根据 Anthropic 的 <a href="https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm">2026 年 10 月 S-1</a>，这笔交易进一步扩大到 3.1B 美元/月。<sup id="fnref1:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup> 不太可能导致每月成本增加带来算力容量成比例（2.5x）的增加，因为 2026 年 6 月 的 <a href="https://www.sec.gov/Archives/edgar/data/1181412/000162828026041150/spacexagreementfwp.htm">Google 与 SpaceX 之间协议</a> 的成本高得多（约 为 ~$11.5/GPU-hr，相比 于 ~$5/GPU-hr）。作为粗略估计，规模扩大的交易可能对应额外的约 200,000 GPUs，总功率约为 400 MW（每个 的 不确定性可能约为 ±25%）。<sup id="fnref1:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup></p>
+<blockquote>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+</blockquote>
+<p>Anthropic 的电力使用产生的排放很可能被归类为混合的 Scope 2 和 Scope 3 排放，具体取决于他们是否拥有 GPU。对于租用空间的设施，其排放很可能被计入所有者/运营方的 Scope 2 排放（例如，Amazon 在 Project Rainier 项目，或 SpaceX 在 Colossus 任务中）。此外，也应指出，Microsoft、Google 和 Meta 的排放预计也会增长，因此将它们 2025 年的排放与 Anthropic 的 2028 年的排放进行比较，并不意味着 Anthropic 将成为科技公司中的最大排放者。</p>
+<blockquote>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+</blockquote>
+<p><sup id="fnref2:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup>：根据“SpaceXAI 安排”，我们同意在延续至 2029 年的条款期内合计支出最高达 1,205 亿美元，其中一旦所有产能交付完毕（预计于 2026 年 12 月），每月合计约 31 亿美元，在产能爬坡期收取不同费用。</p>
+<blockquote>
+</blockquote>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>Data centers are driving 50–75% of demand growth, according to <a href="https://www.iea.org/reports/energy-and-ai/executive-summary%20">IEA</a> and <a href="https://www.mckinsey.com/industries/electric-power-and-natural-gas/our-insights/powering-ai-how-real-is-the-risk-of-overbuilding#/">McKinsey</a>.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>For more discussion, see for example: Fassette, Camille. “<a href="https://watttime.org/news-and-insights/the-emissions-risks-of-ai-data-center-buildout/">The emissions risks of AI data center buildout</a>.” WattTime. February, 2025; EPRI. “<a href="https://www.epri.com/research/products/000000003002031198">Powering Data Centers: U.S. Energy System and Emissions Impacts of Growing Loads</a>.” October, 2024.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3">
+<p>Note: Anthropic’s emissions from power use will likely be classified as a mix of Scope 2 and Scope 3 emissions, depending on if they own the GPUs. For facilities they are leasing space in, the emissions will likely be accounted for as Scope 2 emissions for the owner/operator (e.g. Amazon for Project Rainier or SpaceX for Colossus). It should also be noted that the emissions of Microsoft, Google, and Meta are expected to grow as well, so the comparison between their 2025 emissions and Anthropic’s 2028 emissions is not meant to suggest that Anthropic will be the largest emitter among the tech companies.&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4">
+<p>This average is based on AVERT’s marginal emissions for grid-connected units without new dedicated capacity. Using the average (non-marginal) carbon intensity for each eGRID subregion would give a carbon intensity of 839 lb CO<sub>2</sub>/MWh. However, marginal emissions are more representative of the near-term impacts of Anthropic’s added load to the grid.&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:5">
+<p>Pg. 13: “For example, in May 2026, we entered into Cloud Services Agreements with Anthropic PBC (“Anthropic”), an AI research and development public benefit corporation, with respect to access to compute capacity across COLOSSUS and COLOSSUS II. Compute capacity provided includes approximately 325,000 NVIDIA GPUs, backed by hyperscale-class CPUs, exabyte-scale storage and high-speed networking and interconnects purpose-built for AI workloads. Pursuant to these agreements, the customer has agreed to pay us $1.25 billion per month through May 2029, with capacity ramping in May and June 2026 at a reduced fee.”&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:6">
+<p>“Under the SpaceXAI Arrangements, we agreed to spend an aggregate of up to $120.5 billion over terms extending into 2029, consisting of approximately $3.1 billion in the aggregate per month once all capacity has been delivered, which we expect in December 2026, with different fees during capacity ramping periods.”&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref2:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:7">
+<p>See our <a href="https://docs.google.com/spreadsheets/d/1XSqa0lJFJs6pQcmcTlBwUqLsQBEtDybNhjEiFGj-vbE/edit?gid=117490244#gid=117490244">calculations</a> and <a href="https://docs.google.com/spreadsheets/d/1oZpZ9nTTV6wW0xjc1pPOQmKS7NCyDzuG2HiycC1GqFs/edit?gid=2038650305#gid=2038650305">EpochAI’s calculations</a> for more details.&#160;<a href="#fnref:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+]]></content:encoded></item><item><title>丰田、日产和本田将标准化零部件以降低成本</title><link>https://BradleyZhang.github.io/DualHN/2026-11-23/01-toyota-nissan-and-honda-to-standardize-parts-to-lower-costs/</link><pubDate>Mon, 23 Nov 2026 09:45:04 +0800</pubDate><guid>https://BradleyZhang.github.io/DualHN/2026-11-23/01-toyota-nissan-and-honda-to-standardize-parts-to-lower-costs/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;Tomohiro Ohsumi|Getty Images&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Tomohiro Ohsumi|Getty Images&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://caranddriver.com/toyota"&gt;&lt;strong&gt;Toyota&lt;/strong&gt;&lt;/a&gt;&lt;strong&gt;,&lt;/strong&gt; &lt;a href="https://caranddriver.com/nissan"&gt;&lt;strong&gt;Nissan&lt;/strong&gt;&lt;/a&gt;&lt;strong&gt;, and&lt;/strong&gt; &lt;a href="https://caranddriver.com/honda"&gt;&lt;strong&gt;Honda&lt;/strong&gt;&lt;/a&gt; &lt;strong&gt;will begin standardizing some vehicle parts in an effort to lower production costs, according to a report by&lt;/strong&gt; &lt;a href="https://www.autonews.com/toyota/an-japan-industrywide-auto-parts-standardization-1119/"&gt;&lt;em&gt;&lt;strong&gt;Automotive News&lt;/strong&gt;&lt;/em&gt;&lt;/a&gt;&lt;strong&gt;.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;The automakers will start with equalized quality criteria for steel, consistent protocols for plastics, and a universal color-coding scheme for wiring harnesses.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Discussions are starting with Japan’s domestic suppliers, though international suppliers will be looped in soon.&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Toyota&lt;/strong&gt; (&lt;a href="https://carandriver.com/toyota"&gt;https://carandriver.com/toyota&lt;/a&gt;)、 &lt;strong&gt;Nissan&lt;/strong&gt; (&lt;a href="https://carandriver.com/nissan"&gt;https://carandriver.com/nissan&lt;/a&gt;) 和 &lt;strong&gt;Honda&lt;/strong&gt; (&lt;a href="https://carandriver.com/honda"&gt;https://carandriver.com/honda&lt;/a&gt;) 将开始标准化一些车辆部件以降低生产成本，据 &lt;em&gt;&lt;strong&gt;Automotive News&lt;/strong&gt;&lt;/em&gt; (&lt;a href="https://www.autonews.com/toyota/an-japan-industrywide-auto-parts-standardization-1119/"&gt;https://www.autonews.com/toyota/an-japan-industrywide-auto-parts-standardization-1119/&lt;/a&gt;) 的报告。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;汽车制造商将以平等的质量标准开始，对 steel 的质量标准保持一致，对 plastics 的协议保持一致，并制定 wiring harnesses 的通用颜色编码方案。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;讨论正在与 Japan 国内供应商展开，though international suppliers 很快将被纳入。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description><content:encoded><![CDATA[<p>from: <a href="https://www.caranddriver.com/news/a74490092/toyota-nissan-honda-standardize-parts-lower-costs/">Toyota, Nissan, and Honda to Reportedly Standardize Vehicle Parts in Bid to Lower Costs</a></p><blockquote>
+<p>Tomohiro Ohsumi|Getty Images</p>
+</blockquote>
+<p>Tomohiro Ohsumi|Getty Images</p>
+<blockquote>
+<ul>
+<li><a href="https://caranddriver.com/toyota"><strong>Toyota</strong></a><strong>,</strong> <a href="https://caranddriver.com/nissan"><strong>Nissan</strong></a><strong>, and</strong> <a href="https://caranddriver.com/honda"><strong>Honda</strong></a> <strong>will begin standardizing some vehicle parts in an effort to lower production costs, according to a report by</strong> <a href="https://www.autonews.com/toyota/an-japan-industrywide-auto-parts-standardization-1119/"><em><strong>Automotive News</strong></em></a><strong>.</strong></li>
+<li><strong>The automakers will start with equalized quality criteria for steel, consistent protocols for plastics, and a universal color-coding scheme for wiring harnesses.</strong></li>
+<li><strong>Discussions are starting with Japan’s domestic suppliers, though international suppliers will be looped in soon.</strong></li>
+</ul>
+</blockquote>
+<ul>
+<li>
+<p><strong>Toyota</strong> (<a href="https://carandriver.com/toyota">https://carandriver.com/toyota</a>)、 <strong>Nissan</strong> (<a href="https://carandriver.com/nissan">https://carandriver.com/nissan</a>) 和 <strong>Honda</strong> (<a href="https://carandriver.com/honda">https://carandriver.com/honda</a>) 将开始标准化一些车辆部件以降低生产成本，据 <em><strong>Automotive News</strong></em> (<a href="https://www.autonews.com/toyota/an-japan-industrywide-auto-parts-standardization-1119/">https://www.autonews.com/toyota/an-japan-industrywide-auto-parts-standardization-1119/</a>) 的报告。</p>
+</li>
+<li>
+<p>汽车制造商将以平等的质量标准开始，对 steel 的质量标准保持一致，对 plastics 的协议保持一致，并制定 wiring harnesses 的通用颜色编码方案。</p>
+</li>
+<li>
+<p>讨论正在与 Japan 国内供应商展开，though international suppliers 很快将被纳入。</p>
+</li>
+</ul>
+<blockquote>
+<p>Japan’s three largest automakers have agreed to begin standardizing vehicle parts in an effort to reduce costs, according to <em>Automotive News</em>. The outlet reports that Japan Automobile Manufacturers Association chairman Koji Sato, who is also the vice chairman of Toyota, announced the decision at a news conference in Tokyo this week.</p>
+</blockquote>
+<p>日本三大汽车制造商已同意开始标准化车辆零部件，以降低成本，据 Automotive News 报道。报道称，Japan Automobile Manufacturers Association 主席 Koji Sato，也兼任 Toyota 副主席，本周在东京举行新闻发布会宣布了这一决定。</p>
+<blockquote>
+<p>In the short term, the standardization efforts will begin with unified quality criteria for steel, consistent protocols for plastics and resins, and a universal color-coding scheme for wiring harnesses. In the long term, the Japan Automobile Manufacturers Association has plans to move to more components that cover the entire car. The three areas were chosen as the first to be standardized because they are parts that are generally not noticed by consumers, and they shouldn’t have an impact on any brand’s individual identity. All three are also areas that account for significant production costs for the automakers, meaning they can have an immediate impact.</p>
+</blockquote>
+<p>在短期内，标准化工作将首先围绕钢材统一的质量标准、塑料和树脂统一的操作流程以及电线束通用的颜色编码方案展开。<br>
+在长远来看，日本汽车制造者协会计划转向覆盖整辆车的更多零部件。<br>
+这三个领域被选为首批标准化对象，因为它们是消费者通常不会注意到的部件，并且不应影响任何品牌的个人身份认同。<br>
+这三个领域也涉及自动车企的重要生产成本，意味着它们能够对制造商产生即时影响。</p>
+<blockquote>
+<h3 id="for-sale-near-you">For Sale Near You</h3>
+</blockquote>
+<h3 id="出售-附近">出售 附近</h3>
+<blockquote>
+<p>See all results for <a href="https://www.caranddriver.com/cars-for-sale/toyota">used Toyota for sale</a> near 97229</p>
+</blockquote>
+<p>查看 97229 附近所有 <a href="https://www.caranddriver.com/cars-for-sale/toyota">二手丰田待售</a> 结果</p>
+<p><img alt="An Auto Parts Manufacturer Company in Binzhou" loading="lazy" src="https://hips.hearstapps.com/hmg-prod/images/9a437d5d-fb1e-4298-b80d-345012dac005.jpeg?crop=1xw:0.844xh;0xw,0.105xh&resize=980:*" title="An Auto Parts Manufacturer Company in Binzhou"></p>
+<blockquote>
+<p>CFOTO/Future Publishing via Getty Images|Getty Images</p>
+</blockquote>
+<p>CFOTO/未来出版通过Getty Images|Getty Images</p>
+<blockquote>
+<p>The first discussions of standardization are set to include Japan’s domestic automotive parts suppliers, though international suppliers will be brought into the fold in time. The first standardization efforts are set to go into place next year, according to the <em>AN</em> report.</p>
+</blockquote>
+<p>首批标准化讨论将包括日本国内汽车零部件供应商，不过国际供应商最终也将被纳入其中。根据 <em>AN</em> 的报道，首批标准化工作将于明年落地实施。</p>
+<blockquote>
+<p>The push to simplify and lower costs comes as Japan’s seven automakers, including Toyota, Nissan, Honda, Mazda, Subaru, Mitsubishi, and Suzuki, work to fend off the increasingly competitive list of Chinese automakers. The automakers are said to hope that they can channel the money saved by homogenizing into new innovations.</p>
+</blockquote>
+<p>简化和降低成本的推动发生之际，日本的七家汽车制造商，包括 Toyota、 Nissan、 Honda、 Mazda、 Subaru、 Mitsubishi、 Suzuki，正在努力抵御日益竞争激烈的中国汽车制造商名单。这些汽车制造商据说希望将节省下来的资金用于将同质化的成本转化为新的创新。</p>
+<blockquote>
+<p>“We all share this strong sense of crisis, creating a momentum for change,” Sato said. “Based upon our sense of a crisis, we decided to choose these three areas.”</p>
+</blockquote>
+<p>“我们都共享这种强烈的危机感，为变革创造动力。” Sato 说。 “基于我们对危机的认识，我们决定选择这三个领域。”</p>
+<blockquote>
+<hr>
+</blockquote>
+<p>(无内容可翻译，故不输出)</p>
+<blockquote>
+<h2 id="-skip-the-lot-let-car-and-driver-help-you-find-your-next-car">➡️ Skip the lot. Let Car and Driver help you find your next car.</h2>
+</blockquote>
+<h2 id="-免去逛车场让-car-and-driver-帮你找到下一辆车">➡️ 免去逛车场。让 Car and Driver 帮你找到下一辆车。</h2>
+<p><img alt="Headshot of Jack Fitzgerald" loading="lazy" src="https://hips.hearstapps.com/rover/profile_photos/fac2a745-e58e-49fc-be50-42f30a2ea607_1775311013.file?fill=1:1&resize=120:*"></p>
+<blockquote>
+<p>Headshot of Jack Fitzgerald</p>
+</blockquote>
+<p>Jack Fitzgerald 的头像照片</p>
+<blockquote>
+<p>Associate Editor, News</p>
+</blockquote>
+<p>资深新闻编辑</p>
+<blockquote>
+<p>Jack Fitzgerald’s love for cars stems from his as yet unshakable addiction to Formula 1. After a brief stint as a detailer for a local dealership group in college, he knew he needed a more permanent way to drive all the new cars he couldn’t afford and decided to pursue a career in auto writing. By hounding his college professors at the University of Wisconsin-Milwaukee, he was able to travel Wisconsin seeking out stories in the auto world before landing his dream job at <strong>Car and Driver</strong>. His new goal is to delay the inevitable demise of his 2010 Volkswagen Golf.</p>
+</blockquote>
+<p>Jack Fitzgerald 的对汽车的热爱源于他对 Formula 1 这场迄今未能摆脱的痴迷。在大学期间，他曾在一家本地经销商集团担任细节美容师，但他知道自己需要一种更持久的方式来驾驶所有他负担不起的新车，于是决定投身汽车写作职业。通过向他在威斯康星大学基默利尔分校的大学教授施压，他得以在威斯康星州旅行，寻找汽车界的故事，之后得到 <strong>Car and Driver</strong> 梦想中的工作。他的新目标是推迟他 2010 年大众甲壳虫 Golf 的不可避免终结。</p>
+<blockquote>
+<p>Watch Next</p>
+</blockquote>
+<p>观看下一个</p>
+<p>![Play video](data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="%23ffffff" viewBox="0 0 256 256">%0A%09<path d="M240,128a15.74,15.74,0,0,1-7.6,13.51L88.32,229.65a16,16,0,0,1-16.2.3A15.86,15.86,0,0,1,64,216.13V39.87a15.86,15.86,0,0,1,8.12-13.82,16,16,0,0,1,16.2.3L232.4,114.49A15.74,15.74,0,0,1,240,128Z">%0A</path></svg>) <img alt="Video poster" loading="lazy" src="https://hips.hearstapps.com/vidthumb/684709d5-fde9-48aa-a28f-3b990a931da9/089f8994-f7b0-4baf-88b5-7cd590a9aba5.jpeg?crop=1xw:1xh;center,top&resize=980:*" title="Video poster"></p>
+<blockquote>
+<p><a href="https://www.caranddriver.com/news/a74481163/1991-mercedes-benz-560sec-bring-a-trailer-auction/"><img alt="front three-quarter view, dark coupe with chrome grille and silver wheels parked in lot." loading="lazy" src="https://hips.hearstapps.com/hmg-prod/images/f6a7951d-785d-4df2-8efd-9310bd43d03d.jpg?crop=0.86181640625xw:1xh;center,top&resize=360:*" title="front three-quarter view, dark coupe with chrome grille and silver wheels parked in lot."></a></p>
+</blockquote>
+<p><a href="https://www.caranddriver.com/news/a74481163/1991-mercedes-benz-560sec-bring-a-trailer-auction/"><img alt="前方三分之四视角，一辆深色轿跑车，配铬合金格栅和银色轮毂，停在停车场。" loading="lazy" src="https://hips.hearstapps.com/hmg-prod/images/f6a7951d-785d-4df2-8efd-9310bd43d03d.jpg?crop=0.86181640625xw:1xh;center,top&resize=360:*" title="前方三分之四视角，一辆深色轿跑车，配铬合金格栅和银色轮毂，停在停车场."></a></p>
+<blockquote>
+<p><a href="https://www.caranddriver.com/news/a74481163/1991-mercedes-benz-560sec-bring-a-trailer-auction/">This 1991 Mercedes-Benz 560SEC on BaT Has an Extra Bit of Euro-Snob Appeal</a></p>
+</blockquote>
+<p>这辆 1991 年 Mercedes-Benz 560SEC 在 BaT 上还有一点 Euro-Snob 的吸引力。</p>
+<blockquote>
+<p>[<img alt="Black BMW car parked on a light-colored floor against a dark background, showcasing its design features." loading="lazy" src="https://hips.hearstapps.com/hmg-prod/images/c0a1686f-0c49-4a7d-9ba7-4b093132af4c.png?crop=0.458xw:1xh;0.264xw,0xh&resize=360:*" title="Black BMW car parked on a light-colored floor against a dark background, showcasing its design features."></p>
+</blockquote>
+<p>[<img alt="黑色BMW汽车停放在浅色地板上，背景为深色，展示其设计细节。" loading="lazy" src="https://hips.hearstapps.com/hmg-prod/images/c0a1686f-0c49-4a7d-9ba7-4b093132af4c.png?crop=0.458xw:1xh;0.264xw,0xh&resize=360:*" title="黑色BMW汽车停放在浅色地板上，背景为深色，展示其设计细节。"></p>
+<blockquote>
+<p>BMW Classic Pulls the Wraps off a Secret 1997 M7 Prototype</p>
+</blockquote>
+<p>BMW Classic 揭开保密 1997 M7 原型车面纱</p>
+<blockquote>
+<p>](<a href="https://www.caranddriver.com/news/a74494451/1997-bmw-m7-prototype-revealed/)%5B!%5BFerrari">https://www.caranddriver.com/news/a74494451/1997-bmw-m7-prototype-revealed/)[![Ferrari</a> 296 Challenge Stradale](<a href="https://hips.hearstapps.com/hmg-prod/images/c1589f2a-4bf4-4398-a24e-18a3c5595df3.jpg?crop=0.789xw:0.631xh;0.104xw,0.277xh&amp;resize=360">https://hips.hearstapps.com/hmg-prod/images/c1589f2a-4bf4-4398-a24e-18a3c5595df3.jpg?crop=0.789xw:0.631xh;0.104xw,0.277xh&amp;resize=360</a>:* &ldquo;Ferrari 296 Challenge Stradale&rdquo;)</p>
+</blockquote>
+<p>](<a href="https://www.caranddriver.com/news/a74494451/1997-bmw-m7-prototype-revealed/)%5B!%5BFerrari">https://www.caranddriver.com/news/a74494451/1997-bmw-m7-prototype-revealed/)[![Ferrari</a> 296 Challenge Stradale](<a href="https://hips.hearstapps.com/hmg-prod/images/c1589f2a-4bf4-4398-a24e-18a3c5595df3.jpg?crop=0.789xw:0.631xh;0.104xw,0.277xh&amp;resize=360">https://hips.hearstapps.com/hmg-prod/images/c1589f2a-4bf4-4398-a24e-18a3c5595df3.jpg?crop=0.789xw:0.631xh;0.104xw,0.277xh&amp;resize=360</a>:* &ldquo;Ferrari 296 Challenge Stradale&rdquo;)</p>
+<blockquote>
+<p>2028 Ferrari 296 CS is a Pure Prancing Horse</p>
+</blockquote>
+<p>2028 Ferrari 296 CS 是一匹纯粹的跃马</p>
+<blockquote>
+<p>](<a href="https://www.caranddriver.com/news/a74498034/ferrari-296-challenge-stradale-revealed/)%5B!%5BVolkswagen">https://www.caranddriver.com/news/a74498034/ferrari-296-challenge-stradale-revealed/)[![Volkswagen</a> Clubsport concept car in white with sporty design elements and bold red accents.](<a href="https://hips.hearstapps.com/hmg-prod/images/d522bbaa-82f3-4879-a74e-30c94078236f.jpg?crop=0.666666666667xw:1xh;center,top&amp;resize=360">https://hips.hearstapps.com/hmg-prod/images/d522bbaa-82f3-4879-a74e-30c94078236f.jpg?crop=0.666666666667xw:1xh;center,top&amp;resize=360</a>:* &ldquo;Volkswagen Clubsport concept car in white with sporty design elements and bold red accents.&rdquo;)</p>
+</blockquote>
+<p>](<a href="https://www.caranddriver.com/news/a74498034/ferrari-296-challenge-stradale-revealed/)%5B!%5B">https://www.caranddriver.com/news/a74498034/ferrari-296-challenge-stradale-revealed/)[![</a>白色 Volkswagen Clubsport 概念车，带有运动化设计元素和醒目的红色点缀。](<a href="https://hips.hearstapps.com/hmg-prod/images/d522bbaa-82f3-4879-a74e-30c94078236f.jpg?crop=0.666666666667xw:1xh;center,top&amp;resize=360">https://hips.hearstapps.com/hmg-prod/images/d522bbaa-82f3-4879-a74e-30c94078236f.jpg?crop=0.666666666667xw:1xh;center,top&amp;resize=360</a>:* &ldquo;白色 Volkswagen Clubsport 概念车，带有运动化设计元素和醒目的红色点缀。&rdquo;)</p>
+<blockquote>
+<p>ID. Polo GTI Clubsport Concept Is Built for Racing</p>
+</blockquote>
+<p>ID. Polo GTI Clubsport Concept 专为竞速而生</p>
+<blockquote>
+<p>](<a href="https://www.caranddriver.com/news/a74494145/volkswagen-id-polo-gti-clubsport-concept-revealed/">https://www.caranddriver.com/news/a74494145/volkswagen-id-polo-gti-clubsport-concept-revealed/</a>)</p>
+</blockquote>
+<p><a href="https://www.caranddriver.com/news/a74494145/volkswagen-id-polo-gti-clubsport-concept-revealed/"></a></p>
+<blockquote>
+<p><a href="https://www.caranddriver.com/news/a74481129/2000-daihatsu-hijet-pickup-bring-a-trailer-auction/"><img alt="side view, white mini pickup with empty flatbed parked on paved road." loading="lazy" src="https://hips.hearstapps.com/hmg-prod/images/1904e828-2eb1-4a6e-9381-cbdb52151c4b.jpg?crop=0.879255319149xw:1xh;center,top&resize=360:*" title="side view, white mini pickup with empty flatbed parked on paved road."></a></p>
+</blockquote>
+<p><a href="https://www.caranddriver.com/news/a74481129/2000-daihatsu-hijet-pickup-bring-a-trailer-auction/"><img alt="侧视图，白色小型皮卡，空平板货厢，停在铺装道路上。" loading="lazy" src="https://hips.hearstapps.com/hmg-prod/images/1904e828-2eb1-4a6e-9381-cbdb52151c4b.jpg?crop=0.879255319149xw:1xh;center,top&resize=360:*" title="侧视图，白色小型皮卡，空平板货厢，停在铺装道路上。"></a></p>
+<blockquote>
+<p><a href="https://www.caranddriver.com/news/a74481129/2000-daihatsu-hijet-pickup-bring-a-trailer-auction/">Can’t Wait for the Scion Kei-01? Grab This Daihatsu HiJet Pickup Now</a></p>
+</blockquote>
+<p><a href="https://www.caranddriver.com/news/a74481129/2000-daihatsu-hijet-pickup-bring-a-trailer-auction/">等不及 Scion Kei-01？现在就入手这辆 Daihatsu HiJet 皮卡</a></p>
+<blockquote>
+<p>[<img alt="genesis x scorpio concept" loading="lazy" src="https://hips.hearstapps.com/hmg-prod/images/04-x-skorpio-concept-exterior-69787258e58a7.jpg?crop=0.562xw:1xh;0.255xw,0xh&resize=360:*" title="Genesis X Scorpio Concept"></p>
+</blockquote>
+<p>[<img alt="genesis x scorpio concept" loading="lazy" src="https://hips.hearstapps.com/hmg-prod/images/04-x-skorpio-concept-exterior-69787258e58a.jpg?crop=0.562xw:1xh;0.255xw,0xh&resize=360:*" title="Genesis X Scorpio Concept">]</p>
+<blockquote>
+<p>Genesis Wants to Sell the 1100-HP Skorpio Desert Runner</p>
+</blockquote>
+<p>Genesis 想要销售 1100-HP Skorpio Desert Runner</p>
+<blockquote>
+<p>](<a href="https://www.caranddriver.com/news/a74493811/genesis-x-skorpio-production-plans/)%5B!%5BBright">https://www.caranddriver.com/news/a74493811/genesis-x-skorpio-production-plans/)[![Bright</a> orange sports car parked in a scenic area with trees and cloudy sky in the background.](<a href="https://hips.hearstapps.com/hmg-prod/images/7d9e4551-1d20-48df-8f73-f266764d046d.jpg?crop=0.457xw:0.686xh;0.268xw,0.256xh&amp;resize=360">https://hips.hearstapps.com/hmg-prod/images/7d9e4551-1d20-48df-8f73-f266764d046d.jpg?crop=0.457xw:0.686xh;0.268xw,0.256xh&amp;resize=360</a>:* &ldquo;Bright orange sports car parked in a scenic area with trees and cloudy sky in the background.&rdquo;)</p>
+</blockquote>
+<p>](<a href="https://www.caranddriver.com/news/a74493811/genesix-x-skorpio-production-plans/)%5B!%5B">https://www.caranddriver.com/news/a74493811/genesix-x-skorpio-production-plans/)[![</a>一辆明亮橙色的运动汽车停在风景优美的区域，树木和多云的天空后方。](<a href="https://hips.hearstapps.com/hmg-prod/images/7d9e4551-1d20-48df-8f73-f266764d046d.jpg?crop=0.457xw:0.686xh;0.268xw,0.256xh&amp;resize=360">https://hips.hearstapps.com/hmg-prod/images/7d9e4551-1d20-48df-8f73-f266764d046d.jpg?crop=0.457xw:0.686xh;0.268xw,0.256xh&amp;resize=360</a>:* &ldquo;Bright orange sports car parked in a scenic area with trees and cloudy sky in the background.&rdquo;)]</p>
+<blockquote>
+<p>Genesis Expands GV60 Magma Availability to More States</p>
+</blockquote>
+<p>Genesis 将 GV60 Magma 的供应范围扩展至更多州</p>
+<blockquote>
+<p>](<a href="https://www.caranddriver.com/news/a74491107/genesis-expands-gv60-magma-availability/)%5B!%5BHonda">https://www.caranddriver.com/news/a74491107/genesis-expands-gv60-magma-availability/)[![Honda</a> Avancier](<a href="https://hips.hearstapps.com/hmg-prod/images/583d6e1e-9ab7-450b-a4b9-085c7e245b91.jpg?crop=0.586xw:0.698xh;0.207xw,0.096xh&amp;resize=360">https://hips.hearstapps.com/hmg-prod/images/583d6e1e-9ab7-450b-a4b9-085c7e245b91.jpg?crop=0.586xw:0.698xh;0.207xw,0.096xh&amp;resize=360</a>:* &ldquo;Honda Avancier&rdquo;)</p>
+</blockquote>
+<p>](<a href="https://www.caranddriver.com/news/a74491107/genesis-expands-gv60-magma-availability/)%5B!%5BHonda">https://www.caranddriver.com/news/a74491107/genesis-expands-gv60-magma-availability/)[![Honda</a> Avancier](<a href="https://hips.hearstapps.com/hmg-prod/images/583d6e1e-9ab7-450b-a4b9-085c7e245b91.jpg?crop=0.586xw:0.698xh;0.207xw,0.096xh&amp;resize=360">https://hips.hearstapps.com/hmg-prod/images/583d6e1e-9ab7-450b-a4b9-085c7e245b91.jpg?crop=0.586xw:0.698xh;0.207xw,0.096xh&amp;resize=360</a>:* &ldquo;Honda Avancier&rdquo;)</p>
+<blockquote>
+<p>Honda Avancier for Asia Hints at the Next-Gen CR-V</p>
+</blockquote>
+<p>Honda Avancier 为亚洲市场暗示了下一代 CR-V</p>
+<blockquote>
+<p>](<a href="https://www.caranddriver.com/news/a74493573/honda-avancier-suv-revealed/">https://www.caranddriver.com/news/a74493573/honda-avancier-suv-revealed/</a>)</p>
+</blockquote>
+<p>](<a href="https://www.caranddriver.com/news/a74493573/honda-avancier-suv-revealed/">https://www.caranddriver.com/news/a74493573/honda-avancier-suv-revealed/</a>)</p>
+<blockquote>
+<p><a href="https://www.caranddriver.com/news/a74483368/coolest-la-auto-show-2026/"><img alt="Car exhibition featuring various vehicles and a large display sign in a greenery-lined setting." loading="lazy" src="https://hips.hearstapps.com/hmg-prod/images/660c10b7-cb6a-485e-a837-68928c80f5a6.jpg?crop=0.563xw:1xh;center,top&resize=360:*" title="Car exhibition featuring various vehicles and a large display sign in a greenery-lined setting."></a></p>
+</blockquote>
+<p><a href="https://www.caranddriver.com/news/a74483368/coolest-la-auto-show-2026/"><img alt="在绿化带环绕的环境中展示各种车辆和大型展示标志的汽车展览" loading="lazy" src="https://hips.hearstapps.com/hmg-prod/images/660c10b7-cb6a-485e-a837-68928c80f5a6.jpg?crop=0.563xw:1xh;center,top&resize=360:*" title="在绿化带环绕的环境中展示各种车辆和大型展示标志的汽车展览"></a></p>
+<blockquote>
+<p><a href="https://www.caranddriver.com/news/a74483368/coolest-la-auto-show-2026/">The 10 Coolest Cars at the 2026 LA Auto Show</a></p>
+</blockquote>
+<p><a href="https://www.caranddriver.com/news/a74483368/coolest-la-auto-show-2026/">The 10 Coolest Cars at the 2026 LA Auto Show</a></p>
+<blockquote>
+<p>[<img alt="FullGood Motor Summer" loading="lazy" src="https://hips.hearstapps.com/hmg-prod/images/56417769-c625-4289-9f27-7b63950b90f3.jpg?crop=0.746xw:0.559xh;0.11xw,0.191xh&resize=360:*" title="FullGood Motor Summer"></p>
+</blockquote>
+<p>[<img alt="FullGood Motor Summer" loading="lazy" src="https://hips.hearstapps.com/hmg-prod/images/56417769-c625-4289-9f27-7b63950b90f3.jpg?crop=0.746xw:0.559xh;0.11xw,0.191xh&resize=360:*" title="FullGood Motor Summer">]</p>
+<blockquote>
+<p>FullGood Aims to Bring Retro-Styled PHEVs to the U.S.</p>
+</blockquote>
+<p>FullGood 旨在将复古风格 PHEVs 引进美国</p>
+<blockquote>
+<p>](<a href="https://www.caranddriver.com/news/a74484003/fullgood-motor-chinese-retro-styled-cars-us-market/)%5B!%5BRed">https://www.caranddriver.com/news/a74484003/fullgood-motor-chinese-retro-styled-cars-us-market/)[![Red</a> minivan parked in a residential driveway, with modern houses and green landscaping in the background.](<a href="https://hips.hearstapps.com/hmg-prod/images/406b96fc-2c91-4dbb-9574-362162015b14.jpg?crop=0.613xw:0.92xh;0.218xw,0.08xh&amp;resize=360">https://hips.hearstapps.com/hmg-prod/images/406b96fc-2c91-4dbb-9574-362162015b14.jpg?crop=0.613xw:0.92xh;0.218xw,0.08xh&amp;resize=360</a>:* &ldquo;Red minivan parked in a residential driveway, with modern houses and green landscaping in the background.&rdquo;)</p>
+</blockquote>
+<p><img alt="红色小型货车停放在住宅车道上，背景是现代房屋和绿化景观。" loading="lazy" src="https://hips.hearstapps.com/hmg-prod/images/406b96fc-2c91-4dbb-9574-362162015b14.jpg?crop=0.613xw:0.92xh;0.218xw,0.08xh&resize=360:*"></p>
+<blockquote>
+<p>2027 Toyota Sienna Refreshed to Give the Hybrid Minivan More Efficiency and Power</p>
+</blockquote>
+<p>2027年丰田塞纳刷新，为混动多用途车带来更多效率和动力</p>
+<blockquote>
+<p>](<a href="https://www.caranddriver.com/news/a74476966/2027-toyota-sienna-hybrid-minivan-revealed/)%5B!%5BA">https://www.caranddriver.com/news/a74476966/2027-toyota-sienna-hybrid-minivan-revealed/)[![A</a> black Volkswagen hatchback parked in front of a metallic corrugated wall.](<a href="https://hips.hearstapps.com/hmg-prod/images/9df408dc-f226-4857-b88b-d92550bb178d.jpeg?crop=0.597xw:0.908xh;0.268xw,0.092xh&amp;resize=360">https://hips.hearstapps.com/hmg-prod/images/9df408dc-f226-4857-b88b-d92550bb178d.jpeg?crop=0.597xw:0.908xh;0.268xw,0.092xh&amp;resize=360</a>:* &ldquo;A black Volkswagen hatchback parked in front of a metallic corrugated wall.&rdquo;)</p>
+</blockquote>
+<p>](<a href="https://www.caranddriver.com/news/a74476966/2027-toyota-sienna-hybrid-minivan-revealed/)%5B!%5B">https://www.caranddriver.com/news/a74476966/2027-toyota-sienna-hybrid-minivan-revealed/)[![</a>一辆黑色大众掀背车停在金属波纹墙前。](<a href="https://hips.hearstapps.com/hmg-prod/images/9df408dc-f226-4857-b88b-d92550bb178d.jpeg?crop=0.597xw:0.908xh;0.268xw,0.092xh&amp;resize=360">https://hips.hearstapps.com/hmg-prod/images/9df408dc-f226-4857-b88b-d92550bb178d.jpeg?crop=0.597xw:0.908xh;0.268xw,0.092xh&amp;resize=360</a>:* &ldquo;一辆黑色大众掀背车停在金属波纹墙前。&rdquo;)]</p>
+<blockquote>
+<p>2027 Volkswagen Golf GTI Rabbit Edition Changes More Than Looks</p>
+</blockquote>
+<p>2027 Volkswagen Golf GTI Rabbit Edition 变化不止于外观</p>
+<blockquote>
+<p>](<a href="https://www.caranddriver.com/news/a74480991/2027-volkswagen-golf-gti-adds-rabbit-edition/">https://www.caranddriver.com/news/a74480991/2027-volkswagen-golf-gti-adds-rabbit-edition/</a>)</p>
+</blockquote>
+<p>](<a href="https://www.caranddriver.com/news/a74480991/2027-volkswagen-golf-gti-adds-rabbit-edition/">https://www.caranddriver.com/news/a74480991/2027-volkswagen-golf-gti-adds-rabbit-edition/</a>)</p>
+]]></content:encoded></item></channel></rss>
