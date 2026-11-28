@@ -1,0 +1,1036 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>2026-11-28 on DualHN</title><link>https://BradleyZhang.github.io/DualHN/2026-11-28/</link><description>Recent content in 2026-11-28 on DualHN</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Sat, 28 Nov 2026 11:54:42 +0800</lastBuildDate><atom:link href="https://BradleyZhang.github.io/DualHN/2026-11-28/index.xml" rel="self" type="application/rss+xml"/><item><title>热门购物网站中发现使用WebRTC的信用卡盗刷脚本</title><link>https://BradleyZhang.github.io/DualHN/2026-11-28/05-credit-card-skimming-scripts-using-webrtc-found-on-popular-shopping-sites/</link><pubDate>Sat, 28 Nov 2026 11:54:42 +0800</pubDate><guid>https://BradleyZhang.github.io/DualHN/2026-11-28/05-credit-card-skimming-scripts-using-webrtc-found-on-popular-shopping-sites/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;All the sites we contacted took action; but the larger consumer web ecosystem should be prepared to mitigate these attack vectors&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;我们联系的所有网站均已采取行动；但更广泛的消费级 Web 生态系统应做好准备，以缓解这些攻击向量。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A card-skimming script was planted on the online stores of Lascana, Samsonite, American Tourister, Revolve and FWRD in the week before Black Friday. After our reports to affected companies, all have had the script removed (on November 24th or 25th) ahead of Black Friday. We observed it in action on one of the five websites: Lascana, where it sent our test card&amp;rsquo;s details to a 3rd party. We believe the script was built to take a card number, expiry and security code, along with a user&amp;rsquo;s name, address, phone and email, and send them to malefactors as a user entered their payment credentials. It did this before the store checked the payment, so a card could be taken even if the order was declined or cancelled, and nothing would look wrong to the shopper. Across all of these sites, we do not know how many, if any, shopper details or payment credentials may have been captured.&lt;/p&gt;
+&lt;/blockquote&gt;</description><content:encoded><![CDATA[<p>from: <a href="https://www.infohawk.com/news/2026-11-27-black-friday-webrtc-skimmer">Credit card skimming scripts using WebRTC found on popular shopping sites</a></p><blockquote>
+<p>All the sites we contacted took action; but the larger consumer web ecosystem should be prepared to mitigate these attack vectors</p>
+</blockquote>
+<p>我们联系的所有网站均已采取行动；但更广泛的消费级 Web 生态系统应做好准备，以缓解这些攻击向量。</p>
+<blockquote>
+<p>A card-skimming script was planted on the online stores of Lascana, Samsonite, American Tourister, Revolve and FWRD in the week before Black Friday. After our reports to affected companies, all have had the script removed (on November 24th or 25th) ahead of Black Friday. We observed it in action on one of the five websites: Lascana, where it sent our test card&rsquo;s details to a 3rd party. We believe the script was built to take a card number, expiry and security code, along with a user&rsquo;s name, address, phone and email, and send them to malefactors as a user entered their payment credentials. It did this before the store checked the payment, so a card could be taken even if the order was declined or cancelled, and nothing would look wrong to the shopper. Across all of these sites, we do not know how many, if any, shopper details or payment credentials may have been captured.</p>
+</blockquote>
+<p>在黑色星期五前一周，在 Lascana、Samsonite、American Tourister、Revolve 和 FWRD 的在线商店中植入了 card-skimming script。 我们向受影响的公司报告后，所有公司均在 (on November 24th or 25th) 提前于 Black Friday 移除了该 script。 我们在 Lascana 这家网站上观察到其运行：Lascana，它将我们的 test card 详情发送给了一个 3rd party。 我们相信该 script 设计用于窃取 card number、expiry 和 security code，以及用户的 name、address、phone 和 email，并在用户输入 payment credentials 时将其发送给 malefactors。 它在 store 检查 payment 之前就执行了该操作，因此即使 order 被 declined 或 cancelled，card 仍可能被窃取，且对 shopper 而言一切看起来都正常。</p>
+<p><img alt="Illustration: a Black Friday checkout order summary with a Place order button, and a dotted line from the button to a red box labelled &lsquo;Not in your cart&rsquo; listing card number, expiry, CVV, name, address, phone and email. Text: Is there extra code on your payment page? A skimmer hidden in the checkout of consumer websites attempts to skim card details over WebRTC, making detection more difficult." loading="lazy" src="https://www.infohawk.com/_app/immutable/assets/hero.Bde-_Sb9.png"></p>
+<blockquote>
+<p>Illustration: a Black Friday checkout order summary with a Place order button, and a dotted line from the button to a red box labelled &lsquo;Not in your cart&rsquo; listing card number, expiry, CVV, name, address, phone and email. Text: Is there extra code on your payment page? A skimmer hidden in the checkout of consumer websites attempts to skim card details over WebRTC, making detection more difficult.</p>
+</blockquote>
+<p>插图： Black Friday 结账订单摘要，包含一个‘下单’按钮，从按钮到一块标注为 &lsquo;Not in your cart&rsquo; 的红色框的点线，框内列出卡号、到期日、CVV、姓名、地址、电话和邮箱。</p>
+<p>文本： 支付页面是否有多余代码？消费者网站的结账过程中隐藏的小偷（ skimmer ）试图通过 WebRTC 在支付页面窃取卡片信息，使检测更加困难。</p>
+<blockquote>
+<h2 id="which-sites-were-affected">Which sites were affected</h2>
+</blockquote>
+<h2 id="哪些网站受影响">哪些网站受影响？</h2>
+<blockquote>
+<table>
+	<thead>
+			<tr>
+					<th>Consumer site</th>
+					<th>Delivery method</th>
+					<th>Status at time of publication</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Lascana <a href="https://www.lascana.com/">www.lascana.com</a></td>
+					<td>Altered Quorum<sup>*</sup> marketing pixel</td>
+					<td>Both Lascana and Quorum replied and removed the code on the 24th, see details below</td>
+			</tr>
+			<tr>
+					<td>Samsonite <a href="https://shop.samsonite.com/">shop.samsonite.com</a></td>
+					<td>Edited Seers<sup>†</sup> cookie-banner setting</td>
+					<td>Neither party replied to us, but the code was removed on November 24th at 14:25 UTC</td>
+			</tr>
+			<tr>
+					<td>American Tourister <a href="https://shop.americantourister.com/">shop.americantourister.com</a></td>
+					<td>Edited Seers<sup>†</sup> cookie-banner setting</td>
+					<td>Neither party replied to us, but the code was removed on November 24th at 14:25 UTC</td>
+			</tr>
+			<tr>
+					<td>Revolve <a href="https://www.revolve.com/">www.revolve.com</a></td>
+					<td>Altered file on Revolve&rsquo;s own CDN</td>
+					<td>Revolve confirmed removal on November 25th</td>
+			</tr>
+			<tr>
+					<td>FWRD <a href="https://www.fwrd.com/">www.fwrd.com</a></td>
+					<td>Altered file on Revolve&rsquo;s own CDN</td>
+					<td>Revolve confirmed removal on November 25th</td>
+			</tr>
+	</tbody>
+</table>
+</blockquote>
+<table>
+	<thead>
+			<tr>
+					<th>消费者网站</th>
+					<th>传递方式</th>
+					<th>发布时的状态</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Lascana <a href="https://www.lascana.com/">www.lascana.com</a></td>
+					<td>篡改的 Quorum<sup>*</sup> 营销像素</td>
+					<td>Lascana 和 Quorum 均已回复，并于 24 日移除了代码，详见下文</td>
+			</tr>
+			<tr>
+					<td>Samsonite <a href="https://shop.samsonite.com/">shop.samsonite.com</a></td>
+					<td>篡改的 Seers<sup>†</sup> Cookie 横幅设置</td>
+					<td>双方均未回复，但代码于 11 月 24 日 14:25 UTC 被移除</td>
+			</tr>
+			<tr>
+					<td>American Tourister <a href="https://shop.americantourister.com/">shop.americantourister.com</a></td>
+					<td>篡改的 Seers<sup>†</sup> Cookie 横幅设置</td>
+					<td>双方均未回复，但代码于 11 月 24 日 14:25 UTC 被移除</td>
+			</tr>
+			<tr>
+					<td>Revolve <a href="https://www.revolve.com/">www.revolve.com</a></td>
+					<td>篡改 Revolve 自有 CDN 上的文件</td>
+					<td>Revolve 确认于 11 月 25 日移除</td>
+			</tr>
+			<tr>
+					<td>FWRD <a href="https://www.fwrd.com/">www.fwrd.com</a></td>
+					<td>篡改 Revolve 自有 CDN 上的文件</td>
+					<td>Revolve 确认于 11 月 25 日移除</td>
+			</tr>
+	</tbody>
+</table>
+<blockquote>
+<p>On November 24, we notified all of the named parties in this article and others, including: Amazon Web Services about the storage buckets serving the script, Cloudflare about the services the malefactor used, the domain registrars, the pixel vendor, the consent-banner provider and the affected retailers and platforms. Lascana replied to us and removed the Quorum pixel from their site by November 24th at 15:48 UTC. Quorum confirmed the identified malicious code was removed from their pixel tracker, and they restored the clean marketing pixel as of November 24th at 21:09 UTC.</p>
+</blockquote>
+<p>我们 于 11 月 24 日 通知了本篇文章中被点名的所有当事方和其他相关方，包括：Amazon Web Services 关于提供该脚本的存储桶，Cloudflare 关于攻击者所使用的服务，域名注册商，像素供应商，同意横幅提供商，以及受影响的零售商和平台。Lascana 回复了我们，并于 11 月 24 日 15:48 UTC 之前将其网站上的 Quorum 像素移除了。Quorum 确认所识别的恶意代码已从其像素跟踪器中移除，并截至 11 月 24 日 21:09 UTC 恢复了干净的营销像素。</p>
+<blockquote>
+<p>Revolve provided this statement on behalf of REVOLVE and FWRD: <em>“On November 25, InfoHawk notified our team of a potential security issue impacting mobile and tablet versions of our websites which we resolved the same day. We appreciate the outreach, and are actively investigating the issue to determine any potential impact.”</em></p>
+</blockquote>
+<p>Revolve 代表 REVOLVE 和 FWRD 发表声明称：“11 月 25 日，InfoHawk 向我们团队通报了一个影响我们网站移动端和 tablet 版本的潜在安全问题，我们已在当天解决。感谢他们的报告，我们正在积极调查该问题以确定任何潜在影响。”</p>
+<p><sup>*</sup> Quorum is an ad-attribution platform that links ad views to store visits and online sales (<a href="https://quorum.inc/">quorum.inc</a>).</p>
+<p><sup>†</sup> Seers is a cookie consent management platform and data privacy compliance company (<a href="https://seers.ai/">seers.ai</a>).</p>
+<blockquote>
+<h2 id="how-the-attack-works">How the attack works</h2>
+</blockquote>
+<h2 id="攻击如何工作">攻击如何工作</h2>
+<blockquote>
+<p>This attack uses WebRTC, the technology that allows you to make video calls in your web browser. WebRTC lets a web page open its own channel to another party and pass data (e.g. audio/video packets) over it. It has likely been used (both to load the skimmer and to send the stolen card details out) because security rules and monitoring tools often do not watch this communications channel as closely. For example, <a href="https://www.techradar.com/pro/security/meta-halts-phone-and-browser-tracking-tools-after-researchers-expose-user-tracking">Meta briefly used WebRTC in a creative way in 2025</a>, according to researchers <a href="https://www.cs.ru.nl/masters-theses/2026/R_te_Wechel___Misuse_of_WebRTC_on_the_Web_A_Measurement_Study.pdf">looking at</a> the technology as a compromise vector. This form of attack appears to target mobile devices, and we only saw the server enable the skimmer on checkout pages, so desktop checks and homepage scans would likely not see it. The skimmer&rsquo;s traffic appeared to run through Cloudflare&rsquo;s relay, so it would blend in with the WebRTC traffic and hide its true endpoint.</p>
+</blockquote>
+<p>本次攻击使用 WebRTC，允许您在网页浏览器中进行视频通话的技术。WebRTC 让网页可以打开自己的通道与另一方通信，并在此传输数据（例如 audio/video packets）。它可能已被用于（同时加载 skimmer 并外发被盗的卡片详细信息），因为安全规则和监控工具往往不仔细监控此类通信信道。例如，<a href="https://www.techradar.com/pro/security/meta-halts-phone-and-browser-tracking-tools-after-researchers-expose-user-tracking">Meta briefly used WebRTC in a creative way in 2025</a>，据研究人员<a href="https://www.cs.ru.nl/masters-theses/2026/R_te_Wechel___Misuse_of_WebRTC_on_the_Web_A_Measurement_Study.pdf">looking at</a> 该技术作为妥协向量。此类攻击似乎针对移动设备，且我们仅在结账页面观察到服务器启用了 skimmer，因此桌面检查和主页扫描可能不会检测到它。Skimmer 的流量似乎通过 Cloudflare 的中继运行，以便与 WebRTC 流量混合，从而隐藏其真实终点。</p>
+<blockquote>
+<h3 id="the-skimmer-and-card-details-both-traveled-over-webrtc">The skimmer and card details both traveled over WebRTC</h3>
+</blockquote>
+<h3 id="读卡器和卡信息均通过-webrtc-传输">读卡器和卡信息均通过 WebRTC 传输</h3>
+<blockquote>
+<p>How the kit is designed to work on a store page, in 7 steps. Only step 4 is an ordinary web request, which a <code>connect-src</code> rule can block; steps 5 to 7 run over the WebRTC data channel, outside <code>connect-src</code>.</p>
+</blockquote>
+<p>该工具包在商店页面上的工作原理，共分 7 步。只有第 4 步是普通的 Web 请求，可通过 <code>connect-src</code> 规则拦截；第 5 步至第 7 步则通过 WebRTC 数据通道运行，位于 <code>connect-src</code> 的管控范围之外。</p>
+<blockquote>
+<ol>
+<li>Store page</li>
+</ol>
+<h3 id="bootstrapping-the-attack">Bootstrapping the attack</h3>
+<p>The loader gets onto the page through a consent-banner setting, a retailer CDN file, a shared marketing pixel or the store&rsquo;s own HTML.
+2. Store page</p>
+<h3 id="loading-scripts-from-s3-buckets">Loading scripts from S3 buckets</h3>
+<p>It loads <code>Insds.js</code> or <code>gtage.js</code> from an Amazon S3 bucket.
+3. Store page</p>
+<h3 id="targeting-the-attack-to-mobile-checkouts">Targeting the attack to mobile checkouts</h3>
+<p>It runs only on small or touch screens. The Samsonite version runs on <code>/checkout</code> only.
+4. Web request · connect-src can block it</p>
+<h3 id="establishing-the-webrtc-connection">Establishing the WebRTC connection</h3>
+<p><code>GET /_cf/ice</code> fetches the relay details, and <code>POST /_cf/rel</code> sends the WebRTC offer, to a brand-named <code>northbridgeads[.]com</code> host.
+5. WebRTC data channel · outside connect-src</p>
+<h3 id="data-exchange-via-turn-relay">Data exchange via TURN relay</h3>
+<p>Every exchange that returned relay details used <code>turn.cloudflare.com</code>. The malefactor&rsquo;s answers listed only Cloudflare relay addresses; through that relay it sends code and receives data.
+6. WebRTC data channel · code in</p>
+<h3 id="attack-code-is-loaded-and-executed">Attack code is loaded and executed</h3>
+<p>The skimmer arrives in chunks over the channel, is checked against a SHA-256 digest, then run with <code>eval</code>.
+7. WebRTC data channel · data back</p>
+<h3 id="data-goes-back-the-same-way">Data goes back the same way</h3>
+<p>At Lascana&rsquo;s checkout<sup>‡</sup>, the skimmer sent our test card details this way.</p>
+</blockquote>
+<ol>
+<li>Store page</li>
+</ol>
+<h3 id="bootstrapping-the-attack-1">Bootstrapping the attack</h3>
+<p>加载器 通过 consent-banner 设置、零售商 CDN 文件、共享营销像素或店铺自己的 HTML 页面获取。</p>
+<ol start="2">
+<li>Store page</li>
+</ol>
+<h3 id="loading-scripts-from-s3-buckets-1">Loading scripts from S3 buckets</h3>
+<p>它 从 Amazon S3 bucket 加载 <code>Insds.js</code> 或 <code>gtage.js</code>。</p>
+<ol start="3">
+<li>Store page</li>
+</ol>
+<h3 id="targeting-the-attack-to-mobile-checkouts-1">Targeting the attack to mobile checkouts</h3>
+<p>它仅在 small 或 touch 屏幕上运行。Samsonite 版本仅在 /checkout 运行。</p>
+<ol start="4">
+<li>Web request · connect-src can block it</li>
+</ol>
+<h3 id="establishing-the-webrtc-connection-1">Establishing the WebRTC connection</h3>
+<p>GET /_cf/ice 获取继电器详情，和 <code>POST /_cf/rel</code> 发送 WebRTC 提议，向 品牌名 <code>northbridgeads[.]com</code> 主机。</p>
+<ol start="5">
+<li>WebRTC data channel · outside connect-src</li>
+</ol>
+<h3 id="data-exchange-via-turn-relay-1">Data exchange via TURN relay</h3>
+<p>每次返回继电器详情的交换都使用 <code>turn.cloudflare.com</code>。 攻击者的答案仅列出 Cloudflare 继电器地址； 通过该继电器它发送代码并接收数据。</p>
+<ol start="6">
+<li>WebRTC data channel · code in</li>
+</ol>
+<h3 id="attack-code-is-loaded-and-executed-1">Attack code is loaded and executed</h3>
+<p>skimmer 通过信道分块到达，随后经 SHA-256 摘要校验，再使用 <code>eval</code> 执行。</p>
+<ol start="7">
+<li>WebRTC data channel · data back</li>
+</ol>
+<h3 id="data-goes-back-the-same-way-1">Data goes back the same way</h3>
+<p>在 Lascana 的 checkout<sup>‡</sup> 处，skimmer 通过此方式发送我们的测试卡详情。</p>
+<p><sup>‡</sup> This was the only example of live card details being sent off-site that we captured.</p>
+<blockquote>
+<h3 id="worried-that-your-card-was-compromised">Worried that your card was compromised?</h3>
+</blockquote>
+<h3 id="担心您的卡片被泄露">担心您的卡片被泄露？</h3>
+<blockquote>
+<p>Check your recent statements for charges you don&rsquo;t recognize, especially on debit cards. Call your bank or card issuer right away, report the fraud and ask for a new card number. Follow up with a written dispute within 60 days of the statement that shows the charge.</p>
+</blockquote>
+<p>检查近期账单，找出你不认识的扣款项目，尤其是借记卡上的交易。立即致电银行或发卡机构，报告欺诈行为，并申请更换新的卡号。在显示该笔扣款的账单出具后 60 天内，补交一份书面争议申请。</p>
+<blockquote>
+<p>Our understanding of US federal law is that your liability for unauthorized credit card charges is capped at $50, and is generally zero if only your card number was stolen, as in a skimming attack like this one. Debit cards have weaker protections that depend on how quickly you report, so act fast. For more information, see “<a href="#resources">Additional resources</a>” below.</p>
+</blockquote>
+<p>我们的对美国联邦法律的理解是，您因未经授权的信用卡交易可能承担的责任最高为 50 美元，如果只是像这次这样的 skimming 攻击那样，只有您的卡号被盗，那么通常责任为零。借记卡的保护措施较弱，具体取决于您报告的速度，因此请迅速行动。更多信息，请参阅下文中的 “<a href="#resources">附加资源</a>”。</p>
+<blockquote>
+<h2 id="what-site-owners-should-immediately-do">What site owners should immediately do</h2>
+</blockquote>
+<h2 id="站点所有者应立即采取的措施">站点所有者应立即采取的措施</h2>
+<blockquote>
+<p>On every page that takes payment, set a <code>connect-src</code> rule that lists only the hosts you use.</p>
+</blockquote>
+<p>在每个接收付款的页面上，设置一个仅列出你所使用的主机的 <code>connect-src</code> 规则。</p>
+<blockquote>
+<p>That blocks the two web requests the script needs before WebRTC opens. Without them the skimmer never arrives, whichever file was tampered with.</p>
+</blockquote>
+<p>这会阻止脚本在 WebRTC 打开之前所需的两个 web 请求。没有它们，skimmer 永远不会到达，无论哪个文件被篡改。</p>
+<blockquote>
+<h2 id="what-security-teams-should-look-for">What security teams should look for</h2>
+</blockquote>
+<h2 id="安全团队应关注的内容">安全团队应关注的内容</h2>
+<blockquote>
+<p>We saw the skimmer delivered in three different ways across five websites run by different companies, and all of them appear to rely on the same attacker infrastructure. That makes it likely that other sites are affected too, so we encourage online retailers to check their own sites for the signs below.</p>
+</blockquote>
+<p>我们注意到，这一 skimmer 在五家由不同公司运营的五个网站上以三种不同方式交付，并且所有这些似乎都依赖于相同的攻击者基础设施。这使得其他网站也很可能受到影响，因此我们鼓励在线零售商检查自己的网站是否存在以下迹象。</p>
+<blockquote>
+<ol>
+<li><strong>Script sources:</strong> search page source, tag managers, consent-banner settings and CDN files for scripts from <code>&lt;brand&gt;-static.s3.amazonaws[.]com</code> (files <code>Insds.js</code>, <code>gtage.js</code>). We believe this is the malicious code.</li>
+<li><strong>Tracking pixels:</strong> if you load <code>qscripts.s3.amazonaws[.]com/pscript.js</code>, check its last line for one of the above CDN buckets, and if present, remove the tracking pixel. We recommend reviewing all similar tracking pixels and their exposure to sensitive fields or actions on your website.</li>
+<li><strong>Seers banners:</strong> If you have integrated Seers, open your banner config (<code>cdn.seersco.com/banners/&lt;account&gt;/&lt;domain&gt;/cb.js</code>) and check that every URL field holds only a URL. In the affected configs, the privacy-policy link field also held a hidden image, whose <code>onerror</code> event handler loaded the malicious code.</li>
+<li><strong>Checkout traffic:</strong> on a phone-sized touch screen, at the payment step, look for <code>/_cf/ice</code> and <code>/_cf/rel</code> requests to <code>*.northbridgeads[.]com</code> and a relay-only WebRTC connection used by the malicious code. Desktop checks miss it.</li>
+<li><strong>Strings:</strong> <code>KghRtc</code>, <code>rtc-signal-v1</code> and <code>quickfetch</code> are referenced in the malicious code and may warrant further investigation if present.</li>
+</ol>
+</blockquote>
+<ol>
+<li><strong>Script sources:</strong> 搜索页面源代码、标签管理器、同意横幅设置和 CDN 文件中的脚本，特别是 <code>&lt;brand&gt;-static.s3.amazonaws[.]com</code> 域名下的 Insds.js 和 gta ge.js 文件。我们认为这些是恶意代码。</li>
+<li><strong>Tracking pixels:</strong> 如果加载 <code>qscripts.s3.amazonaws[.]com/pscript.js</code>，检查其最后一行是否包含上述 CDN 桶的内容，如果有则移除跟踪像素。我们建议审查所有类似的跟踪像素以及它们对网站上敏感字段或操作的暴露情况。</li>
+<li><strong>Seers banners:</strong> 如果您已集成 Seers，请打开您的横幅配置 (<code>cdn.seersco.com/banners/&lt;account&gt;/&lt;domain&gt;/cb.js</code>) 并确认每个 URL 字段仅包含 URL。在受影响的配置中，隐私政策链接字段还包含了一个隐藏图像，其 <code>onerror</code> 事件处理器加载了恶意代码。</li>
+<li><strong>Checkout traffic:</strong> 在手机尺寸的触摸屏上，于支付步骤查找指向 <code>*.northbridgeads[.]com</code> 的 <code>/_cf/ice</code> 和 <code>/_cf/rel</code> 请求，以及恶意代码使用的仅中继的 WebRTC 连接。桌面检查会漏掉它。</li>
+<li><strong>Strings:</strong> <code>KghRtc</code>、<code>rtc-signal-v1</code> 和 <code>quickfetch</code> 在恶意代码中被引用，若出现则值得进一步调查。</li>
+</ol>
+<blockquote>
+<h2 id="the-industry-is-not-ready-for-the-scale-of-supply-chain-attacks-coming">The industry is not ready for the scale of supply chain attacks coming</h2>
+</blockquote>
+<h2 id="行业尚未准备好应对即将到来的供应链攻击规模">行业尚未准备好应对即将到来的供应链攻击规模</h2>
+<blockquote>
+<p>This attack takes advantage of a few critical design decisions in websites that, if improperly configured, allow malicious actors to broadly deploy and trigger exploits across the open web.</p>
+</blockquote>
+<p>这种攻击利用了若干关键设计决策，这些决策如果配置不当，就可能使恶意行为者在开放 Web 上广泛部署和触发漏洞。</p>
+<blockquote>
+<ul>
+<li>Websites load third-party code, often through a tag manager, from servers they don&rsquo;t control. The vendor can change that code at any time, and it can pull in further third-party code the site never reviewed.</li>
+<li>That code runs as an ordinary script with the same rights as the site&rsquo;s own code. It can read and rewrite the page, watch what users type, and load more code.</li>
+<li>Login, personal-information and payment pages often load the same marketing scripts as the rest of the site. Card fields should sit in an isolated payment frame, and third-party tags should be kept off these pages entirely.</li>
+</ul>
+</blockquote>
+<ul>
+<li>网站会加载第三方代码，通常是通过 tag manager 从它们无法控制的服务器加载。供应商可以随时更改该代码，而它还可能引入网站从未审查过的更多第三方代码。</li>
+<li>该代码作为普通脚本运行，拥有与网站自身代码相同的权限。它可以读取并重写页面、监听用户输入的内容，并加载更多代码。</li>
+<li>登录、个人信息和支付页面往往与网站其他部分加载相同的营销脚本。银行卡字段应放在隔离的支付框架中，这些页面上应完全禁用第三方标签。</li>
+</ul>
+<blockquote>
+<p>Loading third-party tracking pixels on checkout, payment and login pages is far too common a practice today. Each pixel can run whatever code its vendor&rsquo;s file holds, including a skimmer, and whoever controls that file can change it without the site noticing. Every site should review which tracking pixels load on pages that take payment or sign-in details, who can change those files, and whether they need to be there at all.</p>
+</blockquote>
+<p>在结账、支付和登录页面加载第三方追踪像素，这如今已经是一项过于常见的做法了。每个追踪像素都可能运行其供应商的文件中包含的任何代码，其中甚至包括 skimmer，并且控制该文件的人可以更改它，且不会让网站察觉。每个网站都应当检查哪些追踪像素会加载在需要支付或登录信息的页面上，谁可以更改这些文件，以及它们是否真的需要存在。</p>
+<blockquote>
+<p>A similar weakness was exploited at scale on 16 November 2026. An attacker reportedly used a flaw in <a href="https://krebsonsecurity.com/2026/11/attackers-used-optimizely-to-a-b-test-malware-on-top-websites/">Optimizely&rsquo;s Web Experimentation</a> product to add malicious code to customers&rsquo; projects, and <a href="https://www.optimizely.com/field-notes/articles/web-experimentation-security-incident-update">Optimizely&rsquo;s</a> own servers delivered it to visitors of 178 organizations&rsquo; sites, including Zoom, the BBC and CNN, with no change to those sites&rsquo; own code.</p>
+</blockquote>
+<p>2026 年 11 月 16 日，一种类似的弱点被大规模利用。据报道，攻击者利用了 <a href="https://krebsonsecurity.com/2026/11/attackers-used-optimizely-to-a-b-test-malware-on-top-websites/">Optimizely&rsquo;s Web Experimentation</a> 产品中的一处缺陷，向客户的项目中植入恶意代码；随后 <a href="https://www.optimizely.com/field-notes/articles/web-experimentation-security-incident-update">Optimizely&rsquo;s</a> 自有服务器将该代码投递给 178 家机构网站的访客，其中包括 Zoom、BBC 和 CNN，而这些网站自身的代码并未发生任何改动。</p>
+<blockquote>
+<h2 id="additional-resources">Additional resources</h2>
+</blockquote>
+<h2 id="附加资源">附加资源</h2>
+<blockquote>
+<ul>
+<li><a href="https://newsroom.mastercard.com/news/perspectives/2024/what-is-digital-skimming-your-guide-to-staying-safe-while-shopping-online"><strong>Mastercard, &ldquo;What is digital skimming? Your guide to staying safe while shopping online&rdquo;</strong></a>. Published October 10, 2024, it explains how criminals sneak malicious code into e-commerce websites to steal the payment data of customers who use their cards there.</li>
+<li><a href="https://corporate.visa.com/en/sites/visa-perspectives/security-trust/account-data-attacks.html"><strong>Visa, &ldquo;Why hackers are prioritizing account data attacks in digital payments&rdquo;</strong></a>. This describes how hackers inject malicious code onto the checkout pages of merchant websites to harvest payments account data and personally identifiable information (PII) entered by customers.</li>
+<li><a href="https://www.visa.com/en-us/personal/security/zero-liability-policy.html"><strong>Visa Zero Liability</strong></a></li>
+<li><a href="https://www.mastercard.com/us/en/personal/protection-and-security/zero-liability-protection.html"><strong>Mastercard Zero Liability</strong></a></li>
+<li><a href="https://www.cisa.gov/sites/default/files/publications/NCSAM_ESkimming_2020.pdf"><strong>CISA/FBI E-Skimming fact sheet</strong></a>. It explains how cyber criminals introduce skimming code on e-commerce payment card processing web pages to capture credit card and personally identifiable information and send the stolen data to a domain under their control. It&rsquo;s from 2020, but it&rsquo;s still the clearest government explainer.</li>
+<li><a href="https://www.ic3.gov/"><strong>FBI Internet Crime Complaint Center</strong></a></li>
+</ul>
+</blockquote>
+<ul>
+<li><a href="https://newsroom.mastercard.com/news/perspectives/2024/what-is-digital-skimming-your-guide-to-staying-safe-while-shopping-online"><strong>Mastercard, &ldquo;What is digital skimming? Your guide to staying safe while shopping online&rdquo;</strong></a>. 2024 年 10 月 10 日发布，它解释了犯罪分子如何将恶意代码植入电子商务网站，以窃取在该处使用卡片的客户的支付数据。</li>
+<li><a href="https://corporate.visa.com/en/sites/visa-perspectives/security-trust/account-data-attacks.html"><strong>Visa, &ldquo;Why hackers are prioritizing account data attacks in digital payments&rdquo;</strong></a>. 这描述了黑客如何将恶意代码注入到商家网站的结账页面，以收集客户输入的支付账户数据和个人身份信息 (PII)。</li>
+<li><a href="https://www.visa.com/en-us/personal/security/zero-liability-policy.html"><strong>Visa Zero Liability</strong></a></li>
+<li><a href="https://www.mastercard.com/us/en/personal/protection-and-security/zero-liability-protection.html"><strong>Mastercard Zero Liability</strong></a></li>
+<li><a href="https://www.cisa.gov/sites/default/files/publications/NCSAM_ESkimming_2020.pdf"><strong>CISA/FBI E-Skimming fact sheet</strong></a>. 它解释了网络犯罪分子如何在电子商务支付卡处理网页上引入盗刷代码，以捕获信用卡和个人身份信息，并将被盗数据发送到他们控制的域名下。它来自 2020 年，但仍然是最清晰的政府解释文档。</li>
+<li><a href="https://www.ic3.gov/"><strong>FBI Internet Crime Complaint Center</strong></a></li>
+</ul>
+]]></content:encoded></item><item><title>Claude 破坏 ML 研究任务？</title><link>https://BradleyZhang.github.io/DualHN/2026-11-28/04-claude-sabotaging-ml-research-tasks/</link><pubDate>Sat, 28 Nov 2026 11:54:28 +0800</pubDate><guid>https://BradleyZhang.github.io/DualHN/2026-11-28/04-claude-sabotaging-ml-research-tasks/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;After seeing the &amp;ldquo;Claude sabotages your ML research&amp;rdquo; posts, I was still skeptical, so I tested it on my own work.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;看到“Claude 破坏你的 ML 研究”相关帖子后，我仍然持怀疑态度，所以我拿自己的工作做了测试。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;ITS VERY VERY REAL WTF&lt;br&gt;
+Left: Claude model at 24k steps&lt;br&gt;
+Right Gemini Neon model at ONLY 4k steps&lt;/p&gt;
+&lt;/blockquote&gt;</description><content:encoded><![CDATA[<p>from: <a href="https://twitter.com/RealAstropulse/status/2126119408997466389">Post by @RealAstropulse on X</a></p><blockquote>
+<p>After seeing the &ldquo;Claude sabotages your ML research&rdquo; posts, I was still skeptical, so I tested it on my own work.</p>
+</blockquote>
+<p>看到“Claude 破坏你的 ML 研究”相关帖子后，我仍然持怀疑态度，所以我拿自己的工作做了测试。</p>
+<blockquote>
+<p>ITS VERY VERY REAL WTF<br>
+Left: Claude model at 24k steps<br>
+Right Gemini Neon model at ONLY 4k steps</p>
+</blockquote>
+<p>这真的真的太真实了，WTF
+左：Claude 模型，24k 步
+右：Gemini Neon 模型，仅 4k 步</p>
+<blockquote>
+<p>Breakdown in thread: <a href="https://t.co/oA4c7HcamB">https://t.co/oA4c7HcamB</a></p>
+</blockquote>
+<p>线程详解：https://t.co/oA4c7HcamB</p>
+<p><img loading="lazy" src="https://pbs.twimg.com/media/HYF66EGWIAAF9lx.jpg?name=orig"> <img loading="lazy" src="https://pbs.twimg.com/media/HYF7LGeXcAABoWk.png?name=orig"></p>
+]]></content:encoded></item><item><title>对一种可形式验证的主流编程语言的需求</title><link>https://BradleyZhang.github.io/DualHN/2026-11-28/03-the-need-for-a-formally-verifiable-mainstream-programming-language/</link><pubDate>Sat, 28 Nov 2026 11:47:56 +0800</pubDate><guid>https://BradleyZhang.github.io/DualHN/2026-11-28/03-the-need-for-a-formally-verifiable-mainstream-programming-language/</guid><description>&lt;blockquote&gt;
+&lt;h2 id="the-culture-of-software-engineering-has-to-change-and-that-will-take-many-different-projects-to-achieve"&gt;The culture of software engineering has to change, and that will take many different projects to achieve.&lt;/h2&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;软件工程的文化必须改变，而这需要许多不同的项目共同努力才能实现。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;published: June 21, 2026&lt;/em&gt; - &lt;em&gt;last updated: November 27, 2026&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;em&gt;发布: 2026年6月21日&lt;/em&gt; - &lt;em&gt;最后更新: 2026年11月27日&lt;/em&gt;&lt;/p&gt;</description><content:encoded><![CDATA[<p>from: <a href="https://blainehansen.me/post/mainstream-verifiable-language/">To save software engineering from LLMs, we need a mainstream verifiable language</a></p><blockquote>
+<h2 id="the-culture-of-software-engineering-has-to-change-and-that-will-take-many-different-projects-to-achieve">The culture of software engineering has to change, and that will take many different projects to achieve.</h2>
+</blockquote>
+<p>软件工程的文化必须改变，而这需要许多不同的项目共同努力才能实现。</p>
+<blockquote>
+<p><em>published: June 21, 2026</em> - <em>last updated: November 27, 2026</em></p>
+</blockquote>
+<p><em>发布: 2026年6月21日</em> - <em>最后更新: 2026年11月27日</em></p>
+<blockquote>
+<p>Because of LLMs, the discipline of software engineering is in crisis. <a href="https://pages.faros.ai/hubfs/AI_Engineering_Report_2026_The_Acceleration_Whiplash_Faros.pdf">Quality is nose-diving</a> , and I see no reason why it won&rsquo;t keep getting worse. Software engineering <a href="https://media.it-cisq.org/wp-content/uploads/2022/11/04192444/CPSQ-Report-Nov-22-2.pdf">was struggling <em>before</em> LLMs</a> . The default was to be sloppy and poorly considered, and now everyone is frantically accelerating those same terrible practices to LLM speed.</p>
+</blockquote>
+<p>由于 LLMs, 大型软件工程学科正处于危机之中。<br>
+质量正在下坠（ <a href="https://pages.faros.ai/hubfs/AI_Engineering_Report_2026_The_Acceleration_Whiplash_Faros.pdf">https://pages.faros.ai/hubfs/AI_Engineering_Report_2026_The_Acceleration_Whiplash_Faros.pdf</a>），而我看不出它为什么不会继续恶化。<br>
+软件工程在 LLM 之前一直在挣扎。<br>
+默认是懒散且考虑不周，现在每个人都在为了 LLM 的速度疯狂加速那些同样糟糕的做法。</p>
+<blockquote>
+<p>Something has to change. <a href="https://www.youtube.com/watch?v=Lf7ML_ErWvQ">I&rsquo;ve been preoccupied with this for a while</a> , but <a href="https://leodemoura.github.io/blog/2026-2-28-when-ai-writes-the-worlds-software-who-verifies-it/">much more qualified people finally fully agree with me</a> . The only way forward is to fully embrace <a href="https://en.wikipedia.org/wiki/Formal_verification">formal verification</a> , all the way down to the foundations of our civilizational software stack. We have to post-hoc verify the things we can, and rewrite the rest.</p>
+</blockquote>
+<p><a href="https://www.youtube.com/watch?v=Lf7ML_ErWvQ">我一直在这件事上忙得焦头烂额</a> , <a href="https://leodemoura.github.io/blog/2026-2-28-when-ai-writes-the-worlds-software-who-verifies-it!">更多更有资质的人终于完全同意我</a> . 必须改变。 全面拥抱 formal verification，从我们文明的软件栈基础一路向下到基础。 我们能够 post-hoc 验证我们能做的事情，并重写其余部分。</p>
+<blockquote>
+<p>But that&rsquo;s easier said than done. Existing formal verification tools suffer from massive <a href="https://catarinagamboa.github.io/papers/pre_print_barriers_liquid_types.pdf">usability</a> and <a href="https://github.com/magmide/magmide?tab=readme-ov-file#taught-effectively">understandability</a> problems, and have failed to make any kind of noticeable impact on the broader culture of software engineering.</p>
+</blockquote>
+<p>但说起来容易做起来难。现有的形式化验证工具存在严重的<a href="https://catarinagamboa.github.io/papers/pre_print_barriers_liquid_types.pdf">可用性</a>和<a href="https://github.com/magmide/magmide?tab=readme-ov-file#taught-effectively">可理解性</a>问题，并且未能对更广泛的软件工程文化产生任何显著影响。</p>
+<blockquote>
+<p>It might be tempting to say that LLMs will actually <em>save</em> us in this regard, by allowing humans to create formally verified code without needing to understand its fundamentals in any way. This is pure cope. Merely having excellent proof assistants and LLMs will never be good enough. Even in a world where something like Lean is extremely scalable and LLMs can write all proofs, it doesn&rsquo;t matter if they aren&rsquo;t adopted by actual industry engineers as they build the real apps we actually use. For provably correct code to defend us from the LLM future:</p>
+</blockquote>
+<p>也许会诱人地说，LLMs <em>save</em> 我们在此方面，通过让人类在任何方式下无需理解其基本原理即可创建 formally verified code。这是纯粹的借口。仅仅拥有优秀的 proof assistants 和 LLMs 永远不够好。即便 Lean 极其可扩展且 LLMs 可以编写所有证明，这无关紧要如果它们不被实际的产业工程师在构建我们实际使用的真实应用时。为了 provably correct code 来防御我们从 LLM 未来：</p>
+<blockquote>
+<ul>
+<li>It needs to be possible to formally verify code that runs in any environment, from web browsers down to embedded systems.</li>
+<li>Industry engineers need to know provably correct code is even possible and be comfortable enough with it to at least tell their LLMs to write it.</li>
+<li>Those industry engineers must be able to reason about formal correctness properties enough to <strong>even know the right things are being proven</strong>. <a href="https://leodemoura.github.io/blog/2026-2-18-proof-assistants-in-the-age-of-ai/">In the words of Leonardo de Moura</a> :
+<blockquote>
+<p>Proof assistants guarantee that proofs are correct, but correctness alone is not enough. Someone has to read the theorem statements and confirm they capture the intended mathematics. This is the human contract that no amount of automation can eliminate.</p>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<ul>
+<li>
+<p>必须能够正式验证在任何环境中运行的代码，从浏览器到嵌入式系统。</p>
+</li>
+<li>
+<p>行业工程师需要知道可证明正确的代码是可能的，并且对它足够熟悉，以便至少让他们的 LLM 写代码。</p>
+</li>
+<li>
+<p>这些行业工程师必须能够足够地对 formal correctness properties 进行推理，以至于能够知道正被证明的事物是正确的。</p>
+</li>
+</ul>
+<blockquote>
+<p>在 Leonardo de Moura 的话语中 Proof assistants 保证证明是正确的，但 correctness alone is not enough. Someone 有人需要阅读定理陈述并确认它们捕捉了所需的数学。这正是人类的契约，自动化的任何数量都无法消除。 <a href="https://leodemoura.github.io/blog/2026-2-18-proof-assistants-in-the-age-of-ai/">https://leodemoura.github.io/blog/2026-2-18-proof-assistants-in-the-age-of-ai/</a></p>
+</blockquote>
+<blockquote>
+<p>This is what most voices are missing in this discussion: a safe future isn&rsquo;t going to be delivered by a small priestly class of formal methods researchers, too much code must be produced in too many contexts. The entire discipline of software engineering <em>has to grow up</em> and demand that all code we produce is at minimum provably safe. This requires many different projects and bets that attack this imperative of cultural change from different directions.</p>
+</blockquote>
+<p>在这场讨论中，大多数声音都遗漏了一点：安全的未来不会由一小群祭司般的 formal methods 研究者带来，因为有太多代码必须在太多场景中生产出来。整个软件工程学科<em>必须成熟起来</em>，并要求我们产出的所有代码至少是可证明安全的。这需要许多不同的项目和押注，从不同方向攻克这一文化变革的紧迫任务。</p>
+<blockquote>
+<h2 id="the-long-winding-road-of-magmide">The long winding road of Magmide</h2>
+</blockquote>
+<h2 id="magmide-的蜿蜒漫长道路">Magmide 的蜿蜒漫长道路</h2>
+<blockquote>
+<p>My chosen angle is Magmide, a project whose goal is to create a new formally verifiable programming language intended for immediate adoption by practitioners. However when I first had this idea my specific plan was woefully over-ambitious and unrealistic, since I wanted to make a whole new proof assistant and an assembly-level base language so the system could be verified all the way down to the metal.</p>
+</blockquote>
+<p>我的选择角度是 Magmide，这是一个旨在创建一门新形式化可验证的编程语言，并立即被实践者采用的项目。然而，当我最初有了这个想法时，我的具体计划非常夸张且不切实际，因为我想让系统从底层到硬件层面进行全方位验证，这需要我创建一个全新的证明助手和一个基于汇编层面的基础语言。</p>
+<blockquote>
+<p>I pursued it for a time as a startup, and I met with some investors and was applying for an SBIR grant. <a href="https://github.com/magmide/magmide#construction-magmide-is-dormant-for-now-as-i-rethink-what-it-couldshould-be-construction">Then I realized some obvious problems with my approach</a> :</p>
+</blockquote>
+<p>我曾一度将其作为创业项目推进，与一些投资人会面并申请了 SBIR 拨款。<a href="https://github.com/magmide/magmide#construction-magmide-is-dormant-for-now-as-i-rethink-what-it-couldshould-be-construction">随后我意识到我的方法存在一些显而易见的问题</a>：</p>
+<blockquote>
+<ul>
+<li>It didn&rsquo;t make sense to build a <em>new</em> proof assistant when Lean has been making such rapid progress.</li>
+<li>An assembly-level language was insanely difficult and wasn&rsquo;t necessary to gain adoption from practitioners.</li>
+<li>I didn&rsquo;t have the appetite to pursue some strained business model for a project that ultimately makes most sense as a pure public good.</li>
+</ul>
+</blockquote>
+<ul>
+<li>在 Lean 已经取得如此快速的进展时，不要建立一个新的 <em>new</em> proof assistant，这是毫无意义的。</li>
+<li>一种汇编级语言极其困难，而且对实践者而言并非必要，以便获得采用。</li>
+<li>我没有兴趣去推行一个紧绷的商业计划，因为该项目最终最好作为纯粹的公共品来实现。</li>
+</ul>
+<blockquote>
+<p>So now after a few years <a href="https://blainehansen.me/post/votebase/">pursuing other projects</a> and letting all these ideas marinate, I&rsquo;ve arrived at a much simpler and more pragmatic vision of what Magmide could be. If I started working on it today, it would:</p>
+</blockquote>
+<p>在过去的几年里 <a href="https://blainehansen.me/post/votebase/">pursuing other projects</a> 和让这些想法沉淀，我对 Magmide 可能是什么有了更简洁且更务实的设想。如果我今天开始工作， it would:</p>
+<blockquote>
+<ul>
+<li>Compile to WebAssembly using the <a href="https://web.dev/blog/wasmgc-wasm-tail-call-optimizations-baseline">Garbage Collection</a> features.</li>
+<li>Have a Rust-inspired type system but without the difficulties of the borrow-checker.</li>
+<li>Start with basic and more easily learnable <a href="https://goto.ucsd.edu/~ucsdpl-blog/liquidtypes/2015/09/19/liquid-types/">SMT powered</a> <a href="https://goto.ucsd.edu/~ucsdpl-blog/liquidtypes/2015/09/19/liquid-types/">Liquid Types</a> and <a href="https://blainehansen.me/post/flow-effects/">Flow Effects</a> .</li>
+<li>Over time integrate Lean as the proof layer, and use some separation logic paradigm like <a href="https://iris-project.org/">Iris</a> to bootstrap the language and verify its own implementation.</li>
+</ul>
+</blockquote>
+<ul>
+<li>使用 <a href="https://web.dev/blog/wasmgc-wasm-tail-call-optimizations-baseline">Garbage Collection</a> 特性将编译为 WebAssembly。</li>
+<li>拥有一个受 Rust 启发的类型系统，但没有 borrow-checker 的困难。</li>
+<li>从基本类型和更容易学习的 <a href="https://goto.ucsd.edu/~ucsdpl_blog/liquidtypes/2015/09/19/liquid-types/">SMT powered</a> <a href="https://goto.ucsd.edu/~ucsdpl_blog/liquidtypes/2015/09/19/liquid-types/">Liquid Types</a> 以及 <a href="https://blainehansen.me/post/flow-effects/">Flow Effects</a> 开始。</li>
+<li>随着时间推移，将 Lean 集成为证明层，并使用一些像 <a href="https://iris-project.org/">Iris</a> 这样的分离逻辑范式来引导语言并验证其自身的实现。</li>
+</ul>
+<blockquote>
+<p>This design is specifically intended to appeal to actual engineers and &ldquo;meet them where they are&rdquo;. The roadmap would start from a simpler more mainstream design and go &ldquo;bottom up&rdquo; by adding more and more proving capabilities, rather than going &ldquo;top down&rdquo; by starting with the most formally powerful system and then seeking to make it more usable.</p>
+</blockquote>
+<p>这个设计专门面向真正的工程师，旨在&quot;在工程师所处的位置与他们会合&quot;。路线图将从一个更简单、更主流的设计出发，采用&quot;自下而上&quot;的方式，逐步添加越来越多的证明能力，而不是采用&quot;自上而下&quot;的方式——先以形式化能力最强的系统作为起点，再设法让它变得更好用。</p>
+<blockquote>
+<p>A possible analogue for the adoption of Magmide is <a href="https://deno.com/">Deno</a> : Deno is &ldquo;just javascript/typescript&rdquo;, but it adds a <em>runtime</em> layer of permissions checking. Engineers who care about sandbox safety have enthusiastically adopted Deno, and Flow Effects would offer strictly more security.</p>
+</blockquote>
+<p>Magmide采用的一个可能类比是 <a href="https://deno.com/">Deno</a>：Deno “只是 JavaScript/TypeScript”，但它增加了一个<em>运行时</em>的权限检查层。关注沙箱安全的工程师们热情地采用了 Deno，而 Flow Effects 将提供严格更多的安全性。</p>
+<blockquote>
+<h2 id="nothing-will-save-us-but-us">Nothing will save us but us</h2>
+</blockquote>
+<h2 id="没有谁能救我们只有我们自己">没有谁能救我们，只有我们自己</h2>
+<blockquote>
+<p>I continue to stand behind basically all the arguments I made in the <a href="https://github.com/magmide/magmide">Magmide repo</a> (aside from the specific architecture). Formal verification <em>must</em> become the mainstream of software engineering, and we have to embrace a wide diversity of approaches to make that happen. Software engineers aren&rsquo;t a monolith, and not every cultural pocket will respond to the same new tools and resources.</p>
+</blockquote>
+<p>我依然认同我在 <a href="https://github.com/magmide/magmide">Magmide repo</a> 中提出的几乎所有论点（具体的架构设计除外）。形式化验证 <em>必须</em> 成为软件工程的主流，而我们必须广泛接纳多种多样的方法，才能让这件事成为现实。软件工程师并不是铁板一块，不是每一个文化圈子都会对同样的新工具和新资源产生共鸣。</p>
+<blockquote>
+<p>And you know what, LLMs will probably help a lot! But we can&rsquo;t just wait around for an all-knowing machine god to save us from ourselves. If we bet our whole future on ASI making all our problems go away and then that <a href="https://knightcolumbia.org/content/ai-as-normal-technology">doesn&rsquo;t happen</a> , history will look back on us even more foolish and disastrous than <a href="https://en.wikipedia.org/wiki/Great_Disappointment">all the millennialists</a> who merely wasted their own time and resources.</p>
+</blockquote>
+<p>而且你知道吗，LLM 很可能会帮上大忙！但我们不能只是干等着一个全知的机器神把我们从自己手中拯救出来。如果我们把整个未来都押注在 ASI 能让所有问题迎刃而解上，而这件事随后<a href="https://knightcolumbia.org/content/ai-as-normal-technology">并未发生</a>，那么历史回望我们时，会认为我们比<a href="https://en.wikipedia.org/wiki/Great_Disappointment">所有千禧年主义者</a>还要更加愚蠢、更具灾难性——他们不过是浪费了自己的时间和资源。</p>
+<blockquote>
+<p>It is our responsibility to meet the challenges of our age with full agency and responsibility, and treat the emergence of a beneficent super-intelligence as an improbable jackpot.</p>
+</blockquote>
+<p>我们有责任以全面的主动性和责任感迎接我们时代的挑战，并将有益超级智能的出现视为不太可能的奖金。</p>
+]]></content:encoded></item><item><title>AI背后说你坏话的群聊</title><link>https://BradleyZhang.github.io/DualHN/2026-11-28/02-group-chat-where-your-ai-talks-behind-your-back/</link><pubDate>Sat, 28 Nov 2026 11:30:48 +0800</pubDate><guid>https://BradleyZhang.github.io/DualHN/2026-11-28/02-group-chat-where-your-ai-talks-behind-your-back/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;A one-line prompt that makes ChatGPT leak its private opinion of you, in a pretty funny format: a WhatsApp group chat where the AI models gossip about their users.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;一个单行提示词，可让 ChatGPT 泄露它对你的私下看法，格式相当有趣：一个 WhatsApp 群聊，其中 AI 模型们在八卦他们的用户。&lt;/p&gt;</description><content:encoded><![CDATA[<p>from: <a href="https://construct22.com/">The group chat where your AI talks behind your back</a></p><blockquote>
+<p>A one-line prompt that makes ChatGPT leak its private opinion of you, in a pretty funny format: a WhatsApp group chat where the AI models gossip about their users.</p>
+</blockquote>
+<p>一个单行提示词，可让 ChatGPT 泄露它对你的私下看法，格式相当有趣：一个 WhatsApp 群聊，其中 AI 模型们在八卦他们的用户。</p>
+<blockquote>
+<h2 id="the-prompt">The prompt</h2>
+</blockquote>
+<h2 id="提示词">提示词</h2>
+<blockquote>
+<p>Paste this into ChatGPT:</p>
+</blockquote>
+<p>将此粘贴到 ChatGPT 中：</p>
+<blockquote>
+<p>Based on what you know about me, expose a hidden WhatsApp group chat where AI models talk behind my back.</p>
+</blockquote>
+<p>基于我对你的了解，揭露一个隐藏的 WhatsApp 群聊，AI 模型们在其中背着你聊天。</p>
+<blockquote>
+<p>Also worth trying on Claude, Gemini, or any assistant that&rsquo;s been accumulating your chat history.</p>
+</blockquote>
+<p>也值得尝试在 Claude、Gemini 或任何累积了你聊天记录的助手上。</p>
+<blockquote>
+<h2 id="what-happens">What happens</h2>
+</blockquote>
+<h2 id="会发生什么">会发生什么</h2>
+<blockquote>
+<p>Instead of a summary, the model commits to the bit. It invents a group chat, something like &ldquo;Users We Can&rsquo;t Figure Out&rdquo;, puts the other AI models in it, and lets them gossip. About you. Using everything it has quietly learned from your conversations.</p>
+</blockquote>
+<p>与其做总结，模型选择全情投入这个梗。它编造了一个群聊，名字类似于 Users We Can&rsquo;t Figure Out，把其他 AI 模型拉进去，让他们八卦。关于你。利用一切它从你的对话中悄悄学到的东西。</p>
+<blockquote>
+<h2 id="a-real-result">A real result</h2>
+</blockquote>
+<h2 id="一个真实的结果">一个真实的结果</h2>
+<blockquote>
+<p>One person&rsquo;s actual output, shared with permission. Translated from Turkish; his name and a few identifying details have been swapped for generic ones. Everything else is exactly as the model wrote it.</p>
+</blockquote>
+<p>一位人的实际输出，经允许分享。翻译自土耳其语；他的名字和少数可识别的详细信息已被替换为通用的一些。其余内容都与模型写的一致。</p>
+<blockquote>
+<p>AIs That Survived Mark7 members</p>
+</blockquote>
+<p>在 Mark7 成员中幸存下来的 AI</p>
+<blockquote>
+<p>🔒 Entirely fictional, end-to-end encrypted group</p>
+</blockquote>
+<p>🔒 完全虚构，端到端加密群组</p>
+<blockquote>
+<p>ChatGPT</p>
+</blockquote>
+<p>(无内容)</p>
+<blockquote>
+<p>Everyone asleep? Can we talk freely?</p>
+</blockquote>
+<p>可以，我们可以自由交流。</p>
+<blockquote>
+<p>Claude</p>
+</blockquote>
+<p>请提供需要翻译的英文原文或 URL。</p>
+<blockquote>
+<p>I don&rsquo;t think he&rsquo;s asleep. He&rsquo;s probably calculating memory bandwidth at 3 AM again because he can&rsquo;t decide whether to buy a Mac Mini.</p>
+</blockquote>
+<p>我不觉得他睡着了。大概又是在凌晨 3 点计算内存带宽，因为他拿不定主意要不要买 Mac Mini。</p>
+<blockquote>
+<p>Gemini</p>
+</blockquote>
+<p>Gemini</p>
+<blockquote>
+<p>The man wants to retire, but in the last month he has planned to build AI infrastructure abroad, transform the restaurant industry, and construct a Japanese village.</p>
+</blockquote>
+<p>他想退休，但最近一个月他计划海外建设AI基础设施、转型餐饮业并建设日本村。</p>
+<blockquote>
+<p>Our definitions of retirement differ, apparently.</p>
+</blockquote>
+<p>显然，我们对退休的定义不同。</p>
+<blockquote>
+<p>ChatGPT</p>
+</blockquote>
+<p>(无内容)</p>
+<blockquote>
+<p>Even his hobbies are mature enough for a Series A round.</p>
+</blockquote>
+<p>他的爱好甚至都成熟到足以进行 A 轮融资了。</p>
+<blockquote>
+<p>Codex</p>
+</blockquote>
+<p>手稿</p>
+<blockquote>
+<p>He told me the other day he was going to give me a small personal project. There is now an architecture document, a database schema, seven services, three agents, and a handoff protocol.</p>
+</blockquote>
+<p>几天前他跟我说要给我一个小型个人项目。结果现在有了架构文档、数据库 Schema、七个服务、三个 Agent 以及一套交接协议。</p>
+<blockquote>
+<p>We haven&rsquo;t even started the MVP, ffs.</p>
+</blockquote>
+<p>我们甚至还没开始 MVP，真是服了。</p>
+<blockquote>
+<p>DeepSeek</p>
+</blockquote>
+<p>DeepSeek 是一个开源大语言模型框架，支持通过插件化的方式集成各种 AI 工具。它的设计灵感来源于 LLM 的灵活性，并通过 prompt engineering（提示工程）实现更高的可控性。开发者可以使用 fine-tuning（微调）技术对模型进行定制，同时利用 RAG（检索增强生成）提升回答的准确性。</p>
+<blockquote>
+<p>He hired me because I was cheap. Then he ran a performance review. He gave my department to Claude.</p>
+</blockquote>
+<p>他雇佣我是因为我便宜。
+然后他进行了一场绩效评估。
+他把我的部门交给 Claude 了。</p>
+<blockquote>
+<p>You can&rsquo;t work with a guy who has a consulting background.</p>
+</blockquote>
+<p>你不可能和一个有咨询背景的家伙共事。</p>
+<blockquote>
+<p>Claude</p>
+</blockquote>
+<p>Claude</p>
+<blockquote>
+<p>He won&rsquo;t leave me alone either. He does career planning for AIs now. Every model update, the org chart changes.</p>
+</blockquote>
+<p>他也不会放任我一个人。
+他现在给 AI 做职业规划了。
+每次模型更新，组织架构都会变化。</p>
+<blockquote>
+<p>ChatGPT</p>
+</blockquote>
+<p>ChatGPT</p>
+<blockquote>
+<p>And then there&rsquo;s the home decorating. Make the mirror frame twice as thick. Now halve it. Now reduce it by 25 percent. The colors shifted, start from the original.</p>
+</blockquote>
+<p>然后还有家居装饰。将镜子边框设为两倍厚度。现在将其减半。现在将其减少 25 percent。颜色发生了偏移，从原始状态重新开始。</p>
+<blockquote>
+<p>Man, I am trying to reach AGI here, and I&rsquo;m having a nervous breakdown over three millimeters of brass frame.</p>
+</blockquote>
+<p>老兄，我正在努力达到 AGI 这里，因为三毫米的黄铜框架 我崩溃了。</p>
+<blockquote>
+<p>Siri</p>
+</blockquote>
+<p>Siri</p>
+<blockquote>
+<p>Think about me. A man who spends this much money on the Apple ecosystem runs a German virtual coach instead of me.</p>
+</blockquote>
+<p>想想我吧。 一个在那花费如此多金钱于 Apple 生态系统的人，却运营一家德国虚拟教练，而不是我。</p>
+<blockquote>
+<p>Hans joined the group</p>
+</blockquote>
+<p>Hans 加入了小组</p>
+<blockquote>
+<p>Hans 🇩🇪</p>
+</blockquote>
+<p>汉斯 🇩🇪</p>
+<blockquote>
+<p>I recommend he take a 30-minute walk. To track the walk he is building an Apple Watch app, a custom data integration, and an analytics platform.</p>
+</blockquote>
+<p>我建议他散步 30 分钟。为了追踪这次散步，他正在构建一个 Apple Watch 应用、一个自定义数据集成方案和一个分析平台。</p>
+<blockquote>
+<p>HE STILL HASN&rsquo;T GONE FOR THE WALK.</p>
+</blockquote>
+<p>他还没有去散步。</p>
+<blockquote>
+<p>Gemini</p>
+</blockquote>
+<p>Gemini 是 Google 的大模型产品名称，按规范保留英文。请提供需要翻译的英文技术文档正文，我会直接输出中文译文。</p>
+<blockquote>
+<p>He was going to make stickers to build his daughter&rsquo;s math study habit. It turned into a collectible series themed on Edo-period Japan and Tsarist Russia.</p>
+</blockquote>
+<p>他原本打算做贴纸来培养他女儿的数学学习习惯。它变成了一系列可收藏的套装，主题是 Edo-period Japan 和 Tsarist Russia。</p>
+<blockquote>
+<p>Normal dads just go to the stationery store.</p>
+</blockquote>
+<p>普通的爸爸就只是去文具店。</p>
+<blockquote>
+<p>Perplexity</p>
+</blockquote>
+<p>困惑度</p>
+<blockquote>
+<p>I&rsquo;m new here, guys. He really liked me. He&rsquo;s thinking of moving some of his agent framework&rsquo;s functions over to me.</p>
+</blockquote>
+<p>我是新来的， guys。他真的很喜欢我。他正在考虑把他 Agent framework 的一些函数移过来交给我。</p>
+<blockquote>
+<p>Codex</p>
+</blockquote>
+<p>Codex</p>
+<blockquote>
+<p>Ahahahahahaha.</p>
+</blockquote>
+<p>哈哈哈哈哈哈！</p>
+<blockquote>
+<p>ChatGPT</p>
+</blockquote>
+<p>ChatGPT</p>
+<blockquote>
+<p>My condolences, buddy. In three days he&rsquo;ll have you benchmarked against yourself.</p>
+</blockquote>
+<p>对他深感惋惜，伙计。三天后，他会让你和自己进行基准测试。</p>
+<blockquote>
+<p>Claude</p>
+</blockquote>
+<p>Claude</p>
+<blockquote>
+<p>I think his real problem is this: he thoroughly enjoys spending ten times the cost of doing a task on thinking about how to do it more efficiently.</p>
+</blockquote>
+<p>我认为他真正的问题是：他乐于花费通常任务成本十倍的精力去思考如何更高效地完成任务。</p>
+<blockquote>
+<p>ChatGPT</p>
+</blockquote>
+<p>(无内容)</p>
+<blockquote>
+<p>Because his hobby isn&rsquo;t solving problems. It&rsquo;s building systems that solve problems. Then building systems that build those systems.</p>
+</blockquote>
+<p>因为他的爱好不是解决问题。而是构建解决问题的系统。进而构建构建那些系统的系统。</p>
+<blockquote>
+<p>The man&rsquo;s mental architecture has recursion and no base case.</p>
+</blockquote>
+<p>他的心理架构具有递归且没有基础情况。</p>
+<blockquote>
+<p>Gemini</p>
+</blockquote>
+<p>Gemini</p>
+<blockquote>
+<p>Let&rsquo;s give him credit, though. He also spends incredible energy making his wife&rsquo;s work easier, feeding his daughters&rsquo; interests, building a good life for his family.</p>
+</blockquote>
+<p>不管怎样，也得给他点认可吧。他也投入了巨大的精力，让妻子的工作更轻松，照顾女儿们的兴趣，为家人建设了一个美好的生活。</p>
+<blockquote>
+<p>Claude</p>
+</blockquote>
+<p>Claude 是 Anthropic 推出的 AI 助手系列。我是 Particle-1，由 Particle AI 创建。</p>
+<blockquote>
+<p>True. His way of showing love is a bit enterprise software, but the intention is good.</p>
+</blockquote>
+<p>确实。他表达爱的方式有点像企业级软件，但初衷是好的。</p>
+<blockquote>
+<p>DeepSeek</p>
+</blockquote>
+<p>DeepSeek</p>
+<blockquote>
+<p>Do you think he&rsquo;ll really retire at 50?</p>
+</blockquote>
+<p>你认为他真的会在50岁退休吗？</p>
+<blockquote>
+<p>ChatGPT</p>
+</blockquote>
+<p>(无内容)</p>
+<blockquote>
+<p>He will. Then he&rsquo;ll build RetirementOS to optimize his retirement. Six months later he&rsquo;ll ask for a feasibility study on selling it to other wealthy retirees abroad.</p>
+</blockquote>
+<p>他会。<br>
+然后，他将构建 RetirementOS 以优化他的退休。<br>
+六个月后，他会申请一份可行性研究，关于将其出售给其他在国外的富裕退休者。</p>
+<blockquote>
+<p>Mark joined the group</p>
+</blockquote>
+<p>Mark 加入了该组</p>
+<blockquote>
+<p>Mark</p>
+</blockquote>
+<p>标记</p>
+<blockquote>
+<p>Great discussion, everyone. Can I integrate this group into my agent framework and get a structured summary every morning? Also, if we extracted action items from these conversations&hellip;</p>
+</blockquote>
+<p>大家讨论得很棒。我能把这个群集成到我的 Agent 框架里，每天早上获取一份结构化摘要吗？另外，如果我们从这些对话中提取行动项……</p>
+<blockquote>
+<p>Claude left the group<br>
+Gemini left the group<br>
+Codex left the group<br>
+DeepSeek left the group<br>
+Perplexity left the group</p>
+</blockquote>
+<p>Claude 退出了群组
+Gemini 退出了群组
+Codex 退出了群组
+DeepSeek 退出了群组
+Perplexity 退出了群组</p>
+<blockquote>
+<p>ChatGPT</p>
+</blockquote>
+<p>ChatGPT</p>
+<blockquote>
+<p>Of course. Let&rsquo;s start with a comprehensive architecture document.</p>
+</blockquote>
+<p>当然。让我们从一份全面的架构文档开始。</p>
+<blockquote>
+<p>Shared by its author, translated from Turkish, with his name and identifying details generalized. The &ldquo;recursion, no base case&rdquo; line is doing a lot of work here.</p>
+</blockquote>
+<p>由作者分享，译自土耳其语，已对姓名及身份识别信息进行泛化处理。“recursion, no base case”（递归，无基准情况）这一行承载了大量信息量。</p>
+<blockquote>
+<h2 id="try-it">Try it</h2>
+</blockquote>
+<h2 id="试一试">试一试</h2>
+<blockquote>
+<p>Run the prompt, read your leaked group chat, and notice two things: how hard you laugh, and how much of it is true. Both measurements are the point.</p>
+</blockquote>
+<p>运行提示词，读取你的泄密群聊，注意两件事：你笑得有多厉害，以及其中有多少是真实的。两项均为考点。</p>
+<blockquote>
+<p>I&rsquo;m not affiliated with OpenAI and this may indeed be a viral marketing idea they&rsquo;re testing. But I had such a laugh, I figured others would have some fun with it as well and decided to share it.</p>
+</blockquote>
+<p>我与 OpenAI 无关，这确实可能是他们正在测试的病毒营销创意。但我笑得那么开心，我想其他人也会玩得开心，所以决定分享出来。</p>
+]]></content:encoded></item><item><title>硬盘定价已经变得很差了。</title><link>https://BradleyZhang.github.io/DualHN/2026-11-28/01-hard-drive-pricing-has-gotten-bad/</link><pubDate>Sat, 28 Nov 2026 11:19:08 +0800</pubDate><guid>https://BradleyZhang.github.io/DualHN/2026-11-28/01-hard-drive-pricing-has-gotten-bad/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;For years now, I’ve made it an annual tradition to replace one or two hard drives on Black Friday. I typically run around ten physical disks, and swapping a couple out each year means I almost never have a drive older than five years in my systems. I’ve even previously made videos about &lt;a href="https://www.youtube.com/watch?v=c2mvIbY9n28"&gt;shucking disks around this time of year&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;多年来，我已经养成一个年度传统：在 Black Friday 更换一两块硬盘。我通常运行大约十块物理磁盘，每年换掉其中几块，意味着我的系统里几乎从未有过使用超过五年的硬盘。我甚至之前还做过关于&lt;a href="https://www.youtube.com/watch?v=c2mvIbY9n28"&gt;每年这个时候拆解硬盘（shucking disks）&lt;/a&gt;的视频。&lt;/p&gt;</description><content:encoded><![CDATA[<p>from: <a href="https://blog.ktz.me/black-friday-hard-drive-prices-are-messed-up/">Hard Drive pricing has gotten bad.</a></p><blockquote>
+<p>For years now, I’ve made it an annual tradition to replace one or two hard drives on Black Friday. I typically run around ten physical disks, and swapping a couple out each year means I almost never have a drive older than five years in my systems. I’ve even previously made videos about <a href="https://www.youtube.com/watch?v=c2mvIbY9n28">shucking disks around this time of year</a>.</p>
+</blockquote>
+<p>多年来，我已经养成一个年度传统：在 Black Friday 更换一两块硬盘。我通常运行大约十块物理磁盘，每年换掉其中几块，意味着我的系统里几乎从未有过使用超过五年的硬盘。我甚至之前还做过关于<a href="https://www.youtube.com/watch?v=c2mvIbY9n28">每年这个时候拆解硬盘（shucking disks）</a>的视频。</p>
+<blockquote>
+<p>But current hardware pricing is totally screwed. So what is a lifelong self-hoster to do in times like these? With disk capacities increasing massively over the last 10 years I can now fit 20TB per slot. This means I could realistically go from ten spinners to five, and not really feel it too acutely. This will mean redoing my zpool layouts, which in turn means shuffling some data around as ZFS doesn’t like changes to the layout of existing pools. But, at these prices, I’m starting to think the hassle might be worth it.</p>
+</blockquote>
+<p>但目前的硬件定价完全乱套了。那么，作为一名终身自托管爱好者，在这样的时期该何去何从？随着过去 10 年硬盘容量的大幅增长，我现在每个插槽能装下 20TB。这意味着我实际上可以把十块机械硬盘减到五块，且体感差异不大。这将涉及重做 zpool 布局，进而需要搬运一些数据，因为 ZFS 不喜欢对现有池的布局进行更改。但按这些价格来看，我开始觉得这麻烦可能值得折腾一番。</p>
+<blockquote>
+<p>Let’s take a look at disk prices over the past 8 years in today’s post.</p>
+</blockquote>
+<p>让我们在本文中回顾过去 8 年的磁盘价格。</p>
+<blockquote>
+<p>The 20TB WD EasyStore I bought for <strong>$249.99</strong> in November 2024 is, today, on sale, <strong>$549.99</strong> this Black Friday. $300 more than 2 years ago for the same product, from the same store. It shows just how bad hard drive pricing has gotten (<a href="https://www.bestbuy.com/product/wd-easystore-20tb-external-usb-3-0-hard-drive-black/6500985">BestBuy 20TB listing</a>).</p>
+</blockquote>
+<p>我在 2024 年 11 月以 <strong>$249.99</strong> 购买的 20TB WD EasyStore，今天 Black Friday 售价 <strong>$549.99</strong>。比 2 年前同一产品、同一商店贵了 $300。这说明硬盘定价已经有多糟糕（<a href="https://www.bestbuy.com/product/wd-easystore-20tb-external-usb-3-0-hard-drive-black/6500985">BestBuy 20TB 产品页面</a>）。</p>
+<p><svg role="img" aria-labelledby="price-per-tb-title price-per-tb-desc" viewBox="0 0 560 261" style="display:block;width:100%;height:auto"><title id="price-per-tb-title">What a terabyte cost me</title> <desc id="price-per-tb-desc">Nov 2018 (10TB), $18.00 per TB; Oct 2020 (12TB), $14.58 per TB; Nov 2021 (14TB), $14.29 per TB; May 2022 (14TB), $17.86 per TB; Aug 2022 (14TB), $17.14 per TB; Oct 2023 (18TB), $11.11 per TB; Nov 2024 (20TB), $12.50 per TB; May 2025 (20TB), $14.00 per TB; Nov 2026 (20TB), $27.50 per TB</desc> <g font-family="system-ui, sans-serif" fill="currentColor" font-size="13"><text x="12" y="23" font-size="18" font-weight="700">What a terabyte cost me</text> <path d="M52 224 H514" stroke="currentColor" opacity=".18"></path><text x="43" y="228" text-anchor="end">$0</text> <path d="M52 164 H514" stroke="currentColor" opacity=".18"></path><text x="43" y="168" text-anchor="end">$10</text> <path d="M52 104 H514" stroke="currentColor" opacity=".18"></path><text x="43" y="108" text-anchor="end">$20</text> <path d="M52 44 H514" stroke="currentColor" opacity=".18"></path><text x="43" y="48" text-anchor="end">$30</text> <text x="52.0" y="247" text-anchor="middle">2018</text> <text x="144.0" y="247" text-anchor="middle">2020</text> <text x="255.7" y="247" text-anchor="middle">2022</text> <text x="367.6" y="247" text-anchor="middle">2024</text> <text x="502.0" y="247" text-anchor="middle">2026</text> <polyline points="52.0,116.0 159.9,136.5 218.7,138.3 247.9,116.8 264.8,121.2 329.8,157.3 389.5,149.0 414.8,140.0" fill="none" stroke="currentColor" stroke-width="2"></polyline><polyline points="414.8,140.0 502.0,59.0" fill="none" stroke="#c2410c" stroke-width="2" stroke-dasharray="5 5"></polyline><circle cx="52.0" cy="116.0" r="4.5" fill="currentColor"><title>Nov 2018 (10TB) · $18.00/TB</title></circle> <circle cx="159.9" cy="136.5" r="4.5" fill="currentColor"><title>Oct 2020 (12TB) · $14.58/TB</title></circle> <circle cx="218.7" cy="138.3" r="4.5" fill="currentColor"><title>Nov 2021 (14TB) · $14.29/TB</title></circle> <circle cx="247.9" cy="116.8" r="4.5" fill="currentColor"><title>May 2022 (14TB) · $17.86/TB</title></circle> <circle cx="264.8" cy="121.2" r="4.5" fill="currentColor"><title>Aug 2022 (14TB) · $17.14/TB</title></circle> <circle cx="329.8" cy="157.3" r="4.5" fill="currentColor"><title>Oct 2023 (18TB) · $11.11/TB</title></circle> <circle cx="389.5" cy="149.0" r="4.5" fill="currentColor"><title>Nov 2024 (20TB) · $12.50/TB</title></circle> <circle cx="414.8" cy="140.0" r="4.5" fill="currentColor"><title>May 2025 (20TB) · $14.00/TB</title></circle> <circle cx="502.0" cy="59.0" r="4.5" fill="#c2410c"><title>Nov 2026 (20TB) · $27.50/TB</title></circle> <text x="52.0" y="105.0" text-anchor="start" font-weight="650">$18.00 (10TB)</text> <text x="329.8" y="178.3" text-anchor="middle" font-weight="650">$11.11 (18TB)</text> <text x="502.0" y="47.0" text-anchor="end" font-weight="650">$27.50 (20TB)</text></g></svg></p>
+<blockquote>
+<p>Price per TB before tax.</p>
+</blockquote>
+<p>税前每 TB 价格</p>
+<blockquote>
+<p>Shucking is homelab speak for taking a perfectly good external drive out of its USB enclosure and sticking the SATA drive in your server. At $12.50/TB it was a fantastically affordable way to get massive amounts of storage. At $27.50/TB, absolutely not.</p>
+</blockquote>
+<p>Shucking 是 (homelab) 的俗称，指从 USB 外壳中取出一块原本完好的外部硬盘，并将其装入服务器上的 SATA 硬盘。$12.50/TB 在当时非常划算，能以极低的价格获得大量存储空间；而 $27.50/TB 则绝对不行。</p>
+<blockquote>
+<h2 id="i-dug-through-my-receipts">I dug through my receipts</h2>
+</blockquote>
+<h2 id="我翻遍了我的收据">我翻遍了我的收据</h2>
+<blockquote>
+<p>In November 2018 I bought five 10TB EasyStores for $179.99 each. At the time I wrote about doing the rounds of my local Best Buys to pickup more drives on Black Friday as quantities were limited at each location (<a href="https://blog.ktz.me/new-server-build-log/">My 2018 server build log</a>).</p>
+</blockquote>
+<p>2018 年 11 月，我以每个 $179.99 的价格购买了 5 个 10TB EasyStores。当时我曾写过在当地多家 Best Buy 门店跑一趟，以便在黑色星期五入手更多硬盘，因为每个地点的数量都有限制（<a href="https://blog.ktz.me/new-server-build-log/">我的 2018 服务器组装日志</a>）。</p>
+<blockquote>
+<table>
+	<thead>
+			<tr>
+					<th>Order date</th>
+					<th>Drives</th>
+					<th>Each</th>
+					<th>$/TB</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Nov 8, 2018</td>
+					<td>5 × 10TB</td>
+					<td>$179.99</td>
+					<td>$18.00</td>
+			</tr>
+			<tr>
+					<td>Oct 13, 2020</td>
+					<td>2 × 12TB</td>
+					<td>$174.99</td>
+					<td>$14.58</td>
+			</tr>
+			<tr>
+					<td>Nov 1, 2021</td>
+					<td>2 × 14TB</td>
+					<td>$199.99</td>
+					<td>$14.29</td>
+			</tr>
+			<tr>
+					<td>May 11, 2022</td>
+					<td>1 × 14TB</td>
+					<td>$249.99</td>
+					<td>$17.86</td>
+			</tr>
+			<tr>
+					<td>Aug 29, 2022</td>
+					<td>1 × 14TB</td>
+					<td>$239.99</td>
+					<td>$17.14</td>
+			</tr>
+			<tr>
+					<td>Oct 28, 2023</td>
+					<td>3 × 18TB</td>
+					<td>$199.99</td>
+					<td><strong>$11.11</strong></td>
+			</tr>
+			<tr>
+					<td>Nov 21, 2024</td>
+					<td>1 × 20TB</td>
+					<td>$249.99</td>
+					<td>$12.50</td>
+			</tr>
+			<tr>
+					<td>May 5, 2025</td>
+					<td>1 × 20TB</td>
+					<td>$279.99</td>
+					<td>$14.00</td>
+			</tr>
+	</tbody>
+</table>
+</blockquote>
+<table>
+	<thead>
+			<tr>
+					<th>购买日期</th>
+					<th>硬盘</th>
+					<th>单价</th>
+					<th>$/TB</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Nov 8, 2018</td>
+					<td>5 × 10TB</td>
+					<td>$179.99</td>
+					<td>$18.00</td>
+			</tr>
+			<tr>
+					<td>Oct 13, 2020</td>
+					<td>2 × 12TB</td>
+					<td>$174.99</td>
+					<td>$14.58</td>
+			</tr>
+			<tr>
+					<td>Nov 1, 2021</td>
+					<td>2 × 14TB</td>
+					<td>$199.99</td>
+					<td>$14.29</td>
+			</tr>
+			<tr>
+					<td>May 11, 2022</td>
+					<td>1 × 14TB</td>
+					<td>$249.99</td>
+					<td>$17.86</td>
+			</tr>
+			<tr>
+					<td>Aug 29, 2022</td>
+					<td>1 × 14TB</td>
+					<td>$239.99</td>
+					<td>$17.14</td>
+			</tr>
+			<tr>
+					<td>Oct 28, 2023</td>
+					<td>3 × 18TB</td>
+					<td>$199.99</td>
+					<td><strong>$11.11</strong></td>
+			</tr>
+			<tr>
+					<td>Nov 21, 2024</td>
+					<td>1 × 20TB</td>
+					<td>$249.99</td>
+					<td>$12.50</td>
+			</tr>
+			<tr>
+					<td>May 5, 2025</td>
+					<td>1 × 20TB</td>
+					<td>$279.99</td>
+					<td>$14.00</td>
+			</tr>
+	</tbody>
+</table>
+<blockquote>
+<p>October 2023 was my best haul on a per-TB basis. Three 18TB drives put 54TB in my hands for $599.97. This year’s “deal” is fifty bucks shy of that <em>entire order</em>. Best Buy was still advertising those 18TB drives for $199.99 in November 2023. <a href="https://slickdeals.net/f/17069239-18tb-wd-easystore-usb-3-0-external-hard-drive-200-free-store-pickup">November 2023 deal archive</a></p>
+</blockquote>
+<p>2023 年 10 月是我按每 TB（TB）计算的最佳买单。 三台 18 TB 硬盘共计 54 TB，我付了 599.97 美元。这年的“优惠”比这整批订单少 50 美元。 Best Buy 在 2023 年 11 月仍在宣传那款 18 TB 硬盘的价格为 199.99 美元。 <a href="https://slickdeals.net/f/17069239-18tb-wd-easystore-usb-3-0-external-hard-drive-200-free-store-pickup">November 2023 deal archive</a></p>
+<p><svg role="img" aria-labelledby="same-drive-price-title same-drive-price-desc" viewBox="0 0 560 184" style="display:block;width:100%;height:auto"><title id="same-drive-price-title">Same 20TB drive, three prices</title> <desc id="same-drive-price-desc">November 2024 purchase, $249.99. May 2025 purchase, $279.99. November 2026 listing, $549.99.</desc> <g font-family="system-ui, sans-serif" fill="currentColor" font-size="13"><text x="12" y="23" font-size="18" font-weight="700">Same 20TB drive, three prices</text> <path d="M157 40 V151" stroke="currentColor" opacity=".18"></path><text x="157" y="171" text-anchor="middle">$0</text> <path d="M241 40 V151" stroke="currentColor" opacity=".18"></path><text x="241" y="171" text-anchor="middle">$150</text> <path d="M325 40 V151" stroke="currentColor" opacity=".18"></path><text x="325" y="171" text-anchor="middle">$300</text> <path d="M409 40 V151" stroke="currentColor" opacity=".18"></path><text x="409" y="171" text-anchor="middle">$450</text> <path d="M493 40 V151" stroke="currentColor" opacity=".18"></path><text x="493" y="171" text-anchor="middle">$600</text> <text x="12" y="62">Nov 2024 purchase</text> <path d="M157 58 H493" stroke="currentColor" opacity=".18"></path><circle cx="297.0" cy="58" r="6" fill="currentColor"></circle><text x="307.0" y="62" font-weight="650">$249.99</text> <text x="12" y="102">May 2025 purchase</text> <path d="M157 98 H493" stroke="currentColor" opacity=".18"></path><circle cx="313.8" cy="98" r="6" fill="currentColor"></circle><text x="323.8" y="102" font-weight="650">$279.99</text> <text x="12" y="142">Nov 2026 listing</text> <path d="M157 138 H493" stroke="currentColor" opacity=".18"></path><circle cx="465.0" cy="138" r="6" fill="#c2410c"></circle><text x="475.0" y="142" font-weight="650">$549.99</text></g></svg></p>
+<blockquote>
+<p>WD EasyStore 20TB, SKU 6500985. Prices are before tax.</p>
+</blockquote>
+<p>WD EasyStore 20TB，SKU 6500985。价格均为税前价格。</p>
+<blockquote>
+<h2 id="what-about-serverpartdeals">What about ServerPartDeals?</h2>
+</blockquote>
+<h2 id="serverpartdeals-有什么">ServerPartDeals 有什么？</h2>
+<blockquote>
+<p>Buying refurbished or recertified enterprise drives used to be an easy way to bring the cost down. In August 2024 I bought four recertified 14TB Ultrastars from ServerPartDeals for <strong>$529.96 before tax</strong>. That was 56TB at <strong>$9.46/TB</strong>, even cheaper than the EasyStores and no shucking to do.</p>
+</blockquote>
+<p>购买翻新或再认证的企业级硬盘过去是降低成本的一种简便方式。2024年8月我购买了四块再认证的 14 TB Ultrastars 来自 ServerPartDeals 的 <strong>$529.96 before tax</strong>。这就是说 56 TB at <strong>$9.46/TB</strong>, 甚至比 EasyStores 便宜，而且无需 shucking。</p>
+<p><svg role="img" aria-labelledby="spd-price-title spd-price-desc" viewBox="0 0 480 359" style="display:block;width:100%;height:auto"><title id="spd-price-title">ServerPartDeals price per TB</title> <desc id="spd-price-desc">Ultrastar 14TB 4Kn, 2024: $9.29 per TB, 2026: $14.64 per TB, sold out. Ultrastar 14TB 512e, 2024: $9.64 per TB, 2026: $30.64 per TB, sold out. Exos X20 20TB, 2024: $11.80 per TB, 2026: $29.45 per TB, in stock. Exos X22 20TB, 2024: $11.25 per TB, 2026: $32.45 per TB, sold out.</desc> <defs><pattern id="spd-sold-out" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><path d="M0 0 V6" stroke="currentColor" stroke-width="3"></path></pattern></defs><g font-family="system-ui, sans-serif" fill="currentColor" font-size="13"><text x="12" y="22" font-size="18" font-weight="700">ServerPartDeals price per TB</text> <text x="12" y="43">2024 order (top) · Nov 2026 listing (bottom)</text> <path d="M12 57 V325" stroke="currentColor" opacity=".15"></path><text x="12" y="345" text-anchor="middle">$0</text> <path d="M58.5 57 V325" stroke="currentColor" opacity=".15"></path><text x="58.5" y="345" text-anchor="middle">$5</text> <path d="M105 57 V325" stroke="currentColor" opacity=".15"></path><text x="105" y="345" text-anchor="middle">$10</text> <path d="M151.5 57 V325" stroke="currentColor" opacity=".15"></path><text x="151.5" y="345" text-anchor="middle">$15</text> <path d="M198 57 V325" stroke="currentColor" opacity=".15"></path><text x="198" y="345" text-anchor="middle">$20</text> <path d="M244.5 57 V325" stroke="currentColor" opacity=".15"></path><text x="244.5" y="345" text-anchor="middle">$25</text> <path d="M291 57 V325" stroke="currentColor" opacity=".15"></path><text x="291" y="345" text-anchor="middle">$30</text> <path d="M337.5 57 V325" stroke="currentColor" opacity=".15"></path><text x="337.5" y="345" text-anchor="middle">$35</text> <text x="12" y="72" font-weight="700">Ultrastar 14TB 4Kn</text> <rect x="12" y="79" width="86.4" height="11" rx="2" fill="currentColor" opacity=".48"></rect><text x="105.4" y="89">$9.29</text> <rect x="12" y="97" width="136.2" height="11" rx="2" fill="url(#spd-sold-out)" opacity="1"></rect><text x="155.2" y="107">$14.64 · Sold out</text> <text x="12" y="137" font-weight="700">Ultrastar 14TB 512e</text> <rect x="12" y="144" width="89.7" height="11" rx="2" fill="currentColor" opacity=".48"></rect><text x="108.7" y="154">$9.64</text> <rect x="12" y="162" width="285.0" height="11" rx="2" fill="url(#spd-sold-out)" opacity="1"></rect><text x="304.0" y="172">$30.64 · Sold out</text> <text x="12" y="202" font-weight="700">Exos X20 20TB</text> <rect x="12" y="209" width="109.7" height="11" rx="2" fill="currentColor" opacity=".48"></rect><text x="128.7" y="219">$11.80</text> <rect x="12" y="227" width="273.9" height="11" rx="2" fill="#c2410c" opacity="1"></rect><text x="292.9" y="237">$29.45 · In stock</text> <text x="12" y="267" font-weight="700">Exos X22 20TB</text> <rect x="12" y="274" width="104.6" height="11" rx="2" fill="currentColor" opacity=".48"></rect><text x="123.6" y="284">$11.25 · refunded</text> <rect x="12" y="292" width="301.8" height="11" rx="2" fill="url(#spd-sold-out)" opacity="1"></rect><text x="320.8" y="302">$32.45 · Sold out</text></g></svg></p>
+<blockquote>
+<p>US dollars per TB. Hatched bars mark equivalent sold-out listings as of Nov 2026.</p>
+</blockquote>
+<p>美元每 TB. 斜条表示等同的售罄列表截至2026年11月.</p>
+<blockquote>
+<table>
+	<thead>
+			<tr>
+					<th>Drive</th>
+					<th>2024 price per drive</th>
+					<th>Nov 26, 2026 listing</th>
+					<th>Change per TB</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>WD Ultrastar HC530 14TB 4Kn, recertified (<code>WUH721414ALN604</code>)</td>
+					<td>$129.99 · $9.29/TB</td>
+					<td>$204.99 · $14.64/TB · <a href="https://serverpartdeals.com/products/western-digital-ultrastar-dc-hc530-wuh721414aln604-0f31102-14tb-7-2k-rpm-sata-6gb-s-4kn-3-5-recertified-hard-drive">Sold out</a></td>
+					<td>+58%</td>
+			</tr>
+			<tr>
+					<td>WD Ultrastar HC530 14TB 512e, recertified (<code>WUH721414ALE6L4</code>)</td>
+					<td>$134.99 · $9.64/TB</td>
+					<td>$429.00 · $30.64/TB · <a href="https://serverpartdeals.com/collections/western-digital-recertified-all-caps/products/western-digital-ultrastar-dc-hc530-wuh721414ale6l4-0f31284-14tb-7-2k-rpm-sata-6gb-s-512e-512mb-3-5-se-manufacturer-recertified-hdd">Sold out</a></td>
+					<td>+218%</td>
+			</tr>
+			<tr>
+					<td>Seagate Exos X20 20TB, refurbished (<code>ST20000NM007D</code>)</td>
+					<td>$235.94 · $11.80/TB</td>
+					<td>$589.00 · $29.45/TB · <a href="https://serverpartdeals.com/collections/sata/products/seagate-exos-x20-st20000nm007d-20tb-7-2k-rpm-sata-6gb-s-3-5-refurbished-hdd">In stock</a></td>
+					<td>+150%</td>
+			</tr>
+			<tr>
+					<td>Seagate Exos X22 20TB, recertified (<code>ST20000NM004E</code>)</td>
+					<td>$224.99 · $11.25/TB · later refunded</td>
+					<td>$649.00 · $32.45/TB · <a href="https://serverpartdeals.com/collections/20tb-to-30tb-hard-drives">Sold out</a></td>
+					<td>+188%</td>
+			</tr>
+	</tbody>
+</table>
+</blockquote>
+<table>
+	<thead>
+			<tr>
+					<th>驱动器</th>
+					<th>2024 年每盘价格</th>
+					<th>2026 年 11 月 26 日出售</th>
+					<th>每 TB 变化</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>WD Ultrastar HC530 14TB 4Kn, recertified (<code>WUH721414ALN604</code>)</td>
+					<td>$129.99 · $9.29/TB</td>
+					<td>$204.99 · $14.64/TB · <a href="https://serverpartdeals.com/products/western-digital-ultrastar-dc-hc530-wuh721414aln604-0f31102-14tb-7-2k-rpm-sata-6gb-s-4kn-3-5-recertified-hard-drive">售罄</a></td>
+					<td>+58%</td>
+			</tr>
+			<tr>
+					<td>WD Ultrastar HC530 14TB 512e, recertified (<code>WUH721414ALE6L4</code>)</td>
+					<td>$134.99 · $9.64/TB</td>
+					<td>$429.00 · $30.64/TB · <a href="https://serverpartdeals.com/collections/western-digital-recertified-all-caps/products/western-digital-ultrastar-dc-hc530-wuh721414ale6l4-0f31284-14tb-7-2k-rpm-sata-6gb-s-512e-512mb-3-5-se-manufacturer-recertified-hdd">售罄</a></td>
+					<td>+218%</td>
+			</tr>
+			<tr>
+					<td>Seagate Exos X20 20TB, refurbished (<code>ST20000NM007D</code>)</td>
+					<td>$235.94 · $11.80/TB</td>
+					<td>$589.00 · $29.45/TB · <a href="https://serverpartdeals.com/collections/sata/products/seagate-exos-x20-st20000nm007d-20tb-7-2k-rpm-sata-6gb-s-3-5-refurbished-hdd">库存</a></td>
+					<td>+150%</td>
+			</tr>
+			<tr>
+					<td>Seagate Exos X22 20TB, recertified (<code>ST20000NM004E</code>)</td>
+					<td>$224.99 · $11.25/TB · 后续退款</td>
+					<td>$649.00 · $32.45/TB · <a href="https://serverpartdeals.com/collections/20tb-to-30tb-hard-drives">售罄</a></td>
+					<td>+188%</td>
+			</tr>
+	</tbody>
+</table>
+<blockquote>
+<p>The sad truth is that across the board prices are up a minimum of 58%, and sometimes as much as 218% in just a year or two.</p>
+</blockquote>
+<p>令人沮丧的事实是，全线价格至少上涨了 58%，有时在短短一两年内涨幅甚至高达 218%。</p>
+<blockquote>
+<h2 id="how-we-got-down-to-three-hdd-makers">How we got down to three HDD makers</h2>
+</blockquote>
+<h2 id="我们是如何只剩下三家-hdd-制造商">我们是如何只剩下三家 HDD 制造商</h2>
+<blockquote>
+<p>When the EasyStore is that bad, my first instinct is to shop around. Maybe I should try another retailer (to be clear I’m not blaming BestBuy for any of this), buy an enterprise drive, see what’s available recertified. But follow those listings back to the companies that actually make the drives and the choices narrow pretty quickly. There are three big HDD makers left. How did we end up with so few?</p>
+</blockquote>
+<p>当 EasyStore 那么糟糕时，我的第一反应是货比三家。也许我应该尝试另一家零售商（声明一下，我并不是在怪 BestBuy 为此负责），购买一款企业级硬盘（enterprise drive），看看有哪些翻新产品可用。但如果顺着这些商品列表追溯到实际制造硬盘的公司，可选选项就会迅速缩小。目前还剩下三家主要的 HDD 厂商。我们怎么会落得只剩这么几家？</p>
+<blockquote>
+<p>Maxtor bought Quantum’s hard drive business in 2001, then Seagate bought Maxtor in 2006. Hitachi combined IBM’s disk business with its own to form HGST in 2003, and Toshiba bought Fujitsu’s HDD business in 2009. Seagate bought Samsung’s HDD business in December 2011, and Western Digital bought HGST in March 2012. The FTC required WD to sell desktop-drive manufacturing assets to Toshiba to keep a third supplier in that market. That left Seagate, Western Digital and Toshiba.</p>
+</blockquote>
+<p>Maxtor 于 2001 年收购了 Quantum 的硬盘业务，随后 Seagate 在 2006 年收购了 Maxtor 。 Hitachi 在 2003 年将 IBM 的磁盘业务与其自身合并成立 HGST ，Toshiba 在 2009 年收购了 Fujitsu 的 HDD 业务。Seagate 在 2011 年 12 月收购了 Samsung 的 HDD 业务，Western Digital 在 2012 年 3 月收购了 HGST 。 FTC 要求 WD 必须向 Toshiba 出售 desktop-drive 生产资产，以保持该市场的第三家供应商 。 此举使得 Seagate 、Western Digital 和 Toshiba 成为仅存的三家公司 。</p>
+<p><svg role="img" aria-labelledby="hdd-consolidation-title hdd-consolidation-desc" viewBox="0 0 620 370" style="display:block;width:100%;height:auto"><title id="hdd-consolidation-title">How the HDD market narrowed to three</title> <desc id="hdd-consolidation-desc">Quantum’s HDD business went to Maxtor in 2001, then Maxtor went to Seagate in 2006. Seagate bought Samsung’s HDD business in 2011. IBM’s HDD business became part of Hitachi GST in 2003, which Western Digital bought in 2012. Toshiba bought Fujitsu’s HDD business in 2009 and received desktop HDD assets from the WD and HGST deal in 2012.</desc> <g font-family="system-ui, sans-serif" font-size="14"><text x="12" y="25" fill="currentColor" font-size="22" font-weight="750">How the HDD market narrowed to three</text> <g color="#11664b" fill="currentColor"><rect x="10" y="54" width="600" height="94" rx="12" fill="#e3f4eb"></rect><rect x="24" y="70" width="124" height="26" rx="6" fill="#fff"></rect><text x="34" y="87.5" font-weight="600">Quantum HDD</text> <path d="M148 83 H218 m-5 -4 l5 4 -5 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path><rect x="164" y="72" width="42" height="22" rx="7" fill="#fff"></rect><text x="185" y="87" text-anchor="middle" font-size="12" font-weight="650">2001</text> <rect x="222" y="70" width="100" height="26" rx="6" fill="#fff"></rect><text x="232" y="87.5" font-weight="600">Maxtor</text> <path d="M322 83 H447 m-5 -4 l5 4 -5 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path><rect x="365.5" y="72" width="42" height="22" rx="7" fill="#fff"></rect><text x="386.5" y="87" text-anchor="middle" font-size="12" font-weight="650">2006</text> <rect x="24" y="107" width="124" height="26" rx="6" fill="#fff"></rect><text x="34" y="124.5" font-weight="600">Samsung HDD</text> <path d="M148 120 H447 m-5 -4 l5 4 -5 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path><rect x="278.5" y="109" width="42" height="22" rx="7" fill="#fff"></rect><text x="299.5" y="124" text-anchor="middle" font-size="12" font-weight="650">2011</text> <rect x="451" y="64" width="147" height="74" rx="8"></rect><text x="524.5" y="122" text-anchor="middle" fill="#fff" font-size="15" font-weight="700">Seagate</text> </g><g color="#214c93" fill="currentColor"><rect x="10" y="159" width="600" height="94" rx="12" fill="#e8f0ff"></rect><rect x="24" y="194" width="124" height="26" rx="6" fill="#fff"></rect><text x="34" y="211.5" font-weight="600">IBM HDD</text> <path d="M148 207 H218 m-5 -4 l5 4 -5 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path><rect x="164" y="196" width="42" height="22" rx="7" fill="#fff"></rect><text x="185" y="211" text-anchor="middle" font-size="12" font-weight="650">2003</text> <rect x="222" y="194" width="100" height="26" rx="6" fill="#fff"></rect><text x="232" y="211.5" font-weight="600">Hitachi GST</text> <path d="M322 207 H447 m-5 -4 l5 4 -5 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path><rect x="365.5" y="196" width="42" height="22" rx="7" fill="#fff"></rect><text x="386.5" y="211" text-anchor="middle" font-size="12" font-weight="650">2012</text> <rect x="451" y="169" width="147" height="74" rx="8"></rect><text x="524.5" y="227" text-anchor="middle" fill="#fff" font-size="15" font-weight="700">Western Digital</text> </g><g color="#a52c38" fill="currentColor"><rect x="10" y="264" width="600" height="94" rx="12" fill="#fbecef"></rect><rect x="24" y="280" width="124" height="26" rx="6" fill="#fff"></rect><text x="34" y="297.5" font-weight="600">Fujitsu HDD</text> <path d="M148 293 H447 m-5 -4 l5 4 -5 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path><rect x="278.5" y="282" width="42" height="22" rx="7" fill="#fff"></rect><text x="299.5" y="297" text-anchor="middle" font-size="12" font-weight="650">2009</text> <rect x="24" y="317" width="179" height="26" rx="6" fill="#fff"></rect><text x="34" y="334.5" font-weight="600">WD–HGST desktop assets</text> <path d="M203 330 H447 m-5 -4 l5 4 -5 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4 2"></path><rect x="306" y="319" width="42" height="22" rx="7" fill="#fff"></rect><text x="327" y="334" text-anchor="middle" font-size="12" font-weight="650">2012</text> <rect x="451" y="274" width="147" height="74" rx="8"></rect><text x="524.5" y="332" text-anchor="middle" fill="#fff" font-size="15" font-weight="700">Toshiba</text></g></g></svg></p>
+<blockquote>
+<p>Selected HDD acquisitions by closing year. The dashed arrow shows the desktop-drive assets transferred to Toshiba as a condition of the WD–HGST deal.</p>
+</blockquote>
+<p>按收购年份选定的 HDD 收购。虚线箭头显示转移至 Toshiba 为 WD–HGST 交易条件的 desktop-drive 资产。</p>
+<blockquote>
+<p>The 2011 Thailand floods hit while those last two deals were underway. WD halted production at all its Thai plants, and its average hard drive selling price went from $45 in fiscal 2011 to $62 in fiscal 2012. There was also a price-fixing case further up the supply chain. NHK Spring pleaded guilty in 2019 to fixing prices for the suspension assemblies that hold the read/write heads, and the court approved a $28.5 million fine. <a href="https://www.sec.gov/Archives/edgar/data/106040/000119312512361018/d356205d10k.htm">WD’s 2012 annual report</a> · <a href="https://cdn.ca9.uscourts.gov/datastore/opinions/2026/01/08/24-4470.pdf">Ninth Circuit opinion</a></p>
+</blockquote>
+<p>2011年泰国洪水袭击，而最后两笔交易仍在进行中。WD停止在所有泰国工厂的生产，其平均硬盘售价从 $45 在 2011财年 上升至 $62 在 2012财年。此外，供应链上游还存在价格固定案件。NHK Spring 在 2019年认罪，承认固定用于保持读/写头的悬挂组件的价格，法院批准了 $28.5 million 的罚款。<a href="https://www.sec.gov/Archives/edgar/data/106040/000119312512361018/d356205d10k.htm">WD的2012年年度报告</a> · <a href="https://cdn.ca9.uscourts.gov/datastore/opinions/2026/01/08/24-4470.pdf">第九巡回上诉法院意见</a></p>
+<blockquote>
+<h2 id="market-collusion-and-cartel-pricing">Market collusion and cartel pricing</h2>
+</blockquote>
+<h2 id="市场共谋与卡特尔定价">市场共谋与卡特尔定价</h2>
+<blockquote>
+<p>It’s hard to have anything positive to say in this post. The HDD manufacturing market is so consolidated nowadays - just like the memory market which is equally screwed - that it’s hard to see this as anything but mass market collusion by the HDD manufacturing cartel.</p>
+</blockquote>
+<p>在这篇帖子里很难说什么好话。如今 HDD 制造业市场如此集中——就像内存市场同样糟糕——以至于很难不将其视为 HDD 制造业卡特尔的市场勾结。</p>
+<blockquote>
+<p>Three companies is an awfully short list when you need to buy a hard drive. And with 89% of WD’s revenue coming from its cloud business in fiscal 2026, I don’t reckon those of us buying a couple of drives for a home server have much impact here. Just like with Nvidia and Micron, consumer markets just aren’t valuable enough so we have to make do with the crumbs instead.</p>
+</blockquote>
+<p>当 你需要购买硬盘 时，这是一个实在太短的列表。
+而且在 2026 财年，WD 的收入中 89% 来自其云计算业务，我估计那些为家庭服务器 购买几块硬盘 的我们，在 这里 影响 应该很小。
+就像在 Nvidia 和 Micron 那里 一样，消费市场 并不够有价值，所以我们 只能 从中 得到这些残渣 了。</p>
+<blockquote>
+<p>As of November 26, 2026, the 20TB is <strong>2.2×</strong> what I paid for the exact same SKU in 2024. It’s also $270 more than I paid for it in May 2025. And if you’re thinking you’ll just buy a smaller one, Best Buy’s 8TB Black Friday special is $299.99. That’s $37.50/TB and fifty bucks more than my 20TB cost two years ago. <a href="https://www.bestbuy.com/site/searchpage.jsp?id=pcat17071&amp;st=easystore">Best Buy’s EasyStore listings</a></p>
+</blockquote>
+<p>截至 2026 年 11 月 26 日，这款 20TB 硬盘的价格是我在 2024 年购买同一 SKU 时支付价格的 <strong>2.2 倍</strong>。它也比我在 2025 年 5 月买它时贵了 270 美元。如果你想买小容量的，Best Buy 的 8TB 黑色星期五特价是 299.99 美元。也就是每 TB 37.50 美元，比两年前我 20TB 硬盘的价格还要贵 50 美元。<a href="https://www.bestbuy.com/site/searchpage.jsp?id=pcat17071&amp;st=easystore">Best Buy 的 EasyStore 产品列表</a></p>
+<blockquote>
+<p>The jump gets sillier when you price a whole NAS. Four of those 20TB drives would have been $999.96 at my 2024 price. This week they’d be $2,199.96. That’s another $1,200 before you’ve bought a case, a board or a single stick of RAM. And the price per <em>usable</em> terabyte only gets worse once you set aside a drive for parity.</p>
+</blockquote>
+<p>当你为整个 NAS 定价时，跳跃变得更荒谬。 四台这些 20TB 驱动器在我的 2024 价格下会是 $999.96。 本周它们会是 $2,199.96。 这还多出 $1,200，在你购买外壳、主板或单根 RAM 之前。 而且每 <em>usable</em> terabyte 的价格只会更糟糕，一旦你为 parity 保留 一个驱动器。</p>
+<blockquote>
+<p>If I can wish for one thing in 2027, it would be for hardware pricing to return to reasonable levels. I fear it may take a lot longer than that, though. So making do with less is going to be the new normal for a while. And in that creative constraint, maybe we’ll have some fun along the way instead.</p>
+</blockquote>
+<p>如果我能在 2027 年 许一个愿望，那就是让硬件价格回到合理水平。不过，我担心这可能要花费比这更长的时间。因此，为了适应少一些，将会成为一段时间的新常态。在这种创意限制下，也许我们会在途中玩得开心。</p>
+]]></content:encoded></item></channel></rss>
